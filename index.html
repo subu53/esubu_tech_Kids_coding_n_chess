@@ -59,23 +59,46 @@
         </ul>
       </div>
     </section>
-    <section id="contact">
-      <h2>Talk to Us</h2>
-      <form action="https://formsubmit.co/esubumedia@gmail.com" method="POST" class="contact-form">
-        <input type="hidden" name="_captcha" value="false">
-        <label for="name">Parent's Name</label>
-        <input type="text" id="name" name="name" required>
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" required>
-        <label for="message">Your Message or Child's Age</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </section>
-  </main>
-  <footer>
-    <p>&copy; 2025 Esubu Tech Academy. &copy; +254720811346  All rights reserved.</p>
-  </footer>
+  <section id="contact">
+  <h2>Talk to Us</h2>
+
+  <!-- ✅ Visible clickable phone numbers -->
+  <p>
+    <strong>Phone:</strong>
+    <a href="tel:+254720811346">+254 720 811 346</a> /
+    <a href="tel:+254799470690">+254 799 470 690</a>
+  </p>
+  <p><strong>Email:</strong> <a href="mailto:esubumedia@gmail.com">esubumedia@gmail.com</a></p>
+
+  <!-- ✅ Updated form with a phone number input -->
+  <form action="https://formsubmit.co/esubumedia@gmail.com" method="POST" class="contact-form">
+    <input type="hidden" name="_captcha" value="false">
+
+    <label for="name">Parent's Name</label>
+    <input type="text" id="name" name="name" required>
+
+    <!-- New phone number field -->
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="phone" placeholder="+254..." required pattern="[0-9+ ]{7,15}">
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="message">Your Message or Child's Age</label>
+    <textarea id="message" name="message" rows="4" required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<footer>
+  <p>
+    &copy; 2025 Esubu Tech Academy. All rights reserved.<br>
+    📞 <a href="tel:+254720811346">+254 720 811 346</a> /
+    <a href="tel:+254799470690">+254 799 470 690</a>
+  </p>
+</footer>
+
   <script src="script.js"></script>
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
