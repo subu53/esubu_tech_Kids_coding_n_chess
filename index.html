@@ -2,122 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Esubu Tech Academy | Kids Coding & Chess Camp</title>
+  <link rel="stylesheet" href="styles.css?v=5" />
+  
+<!-- ✅ Added Google Font (Inter – extremely mobile-friendly) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHFDG299C1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-GHFDG299C1');
-  </script>
-
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Nunito', sans-serif;
-      line-height: 1.7;
-      color: #222;
-      background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='20' r='6' fill='%23CDECC4' fill-opacity='0.45'/%3E%3Ccircle cx='150' cy='80' r='5' fill='%23CDECC4' fill-opacity='0.35'/%3E%3Cpath d='M80 40 L90 60 L85 85 L65 95 L55 75 Z' fill='%23000000' fill-opacity='0.05'/%3E%3Ctext x='120' y='40' font-size='20' fill='%231E1E1E' fill-opacity='0.15' font-family='Inter'%3E%7B%7D%3C/text%3E%3Cpath d='M160 150 l-10 -20 l15 -15 l10 10 l-5 25 z' fill='%23F8C7C7' fill-opacity='0.35'/%3E%3Crect x='30' y='130' width='15' height='15' fill='%231E1E1E' fill-opacity='0.1' rx='2'/%3E%3Cpath d='M100 170 h30 l-15 -12z' fill='%231E1E1E' fill-opacity='0.08'/%3E%3C/svg%3E");
-      background-size: 300px 300px;
-      background-attachment: fixed;
-    }
-    header nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      background: rgba(255,255,255,0.95);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    .logo {
-      font-weight: 700;
-      font-size: 1.5rem;
-    }
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-      padding: 0;
-      margin: 0;
-    }
-    .nav-links a {
-      text-decoration: none;
-      color: #222;
-      font-weight: 600;
-    }
-    .hero {
-      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('https://i.ibb.co/8s7R9cF/kids-coding-kenya.jpg');
-      background-size: cover;
-      background-position: center;
-      padding: 6rem 1.5rem;
-      text-align: center;
-      color: white;
-    }
-    .hero h1 {
-      font-size: 2.4rem;
-      font-weight: 800;
-      margin-bottom: 1rem;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: auto;
-    }
-    section {
-      padding: 3rem 1.5rem;
-      max-width: 1100px;
-      margin: auto;
-    }
-    h2 {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-    .card {
-      background: white;
-      border-radius: 12px;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
-    }
-    ul li {
-      margin-bottom: 0.6rem;
-    }
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      background-color: #25D366;
-      color: white;
-      border-radius: 50px;
-      padding: 10px 18px;
-      font-size: 16px;
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-      z-index: 9999;
-      transition: transform 0.2s ease, background-color 0.3s ease;
-    }
-    .whatsapp-float:hover { transform: scale(1.05); background-color: #1EBE5D; }
-    .whatsapp-icon { width: 24px; height: 24px; margin-right: 8px; }
-    @media (max-width: 600px) {
-      .hero h1 { font-size: 1.9rem; }
-      .hero p { font-size: 1rem; }
-      .nav-links { flex-direction: column; gap: 1rem; }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css?v=5" />
+  
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GHFDG299C1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GHFDG299C1');
+</script>
 </head>
 <body>
   <header>
@@ -131,55 +32,29 @@
       </ul>
     </nav>
   </header>
-
   <main>
     <section id="home" class="hero">
-      <h1>Give your child the skills to thrive in a digital Kenya</h1>
-      <p>Coding and chess help children think smarter, solve problems confidently, and prepare for a future shaped by technology, creativity, and AI.</p>
+      <h1>Empowering Young Minds This Holiday</h1>
+      <p>Enroll your child (ages 6–16) in our live online camp to learn <strong>Scratch Programming</strong> and <strong>Chess</strong> — skills that build creativity, logic, and confidence.</p>
+      <a href="#programs" class="cta-btn">View Holiday Programs</a>
     </section>
-
     <section id="about">
-      <h2>About EsubuTech Kids Coding & Chess</h2>
-      <div class="card">
-        <p>We are a Kenyan learning initiative dedicated to helping children build strong digital and problem-solving skills. Our programs are crafted with Kenyan families in mind—safe, flexible, interactive, and rooted in real-world skills.</p>
-        <ul>
-          <li>👨‍🏫 Experienced and child-friendly instructors</li>
-          <li>📘 Structured curriculum with clear outcomes</li>
-          <li>💻 Safe online learning environment</li>
-          <li>🤝 Small class sizes for personalised attention</li>
-          <li>🎯 Skills that support schoolwork and future careers</li>
-        </ul>
-      </div>
+      <h2>Why Parents Choose Esubu Tech Academy</h2>
+      <p>At Esubu Tech Academy, we equip children with real-world skills that sharpen their minds and spark a love for learning. Our online holiday program combines interactive coding lessons and strategic chess games — all led by passionate instructors in a safe, engaging Zoom environment. Give your child a head start in tech and critical thinking, for just KES 12,000/month.</p>
     </section>
-
     <section id="programs">
       <h2>What Your Child Will Learn</h2>
-
-      <div class="card">
-        <h3>Scratch Programming</h3>
-        <p>Scratch introduces children to coding through fun, colourful blocks. It’s a gentle way for kids to learn how computers think—without pressure or complexity.</p>
-        <ul>
-          <li>🧠 Logical thinking and project planning</li>
-          <li>🎨 Creativity through animations, stories, and mini-games</li>
-          <li>🧩 Step-by-step problem solving</li>
-          <li>💡 Confidence in bringing ideas to life</li>
-          <li>🛠 Early computational thinking skills</li>
-        </ul>
+      <div class="program-list">
+        <div class="program-card">
+          <h3>Scratch Programming</h3>
+          <p>Kids learn how to build games, animations, and interactive stories — laying the foundation for future coding confidence. No experience needed.</p>
+        </div>
+        <div class="program-card">
+          <h3>Chess</h3>
+          <p>Through guided games and tournaments, children develop focus, patience, and strategic thinking — core skills that support academic success.</p>
+        </div>
       </div>
-
-      <div class="card">
-        <h3>Chess for Kids</h3>
-        <p>Chess is one of the most effective tools for strengthening a child’s thinking skills. It teaches patience, strategy, creativity, and the ability to make decisions under pressure. Children learn how to think ahead—an essential life skill.</p>
-        <ul>
-          <li>♟ Improved focus and attention span</li>
-          <li>🧠 Strategic thinking & planning ahead</li>
-          <li>🔥 Patience and emotional control</li>
-          <li>📈 Better problem-solving and reasoning skills</li>
-          <li>🤝 Sportsmanship, respect, and confidence</li>
-        </ul>
-      </div>
-
-      <div class="card">
+      <div class="program-details">
         <h4>Program Highlights:</h4>
         <ul>
           <li>Live Zoom classes with friendly instructors</li>
@@ -190,75 +65,96 @@
         </ul>
       </div>
     </section>
+  <section id="contact">
+  <h2>Talk to Us</h2>
 
-    <section id="parents-love">
-      <h2>What Parents Love About Our Classes</h2>
-      <div class="card">
-        <ul>
-          <li>Interactive lessons that are fun and practical</li>
-          <li>Children develop independence and confidence</li>
-          <li>Safe and structured online learning</li>
-          <li>Clear progress updates</li>
-          <li>Flexible schedules for busy parents</li>
-          <li>Supportive teachers who genuinely care</li>
-        </ul>
-      </div>
-    </section>
+  <!-- ✅ Visible clickable phone numbers -->
+  <p>
+    <strong>Phone:</strong>
+    <a href="tel:+254720811346">+254 720 811 346</a> /
+    <a href="tel:+254799470690">+254 799 470 690</a>
+  </p>
+ <p><strong>📧 Email:</strong> 
+  <a href="mailto:sammyssbu@esubutech.online">sammyssbu@esubutech.online</a> / 
+  <a href="mailto:esubumedia@gmail.com">esubumedia@gmail.com</a>
+</p>
 
-    <section id="testimonials">
-      <h2>What Kenyan Parents Are Saying</h2>
-      <div class="card">
-        <ul>
-          <li>“My son now explains his ideas with confidence. Coding has helped him think differently.” — Parent, Nairobi</li>
-          <li>“Chess improved my daughter's concentration and school performance.” — Parent, Kiambu</li>
-          <li>“I didn’t know much about coding, but now I see how important it is. My child is learning skills I never had.” — Parent, Nakuru</li>
-        </ul>
-      </div>
-    </section>
+  <!-- ✅ Updated form with a phone number input -->
+  <form action="https://formsubmit.co/esubumedia@gmail.com" method="POST" class="contact-form">
+    <input type="hidden" name="_captcha" value="false">
 
-    <section id="contact">
-      <h2>Talk to Us</h2>
-      <p><strong>Phone:</strong> <a href="tel:+254720811346">+254 720 811 346</a> / <a href="tel:+254799470690">+254 799 470 690</a></p>
-      <p><strong>📧 Email:</strong> <a href="mailto:sammyssbu@esubutech.online">sammyssbu@esubutech.online</a> / <a href="mailto:esubumedia@gmail.com">esubumedia@gmail.com</a></p>
+    <label for="name">Parent's Name</label>
+    <input type="text" id="name" name="name" required>
 
-      <form action="https://formsubmit.co/esubumedia@gmail.com" method="POST" class="contact-form">
-        <input type="hidden" name="_captcha" value="false">
-        <label for="name">Parent's Name</label>
-        <input type="text" id="name" name="name" required>
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" placeholder="+254..." required pattern="[0-9+ ]{7,15}">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" required>
-        <label for="message">Your Message or Child's Age</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </section>
-  </main>
+    <!-- New phone number field -->
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="phone" placeholder="+254..." required pattern="[0-9+ ]{7,15}">
 
-  <footer>
-    <p>&copy; 2025 Esubu Tech Academy. All rights reserved.<br>📞 <a href="tel:+254720811346">+254 720 811 346</a> / <a href="tel:+254799470690">+254 799 470 690</a></p>
-  </footer>
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" required>
 
-  <!-- Tawk.to Script -->
-  <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-      s1.async=true;
-      s1.src='https://embed.tawk.to/68fdede9cf7edc194c8d6a64/1j8fuineb';
-      s1.charset='UTF-8';
-      s1.setAttribute('crossorigin','*');
-      s0.parentNode.insertBefore(s1,s0);
-    })();
-  </script>
+    <label for="message">Your Message or Child's Age</label>
+    <textarea id="message" name="message" rows="4" required></textarea>
 
-  <!-- WhatsApp Button -->
-  <a href="https://wa.me/254720811346" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
-    <span>WhatsApp Us</span>
-  </a>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<footer>
+  <p>
+    &copy; 2025 Esubu Tech Academy. All rights reserved.<br>
+    📞 <a href="tel:+254720811346">+254 720 811 346</a> /
+    <a href="tel:+254799470690">+254 799 470 690</a>
+  </p>
+</footer>
 
   <script src="script.js"></script>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/68fdede9cf7edc194c8d6a64/1j8fuineb';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<!-- WhatsApp Chat Button -->
+<a href="https://wa.me/254720811346" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
+  <span>WhatsApp Us</span>
+</a>
+
+<style>
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #25D366;
+  color: white;
+  border-radius: 50px;
+  padding: 10px 18px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  z-index: 9999;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+.whatsapp-float:hover {
+  transform: scale(1.05);
+  background-color: #1EBE5D;
+}
+.whatsapp-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+</style>
+
 </body>
 </html>
