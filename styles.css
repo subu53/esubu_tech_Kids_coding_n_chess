@@ -1,9 +1,12 @@
 /* Green and Red Theme for Esubu Tech Academy */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap');
+
 body {
   margin: 0;
-  font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans-serif;
+  font-family: 'Nunito', sans-serif;
   background: #f8fdf8;
   color: #222;
+  line-height: 1.6;
 }
 
 header {
@@ -22,7 +25,7 @@ nav {
 
 .logo {
   font-size: 1.7rem;
-  font-weight: bold;
+  font-weight: 800;
   color: #fff;
   letter-spacing: 1px;
 }
@@ -39,6 +42,7 @@ nav {
   color: #fff;
   text-decoration: none;
   font-size: 1.1rem;
+  font-weight: 600;
   transition: color 0.2s;
 }
 
@@ -50,18 +54,18 @@ nav {
   background: linear-gradient(120deg, #4caf50 0%, #ff5722 100%);
   text-align: center;
   padding: 4rem 1rem 3rem 1rem;
+  color: #fff;
 }
 
 .hero h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: #fff;
+  font-weight: 800;
 }
 
 .hero p {
   font-size: 1.3rem;
   margin-bottom: 2rem;
-  color: #fff;
 }
 
 .cta-btn {
@@ -71,7 +75,7 @@ nav {
   border: none;
   border-radius: 30px;
   font-size: 1.1rem;
-  font-weight: bold;
+  font-weight: 700;
   cursor: pointer;
   text-decoration: none;
   transition: background 0.2s;
@@ -118,6 +122,7 @@ section {
 .program-card h3 {
   color: #d32f2f;
   margin-bottom: 0.5rem;
+  font-weight: 700;
 }
 
 .program-details ul {
@@ -133,7 +138,7 @@ section {
 }
 
 .contact-form label {
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .contact-form input, .contact-form textarea {
@@ -141,6 +146,7 @@ section {
   border-radius: 8px;
   border: 2px solid #4caf50;
   font-size: 1rem;
+  font-family: 'Nunito', sans-serif;
   resize: none;
 }
 
@@ -151,7 +157,7 @@ section {
   border-radius: 20px;
   padding: 0.7rem 1.5rem;
   font-size: 1.1rem;
-  font-weight: bold;
+  font-weight: 700;
   cursor: pointer;
   transition: background 0.2s;
 }
@@ -184,5 +190,8 @@ footer {
   }
   .hero h1 {
     font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1rem;
   }
 }
