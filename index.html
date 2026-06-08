@@ -39,6 +39,9 @@
         <a href="#tech-home" class="div-pill" id="pill-tech" data-division="tech">
           💼 Tech Solutions
         </a>
+        <a href="#data-home" class="div-pill" id="pill-data" data-division="data">
+          📊 Data Science
+        </a>
       </div>
 
       <!-- Nav Links (context-aware) -->
@@ -53,6 +56,11 @@
         <li class="tech-nav hidden"><a href="#erp-products" class="nav-link">Products</a></li>
         <li class="tech-nav hidden"><a href="#tech-why-us" class="nav-link">Why Us</a></li>
         <li class="tech-nav hidden"><a href="#tech-contact" class="nav-link">Get Demo</a></li>
+        <!-- Data Science links -->
+        <li class="data-nav hidden"><a href="#data-home" class="nav-link">Overview</a></li>
+        <li class="data-nav hidden"><a href="#data-services" class="nav-link">Services</a></li>
+        <li class="data-nav hidden"><a href="#data-process" class="nav-link">Process</a></li>
+        <li class="data-nav hidden"><a href="#data-contact" class="nav-link">Contact</a></li>
       </ul>
 
       <button class="hamburger" id="hamburger" aria-label="Toggle menu">
@@ -62,9 +70,10 @@
 
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobile-menu">
-      <div class="mobile-division">
+      <div class="mobile-division mobile-division--three">
         <a href="#academy-home" class="mob-div-pill active" data-division="academy" onclick="switchDivision('academy')">🎓 Academy</a>
         <a href="#tech-home" class="mob-div-pill" data-division="tech" onclick="switchDivision('tech')">💼 Tech</a>
+        <a href="#data-home" class="mob-div-pill" data-division="data" onclick="switchDivision('data')">📊 Data</a>
       </div>
       <ul class="mobile-nav-links" id="mobile-nav-links">
         <li class="m-academy-nav"><a href="#academy-home" onclick="closeMobile()">Home</a></li>
@@ -75,6 +84,10 @@
         <li class="m-tech-nav hidden"><a href="#erp-products" onclick="closeMobile()">Products</a></li>
         <li class="m-tech-nav hidden"><a href="#tech-why-us" onclick="closeMobile()">Why Us</a></li>
         <li class="m-tech-nav hidden"><a href="#tech-contact" onclick="closeMobile()">Get Demo</a></li>
+        <li class="m-data-nav hidden"><a href="#data-home" onclick="closeMobile()">Overview</a></li>
+        <li class="m-data-nav hidden"><a href="#data-services" onclick="closeMobile()">Services</a></li>
+        <li class="m-data-nav hidden"><a href="#data-process" onclick="closeMobile()">Process</a></li>
+        <li class="m-data-nav hidden"><a href="#data-contact" onclick="closeMobile()">Contact</a></li>
       </ul>
     </div>
   </header>
@@ -498,6 +511,285 @@
 
     </div><!-- end #tech-division -->
 
+
+    <!-- ============================================================
+         DATA SCIENCE DIVISION
+    ============================================================ -->
+    <div id="data-division" class="hidden">
+
+      <!-- Data Science Hero -->
+      <section id="data-home" class="data-hero">
+        <div class="data-hero-content">
+          <div class="data-hero-badge">📊 Esubu Data Science</div>
+          <h1>Turn Your Data Into<br><span class="data-underline">Decisions That Win</span></h1>
+          <p>We help Kenyan businesses and organisations unlock the power hidden in their data — through analytics, machine learning, dashboards, and AI solutions built for the real world.</p>
+          <div class="data-hero-actions">
+            <a href="#data-contact" class="data-cta-btn">Start a Project</a>
+            <a href="#data-services" class="data-cta-outline">Explore Services</a>
+          </div>
+          <div class="data-hero-stats">
+            <div class="data-stat"><span>6+</span><p>Service Areas</p></div>
+            <div class="data-stat"><span>AI</span><p>Ready Solutions</p></div>
+            <div class="data-stat"><span>Local</span><p>Data Experts</p></div>
+          </div>
+        </div>
+        <div class="data-hero-visual">
+          <div class="data-float-card df1">📈 Predictive Analytics</div>
+          <div class="data-float-card df2">🤖 Machine Learning</div>
+          <div class="data-float-card df3">📉 Data Visualisation</div>
+          <div class="data-float-card df4">🧹 Data Cleaning</div>
+          <div class="data-float-card df5">🧠 Business Intelligence</div>
+          <div class="data-float-card df6">🔍 Statistical Analysis</div>
+        </div>
+      </section>
+
+      <!-- Data Services -->
+      <section id="data-services" class="data-services-section">
+        <div class="container">
+          <div class="data-section-badge">What We Do</div>
+          <h2 class="data-section-title">Our Data Science Services</h2>
+          <p class="data-section-sub">End-to-end data solutions — from raw numbers to clear, actionable business insights</p>
+
+          <div class="data-services-grid">
+
+            <div class="data-card" id="ds-analysis">
+              <div class="data-card-header da">
+                <i class="fas fa-chart-line"></i>
+                <span class="data-tag">Most Requested</span>
+              </div>
+              <h3>Data Analysis & Reporting</h3>
+              <p>We dig into your existing data — sales, operations, finance — and surface the patterns and trends that matter most to your business.</p>
+              <ul class="data-features">
+                <li><i class="fas fa-check"></i> Sales & revenue trend analysis</li>
+                <li><i class="fas fa-check"></i> KPI dashboards & scorecards</li>
+                <li><i class="fas fa-check"></i> Monthly / quarterly reports</li>
+                <li><i class="fas fa-check"></i> Excel, Google Sheets & SQL</li>
+                <li><i class="fas fa-check"></i> Custom insight presentations</li>
+              </ul>
+              <a href="#data-contact" class="data-cta">Get Started <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="data-card" id="ds-ml">
+              <div class="data-card-header ml">
+                <i class="fas fa-robot"></i>
+              </div>
+              <h3>Machine Learning & AI</h3>
+              <p>We build and deploy custom ML models that automate decisions, detect patterns, and predict outcomes — tailored to your business context.</p>
+              <ul class="data-features">
+                <li><i class="fas fa-check"></i> Classification & regression models</li>
+                <li><i class="fas fa-check"></i> Customer churn prediction</li>
+                <li><i class="fas fa-check"></i> Demand & sales forecasting</li>
+                <li><i class="fas fa-check"></i> Fraud & anomaly detection</li>
+                <li><i class="fas fa-check"></i> Model deployment & monitoring</li>
+              </ul>
+              <a href="#data-contact" class="data-cta">Get Started <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="data-card" id="ds-viz">
+              <div class="data-card-header viz">
+                <i class="fas fa-chart-pie"></i>
+              </div>
+              <h3>Data Visualisation & Dashboards</h3>
+              <p>Beautiful, interactive dashboards that give your team a live view of business performance — from anywhere, on any device.</p>
+              <ul class="data-features">
+                <li><i class="fas fa-check"></i> Power BI & Tableau dashboards</li>
+                <li><i class="fas fa-check"></i> Google Looker Studio reports</li>
+                <li><i class="fas fa-check"></i> Real-time data updates</li>
+                <li><i class="fas fa-check"></i> Custom charts & infographics</li>
+                <li><i class="fas fa-check"></i> Mobile-responsive views</li>
+              </ul>
+              <a href="#data-contact" class="data-cta">Get Started <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="data-card" id="ds-bi">
+              <div class="data-card-header bi">
+                <i class="fas fa-briefcase"></i>
+              </div>
+              <h3>Business Intelligence (BI)</h3>
+              <p>Connect all your data sources into one intelligent BI platform — empowering every team to make faster, smarter decisions.</p>
+              <ul class="data-features">
+                <li><i class="fas fa-check"></i> Data warehouse design</li>
+                <li><i class="fas fa-check"></i> Multi-source data integration</li>
+                <li><i class="fas fa-check"></i> Self-service BI setup</li>
+                <li><i class="fas fa-check"></i> Executive reporting suites</li>
+                <li><i class="fas fa-check"></i> Automated alert systems</li>
+              </ul>
+              <a href="#data-contact" class="data-cta">Get Started <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="data-card" id="ds-etl">
+              <div class="data-card-header etl">
+                <i class="fas fa-database"></i>
+              </div>
+              <h3>Data Cleaning & ETL Pipelines</h3>
+              <p>Bad data leads to bad decisions. We build robust pipelines that collect, clean, transform, and load your data reliably every time.</p>
+              <ul class="data-features">
+                <li><i class="fas fa-check"></i> Data quality assessment</li>
+                <li><i class="fas fa-check"></i> Automated ETL pipelines</li>
+                <li><i class="fas fa-check"></i> Database design & optimisation</li>
+                <li><i class="fas fa-check"></i> API data integrations</li>
+                <li><i class="fas fa-check"></i> Scheduled data refreshes</li>
+              </ul>
+              <a href="#data-contact" class="data-cta">Get Started <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="data-card" id="ds-stats">
+              <div class="data-card-header stats">
+                <i class="fas fa-flask"></i>
+              </div>
+              <h3>Statistical & Research Analysis</h3>
+              <p>From academic research to market surveys — we apply rigorous statistical methods to validate findings and drive evidence-based strategy.</p>
+              <ul class="data-features">
+                <li><i class="fas fa-check"></i> Survey & questionnaire analysis</li>
+                <li><i class="fas fa-check"></i> Hypothesis testing & A/B testing</li>
+                <li><i class="fas fa-check"></i> SPSS, R & Python analysis</li>
+                <li><i class="fas fa-check"></i> Research report writing</li>
+                <li><i class="fas fa-check"></i> Market & competitor analysis</li>
+              </ul>
+              <a href="#data-contact" class="data-cta">Get Started <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Tools We Use -->
+      <section class="data-tools-section">
+        <div class="container">
+          <div class="data-section-badge">Our Stack</div>
+          <h2 class="data-section-title">Tools & Technologies</h2>
+          <div class="tools-grid">
+            <div class="tool-pill"><i class="fab fa-python"></i> Python</div>
+            <div class="tool-pill"><i class="fas fa-registered"></i> R</div>
+            <div class="tool-pill"><i class="fas fa-table"></i> SQL</div>
+            <div class="tool-pill"><i class="fas fa-chart-bar"></i> Power BI</div>
+            <div class="tool-pill"><i class="fas fa-chart-pie"></i> Tableau</div>
+            <div class="tool-pill"><i class="fab fa-google"></i> Looker Studio</div>
+            <div class="tool-pill"><i class="fas fa-file-excel"></i> Excel / Sheets</div>
+            <div class="tool-pill"><i class="fas fa-brain"></i> TensorFlow</div>
+            <div class="tool-pill"><i class="fas fa-cloud"></i> Azure / AWS</div>
+            <div class="tool-pill"><i class="fas fa-database"></i> PostgreSQL</div>
+            <div class="tool-pill"><i class="fas fa-code"></i> Scikit-learn</div>
+            <div class="tool-pill"><i class="fas fa-project-diagram"></i> Apache Spark</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Process -->
+      <section id="data-process" class="data-process-section">
+        <div class="container">
+          <div class="data-section-badge">How We Work</div>
+          <h2 class="data-section-title">Our Data Process</h2>
+          <div class="data-steps-row">
+            <div class="data-step">
+              <div class="data-step-num">01</div>
+              <div class="data-step-icon">🔍</div>
+              <h3>Discover</h3>
+              <p>We understand your business goals and audit your existing data sources and quality.</p>
+            </div>
+            <div class="data-step-arrow">→</div>
+            <div class="data-step">
+              <div class="data-step-num">02</div>
+              <div class="data-step-icon">🧹</div>
+              <h3>Prepare</h3>
+              <p>We clean, structure, and transform your raw data into a solid analytical foundation.</p>
+            </div>
+            <div class="data-step-arrow">→</div>
+            <div class="data-step">
+              <div class="data-step-num">03</div>
+              <div class="data-step-icon">📊</div>
+              <h3>Analyse</h3>
+              <p>We apply the right models, algorithms, or statistical methods to extract insights.</p>
+            </div>
+            <div class="data-step-arrow">→</div>
+            <div class="data-step">
+              <div class="data-step-num">04</div>
+              <div class="data-step-icon">🚀</div>
+              <h3>Deliver</h3>
+              <p>We present clear reports, dashboards, or deployed models — with ongoing support.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Data Contact -->
+      <section id="data-contact" class="data-contact-section">
+        <div class="container">
+          <div class="data-section-badge">Let's Talk Data</div>
+          <h2 class="data-section-title">Start Your Data Project</h2>
+          <p class="data-section-sub">Tell us about your data challenge and we'll get back to you within 24 hours with a plan.</p>
+          <div class="data-contact-grid">
+            <form class="data-demo-form" id="data-form" onsubmit="submitDataForm(event)">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="d-org">Organisation / Company</label>
+                  <input type="text" id="d-org" placeholder="e.g. Nairobi Retailers Ltd" required>
+                </div>
+                <div class="form-group">
+                  <label for="d-service">Service Needed</label>
+                  <select id="d-service" required>
+                    <option value="">Select service...</option>
+                    <option value="analysis">Data Analysis & Reporting</option>
+                    <option value="ml">Machine Learning & AI</option>
+                    <option value="viz">Dashboards & Visualisation</option>
+                    <option value="bi">Business Intelligence</option>
+                    <option value="etl">Data Cleaning & ETL</option>
+                    <option value="stats">Statistical / Research Analysis</option>
+                    <option value="other">Other / Not Sure</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="d-name">Your Name</label>
+                  <input type="text" id="d-name" placeholder="Full name" required>
+                </div>
+                <div class="form-group">
+                  <label for="d-phone">Phone / WhatsApp</label>
+                  <input type="tel" id="d-phone" placeholder="+254 7XX XXX XXX" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="d-email">Email Address</label>
+                <input type="email" id="d-email" placeholder="you@example.com">
+              </div>
+              <div class="form-group">
+                <label for="d-message">Describe your data challenge</label>
+                <textarea id="d-message" rows="3" placeholder="What data do you have? What decisions do you want to make?"></textarea>
+              </div>
+              <button type="submit" class="data-submit-btn">
+                <i class="fas fa-paper-plane"></i> Send Project Brief
+              </button>
+            </form>
+            <div class="data-contact-info">
+              <h3>Reach Us Directly</h3>
+              <div class="data-contact-items">
+                <a href="https://wa.me/254720811346" class="data-contact-item" target="_blank">
+                  <i class="fab fa-whatsapp"></i>
+                  <div><strong>WhatsApp</strong><span>Fastest response</span></div>
+                </a>
+                <a href="mailto:esubumedia@gmail.com" class="data-contact-item">
+                  <i class="fas fa-envelope"></i>
+                  <div><strong>Email</strong><span>esubumedia@gmail.com</span></div>
+                </a>
+                <a href="tel:+254720811346" class="data-contact-item">
+                  <i class="fas fa-phone"></i>
+                  <div><strong>Call</strong><span>+254 720 811 346</span></div>
+                </a>
+              </div>
+              <div class="data-why-boxes">
+                <div class="data-why-item">📍 Kenya-based experts</div>
+                <div class="data-why-item">⚡ Fast turnaround</div>
+                <div class="data-why-item">🔒 Data confidentiality</div>
+                <div class="data-why-item">💡 Insight-first approach</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- end #data-division -->
+
   </main>
 
   <!-- ============================================================
@@ -532,6 +824,15 @@
             <li><a href="#erp-products" onclick="switchDivision('tech')">Products</a></li>
             <li><a href="#tech-why-us" onclick="switchDivision('tech')">Why Us</a></li>
             <li><a href="#tech-contact" onclick="switchDivision('tech')">Get Demo</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>📊 Data Science</h4>
+          <ul>
+            <li><a href="#data-home" onclick="switchDivision('data')">Overview</a></li>
+            <li><a href="#data-services" onclick="switchDivision('data')">Services</a></li>
+            <li><a href="#data-process" onclick="switchDivision('data')">Process</a></li>
+            <li><a href="#data-contact" onclick="switchDivision('data')">Contact</a></li>
           </ul>
         </div>
         <div class="footer-col">
