@@ -747,6 +747,209 @@ nav {
   box-shadow: var(--shadow-xl);
 }
 
+
+/* ============================================================
+   ACADEMY — SCHEDULE SECTION
+   ============================================================ */
+.schedule-section {
+  padding: 5rem 1.5rem;
+  background: var(--white);
+  text-align: center;
+}
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 2rem auto 0;
+  text-align: left;
+}
+
+.schedule-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  border: 2px solid var(--gray-200);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  transition: all var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.schedule-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 5px;
+}
+
+.term-card { border-color: #c8e6c9; }
+.term-card::before { background: linear-gradient(90deg, var(--green-700), var(--green-500)); }
+.term-card:hover { box-shadow: 0 10px 36px rgba(46,125,50,0.15); transform: translateY(-4px); }
+
+.holiday-card { border-color: #ffcc80; }
+.holiday-card::before { background: linear-gradient(90deg, #e65100, #ff9800); }
+.holiday-card:hover { box-shadow: 0 10px 36px rgba(230,81,0,0.12); transform: translateY(-4px); }
+
+.sched-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sched-icon {
+  font-size: 2.2rem;
+  flex-shrink: 0;
+}
+
+.sched-header h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--gray-900);
+  margin-bottom: 0.25rem;
+}
+
+.sched-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  background: #e8f5e9;
+  color: var(--green-800);
+  border: 1px solid #a5d6a7;
+}
+
+.sched-tag.holiday-tag {
+  background: #fff3e0;
+  color: #e65100;
+  border-color: #ffcc80;
+}
+
+/* Day pills */
+.sched-days {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.sched-day {
+  flex: 1;
+  text-align: center;
+  padding: 0.5rem 0.25rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.72rem;
+  font-weight: 700;
+  background: var(--light-gray);
+  color: var(--gray-400);
+}
+
+.term-card .sched-day.active {
+  background: var(--green-800);
+  color: #fff;
+}
+
+.holiday-card .sched-day.active {
+  background: #e65100;
+  color: #fff;
+}
+
+/* Detail list */
+.sched-details {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex: 1;
+}
+
+.sched-details li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--gray-600);
+  font-weight: 600;
+}
+
+.sched-details li i {
+  font-size: 0.9rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.term-card .sched-details li i { color: var(--green-600); }
+.holiday-card .sched-details li i { color: #e65100; }
+
+.sched-warn { color: var(--red-600) !important; }
+
+/* CTA buttons */
+.sched-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.5rem;
+  border-radius: var(--radius-full);
+  font-weight: 800;
+  font-size: 0.95rem;
+  transition: all var(--transition);
+  margin-top: auto;
+}
+
+.term-btn {
+  background: var(--green-800);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(46,125,50,0.3);
+}
+.term-btn:hover {
+  background: var(--green-600);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(46,125,50,0.35);
+}
+
+.holiday-btn {
+  background: #e65100;
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(230,81,0,0.28);
+}
+.holiday-btn:hover {
+  background: #bf360c;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(230,81,0,0.35);
+}
+
+/* Bottom note */
+.schedule-note {
+  margin-top: 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #f0f7f0;
+  border: 1px solid #c8e6c9;
+  color: var(--green-900);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.schedule-note a {
+  color: var(--green-700);
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+@media (max-width: 640px) {
+  .schedule-grid { grid-template-columns: 1fr; }
+  .sched-days { flex-wrap: wrap; }
+}
 /* ============================================================
    TECH SOLUTIONS DIVISION — HERO
    ============================================================ */
@@ -2750,6 +2953,7 @@ nav {
   .program-details-box { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
 }
+
 
 
 
