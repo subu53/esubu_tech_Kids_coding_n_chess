@@ -950,6 +950,309 @@ nav {
   .schedule-grid { grid-template-columns: 1fr; }
   .sched-days { flex-wrap: wrap; }
 }
+
+/* ============================================================
+   ACADEMY — BENEFITS SECTION
+   ============================================================ */
+.benefits-section {
+  padding: 5rem 1.5rem;
+  background: linear-gradient(180deg, #f0faf0 0%, var(--white) 100%);
+  text-align: center;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 2.5rem auto 3rem;
+  max-width: 1000px;
+  text-align: left;
+}
+
+.benefit-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  background: var(--white);
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  transition: all var(--transition);
+}
+
+.benefit-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 32px rgba(0,0,0,0.1);
+  border-color: var(--green-300, #a5d6a7);
+}
+
+.benefit-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+
+.benefit-icon-wrap.green {
+  background: #e8f5e9;
+  color: var(--green-800);
+}
+
+.benefit-icon-wrap.red {
+  background: #ffebee;
+  color: var(--red-800);
+}
+
+.benefit-text h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--gray-900);
+  margin-bottom: 0.4rem;
+}
+
+.benefit-text p {
+  font-size: 0.9rem;
+  color: var(--gray-600);
+  line-height: 1.65;
+}
+
+.benefit-text p strong { color: var(--gray-900); }
+
+/* Quote */
+.benefits-quote {
+  max-width: 640px;
+  margin: 0 auto;
+  background: var(--green-800);
+  color: #fff;
+  border-radius: var(--radius-lg);
+  padding: 2rem 2.5rem;
+  text-align: left;
+  position: relative;
+}
+
+.benefits-quote i {
+  font-size: 2rem;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.benefits-quote p {
+  font-size: 1.05rem;
+  font-style: italic;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.92);
+  margin-bottom: 0.75rem;
+}
+
+.benefits-quote span {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.65);
+}
+
+/* ============================================================
+   ACADEMY — FOMO SECTION
+   ============================================================ */
+.fomo-section {
+  padding: 0;
+  text-align: center;
+}
+
+.fomo-inner {
+  background: linear-gradient(135deg, #0d2e13 0%, #1b5e20 40%, #7b1a1a 75%, #4a0000 100%);
+  padding: 5rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.fomo-inner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M0 0h40v40H0V0zm40 40h40v40H40V40z'/%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.fomo-inner .container { position: relative; z-index: 1; }
+
+.fomo-top { margin-bottom: 3rem; }
+
+.fomo-badge {
+  display: inline-block;
+  background: rgba(255,100,0,0.25);
+  color: #ffcc80;
+  border: 1px solid rgba(255,160,0,0.4);
+  padding: 0.4rem 1.1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.25rem;
+}
+
+.fomo-title {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.fomo-accent {
+  color: #ff8a65;
+}
+
+/* Stats row */
+.fomo-stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto 3.5rem;
+}
+
+.fomo-stat {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1rem;
+  text-align: center;
+  backdrop-filter: blur(6px);
+}
+
+.fomo-num {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #69f0ae;
+  line-height: 1;
+  margin-bottom: 0.6rem;
+}
+
+.fomo-stat p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.78);
+  line-height: 1.55;
+}
+
+.fomo-stat p strong { color: #fff; }
+
+/* Fear cards */
+.fomo-fears {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  max-width: 960px;
+  margin: 0 auto 3.5rem;
+  text-align: left;
+}
+
+.fomo-fear-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  transition: all var(--transition);
+}
+
+.fomo-fear-card:hover {
+  background: rgba(255,255,255,0.11);
+  transform: translateY(-3px);
+}
+
+.fear-icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.fomo-fear-card h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.fomo-fear-card p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.6;
+}
+
+.fomo-fear-card p strong { color: #fff; }
+
+/* CTA block */
+.fomo-cta-block {
+  text-align: center;
+}
+
+.fomo-cta-text {
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.88);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.fomo-cta-text strong { color: #fff; font-size: 1.4rem; }
+
+.fomo-cta-btns {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.fomo-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--green-500);
+  color: #fff;
+  padding: 0.9rem 2rem;
+  border-radius: var(--radius-full);
+  font-weight: 800;
+  font-size: 1rem;
+  box-shadow: 0 4px 20px rgba(76,175,80,0.4);
+  transition: all var(--transition);
+}
+
+.fomo-btn-primary:hover {
+  background: var(--green-400);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(76,175,80,0.5);
+}
+
+.fomo-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: #fff;
+  padding: 0.9rem 2rem;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 1rem;
+  border: 2px solid rgba(255,255,255,0.45);
+  transition: all var(--transition);
+}
+
+.fomo-btn-outline:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.8);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 640px) {
+  .fomo-stats-row { grid-template-columns: 1fr; }
+  .benefits-grid { grid-template-columns: 1fr; }
+}
 /* ============================================================
    TECH SOLUTIONS DIVISION — HERO
    ============================================================ */
@@ -2953,6 +3256,7 @@ nav {
   .program-details-box { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
 }
+
 
 
 
