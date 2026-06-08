@@ -2097,7 +2097,7 @@ nav {
   grid-template-columns: 1fr 1fr;
   gap: 1.75rem;
   max-width: 960px;
-  margin: 0 auto 3rem;
+  margin: 2rem auto 0;
   text-align: left;
 }
 
@@ -2117,8 +2117,14 @@ nav {
   transform: translateY(-4px);
 }
 
-.zindi-card { border-top: 4px solid var(--green-600); }
-.github-card { border-top: 4px solid var(--red-700); }
+.zindi-card {
+  border-top: 4px solid var(--green-600);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.github-card {
+  border-top: 4px solid var(--red-700);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
 
 .platform-card-header {
   display: flex;
@@ -2568,13 +2574,11 @@ nav {
   box-shadow: 0 8px 28px rgba(0,0,0,0.25);
 }
 
-/* compact portfolio overrides */
-.portfolio-compact {
-  padding: 3rem 1.5rem;
-}
-
-.portfolio-compact .data-section-title {
-  margin-bottom: 1.25rem !important;
+/* ── Data Portfolio Section ── */
+.data-portfolio-section {
+  padding: 5rem 1.5rem;
+  background: var(--white);
+  text-align: center;
 }
 
 @media (max-width: 640px) {
@@ -2733,6 +2737,7 @@ nav {
   .program-details-box { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
 }
+
 
 
 
