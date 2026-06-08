@@ -2094,7 +2094,7 @@ nav {
    ============================================================ */
 .portfolio-section {
   padding: 5rem 1.5rem;
-  background: var(--light-gray);
+  background: #f7faf7;
   text-align: center;
 }
 
@@ -2295,19 +2295,7 @@ nav {
 }
 
 /* ── Zindi affiliation ── */
-.zindi-affiliation {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: var(--green-800);
-  background: var(--green-50, #f1f8e9);
-  border: 1px solid var(--green-200, #c8e6c9);
-  border-radius: var(--radius-md);
-  padding: 0.55rem 0.9rem;
-  margin-top: auto;
-}
+
 
 /* ── GitHub card internals ── */
 .gh-bio {
@@ -2391,6 +2379,72 @@ nav {
   color: var(--gray-600);
   margin-bottom: 1rem;
 }
+
+/* ── zindi section labels ── */
+.zindi-section-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 0.35rem;
+}
+
+/* ── zindi affiliation bar ── */
+.zindi-affiliation-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #2e7d32;
+  background: #e8f5e9;
+  border: 1px solid #a5d6a7;
+  border-radius: 8px;
+  padding: 0.6rem 0.9rem;
+  margin-top: auto;
+}
+
+/* ── portfolio CTA bar ── */
+.portfolio-cta-bar {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+.portfolio-cta-bar p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.port-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #1b5e20, #2e7d32);
+  color: #fff;
+  padding: 0.85rem 2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 800;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 16px rgba(46,125,50,0.3);
+}
+
+.port-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(46,125,50,0.4);
+}
+
+/* ── Responsive for portfolio ── */
+@media (max-width: 700px) {
+  .proof-platforms {
+    grid-template-columns: 1fr;
+  }
+  .zindi-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 /* ============================================================
    RESPONSIVE
    ============================================================ */
@@ -2433,4 +2487,5 @@ nav {
   .program-details-box { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
 }
+
 
