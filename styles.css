@@ -2603,12 +2603,18 @@ nav {
   background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 35%, #7b1a1a 70%, #b71c1c 100%) !important;
 }
 
-/* Section badge: clean green pill, no muddy gradient */
+/* Section badge: clean green pill for light sections — overridden for dark sections below */
 .data-section-badge {
   background: #e8f5e9 !important;
   color: #1b5e20 !important;
   border: 1.5px solid #a5d6a7 !important;
   font-weight: 800 !important;
+}
+/* Badge on dark green contact section */
+.data-contact-section .data-section-badge {
+  background: rgba(255,255,255,0.15) !important;
+  color: #fff !important;
+  border-color: rgba(255,255,255,0.35) !important;
 }
 
 /* Services section — very light warm white */
@@ -2687,13 +2693,20 @@ nav {
   background: #f4faf4 !important;
 }
 
-/* Data section titles — consistent dark charcoal */
+/* Data section titles — consistent dark charcoal on light sections */
 .data-section-title {
   color: #111827;
   letter-spacing: -0.3px;
 }
 .data-section-sub {
   color: #4b5563;
+}
+/* On the dark green contact section, force white text — highest specificity wins */
+.data-contact-section .data-section-title {
+  color: #ffffff !important;
+}
+.data-contact-section .data-section-sub {
+  color: rgba(255,255,255,0.88) !important;
 }
 /* ============================================================
    RESPONSIVE
