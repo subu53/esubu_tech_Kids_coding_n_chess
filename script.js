@@ -244,7 +244,7 @@ function submitDemo(e) {
   );
 
   // Open WhatsApp with the message
-  window.open(`https://wa.me/254700000000?text=${waText}`, '_blank');
+  window.open(`https://wa.me/254720811346?text=${waText}`, '_blank');
 
   // Show toast
   showToast('✅ Demo request sent via WhatsApp!');
