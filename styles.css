@@ -2445,6 +2445,156 @@ nav {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* ============================================================
+   AMLD AFRICA BRAND AMBASSADOR SECTION
+   ============================================================ */
+.amld-section {
+  background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 40%, #b71c1c 100%);
+  padding: 4.5rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.amld-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.amld-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.amld-badge-wrap {
+  flex-shrink: 0;
+}
+
+.amld-icon-ring {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  border: 3px solid rgba(255,255,255,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: #fff;
+  box-shadow: 0 0 40px rgba(255,255,255,0.15);
+  animation: amldPulse 3s ease-in-out infinite;
+}
+
+@keyframes amldPulse {
+  0%, 100% { box-shadow: 0 0 30px rgba(255,255,255,0.12); }
+  50%       { box-shadow: 0 0 60px rgba(255,255,255,0.28); }
+}
+
+.amld-content {
+  flex: 1;
+  color: #fff;
+}
+
+.amld-eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 0.5rem;
+}
+
+.amld-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 0.85rem;
+}
+
+.amld-sub {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.amld-sub strong {
+  color: #fff;
+}
+
+.amld-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.amld-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+  padding: 0.35rem 0.9rem;
+  border-radius: 50px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  backdrop-filter: blur(4px);
+}
+
+.amld-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #fff;
+  color: #1b5e20;
+  padding: 0.8rem 1.75rem;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.amld-cta-btn:hover {
+  background: #f1f8e9;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.25);
+}
+
+/* compact portfolio overrides */
+.portfolio-compact {
+  padding: 3rem 1.5rem;
+}
+
+.portfolio-compact .data-section-title {
+  margin-bottom: 1.25rem !important;
+}
+
+@media (max-width: 640px) {
+  .amld-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .amld-pills {
+    justify-content: center;
+  }
+  .amld-title {
+    font-size: 1.5rem;
+  }
+}
 /* ============================================================
    RESPONSIVE
    ============================================================ */
@@ -2487,5 +2637,6 @@ nav {
   .program-details-box { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
 }
+
 
 
