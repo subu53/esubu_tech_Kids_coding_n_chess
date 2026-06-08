@@ -3,157 +3,552 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Esubu Tech Academy | Kids Coding & Chess Camp</title>
-  
-<!-- ✅ Added Google Font (Inter – extremely mobile-friendly) -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <title>Esubu Tech | Academy & Solutions</title>
+  <meta name="description" content="Esubu Tech offers two world-class divisions: Esubu Tech Academy for kids coding & chess, and Esubu Tech Solutions for ERP systems — school, gym, retail, hospital, church, and chama management.">
 
-  <link rel="stylesheet" href="styles.css?v=5" />
-  
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css?v=10" />
+
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GHFDG299C1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-GHFDG299C1');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHFDG299C1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GHFDG299C1');
+  </script>
 </head>
 <body>
-  <header>
+
+  <!-- ============================================================
+       HEADER / NAVIGATION
+  ============================================================ -->
+  <header id="main-header">
     <nav>
-      <div class="logo">Esubu Tech Academy</div>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#programs">Programs</a></li>
-        <li><a href="#contact">Contact</a></li>
+      <div class="logo">
+        <span class="logo-icon">⚡</span>
+        <span class="logo-text">Esubu<span class="logo-accent">Tech</span></span>
+      </div>
+
+      <!-- Division Toggle Pills -->
+      <div class="division-toggle" id="division-toggle">
+        <a href="#academy-home" class="div-pill active" id="pill-academy" data-division="academy">
+          🎓 Academy
+        </a>
+        <a href="#tech-home" class="div-pill" id="pill-tech" data-division="tech">
+          💼 Tech Solutions
+        </a>
+      </div>
+
+      <!-- Nav Links (context-aware) -->
+      <ul class="nav-links" id="nav-links">
+        <!-- Academy links -->
+        <li class="academy-nav"><a href="#academy-home" class="nav-link">Home</a></li>
+        <li class="academy-nav"><a href="#about" class="nav-link">About</a></li>
+        <li class="academy-nav"><a href="#programs" class="nav-link">Programs</a></li>
+        <li class="academy-nav"><a href="#contact" class="nav-link">Contact</a></li>
+        <!-- Tech links -->
+        <li class="tech-nav hidden"><a href="#tech-home" class="nav-link">Overview</a></li>
+        <li class="tech-nav hidden"><a href="#erp-products" class="nav-link">Products</a></li>
+        <li class="tech-nav hidden"><a href="#tech-why-us" class="nav-link">Why Us</a></li>
+        <li class="tech-nav hidden"><a href="#tech-contact" class="nav-link">Get Demo</a></li>
       </ul>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+      <div class="mobile-division">
+        <a href="#academy-home" class="mob-div-pill active" data-division="academy" onclick="switchDivision('academy')">🎓 Academy</a>
+        <a href="#tech-home" class="mob-div-pill" data-division="tech" onclick="switchDivision('tech')">💼 Tech</a>
+      </div>
+      <ul class="mobile-nav-links" id="mobile-nav-links">
+        <li class="m-academy-nav"><a href="#academy-home" onclick="closeMobile()">Home</a></li>
+        <li class="m-academy-nav"><a href="#about" onclick="closeMobile()">About</a></li>
+        <li class="m-academy-nav"><a href="#programs" onclick="closeMobile()">Programs</a></li>
+        <li class="m-academy-nav"><a href="#contact" onclick="closeMobile()">Contact</a></li>
+        <li class="m-tech-nav hidden"><a href="#tech-home" onclick="closeMobile()">Overview</a></li>
+        <li class="m-tech-nav hidden"><a href="#erp-products" onclick="closeMobile()">Products</a></li>
+        <li class="m-tech-nav hidden"><a href="#tech-why-us" onclick="closeMobile()">Why Us</a></li>
+        <li class="m-tech-nav hidden"><a href="#tech-contact" onclick="closeMobile()">Get Demo</a></li>
+      </ul>
+    </div>
   </header>
+
   <main>
-    <section id="home" class="hero">
-      <h1>Empowering Young Minds This Holiday</h1>
-      <p>Enroll your child (ages 6–16) in our live online camp to learn <strong>Scratch Programming</strong> and <strong>Chess</strong> — skills that build creativity, logic, and confidence.</p>
-      <a href="#programs" class="cta-btn">View Holiday Programs</a>
-    </section>
-    <section id="about">
-      <h2>Why Parents Choose Esubu Tech Academy</h2>
-      <p>At Esubu Tech Academy, we equip children with real-world skills that sharpen their minds and spark a love for learning. Our online holiday program combines interactive coding lessons and strategic chess games — all led by passionate instructors in a safe, engaging Zoom environment. Give your child a head start in tech and critical thinking, for just KES 12,000/month.</p>
-    </section>
-    <section id="programs">
-      <h2>What Your Child Will Learn</h2>
-      <div class="program-list">
-        <div class="program-card">
-          <h3>Scratch Programming</h3>
-          <p>Kids learn how to build games, animations, and interactive stories — laying the foundation for future coding confidence. No experience needed.</p>
+
+    <!-- ============================================================
+         ACADEMY DIVISION
+    ============================================================ -->
+    <div id="academy-division">
+
+      <!-- Hero -->
+      <section id="academy-home" class="hero">
+        <div class="hero-content">
+          <div class="hero-badge">🎓 Esubu Tech Academy</div>
+          <h1>Empowering Young Minds This Holiday</h1>
+          <p>Enroll your child (ages 6–16) in our live online camp to learn <strong>Scratch Programming</strong> and <strong>Chess</strong> — skills that build creativity, logic, and confidence.</p>
+          <div class="hero-actions">
+            <a href="#programs" class="cta-btn">View Holiday Programs</a>
+            <a href="https://wa.me/254700000000" class="cta-btn-outline" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat"><span class="stat-num">500+</span><span class="stat-label">Kids Trained</span></div>
+            <div class="stat"><span class="stat-num">6–16</span><span class="stat-label">Age Group</span></div>
+            <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Online & Safe</span></div>
+          </div>
         </div>
-        <div class="program-card">
-          <h3>Chess</h3>
-          <p>Through guided games and tournaments, children develop focus, patience, and strategic thinking — core skills that support academic success.</p>
+        <div class="hero-visual">
+          <div class="floating-card card-1">💻 Scratch Coding</div>
+          <div class="floating-card card-2">♟️ Chess Mastery</div>
+          <div class="floating-card card-3">🚀 Future Ready</div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="about-section">
+        <div class="container">
+          <div class="section-badge">About Us</div>
+          <h2>Why Parents Choose Esubu Tech Academy</h2>
+          <p class="section-sub">At Esubu Tech Academy, we equip children with real-world skills that sharpen their minds and spark a love for learning. Our online holiday program combines interactive coding lessons and strategic chess games — all led by passionate instructors in a safe, engaging Zoom environment.</p>
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-icon">🎯</div>
+              <h3>Expert Instructors</h3>
+              <p>Passionate, certified teachers who make learning fun and interactive for every child.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🌐</div>
+              <h3>100% Online</h3>
+              <p>Live Zoom sessions from the comfort of your home — no commute, just learning.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🏆</div>
+              <h3>Proven Results</h3>
+              <p>500+ kids trained. Our graduates go on to compete in coding fairs and chess tournaments.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">💰</div>
+              <h3>Affordable</h3>
+              <p>Quality education at just <strong>KES 12,000/month</strong> — invest in your child's future today.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Programs -->
+      <section id="programs" class="programs-section">
+        <div class="container">
+          <div class="section-badge">Programs</div>
+          <h2>What Your Child Will Learn</h2>
+          <div class="program-list">
+            <div class="program-card">
+              <div class="program-icon">💻</div>
+              <h3>Scratch Programming</h3>
+              <p>Kids learn how to build games, animations, and interactive stories — laying the foundation for future coding confidence. No experience needed.</p>
+              <ul class="program-features">
+                <li>✓ Game development basics</li>
+                <li>✓ Animations & storytelling</li>
+                <li>✓ Logical thinking skills</li>
+                <li>✓ Creative problem solving</li>
+              </ul>
+            </div>
+            <div class="program-card">
+              <div class="program-icon">♟️</div>
+              <h3>Chess</h3>
+              <p>Through guided games and tournaments, children develop focus, patience, and strategic thinking — core skills that support academic success.</p>
+              <ul class="program-features">
+                <li>✓ Rules & opening strategies</li>
+                <li>✓ Tournament preparation</li>
+                <li>✓ Focus & concentration</li>
+                <li>✓ Critical thinking</li>
+              </ul>
+            </div>
+          </div>
+          <div class="program-details-box">
+            <div class="detail-item"><i class="fas fa-calendar-alt"></i><div><strong>Schedule</strong><span>Mon–Fri, 9am–12pm (Holiday Camp)</span></div></div>
+            <div class="detail-item"><i class="fas fa-users"></i><div><strong>Class Size</strong><span>Small groups (max 15 kids)</span></div></div>
+            <div class="detail-item"><i class="fas fa-certificate"></i><div><strong>Certificate</strong><span>Awarded on completion</span></div></div>
+            <div class="detail-item"><i class="fas fa-tag"></i><div><strong>Fee</strong><span>KES 12,000 per month</span></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="contact-section">
+        <div class="container">
+          <div class="section-badge">Contact Academy</div>
+          <h2>Enroll Your Child Today</h2>
+          <p class="section-sub">Ready to give your child a head start? Reach out to us and we'll get them started right away.</p>
+          <div class="contact-grid">
+            <a href="https://wa.me/254700000000" class="contact-card whatsapp" target="_blank">
+              <i class="fab fa-whatsapp"></i>
+              <span>WhatsApp Us</span>
+              <small>Quick enrollment support</small>
+            </a>
+            <a href="mailto:academy@esubutech.online" class="contact-card email">
+              <i class="fas fa-envelope"></i>
+              <span>Email Us</span>
+              <small>academy@esubutech.online</small>
+            </a>
+            <a href="tel:+254700000000" class="contact-card phone">
+              <i class="fas fa-phone"></i>
+              <span>Call Us</span>
+              <small>+254 700 000 000</small>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div><!-- end #academy-division -->
+
+
+    <!-- ============================================================
+         TECH SOLUTIONS DIVISION
+    ============================================================ -->
+    <div id="tech-division" class="hidden">
+
+      <!-- Tech Hero -->
+      <section id="tech-home" class="tech-hero">
+        <div class="tech-hero-bg"></div>
+        <div class="tech-hero-content">
+          <div class="tech-hero-badge">💼 Esubu Tech Solutions</div>
+          <h1>Smart ERP Systems<br><span class="tech-gradient-text">Built for Africa</span></h1>
+          <p>From schools to chamas, hospitals to churches — we build affordable, powerful management systems tailored for Kenyan organisations. Go digital. Save time. Grow confidently.</p>
+          <div class="tech-hero-actions">
+            <a href="#tech-contact" class="tech-cta-btn">Request a Free Demo</a>
+            <a href="#erp-products" class="tech-cta-outline">Explore Products</a>
+          </div>
+          <div class="tech-hero-stats">
+            <div class="tech-stat"><span>6+</span><p>ERP Modules</p></div>
+            <div class="tech-stat"><span>Kenya</span><p>Based Support</p></div>
+            <div class="tech-stat"><span>Custom</span><p>Built For You</p></div>
+          </div>
+        </div>
+        <div class="tech-hero-visual">
+          <div class="erp-float-card erp-f1"><i class="fas fa-school"></i> School ERP</div>
+          <div class="erp-float-card erp-f2"><i class="fas fa-dumbbell"></i> Gym ERP</div>
+          <div class="erp-float-card erp-f3"><i class="fas fa-cash-register"></i> Retail POS</div>
+          <div class="erp-float-card erp-f4"><i class="fas fa-hospital"></i> Hospital ERP</div>
+          <div class="erp-float-card erp-f5"><i class="fas fa-church"></i> Church ERP</div>
+          <div class="erp-float-card erp-f6"><i class="fas fa-people-group"></i> Chama ERP</div>
+        </div>
+      </section>
+
+      <!-- ERP Products -->
+      <section id="erp-products" class="erp-section">
+        <div class="container">
+          <div class="tech-section-badge">Our Products</div>
+          <h2 class="tech-section-title">Choose Your ERP Solution</h2>
+          <p class="tech-section-sub">Purpose-built management systems for every type of Kenyan organisation</p>
+
+          <div class="erp-grid">
+
+            <div class="erp-card" id="erp-school">
+              <div class="erp-card-header school">
+                <i class="fas fa-school"></i>
+                <span class="erp-tag">Most Popular</span>
+              </div>
+              <h3>School Management System</h3>
+              <p>A complete digital school admin platform — from student enrollment to exams, fees, and staff management.</p>
+              <ul class="erp-features">
+                <li><i class="fas fa-check"></i> Student & staff records</li>
+                <li><i class="fas fa-check"></i> Fee collection & MPesa integration</li>
+                <li><i class="fas fa-check"></i> Exam & grade management</li>
+                <li><i class="fas fa-check"></i> SMS/Email alerts to parents</li>
+                <li><i class="fas fa-check"></i> Attendance tracking</li>
+                <li><i class="fas fa-check"></i> Academic reports & certificates</li>
+              </ul>
+              <a href="#tech-contact" class="erp-cta">Get Demo <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="erp-card" id="erp-gym">
+              <div class="erp-card-header gym">
+                <i class="fas fa-dumbbell"></i>
+              </div>
+              <h3>Gym Management System</h3>
+              <p>Manage memberships, track attendance, handle payments and grow your fitness business effortlessly.</p>
+              <ul class="erp-features">
+                <li><i class="fas fa-check"></i> Member profiles & subscriptions</li>
+                <li><i class="fas fa-check"></i> Biometric / QR check-in</li>
+                <li><i class="fas fa-check"></i> MPesa payment tracking</li>
+                <li><i class="fas fa-check"></i> Class scheduling</li>
+                <li><i class="fas fa-check"></i> Revenue & membership reports</li>
+                <li><i class="fas fa-check"></i> Expiry reminders via SMS</li>
+              </ul>
+              <a href="#tech-contact" class="erp-cta">Get Demo <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="erp-card" id="erp-retail">
+              <div class="erp-card-header retail">
+                <i class="fas fa-cash-register"></i>
+              </div>
+              <h3>Retail / POS System</h3>
+              <p>A fast, intuitive point-of-sale and inventory system for shops, supermarkets, and retail chains.</p>
+              <ul class="erp-features">
+                <li><i class="fas fa-check"></i> Barcode scanning & receipts</li>
+                <li><i class="fas fa-check"></i> Inventory & stock alerts</li>
+                <li><i class="fas fa-check"></i> MPesa & cash payments</li>
+                <li><i class="fas fa-check"></i> Multi-branch support</li>
+                <li><i class="fas fa-check"></i> Sales & profit reports</li>
+                <li><i class="fas fa-check"></i> Supplier & purchase orders</li>
+              </ul>
+              <a href="#tech-contact" class="erp-cta">Get Demo <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="erp-card" id="erp-hospital">
+              <div class="erp-card-header hospital">
+                <i class="fas fa-hospital"></i>
+              </div>
+              <h3>Hospital Management System</h3>
+              <p>Digitalise your clinic or hospital operations — from patient records to billing and pharmacy management.</p>
+              <ul class="erp-features">
+                <li><i class="fas fa-check"></i> Patient registration & records (EMR)</li>
+                <li><i class="fas fa-check"></i> Appointment scheduling</li>
+                <li><i class="fas fa-check"></i> Pharmacy & lab management</li>
+                <li><i class="fas fa-check"></i> Billing & insurance claims</li>
+                <li><i class="fas fa-check"></i> Doctor & nurse dashboards</li>
+                <li><i class="fas fa-check"></i> NHIF/SHA compatible</li>
+              </ul>
+              <a href="#tech-contact" class="erp-cta">Get Demo <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="erp-card" id="erp-church">
+              <div class="erp-card-header church">
+                <i class="fas fa-church"></i>
+              </div>
+              <h3>Church Management System</h3>
+              <p>Manage your congregation, tithes, events, and communication from one powerful platform.</p>
+              <ul class="erp-features">
+                <li><i class="fas fa-check"></i> Member & family profiles</li>
+                <li><i class="fas fa-check"></i> Tithe & offering tracking</li>
+                <li><i class="fas fa-check"></i> Event & service scheduling</li>
+                <li><i class="fas fa-check"></i> SMS prayer chain & alerts</li>
+                <li><i class="fas fa-check"></i> Cell group management</li>
+                <li><i class="fas fa-check"></i> Annual giving statements</li>
+              </ul>
+              <a href="#tech-contact" class="erp-cta">Get Demo <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="erp-card" id="erp-chama">
+              <div class="erp-card-header chama">
+                <i class="fas fa-people-group"></i>
+              </div>
+              <h3>Chama / SACCO System</h3>
+              <p>Automate contributions, loans, interest calculations and financial reporting for your investment group or SACCO.</p>
+              <ul class="erp-features">
+                <li><i class="fas fa-check"></i> Member contributions tracking</li>
+                <li><i class="fas fa-check"></i> Loan management & interest</li>
+                <li><i class="fas fa-check"></i> MPesa C2B integration</li>
+                <li><i class="fas fa-check"></i> Meeting minutes & records</li>
+                <li><i class="fas fa-check"></i> Dividend & share calculations</li>
+                <li><i class="fas fa-check"></i> Auditable financial reports</li>
+              </ul>
+              <a href="#tech-contact" class="erp-cta">Get Demo <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Us -->
+      <section id="tech-why-us" class="tech-why-section">
+        <div class="container">
+          <div class="tech-section-badge">Why Esubu Tech</div>
+          <h2 class="tech-section-title">Why Choose Us?</h2>
+          <div class="why-grid">
+            <div class="why-card">
+              <div class="why-icon">🇰🇪</div>
+              <h3>Locally Built</h3>
+              <p>Designed by Kenyans, for Kenyan organisations. We understand your environment, language, and needs.</p>
+            </div>
+            <div class="why-card">
+              <div class="why-icon">📱</div>
+              <h3>MPesa Native</h3>
+              <p>All our systems come with built-in MPesa integration — the way Kenyans pay.</p>
+            </div>
+            <div class="why-card">
+              <div class="why-icon">🛠️</div>
+              <h3>Customisable</h3>
+              <p>Every system can be tailored to your specific workflows, branding, and business rules.</p>
+            </div>
+            <div class="why-card">
+              <div class="why-icon">📞</div>
+              <h3>Dedicated Support</h3>
+              <p>Real humans answer your calls. Nairobi-based support team available 6 days a week.</p>
+            </div>
+            <div class="why-card">
+              <div class="why-icon">☁️</div>
+              <h3>Cloud & Offline</h3>
+              <p>Access from anywhere with cloud sync, or run offline in areas with unreliable internet.</p>
+            </div>
+            <div class="why-card">
+              <div class="why-icon">💵</div>
+              <h3>Affordable Pricing</h3>
+              <p>Transparent, affordable pricing with no hidden fees. We grow with your organisation.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How It Works -->
+      <section class="how-it-works-section">
+        <div class="container">
+          <div class="tech-section-badge">Process</div>
+          <h2 class="tech-section-title">How It Works</h2>
+          <div class="steps-row">
+            <div class="step-item">
+              <div class="step-num">01</div>
+              <h3>Consult</h3>
+              <p>Book a free call. Tell us about your organisation and what you need. We listen first.</p>
+            </div>
+            <div class="step-arrow">→</div>
+            <div class="step-item">
+              <div class="step-num">02</div>
+              <h3>Demo</h3>
+              <p>We show you a live demo of the system tailored to your use case. No pressure, no obligation.</p>
+            </div>
+            <div class="step-arrow">→</div>
+            <div class="step-item">
+              <div class="step-num">03</div>
+              <h3>Deploy</h3>
+              <p>We set up, configure, train your staff, and go live. Ongoing support included.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tech Contact -->
+      <section id="tech-contact" class="tech-contact-section">
+        <div class="container">
+          <div class="tech-section-badge">Get Started</div>
+          <h2 class="tech-section-title">Request a Free Demo</h2>
+          <p class="tech-section-sub">Tell us about your organisation and we'll set up a personalised demo within 24 hours.</p>
+          <div class="tech-contact-grid">
+            <form class="demo-form" id="demo-form" onsubmit="submitDemo(event)">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="org-name">Organisation Name</label>
+                  <input type="text" id="org-name" placeholder="e.g. Greenfields School" required>
+                </div>
+                <div class="form-group">
+                  <label for="org-type">Organisation Type</label>
+                  <select id="org-type" required>
+                    <option value="">Select type...</option>
+                    <option value="school">School / College</option>
+                    <option value="gym">Gym / Fitness Centre</option>
+                    <option value="retail">Retail / Shop</option>
+                    <option value="hospital">Hospital / Clinic</option>
+                    <option value="church">Church / Ministry</option>
+                    <option value="chama">Chama / SACCO</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contact-name">Your Name</label>
+                  <input type="text" id="contact-name" placeholder="Full name" required>
+                </div>
+                <div class="form-group">
+                  <label for="contact-phone">Phone / WhatsApp</label>
+                  <input type="tel" id="contact-phone" placeholder="+254 7XX XXX XXX" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="contact-email">Email Address</label>
+                <input type="email" id="contact-email" placeholder="you@example.com">
+              </div>
+              <div class="form-group">
+                <label for="message">Any specific requirements?</label>
+                <textarea id="message" rows="3" placeholder="Tell us what you need..."></textarea>
+              </div>
+              <button type="submit" class="tech-submit-btn">
+                <i class="fas fa-paper-plane"></i> Send Demo Request
+              </button>
+            </form>
+            <div class="tech-contact-info">
+              <h3>Or Reach Us Directly</h3>
+              <div class="tech-contact-items">
+                <a href="https://wa.me/254700000000" class="tech-contact-item wa" target="_blank">
+                  <i class="fab fa-whatsapp"></i>
+                  <div><strong>WhatsApp</strong><span>Fastest response</span></div>
+                </a>
+                <a href="mailto:solutions@esubutech.online" class="tech-contact-item em">
+                  <i class="fas fa-envelope"></i>
+                  <div><strong>Email</strong><span>solutions@esubutech.online</span></div>
+                </a>
+                <a href="tel:+254700000000" class="tech-contact-item ph">
+                  <i class="fas fa-phone"></i>
+                  <div><strong>Call</strong><span>+254 700 000 000</span></div>
+                </a>
+              </div>
+              <div class="tech-trust-badges">
+                <div class="trust-badge">✓ Free Demo</div>
+                <div class="trust-badge">✓ No Hidden Fees</div>
+                <div class="trust-badge">✓ 24hr Response</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- end #tech-division -->
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">⚡ Esubu<span>Tech</span></div>
+          <p>Two divisions. One mission: empowering Kenya through technology.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>🎓 Academy</h4>
+          <ul>
+            <li><a href="#academy-home" onclick="switchDivision('academy')">Home</a></li>
+            <li><a href="#about" onclick="switchDivision('academy')">About</a></li>
+            <li><a href="#programs" onclick="switchDivision('academy')">Programs</a></li>
+            <li><a href="#contact" onclick="switchDivision('academy')">Enroll Now</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>💼 Tech Solutions</h4>
+          <ul>
+            <li><a href="#tech-home" onclick="switchDivision('tech')">Overview</a></li>
+            <li><a href="#erp-products" onclick="switchDivision('tech')">Products</a></li>
+            <li><a href="#tech-why-us" onclick="switchDivision('tech')">Why Us</a></li>
+            <li><a href="#tech-contact" onclick="switchDivision('tech')">Get Demo</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><i class="fab fa-whatsapp"></i> +254 700 000 000</li>
+            <li><i class="fas fa-envelope"></i> info@esubutech.online</li>
+            <li><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</li>
+          </ul>
         </div>
       </div>
-      <div class="program-details">
-        <h4>Program Highlights:</h4>
-        <ul>
-          <li>Live Zoom classes with friendly instructors</li>
-          <li>Small groups for personalized attention</li>
-          <li>Project-based, engaging format</li>
-          <li>Ideal for kids aged 6–16</li>
-          <li>Tuition: KES 12,000/month (all inclusive)</li>
-        </ul>
+      <div class="footer-bottom">
+        <p>© 2025 Esubu Tech. All rights reserved. | <a href="https://esubutech.online">esubutech.online</a></p>
       </div>
-    </section>
-  <section id="contact">
-  <h2>Talk to Us</h2>
+    </div>
+  </footer>
 
-  <!-- ✅ Visible clickable phone numbers -->
-  <p>
-    <strong>Phone:</strong>
-    <a href="tel:+254720811346">+254 720 811 346</a> /
-    <a href="tel:+254799470690">+254 799 470 690</a>
-  </p>
- <p><strong>📧 Email:</strong> 
-  <a href="mailto:sammyssbu@esubutech.online">sammyssbu@esubutech.online</a> / 
-  <a href="mailto:esubumedia@gmail.com">esubumedia@gmail.com</a>
-</p>
-
-  <!-- ✅ Updated form with a phone number input -->
-  <form action="https://formsubmit.co/esubumedia@gmail.com" method="POST" class="contact-form">
-    <input type="hidden" name="_captcha" value="false">
-
-    <label for="name">Parent's Name</label>
-    <input type="text" id="name" name="name" required>
-
-    <!-- New phone number field -->
-    <label for="phone">Phone Number</label>
-    <input type="tel" id="phone" name="phone" placeholder="+254..." required pattern="[0-9+ ]{7,15}">
-
-    <label for="email">Email Address</label>
-    <input type="email" id="email" name="email" required>
-
-    <label for="message">Your Message or Child's Age</label>
-    <textarea id="message" name="message" rows="4" required></textarea>
-
-    <button type="submit">Send Message</button>
-  </form>
-</section>
-
-<footer>
-  <p>
-    &copy; 2025 Esubu Tech Academy. All rights reserved.<br>
-    📞 <a href="tel:+254720811346">+254 720 811 346</a> /
-    <a href="tel:+254799470690">+254 799 470 690</a>
-  </p>
-</footer>
-
-  <script src="script.js"></script>
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/68fdede9cf7edc194c8d6a64/1j8fuineb';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
-<!-- WhatsApp Chat Button -->
-<a href="https://wa.me/254720811346" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
-  <span>WhatsApp Us</span>
-</a>
-
-<style>
-.whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background-color: #25D366;
-  color: white;
-  border-radius: 50px;
-  padding: 10px 18px;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-  z-index: 9999;
-  transition: transform 0.2s ease, background-color 0.3s ease;
-}
-.whatsapp-float:hover {
-  transform: scale(1.05);
-  background-color: #1EBE5D;
-}
-.whatsapp-icon {
-  width: 24px;
-  height: 24px;
-  margin-right: 8px;
-}
-</style>
-
+  <script src="script.js?v=10"></script>
 </body>
 </html>
