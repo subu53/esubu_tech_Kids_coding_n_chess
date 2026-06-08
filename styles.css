@@ -1529,6 +1529,566 @@ nav {
 }
 
 /* ============================================================
+   DATA SCIENCE DIVISION — HERO
+   (diagonal green→red gradient, distinct from both other heroes)
+   ============================================================ */
+.data-hero {
+  background: linear-gradient(135deg, var(--green-900) 0%, #7b1a1a 50%, var(--red-900) 100%);
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  padding: 5rem 1.5rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.data-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 50% 60% at 75% 40%, rgba(255,255,255,0.05) 0%, transparent 70%),
+    radial-gradient(ellipse 30% 30% at 0% 100%, rgba(0,0,0,0.12) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.data-hero::after {
+  content: '';
+  position: absolute;
+  width: 550px; height: 550px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.06);
+  right: -120px; top: -120px;
+  pointer-events: none;
+}
+
+.data-hero-content {
+  max-width: 1140px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.data-hero-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.16);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.22);
+  color: var(--white);
+  padding: 0.4rem 1.1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.88rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.5px;
+}
+
+.data-hero h1 {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+  max-width: 650px;
+}
+
+.data-underline {
+  text-decoration: underline;
+  text-decoration-color: rgba(255,255,255,0.35);
+  text-underline-offset: 6px;
+}
+
+.data-hero-content > p {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.9);
+  max-width: 580px;
+  margin-bottom: 2rem;
+}
+
+.data-hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.data-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--white);
+  color: var(--green-900);
+  padding: 0.85rem 2rem;
+  border-radius: var(--radius-full);
+  font-weight: 800;
+  font-size: 1rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.22);
+  transition: all var(--transition);
+}
+
+.data-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.28);
+}
+
+.data-cta-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: transparent;
+  color: var(--white);
+  padding: 0.85rem 2rem;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 1rem;
+  border: 2px solid rgba(255,255,255,0.6);
+  transition: all var(--transition);
+}
+
+.data-cta-outline:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: var(--white);
+  transform: translateY(-2px);
+}
+
+.data-hero-stats {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.data-stat { display: flex; flex-direction: column; }
+.data-stat span {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1;
+}
+.data-stat p {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.72);
+  font-weight: 600;
+  margin-top: 3px;
+}
+
+/* Floating cards */
+.data-hero-visual {
+  position: absolute;
+  right: 5%; top: 50%;
+  transform: translateY(-50%);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7rem;
+  pointer-events: none;
+}
+
+.data-float-card {
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: var(--white);
+  padding: 0.65rem 1rem;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: 0.82rem;
+  box-shadow: var(--shadow-md);
+  white-space: nowrap;
+  animation: floatAnim 3s ease-in-out infinite;
+}
+
+.df2 { animation-delay: 0.5s; }
+.df3 { animation-delay: 1s; }
+.df4 { animation-delay: 1.5s; }
+.df5 { animation-delay: 2s; }
+.df6 { animation-delay: 2.5s; }
+
+/* ============================================================
+   DATA SCIENCE — SHARED BADGE/TITLE
+   ============================================================ */
+.data-section-badge {
+  display: inline-block;
+  padding: 0.3rem 1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  background: linear-gradient(135deg, var(--green-100), var(--red-100));
+  color: var(--green-900);
+  border: 1px solid var(--gray-200);
+}
+
+.data-section-title {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 800;
+  color: var(--gray-900);
+  margin-bottom: 0.5rem;
+}
+
+.data-section-sub {
+  max-width: 640px;
+  font-size: 1.05rem;
+  color: var(--gray-600);
+  margin: 0.5rem auto 2.5rem;
+  text-align: center;
+}
+
+/* ============================================================
+   DATA SCIENCE — SERVICES CARDS
+   ============================================================ */
+.data-services-section {
+  padding: 5rem 1.5rem;
+  background: var(--white);
+  text-align: center;
+}
+
+.data-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.data-card {
+  background: var(--white);
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.data-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+  border-color: transparent;
+}
+
+/* Card header colour bands — alternate green/red */
+.data-card-header {
+  padding: 2rem 1.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.data-card-header i {
+  font-size: 2.2rem;
+  color: var(--white);
+}
+
+.data-card-header.da    { background: linear-gradient(135deg, var(--green-800), var(--green-500)); }
+.data-card-header.ml    { background: linear-gradient(135deg, var(--red-800), var(--red-500)); }
+.data-card-header.viz   { background: linear-gradient(135deg, var(--green-700), var(--green-400)); }
+.data-card-header.bi    { background: linear-gradient(135deg, var(--red-700), var(--red-400)); }
+.data-card-header.etl   { background: linear-gradient(135deg, var(--green-900), var(--green-600)); }
+.data-card-header.stats { background: linear-gradient(135deg, var(--red-900), var(--red-600)); }
+
+.data-tag {
+  background: rgba(255,255,255,0.25);
+  color: var(--white);
+  padding: 0.2rem 0.7rem;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.data-card h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--gray-900);
+  padding: 1.25rem 1.75rem 0.5rem;
+}
+
+.data-card > p {
+  color: var(--gray-600);
+  font-size: 0.92rem;
+  padding: 0 1.75rem 1.25rem;
+  line-height: 1.6;
+}
+
+.data-features {
+  padding: 0 1.75rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-bottom: 1.5rem;
+}
+
+.data-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.88rem;
+  color: var(--gray-600);
+  font-weight: 600;
+}
+
+.data-features li i { font-size: 0.75rem; flex-shrink: 0; }
+
+/* Alternate check colours */
+#ds-analysis .data-features li i,
+#ds-viz .data-features li i,
+#ds-etl .data-features li i { color: var(--green-600); }
+#ds-ml .data-features li i,
+#ds-bi .data-features li i,
+#ds-stats .data-features li i { color: var(--red-600); }
+
+.data-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 1.75rem 1.75rem;
+  padding: 0.7rem 1.5rem;
+  border-radius: var(--radius-full);
+  font-weight: 800;
+  font-size: 0.9rem;
+  transition: all var(--transition);
+  width: fit-content;
+  color: var(--white);
+}
+
+#ds-analysis .data-cta, #ds-viz .data-cta, #ds-etl .data-cta { background: var(--green-800); }
+#ds-ml .data-cta, #ds-bi .data-cta, #ds-stats .data-cta         { background: var(--red-800); }
+#ds-analysis .data-cta:hover, #ds-viz .data-cta:hover, #ds-etl .data-cta:hover { background: var(--green-600); transform: translateX(3px); }
+#ds-ml .data-cta:hover, #ds-bi .data-cta:hover, #ds-stats .data-cta:hover       { background: var(--red-600); transform: translateX(3px); }
+
+/* ============================================================
+   DATA SCIENCE — TOOLS SECTION
+   ============================================================ */
+.data-tools-section {
+  padding: 4rem 1.5rem;
+  background: var(--light-gray);
+  text-align: center;
+}
+
+.tools-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.tool-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--white);
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-full);
+  padding: 0.55rem 1.2rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  transition: all var(--transition);
+  cursor: default;
+}
+
+.tool-pill:hover {
+  border-color: var(--green-500);
+  color: var(--green-800);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-2px);
+}
+
+.tool-pill i { color: var(--red-600); font-size: 0.95rem; }
+
+/* ============================================================
+   DATA SCIENCE — PROCESS SECTION
+   ============================================================ */
+.data-process-section {
+  padding: 5rem 1.5rem;
+  background: var(--white);
+  text-align: center;
+}
+
+.data-steps-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.data-step {
+  flex: 1;
+  min-width: 160px;
+  max-width: 220px;
+  text-align: center;
+  padding: 2rem 1.25rem;
+  border-radius: var(--radius-lg);
+  background: var(--off-white);
+  border: 1.5px solid var(--gray-200);
+  transition: all var(--transition);
+}
+
+.data-step:hover {
+  background: var(--white);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.data-step-num {
+  font-family: 'Inter', sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--green-700), var(--red-700));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.data-step-icon { font-size: 1.8rem; margin-bottom: 0.5rem; }
+
+.data-step h3 {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--gray-900);
+  margin-bottom: 0.4rem;
+}
+
+.data-step p {
+  font-size: 0.85rem;
+  color: var(--gray-600);
+}
+
+.data-step-arrow {
+  font-size: 1.8rem;
+  color: var(--gray-400);
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   DATA SCIENCE — CONTACT SECTION
+   ============================================================ */
+.data-contact-section {
+  padding: 5rem 1.5rem;
+  background: linear-gradient(135deg, var(--green-900) 0%, #7b1a1a 50%, var(--red-900) 100%);
+  text-align: center;
+}
+
+.data-contact-section .data-section-badge {
+  background: rgba(255,255,255,0.16);
+  border-color: rgba(255,255,255,0.2);
+  color: var(--white);
+}
+
+.data-contact-section .data-section-title { color: var(--white); }
+.data-contact-section .data-section-sub   { color: rgba(255,255,255,0.85); }
+
+.data-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 2rem;
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.data-demo-form {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+}
+
+.data-submit-btn {
+  width: 100%;
+  padding: 0.9rem;
+  background: linear-gradient(135deg, var(--green-800), #7b1a1a);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius-full);
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all var(--transition);
+}
+
+.data-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.22);
+  opacity: 0.92;
+}
+
+.data-contact-info {
+  padding: 2rem 1.5rem;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: var(--radius-lg);
+  color: var(--white);
+}
+
+.data-contact-info h3 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-bottom: 1.25rem;
+}
+
+.data-contact-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-bottom: 1.75rem;
+}
+
+.data-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-md);
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  transition: all var(--transition);
+  color: var(--white);
+}
+
+.data-contact-item:hover {
+  background: rgba(255,255,255,0.18);
+  transform: translateX(3px);
+}
+
+.data-contact-item i { font-size: 1.3rem; width: 22px; text-align: center; }
+.data-contact-item div { display: flex; flex-direction: column; }
+.data-contact-item strong { font-size: 0.85rem; }
+.data-contact-item span { font-size: 0.8rem; color: rgba(255,255,255,0.72); }
+
+.data-why-boxes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.data-why-item {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: var(--white);
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width: 900px) {
