@@ -2343,8 +2343,8 @@ nav {
 }
 
 .gh-repo-card div { flex: 1; }
-.gh-repo-card strong { display: block; font-size: 0.9rem; font-weight: 800; }
-.gh-repo-card span  { display: block; font-size: 0.8rem; color: var(--gray-500); }
+.gh-repo-card strong { display: block; font-size: 0.88rem; font-weight: 800; color: var(--gray-900); }
+.gh-repo-card span  { display: block; font-size: 0.78rem; color: var(--gray-500); line-height: 1.4; margin-top: 2px; white-space: normal; }
 
 .repo-arrow { color: var(--gray-400); flex-shrink: 0; }
 
@@ -2689,11 +2689,11 @@ nav {
 
 /* Data section titles — consistent dark charcoal */
 .data-section-title {
-  color: #111827 !important;
+  color: #111827;
   letter-spacing: -0.3px;
 }
 .data-section-sub {
-  color: #4b5563 !important;
+  color: #4b5563;
 }
 /* ============================================================
    RESPONSIVE
@@ -2737,6 +2737,7 @@ nav {
   .program-details-box { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
 }
+
 
 
 
