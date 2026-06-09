@@ -1287,7 +1287,7 @@ nav {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  color: #ff6b35;
+  color: var(--red-600);
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 2px;
@@ -1297,7 +1297,7 @@ nav {
 
 .fomo-dot {
   width: 8px; height: 8px;
-  background: #ff6b35;
+  background: var(--red-700);
   border-radius: 50%;
   animation: pulse 1.8s ease-in-out infinite;
 }
@@ -1318,7 +1318,7 @@ nav {
   z-index: 1;
 }
 
-.fomo-red { color: #ff6b35; }
+.fomo-red { color: var(--red-600); }
 
 .fomo-lead {
   max-width: 620px;
@@ -1928,7 +1928,7 @@ nav {
 
 .consulting-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   margin-top: 1rem;
   text-align: left;
@@ -1979,10 +1979,10 @@ nav {
   z-index: 1;
 }
 
-.cs-startup-h { background: linear-gradient(135deg, #b71c1c, #e53935); }
+.cs-startup-h { background: linear-gradient(135deg, #7f0000, #c62828); }
 .cs-ecom-h    { background: linear-gradient(135deg, var(--green-800), var(--green-500)); }
 
-.cs-mktg-h    { background: linear-gradient(135deg, #e65100, #ff8f00); }
+.cs-mktg-h    { background: linear-gradient(135deg, var(--red-900), var(--red-600)); }
 
 /* ── Tag pill — same as .erp-tag ── */
 .cs-tag {
@@ -2042,7 +2042,7 @@ nav {
 #cs-startup  .cs-features li i { color: #e53935; }
 #cs-ecommerce .cs-features li i { color: var(--green-600); }
 
-#cs-marketing .cs-features li i { color: #fb8c00; }
+#cs-marketing .cs-features li i { color: var(--red-600); }
 
 /* ── CTA — same as .erp-cta ── */
 .cs-cta {
@@ -2059,8 +2059,8 @@ nav {
   width: fit-content;
 }
 
-#cs-startup  .cs-cta { background: #c62828; }
-#cs-startup  .cs-cta:hover { background: #b71c1c; transform: translateX(3px); }
+#cs-startup  .cs-cta { background: #b71c1c; }
+#cs-startup  .cs-cta:hover { background: #7f0000; transform: translateX(3px); }
 
 #cs-ecommerce .cs-cta { background: var(--green-800); }
 #cs-ecommerce .cs-cta:hover { background: var(--green-600); transform: translateX(3px); }
@@ -2068,8 +2068,8 @@ nav {
 
 
 
-#cs-marketing .cs-cta { background: #e65100; }
-#cs-marketing .cs-cta:hover { background: #bf360c; transform: translateX(3px); }
+#cs-marketing .cs-cta { background: var(--red-800); }
+#cs-marketing .cs-cta:hover { background: var(--red-600); transform: translateX(3px); }
 /* ============================================================
    TECH — WHY US SECTION
    ============================================================ */
@@ -2329,7 +2329,7 @@ nav {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  color: #ff6b35;
+  color: var(--red-700);
   font-size: 0.75rem;
   font-weight: 800;
   letter-spacing: 2px;
@@ -2339,7 +2339,7 @@ nav {
 
 .why-pulse {
   width: 8px; height: 8px;
-  background: #ff6b35;
+  background: var(--red-700);
   border-radius: 50%;
   display: inline-block;
   animation: pulse 1.8s ease-in-out infinite;
@@ -2354,7 +2354,7 @@ nav {
   margin-bottom: 1.25rem;
 }
 
-.why-red { color: #ff6b35; }
+.why-red { color: var(--red-500); }
 
 .why-subhead {
   font-size: 1.05rem;
@@ -3797,7 +3797,7 @@ nav {
 .ztag.agriculture { background: #e8f5e9; color: #2e7d32; border-color: #a5d6a7; }
 .ztag.health      { background: #fce4ec; color: #c62828; border-color: #ef9a9a; }
 .ztag.climate     { background: #e3f2fd; color: #1565c0; border-color: #90caf9; }
-.ztag.fraud       { background: #fff3e0; color: #e65100; border-color: #ffcc80; }
+.ztag.fraud { background: #ffebee; color: var(--red-700); border-color: #ef9a9a; }
 .ztag.sdg         { background: #f3e5f5; color: #6a1b9a; border-color: #ce93d8; }
 .ztag.govt        { background: #e0f2f1; color: #00695c; border-color: #80cbc4; }
 
@@ -4277,6 +4277,8 @@ nav {
   .program-details-box { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
 }
+
+
 
 
 
