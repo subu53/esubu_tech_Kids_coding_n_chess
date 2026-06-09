@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Esubu Data Science | Analytics, Machine Learning & BI in Kenya</title>
+  <meta name="description" content="Esubu Data Science helps organizations unlock insights. Custom ML models, BI dashboards, data cleaning, and statistical research with local expertise.">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../styles.css?v=11" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHFDG299C1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GHFDG299C1');
+  </script>
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER / NAVIGATION
+  ============================================================ -->
+  <header id="main-header" style="background: linear-gradient(135deg, #1b5e20 0%, #7b1a1a 50%, #b71c1c 100%);">
+    <nav>
+      <div class="logo">
+        <a href="/" style="display: flex; align-items: center; gap: 0.4rem;">
+          <span class="logo-icon">âš¡</span>
+          <span class="logo-text">Esubu<span class="logo-accent">Tech</span></span>
+        </a>
+      </div>
+
+      <!-- Nav Links -->
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#data-home" class="nav-link">Overview</a></li>
+        <li><a href="#data-services" class="nav-link">Services</a></li>
+        <li><a href="#data-process" class="nav-link">Process</a></li>
+        <li><a href="#data-portfolio" class="nav-link">Portfolio</a></li>
+        <li><a href="/academy" class="nav-link">Academy</a></li>
+        <li><a href="/techsolutions" class="nav-link">Tech Solutions</a></li>
+        <li><a href="#data-contact" class="nav-link active-link" style="background: rgba(255,255,255,0.18); font-weight:700;">Start Project</a></li>
+      </ul>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu" style="background: #7b1a1a;">
+      <ul class="mobile-nav-links" id="mobile-nav-links">
+        <li><a href="#data-home" onclick="closeMobile()">Overview</a></li>
+        <li><a href="#data-services" onclick="closeMobile()">Services</a></li>
+        <li><a href="#data-process" onclick="closeMobile()">Process</a></li>
+        <li><a href="#data-portfolio" onclick="closeMobile()">Portfolio</a></li>
+        <li><a href="/academy">ðŸŽ“ Academy</a></li>
+        <li><a href="/techsolutions">ðŸ’¼ Tech Solutions</a></li>
+        <li><a href="#data-contact" onclick="closeMobile()">âœ‰ï¸ Start Project</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============================================================
+         DATA SCIENCE DIVISION CONTENT
+    ============================================================ -->
+    <div id="data-division">
+
+      <!-- Data Science Hero -->
+      <section id="data-home" class="data-hero">
+        <div class="data-hero-content">
+          <div class="data-hero-badge">ðŸ“Š Esubu Data Science</div>
+          <h1>Turn Your Data Into<br><span class="data-underline">Decisions That Win</span></h1>
+          <p>We help Kenyan businesses and organisations unlock the power hidden in their data â€” through analytics, machine learning, dashboards, and AI solutions built for the real world.</p>
+          <div class="data-hero-actions">
+            <a href="#data-contact" class="data-cta-btn">Start a Project</a>
+            <a href="#data-services" class="data-cta-outline">Explore Services</a>
+          </div>
+          <div class="data-hero-stats">
+            <div class="data-stat"><span>6+</span><p>Service Areas</p></div>
+            <div class="data-stat"><span>AI</span><p>Ready Solutions</p></div>
+            <div class="data-stat"><span>Local</span><p>Data Experts</p></div>
+          </div>
+        </div>
+        <div class="data-hero-visual">
+          <div class="data-float-card df1">ðŸ“ˆ Predictive Analytics</div>
+          <div class="data-float-card df2">ðŸ¤– Machine Learning</div>
+          <div class="data-float-card df3">ðŸ“‰ Data Visualisation</div>
+          <div class="data-float-card df4">ðŸ§¹ Data Cleaning</div>
+          <div class="data-float-card df5">ðŸ§  Business Intelligence</div>
+          <div class="data-float-card df6">ðŸ” Statistical Analysis</div>
+        </div>
+      </section>
+
+      <!-- Data Services -->
+      <section id="data-services" class="data-services-section">
+        <div class="container">
+          <div class="data-section-badge">What We Do</div>
+          <h2 class="data-section-title">Our Data Science Services</h2>
+          <p class="data-section-sub">End-to-end data solutions â€” from raw numbers to clear, actionable business insights</p>
+
+          <div class="data-services-grid">
+
+            <div class="data-card" id="ds-analysis">
+              <div class="data-card-header da">
+                <i class="fas fa-chart-line"></i>
+                <span class="data-tag">Most Requested</span>
+              </div>
+              <h3>Data Analysis & Reporting</h3>
+              <p>We dig into your existing data â€” sales, operations, finance â€” and surface the patterns and trends that matter most to your business.</p>
+              <ul class="data-features">
+                <li><i class="fas fa-check"></i> Sales & revenue trend analysis</li>
+                <li><i class="fas fa-check"></i> KPI dashboards & scorecards</li>
+                <li><i class="fas fa-check"></i> Monthly / quarterly reports</li>
+                <li><i class="fas fa-check"></i> Excel, Google Sheets & SQL</li>
+                <li><i class="fas fa-check"></i> Custom insight presentations</li>
+              </ul>
+              <a href="#data-contact" class="data-cta">Get Started <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="data-card" id="ds-ml">
+              <div class="data-card-header ml">
+                <i class="fas fa-robot"></i>
+              </div>
+              <h3>Machine Learning & AI</h3>
+              <p>We build and deploy custom ML models that automate decisions, detect patterns, and predict outcomes â€” tailored to your business context.</p>
+              <ul class="data-features">
+                <li><i class="fas fa-check"></i> Classification & regression models</li>
+                <li><i class="fas fa-check"></i> Customer churn prediction</li>
+                <li><i class="fas fa-check"></i> Demand & sales forecasting</li>
+                <li><i class="fas fa-check"></i> Fraud & anomaly detection</li>
+                <li><i class="fas fa-check"></i> Model deployment & monitoring</li>
+              </ul>
+              <a href="#data-contact" class="data-cta">Get Started <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="data-card" id="ds-viz">
+              <div class="data-card-header viz">
+                <i class="fas fa-chart-pie"></i>
+              </div>
+              <h3>Data Visualisation & Dashboards</h3>
+              <p>Beautiful, interactive dashboards that give your team a live view of business performance â€” from anywhere, on any device.</p>
+              <ul class="data-features">
+                <li><i class="fas fa-check"></i> Power BI & Tableau dashboards</li>
+                <li><i class="fas fa-check"></i> Google Looker Studio reports</li>
+                <li><i class="fas fa-check"></i> Real-time data updates</li>
+                <li><i class="fas fa-check"></i> Custom charts & infographics</li>
+                <li><i class="fas fa-check"></i> Mobile-responsive views</li>
+              </ul>
+              <a href="#data-contact" class="data-cta">Get Started <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="data-card" id="ds-bi">
+              <div class="data-card-header bi">
+                <i class="fas fa-briefcase"></i>
+              </div>
+              <h3>Business Intelligence (BI)</h3>
+              <p>Connect all your data sources into one intelligent BI platform â€” empowering every team to make faster, smarter decisions.</p>
+              <ul class="data-features">
+                <li><i class="fas fa-check"></i> Data warehouse design</li>
+                <li><i class="fas fa-check"></i> Multi-source data integration</li>
+                <li><i class="fas fa-check"></i> Self-service BI setup</li>
+                <li><i class="fas fa-check"></i> Executive reporting suites</li>
+                <li><i class="fas fa-check"></i> Automated alert systems</li>
+              </ul>
+              <a href="#data-contact" class="data-cta">Get Started <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="data-card" id="ds-etl">
+              <div class="data-card-header etl">
+                <i class="fas fa-database"></i>
+              </div>
+              <h3>Data Cleaning & ETL Pipelines</h3>
+              <p>Bad data leads to bad decisions. We build robust pipelines that collect, clean, transform, and load your data reliably every time.</p>
+              <ul class="data-features">
+                <li><i class="fas fa-check"></i> Data quality assessment</li>
+                <li><i class="fas fa-check"></i> Automated ETL pipelines</li>
+                <li><i class="fas fa-check"></i> Database design & optimisation</li>
+                <li><i class="fas fa-check"></i> API data integrations</li>
+                <li><i class="fas fa-check"></i> Scheduled data refreshes</li>
+              </ul>
+              <a href="#data-contact" class="data-cta">Get Started <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="data-card" id="ds-stats">
+              <div class="data-card-header stats">
+                <i class="fas fa-flask"></i>
+              </div>
+              <h3>Statistical & Research Analysis</h3>
+              <p>From academic research to market surveys â€” we apply rigorous statistical methods to validate findings and drive evidence-based strategy.</p>
+              <ul class="data-features">
+                <li><i class="fas fa-check"></i> Survey & questionnaire analysis</li>
+                <li><i class="fas fa-check"></i> Hypothesis testing & A/B testing</li>
+                <li><i class="fas fa-check"></i> SPSS, R & Python analysis</li>
+                <li><i class="fas fa-check"></i> Research report writing</li>
+                <li><i class="fas fa-check"></i> Market & competitor analysis</li>
+              </ul>
+              <a href="#data-contact" class="data-cta">Get Started <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Tools We Use -->
+      <section class="data-tools-section">
+        <div class="container">
+          <div class="data-section-badge">Our Stack</div>
+          <h2 class="data-section-title">Tools & Technologies</h2>
+          <div class="tools-grid">
+            <div class="tool-pill"><i class="fab fa-python"></i> Python</div>
+            <div class="tool-pill"><i class="fas fa-registered"></i> R</div>
+            <div class="tool-pill"><i class="fas fa-table"></i> SQL</div>
+            <div class="tool-pill"><i class="fas fa-chart-bar"></i> Power BI</div>
+            <div class="tool-pill"><i class="fas fa-chart-pie"></i> Tableau</div>
+            <div class="tool-pill"><i class="fab fa-google"></i> Looker Studio</div>
+            <div class="tool-pill"><i class="fas fa-file-excel"></i> Excel / Sheets</div>
+            <div class="tool-pill"><i class="fas fa-brain"></i> TensorFlow</div>
+            <div class="tool-pill"><i class="fas fa-cloud"></i> Azure / AWS</div>
+            <div class="tool-pill"><i class="fas fa-database"></i> PostgreSQL</div>
+            <div class="tool-pill"><i class="fas fa-code"></i> Scikit-learn</div>
+            <div class="tool-pill"><i class="fas fa-project-diagram"></i> Apache Spark</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Our Data Process -->
+      <section id="data-process" class="data-process-section">
+        <div class="container">
+          <div class="data-section-badge">How We Work</div>
+          <h2 class="data-section-title">Our Data Process</h2>
+          <p class="data-section-sub">A clear, repeatable 4-step method that turns raw data into real decisions.</p>
+          <div class="data-steps-row">
+
+            <div class="data-step">
+              <div class="data-step-num">01</div>
+              <div class="data-step-icon">ðŸ”</div>
+              <h3>Discover</h3>
+              <p>Understand your business goals and audit your existing data sources and quality.</p>
+            </div>
+
+            <div class="data-step-arrow"><i class="fas fa-chevron-right"></i></div>
+
+            <div class="data-step">
+              <div class="data-step-num">02</div>
+              <div class="data-step-icon">ðŸ§¹</div>
+              <h3>Prepare</h3>
+              <p>Clean, structure, and transform raw data into a solid analytical foundation.</p>
+            </div>
+
+            <div class="data-step-arrow"><i class="fas fa-chevron-right"></i></div>
+
+            <div class="data-step">
+              <div class="data-step-num">03</div>
+              <div class="data-step-icon">ðŸ“Š</div>
+              <h3>Analyse</h3>
+              <p>Apply the right models, algorithms, or statistical methods to extract insights.</p>
+            </div>
+
+            <div class="data-step-arrow"><i class="fas fa-chevron-right"></i></div>
+
+            <div class="data-step">
+              <div class="data-step-num">04</div>
+              <div class="data-step-icon">ðŸš€</div>
+              <h3>Deliver</h3>
+              <p>Present clear reports, dashboards, or deployed models â€” with full handover and support.</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Real Projects. Real Results. -->
+      <section id="data-portfolio" class="data-portfolio-section">
+        <div class="container">
+          <div class="data-section-badge">Proof of Work</div>
+          <h2 class="data-section-title">Real Projects. Real Results.</h2>
+          <p class="data-section-sub">Active on Africa's largest data science platform â€” here's the track record.</p>
+
+          <div class="proof-platforms">
+
+            <!-- Zindi compact card -->
+            <div class="platform-card zindi-card">
+              <div class="platform-card-header">
+                <div class="platform-logo-row">
+                  <img src="https://assets.zindi.africa/favicon-96x96.png" alt="Zindi" class="platform-logo" onerror="this.style.display='none'">
+                  <div>
+                    <span class="platform-name">Zindi Africa</span>
+                    <span class="platform-handle">@Sammy_S_Mutuku Â· ðŸ‡°ðŸ‡ª</span>
+                  </div>
+                </div>
+                <a href="https://zindi.africa/users/Sammy_S_Mutuku" target="_blank" class="platform-link-btn zindi-btn">
+                  Profile <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+
+              <div class="zindi-stats">
+                <div class="zindi-stat"><span class="zstat-num">#465</span><span class="zstat-label">Global Rank</span></div>
+                <div class="zindi-stat"><span class="zstat-num">Top 500</span><span class="zstat-label">AI Builders</span></div>
+                <div class="zindi-stat"><span class="zstat-num">10</span><span class="zstat-label">Competitions</span></div>
+                <div class="zindi-stat"><span class="zstat-num">385+</span><span class="zstat-label">Submissions</span></div>
+              </div>
+
+              <div class="zindi-medals">
+                <div class="medal silver">ðŸ¥ˆ 3 Silver</div>
+                <div class="medal bronze">ðŸ¥‰ 2 Bronze</div>
+              </div>
+
+              <div class="zindi-comp-tags" style="margin-top:.5rem;">
+                <span class="ztag agriculture">ðŸŒ¾ Agriculture (5)</span>
+                <span class="ztag health">ðŸ¥ Health (4)</span>
+                <span class="ztag climate">ðŸŒ Climate (3)</span>
+                <span class="ztag fraud">ðŸ” Fraud (2)</span>
+                <span class="ztag sdg">ðŸ“Š SDG (2)</span>
+                <span class="ztag govt">ðŸ›ï¸ Govt (1)</span>
+              </div>
+
+              <div class="zindi-skills" style="margin-top:.5rem;">
+                <span class="zskill"><i class="fab fa-python"></i> Python</span>
+                <span class="zskill"><i class="fas fa-database"></i> SQL</span>
+                <span class="zskill"><i class="fas fa-registered"></i> R</span>
+                <span class="zskill"><i class="fas fa-brain"></i> ML</span>
+                <span class="zskill"><i class="fas fa-chart-pie"></i> Data Viz</span>
+              </div>
+            </div>
+
+            <!-- GitHub compact card -->
+            <div class="platform-card github-card">
+              <div class="platform-card-header">
+                <div class="platform-logo-row">
+                  <i class="fab fa-github github-icon"></i>
+                  <div>
+                    <span class="platform-name">GitHub</span>
+                    <span class="platform-handle">@subu53</span>
+                  </div>
+                </div>
+                <a href="https://github.com/subu53" target="_blank" class="platform-link-btn gh-btn">
+                  Profile <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+
+              <div class="gh-repos">
+
+                <a href="https://github.com/subu53/dataorg-financial-health-prediction" target="_blank" class="gh-repo-card">
+                  <div class="repo-icon" style="background:#e8f5e9;color:#1b5e20;"><i class="fas fa-chart-line"></i></div>
+                  <div>
+                    <strong>Financial Health Prediction</strong>
+                    <span>Predicting business financial health from trade &amp; socio-economic data â€” helping lenders &amp; investors make smarter decisions</span>
+                  </div>
+                  <i class="fas fa-arrow-right repo-arrow"></i>
+                </a>
+
+                <a href="https://github.com/subu53/Lung_diagnostic_system" target="_blank" class="gh-repo-card">
+                  <div class="repo-icon" style="background:#fde8e8;color:#b71c1c;"><i class="fas fa-hospital"></i></div>
+                  <div>
+                    <strong>AI Diagnostic System â­</strong>
+                    <span>AI-powered clinical decision support â€” reducing diagnostic cost &amp; time for healthcare providers</span>
+                  </div>
+                  <i class="fas fa-arrow-right repo-arrow"></i>
+                </a>
+
+                <a href="https://github.com/subu53/lungcancerai_v1" target="_blank" class="gh-repo-card">
+                  <div class="repo-icon" style="background:#e8f5e9;color:#1b5e20;"><i class="fas fa-microscope"></i></div>
+                  <div>
+                    <strong>Cancer Early Detection ML</strong>
+                    <span>ML model for early-stage lung cancer screening â€” improving patient outcomes through data</span>
+                  </div>
+                  <i class="fas fa-arrow-right repo-arrow"></i>
+                </a>
+
+                <a href="https://github.com/subu53/SocialMediaXke" target="_blank" class="gh-repo-card">
+                  <div class="repo-icon" style="background:#fde8e8;color:#b71c1c;"><i class="fas fa-bullhorn"></i></div>
+                  <div>
+                    <strong>Social Media Intelligence Agent</strong>
+                    <span>Automated social listening &amp; content agent â€” driving engagement for brands</span>
+                  </div>
+                  <i class="fas fa-arrow-right repo-arrow"></i>
+                </a>
+
+              </div>
+
+              <a href="https://www.linkedin.com/in/samsubu/" target="_blank" class="linkedin-pill" style="margin-top:.75rem;">
+                <i class="fab fa-linkedin"></i> Connect on LinkedIn
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- AMLD AFRICA BRAND AMBASSADOR -->
+      <section id="amld-section" class="amld-section">
+        <div class="amld-inner">
+          <div class="amld-badge-wrap">
+            <div class="amld-icon-ring">
+              <i class="fas fa-certificate"></i>
+            </div>
+          </div>
+          <div class="amld-content">
+            <span class="amld-eyebrow">Official Recognition</span>
+            <h2 class="amld-title">AMLD Africa Brand Ambassador</h2>
+            <p class="amld-sub">
+              Representing <strong>Applied Machine Learning Days (AMLD) Africa</strong> at KCA University, Nairobi â€” Kenya's leading data science & AI community event. Championing AI education, research, and access across East Africa.
+            </p>
+            <div class="amld-pills">
+              <span class="amld-pill"><i class="fas fa-map-marker-alt"></i> KCA University, Nairobi</span>
+              <span class="amld-pill"><i class="fas fa-globe-africa"></i> East Africa Chapter</span>
+              <span class="amld-pill"><i class="fas fa-users"></i> AI Community Leader</span>
+            </div>
+            <a href="https://mlafrica.org/" target="_blank" class="amld-cta-btn">
+              <i class="fas fa-external-link-alt"></i> Visit AMLD Africa
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Data Contact -->
+      <section id="data-contact" class="data-contact-section">
+        <div class="container">
+          <div class="data-section-badge" style="background:rgba(255,255,255,0.15);color:#fff;border-color:rgba(255,255,255,0.3);">Let's Talk Data</div>
+          <h2 class="data-section-title" style="color:#fff;">Start Your Data Project</h2>
+          <p class="data-section-sub" style="color:rgba(255,255,255,0.88);">Tell us about your data challenge and we'll get back to you within 24 hours with a plan.</p>
+          <div class="data-contact-grid">
+            <form class="data-demo-form" id="data-form" onsubmit="submitDataForm(event)">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="d-org">Organisation / Company</label>
+                  <input type="text" id="d-org" placeholder="e.g. Nairobi Retailers Ltd" required>
+                </div>
+                <div class="form-group">
+                  <label for="d-service">Service Needed</label>
+                  <select id="d-service" required>
+                    <option value="">Select service...</option>
+                    <option value="analysis">Data Analysis & Reporting</option>
+                    <option value="ml">Machine Learning & AI</option>
+                    <option value="viz">Dashboards & Visualisation</option>
+                    <option value="bi">Business Intelligence</option>
+                    <option value="etl">Data Cleaning & ETL</option>
+                    <option value="stats">Statistical / Research Analysis</option>
+                    <option value="other">Other / Not Sure</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="d-name">Your Name</label>
+                  <input type="text" id="d-name" placeholder="Full name" required>
+                </div>
+                <div class="form-group">
+                  <label for="d-phone">Phone / WhatsApp</label>
+                  <input type="tel" id="d-phone" placeholder="+254 7XX XXX XXX" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="d-email">Email Address</label>
+                <input type="email" id="d-email" placeholder="you@example.com">
+              </div>
+              <div class="form-group">
+                <label for="d-message">Describe your data challenge</label>
+                <textarea id="d-message" rows="3" placeholder="What data do you have? What decisions do you want to make?"></textarea>
+              </div>
+              <button type="submit" class="data-submit-btn">
+                <i class="fas fa-paper-plane"></i> Send Project Brief
+              </button>
+            </form>
+            <div class="data-contact-info">
+              <h3>Reach Us Directly</h3>
+              <div class="data-contact-items">
+                <a href="https://wa.me/254720811346" class="data-contact-item" target="_blank">
+                  <i class="fab fa-whatsapp"></i>
+                  <div><strong>WhatsApp</strong><span>Fastest response</span></div>
+                </a>
+                <a href="mailto:esubumedia@gmail.com" class="data-contact-item">
+                  <i class="fas fa-envelope"></i>
+                  <div><strong>Email</strong><span>esubumedia@gmail.com</span></div>
+                </a>
+                <a href="tel:+254720811346" class="data-contact-item">
+                  <i class="fas fa-phone"></i>
+                  <div><strong>Call</strong><span>+254 720 811 346</span></div>
+                </a>
+              </div>
+              <div class="data-why-boxes">
+                <div class="data-why-item">ðŸ“ Kenya-based experts</div>
+                <div class="data-why-item">âš¡ Fast turnaround</div>
+                <div class="data-why-item">ðŸ”’ Data confidentiality</div>
+                <div class="data-why-item">ðŸ’¡ Insight-first approach</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">âš¡ Esubu<span>Tech</span></div>
+          <p>Three wings. One mission: empowering Kenya through technology.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>ðŸŽ“ Academy</h4>
+          <ul>
+            <li><a href="/academy#academy-home">Home</a></li>
+            <li><a href="/academy#about">About</a></li>
+            <li><a href="/academy#programs">Programs</a></li>
+            <li><a href="/academy#contact">Enroll Now</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>ðŸ’¼ Tech Solutions</h4>
+          <ul>
+            <li><a href="/techsolutions#tech-home">Overview</a></li>
+            <li><a href="/techsolutions#erp-products">ERP Systems</a></li>
+            <li><a href="/techsolutions#tech-consulting">Consulting</a></li>
+            <li><a href="/techsolutions#tech-why-us">Why Us</a></li>
+            <li><a href="/techsolutions#tech-contact">Get Demo</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>ðŸ“Š Data Science</h4>
+          <ul>
+            <li><a href="#data-home">Overview</a></li>
+            <li><a href="#data-services">Services</a></li>
+            <li><a href="#data-process">Process</a></li>
+            <li><a href="#data-contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><i class="fab fa-whatsapp"></i> +254 720 811 346</li>
+            <li><i class="fas fa-envelope"></i> esubumedia@gmail.com</li>
+            <li><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Â© 2025 Esubu Tech. All rights reserved. | <a href="https://esubutech.online">esubutech.online</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
