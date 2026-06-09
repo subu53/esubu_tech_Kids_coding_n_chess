@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Esubu Tech Solutions | ERP Systems & Business Consulting in Kenya</title>
+  <meta name="description" content="Esubu Tech Solutions builds ERP systems for schools, gyms, retail, clinics, law firms and chamas. Custom systems, native M-Pesa integration, and local support.">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../styles.css?v=11" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHFDG299C1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GHFDG299C1');
+  </script>
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER / NAVIGATION
+  ============================================================ -->
+  <header id="main-header" style="background: linear-gradient(90deg, #b71c1c, #c62828);">
+    <nav>
+      <div class="logo">
+        <a href="/" style="display: flex; align-items: center; gap: 0.4rem;">
+          <span class="logo-icon">âš¡</span>
+          <span class="logo-text">Esubu<span class="logo-accent">Tech</span></span>
+        </a>
+      </div>
+
+      <!-- Nav Links -->
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#tech-home" class="nav-link">Overview</a></li>
+        <li><a href="#erp-products" class="nav-link">ERP Systems</a></li>
+        <li><a href="#tech-consulting" class="nav-link">Consulting</a></li>
+        <li><a href="#tech-why-us" class="nav-link">Why Us</a></li>
+        <li><a href="/academy" class="nav-link">Academy</a></li>
+        <li><a href="/datascience" class="nav-link">Data Science</a></li>
+        <li><a href="#tech-contact" class="nav-link active-link" style="background: rgba(255,255,255,0.18); font-weight:700;">Get Demo</a></li>
+      </ul>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu" style="background: #b71c1c;">
+      <ul class="mobile-nav-links" id="mobile-nav-links">
+        <li><a href="#tech-home" onclick="closeMobile()">Overview</a></li>
+        <li><a href="#erp-products" onclick="closeMobile()">ERP Systems</a></li>
+        <li><a href="#tech-consulting" onclick="closeMobile()">Consulting</a></li>
+        <li><a href="#tech-why-us" onclick="closeMobile()">Why Us</a></li>
+        <li><a href="/academy">ðŸŽ“ Academy</a></li>
+        <li><a href="/datascience">ðŸ“Š Data Science</a></li>
+        <li><a href="#tech-contact" onclick="closeMobile()">âœ‰ï¸ Get Demo</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============================================================
+         TECH SOLUTIONS DIVISION CONTENT
+    ============================================================ -->
+    <div id="tech-division">
+
+      <!-- Tech Hero -->
+      <section id="tech-home" class="tech-hero">
+        <div class="tech-hero-bg"></div>
+        <div class="tech-hero-content">
+          <div class="tech-hero-badge">ðŸ’¼ Esubu Tech Solutions</div>
+          <h1>Technology That Moves<br><span class="tech-gradient-text">African Business Forward</span></h1>
+          <p>ERP systems, startup consulting, e-commerce, shipping and digital marketing â€” we build the digital infrastructure Kenyan businesses need to compete, scale, and win.</p>
+          <div class="tech-hero-actions">
+            <a href="#tech-contact" class="tech-cta-btn">Book a Free Consultation</a>
+            <a href="#erp-products" class="tech-cta-outline">Explore All Services</a>
+          </div>
+          <div class="tech-hero-stats">
+            <div class="tech-stat"><span>6+</span><p>ERP Systems</p></div>
+            <div class="tech-stat"><span>4</span><p>Consulting Services</p></div>
+            <div class="tech-stat"><span>KES</span><p>Transparent Pricing</p></div>
+            <div class="tech-stat"><span>24hr</span><p>Support Response</p></div>
+          </div>
+        </div>
+        <div class="tech-hero-visual">
+          <div class="erp-float-card erp-f1"><i class="fas fa-school"></i> School ERP</div>
+          <div class="erp-float-card erp-f2"><i class="fas fa-scale-balanced"></i> Legal ERP</div>
+          <div class="erp-float-card erp-f3"><i class="fas fa-store"></i> Retail POS</div>
+          <div class="erp-float-card erp-f4"><i class="fas fa-hospital"></i> Hospital ERP</div>
+          <div class="erp-float-card erp-f5"><i class="fas fa-rocket"></i> Startup Consulting</div>
+          <div class="erp-float-card erp-f6"><i class="fas fa-bullhorn"></i> Digital Marketing</div>
+        </div>
+      </section>
+
+      <!-- ERP Products -->
+      <section id="erp-products" class="erp-section">
+        <div class="container">
+          <div class="tech-section-badge">Our Products</div>
+          <h2 class="tech-section-title">Choose Your ERP Solution</h2>
+          <p class="tech-section-sub">Purpose-built management systems for every type of Kenyan organisation</p>
+
+          <div class="erp-grid">
+
+            <div class="erp-card" id="erp-school">
+              <div class="erp-card-header school">
+                <i class="fas fa-school"></i>
+                <span class="erp-tag">Most Popular</span>
+              </div>
+              <h3>School Management System</h3>
+              <p>A complete digital school admin platform â€” from student enrollment to exams, fees, and staff management.</p>
+              <ul class="erp-features">
+                <li><i class="fas fa-check"></i> Student & staff records</li>
+                <li><i class="fas fa-check"></i> Fee collection & MPesa integration</li>
+                <li><i class="fas fa-check"></i> Exam & grade management</li>
+                <li><i class="fas fa-check"></i> SMS/Email alerts to parents</li>
+                <li><i class="fas fa-check"></i> Attendance tracking</li>
+                <li><i class="fas fa-check"></i> Academic reports & certificates</li>
+              </ul>
+              <a href="#tech-contact" class="erp-cta">Get Demo <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="erp-card" id="erp-gym">
+              <div class="erp-card-header gym">
+                <i class="fas fa-dumbbell"></i>
+                <span class="erp-tag">Fitness &amp; Wellness</span>
+              </div>
+              <h3>Gym Management System</h3>
+              <p>Manage memberships, track attendance, handle payments and grow your fitness business effortlessly.</p>
+              <ul class="erp-features">
+                <li><i class="fas fa-check"></i> Member profiles & subscriptions</li>
+                <li><i class="fas fa-check"></i> Biometric / QR check-in</li>
+                <li><i class="fas fa-check"></i> MPesa payment tracking</li>
+                <li><i class="fas fa-check"></i> Class scheduling</li>
+                <li><i class="fas fa-check"></i> Revenue & membership reports</li>
+                <li><i class="fas fa-check"></i> Expiry reminders via SMS</li>
+              </ul>
+              <a href="#tech-contact" class="erp-cta">Get Demo <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="erp-card" id="erp-retail">
+              <div class="erp-card-header retail">
+                <i class="fas fa-cash-register"></i>
+                <span class="erp-tag">Retail &amp; POS</span>
+              </div>
+              <h3>Retail / POS System</h3>
+              <p>A fast, intuitive point-of-sale and inventory system for shops, supermarkets, and retail chains.</p>
+              <ul class="erp-features">
+                <li><i class="fas fa-check"></i> Barcode scanning & receipts</li>
+                <li><i class="fas fa-check"></i> Inventory & stock alerts</li>
+                <li><i class="fas fa-check"></i> MPesa & cash payments</li>
+                <li><i class="fas fa-check"></i> Multi-branch support</li>
+                <li><i class="fas fa-check"></i> Sales & profit reports</li>
+                <li><i class="fas fa-check"></i> Supplier & purchase orders</li>
+              </ul>
+              <a href="#tech-contact" class="erp-cta">Get Demo <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="erp-card" id="erp-hospital">
+              <div class="erp-card-header hospital">
+                <i class="fas fa-hospital"></i>
+                <span class="erp-tag">Healthcare</span>
+              </div>
+              <h3>Hospital Management System</h3>
+              <p>Digitalise your clinic or hospital operations â€” from patient records to billing and pharmacy management.</p>
+              <ul class="erp-features">
+                <li><i class="fas fa-check"></i> Patient registration & records (EMR)</li>
+                <li><i class="fas fa-check"></i> Appointment scheduling</li>
+                <li><i class="fas fa-check"></i> Pharmacy & lab management</li>
+                <li><i class="fas fa-check"></i> Billing & insurance claims</li>
+                <li><i class="fas fa-check"></i> Doctor & nurse dashboards</li>
+                <li><i class="fas fa-check"></i> NHIF/SHA compatible</li>
+              </ul>
+              <a href="#tech-contact" class="erp-cta">Get Demo <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="erp-card" id="erp-legal">
+              <div class="erp-card-header legal">
+                <i class="fas fa-scale-balanced"></i>
+                <span class="erp-tag">Law Firms &amp; Advocates</span>
+              </div>
+              <h3>Smart Legal ERP</h3>
+              <p>Purpose-built for African law firms. Manage cases, clients, billing and compliance â€” built and supported by Esubu Tech.</p>
+              <ul class="erp-features">
+                <li><i class="fas fa-check"></i> Case &amp; matter management</li>
+                <li><i class="fas fa-check"></i> Time tracking &amp; legal billing</li>
+                <li><i class="fas fa-check"></i> Client portal &amp; document vault</li>
+                <li><i class="fas fa-check"></i> Court calendar &amp; deadline alerts</li>
+                <li><i class="fas fa-check"></i> KRA eTIMS-compliant invoicing</li>
+                <li><i class="fas fa-check"></i> Trust account management</li>
+              </ul>
+              <a href="#tech-contact" class="erp-cta">Get Demo <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="erp-card" id="erp-chama">
+              <div class="erp-card-header chama">
+                <i class="fas fa-people-group"></i>
+                <span class="erp-tag">Chamas &amp; SACCOs</span>
+              </div>
+              <h3>Chama / SACCO System</h3>
+              <p>Automate contributions, loans, interest calculations and financial reporting for your investment group or SACCO.</p>
+              <ul class="erp-features">
+                <li><i class="fas fa-check"></i> Member contributions tracking</li>
+                <li><i class="fas fa-check"></i> Loan management & interest</li>
+                <li><i class="fas fa-check"></i> MPesa C2B integration</li>
+                <li><i class="fas fa-check"></i> Meeting minutes & records</li>
+                <li><i class="fas fa-check"></i> Dividend & share calculations</li>
+                <li><i class="fas fa-check"></i> Auditable financial reports</li>
+              </ul>
+              <a href="#tech-contact" class="erp-cta">Get Demo <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      
+      <!-- CONSULTING & DIGITAL SERVICES -->
+      <section id="tech-consulting" class="consulting-section">
+        <div class="container">
+          <div class="tech-section-badge">Consulting & Digital Services</div>
+          <h2 class="tech-section-title">Grow Beyond Systems</h2>
+          <p class="tech-section-sub">Strategy, e-commerce and digital marketing â€” three services that turn a good business into a great one.</p>
+
+          <div class="consulting-grid">
+
+            <!-- Startup Consulting -->
+            <div class="cs-card" id="cs-startup">
+              <div class="cs-card-header cs-startup-h">
+                <i class="fas fa-rocket"></i>
+                <span class="cs-tag">For Founders & SMEs</span>
+              </div>
+              <h3>Startup Consulting</h3>
+              <p>You have the idea. We help you build the business around it â€” from validating your model and registering your company, to pitching investors and hitting the Kenyan market with confidence.</p>
+              <ul class="cs-features">
+                <li><i class="fas fa-check"></i> Business model & revenue validation</li>
+                <li><i class="fas fa-check"></i> Company registration & compliance</li>
+                <li><i class="fas fa-check"></i> Investor pitch deck preparation</li>
+                <li><i class="fas fa-check"></i> MVP planning & tech stack advisory</li>
+                <li><i class="fas fa-check"></i> Go-to-market strategy for Kenya & Africa</li>
+                <li><i class="fas fa-check"></i> Financial modelling & projections</li>
+              </ul>
+              <a href="#tech-contact" class="cs-cta">Start a Conversation <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <!-- E-Commerce -->
+            <div class="cs-card" id="cs-ecommerce">
+              <div class="cs-card-header cs-ecom-h">
+                <i class="fas fa-store"></i>
+                <span class="cs-tag">For Retailers & Brands</span>
+              </div>
+              <h3>E-Commerce Consulting</h3>
+              <p>Kenya's online market is growing fast â€” but most businesses are selling wrong. We set up and scale your store with the right platform, M-Pesa integration, and a customer experience that turns browsers into buyers.</p>
+              <ul class="cs-features">
+                <li><i class="fas fa-check"></i> Platform selection (Shopify, WooCommerce, custom)</li>
+                <li><i class="fas fa-check"></i> M-Pesa & card payment gateway setup</li>
+                <li><i class="fas fa-check"></i> Product catalogue & SEO optimisation</li>
+                <li><i class="fas fa-check"></i> Conversion rate & checkout optimisation</li>
+                <li><i class="fas fa-check"></i> Order fulfilment & returns process</li>
+                <li><i class="fas fa-check"></i> Monthly performance analytics & reports</li>
+              </ul>
+              <a href="#tech-contact" class="cs-cta">Get an E-Commerce Audit <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <!-- Digital Marketing -->
+            <div class="cs-card" id="cs-marketing">
+              <div class="cs-card-header cs-mktg-h">
+                <i class="fas fa-bullhorn"></i>
+                <span class="cs-tag">For Every Business</span>
+              </div>
+              <h3>Digital Marketing Strategy</h3>
+              <p>Most Kenyan businesses are invisible online â€” and what little they post gets no results. We build data-driven strategies that put your brand in front of the right people and turn that attention into revenue.</p>
+              <ul class="cs-features">
+                <li><i class="fas fa-check"></i> Social media strategy (Instagram, TikTok, X, LinkedIn)</li>
+                <li><i class="fas fa-check"></i> Google Ads & Meta Ads campaign management</li>
+                <li><i class="fas fa-check"></i> SEO & content marketing</li>
+                <li><i class="fas fa-check"></i> WhatsApp Business & email automation</li>
+                <li><i class="fas fa-check"></i> Brand identity & visual strategy</li>
+                <li><i class="fas fa-check"></i> Monthly analytics & campaign reporting</li>
+              </ul>
+              <a href="#tech-contact" class="cs-cta">Request a Marketing Audit <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Us -->
+      <section id="tech-why-us" class="tech-why-section">
+
+        <!-- Opening statement -->
+        <div class="why-statement-bar">
+          <div class="container">
+            <div class="why-statement-inner">
+              <div class="why-eyebrow"><span class="why-pulse"></span> Why It Matters Who You Choose</div>
+              <h2 class="why-main-headline">Over <span class="why-red">60% of Kenyan SMEs fail within 3 years.</span><br>Bad systems and poor records are a leading cause.</h2>
+              <p class="why-subhead">Kenya has 7.4 million SMEs. Fewer than 30% have a professional website. Most are running on WhatsApp, paper, and Excel. The businesses that survive â€” and grow â€” are the ones that get the right digital infrastructure, early. That is what we build.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stat counters strip -->
+        <div class="why-stats-strip">
+          <div class="why-stat-item">
+            <span class="wsi-num">7.4M</span>
+            <span class="wsi-label">Kenyan SMEs â€” only 30% have a website</span>
+          </div>
+          <div class="why-stat-sep"></div>
+          <div class="why-stat-item">
+            <span class="wsi-num">28%</span>
+            <span class="wsi-label">Higher productivity reported after ERP adoption</span>
+          </div>
+          <div class="why-stat-sep"></div>
+          <div class="why-stat-item">
+            <span class="wsi-num">3.1M</span>
+            <span class="wsi-label">M-Pesa merchants â€” most can't auto-reconcile</span>
+          </div>
+          <div class="why-stat-sep"></div>
+          <div class="why-stat-item">
+            <span class="wsi-num">Jan 2026</span>
+            <span class="wsi-label">KRA: No eTIMS invoice = No tax deduction</span>
+          </div>
+        </div>
+
+        <!-- Reasons grid -->
+        <div class="why-reasons-wrap">
+          <div class="container">
+            <div class="tech-section-badge">6 Reasons We're Different</div>
+            <h2 class="tech-section-title">Built for Kenya. Designed to Last.</h2>
+            <p class="tech-section-sub">Foreign software wasn't designed for your reality. We were.</p>
+
+            <div class="why-reasons-grid">
+
+              <div class="why-reason-card" id="wr-local">
+                <div class="wr-top">
+                  <div class="wr-icon-wrap"><i class="fas fa-map-marker-alt"></i></div>
+                  <div class="wr-header">
+                    <span class="wr-num">01</span>
+                    <h3>Built for Kenya's Reality</h3>
+                  </div>
+                </div>
+                <p>SAP and Oracle weren't built for KRA eTIMS, NSSF Phase 3, SHA (formerly NHIF), or M-Pesa reconciliation. Our systems handle <strong>all Kenyan statutory requirements out of the box</strong> â€” no expensive add-ons, no workarounds. As of January 2026, any expense not backed by an eTIMS invoice is disallowed by KRA. Your system must comply. Ours does.</p>
+                <div class="wr-tags">
+                  <span>KRA eTIMS</span><span>NSSF Phase 3</span><span>SHA</span><span>M-Pesa</span>
+                </div>
+              </div>
+
+              <div class="why-reason-card" id="wr-support">
+                <div class="wr-top">
+                  <div class="wr-icon-wrap"><i class="fas fa-headset"></i></div>
+                  <div class="wr-header">
+                    <span class="wr-num">02</span>
+                    <h3>Support That Responds in Minutes</h3>
+                  </div>
+                </div>
+                <p>Failing to respond to a critical system issue within 5 minutes can paralyse your operations. Foreign providers run on US or European time zones â€” your emergency is their morning email. We are <strong>Nairobi-based, WhatsApp-reachable, and available 6 days a week.</strong> Your staff speak to real people who understand your exact setup, every time.</p>
+                <div class="wr-tags">
+                  <span>WhatsApp Support</span><span>6-Day Availability</span><span>Nairobi-Based</span>
+                </div>
+              </div>
+
+              <div class="why-reason-card" id="wr-mpesa">
+                <div class="wr-top">
+                  <div class="wr-icon-wrap"><i class="fas fa-mobile-alt"></i></div>
+                  <div class="wr-header">
+                    <span class="wr-num">03</span>
+                    <h3>M-Pesa Native â€” Not an Afterthought</h3>
+                  </div>
+                </div>
+                <p>3.1 million businesses now accept M-Pesa payments â€” yet most accounting systems can't automatically reconcile them. Our systems integrate <strong>Lipa na M-Pesa, Paybill, Till Number, and Pochi la Biashara natively</strong> â€” every transaction automatically matched to the right invoice, customer, and account. No manual matching. No errors.</p>
+                <div class="wr-tags">
+                  <span>Lipa na M-Pesa</span><span>Auto-Reconciliation</span><span>Real-Time Sync</span>
+                </div>
+              </div>
+
+              <div class="why-reason-card" id="wr-price">
+                <div class="wr-top">
+                  <div class="wr-icon-wrap"><i class="fas fa-coins"></i></div>
+                  <div class="wr-header">
+                    <span class="wr-num">04</span>
+                    <h3>Priced in KES. No Dollar Surprises.</h3>
+                  </div>
+                </div>
+                <p>When the KES depreciates against the dollar â€” which happens â€” your QuickBooks or Xero subscription quietly gets more expensive. Our pricing is <strong>fixed in Kenyan Shillings, transparent, and tiered</strong> for SMEs, meaning you pay exactly what you agreed and nothing more. No exchange rate exposure. No annual fee shock.</p>
+                <div class="wr-tags">
+                  <span>KES Pricing</span><span>No Hidden Fees</span><span>SME Tiers</span>
+                </div>
+              </div>
+
+              <div class="why-reason-card" id="wr-custom">
+                <div class="wr-top">
+                  <div class="wr-icon-wrap"><i class="fas fa-sliders-h"></i></div>
+                  <div class="wr-header">
+                    <span class="wr-num">05</span>
+                    <h3>Customised to Your Workflow</h3>
+                  </div>
+                </div>
+                <p>Off-the-shelf foreign software is built for a generic business in a generic country. Your school, hospital, SACCO, or retail chain has specific workflows, specific approval chains, and specific reports your board demands. We <strong>configure, customise, and train your team</strong> on a system that works the way you work â€” not the way Silicon Valley thinks you should.</p>
+                <div class="wr-tags">
+                  <span>Custom Workflows</span><span>Staff Training</span><span>Ongoing Config</span>
+                </div>
+              </div>
+
+              <div class="why-reason-card" id="wr-security">
+                <div class="wr-top">
+                  <div class="wr-icon-wrap"><i class="fas fa-shield-halved"></i></div>
+                  <div class="wr-header">
+                    <span class="wr-num">06</span>
+                    <h3>Secure, Compliant &amp; Audit-Ready</h3>
+                  </div>
+                </div>
+                <p>Kenya's Data Protection Act creates legal obligations for how businesses handle customer data. Manual systems â€” WhatsApp groups, spreadsheets, paper â€” create compliance exposure. Our systems are built with <strong>role-based access, encrypted storage, full audit trails, and automatic backups</strong> â€” so your data is protected, your records are credible, and your auditors leave satisfied.</p>
+                <div class="wr-tags">
+                  <span>Data Protection Act</span><span>Audit Trails</span><span>Role-Based Access</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Social proof bar -->
+        <div class="why-proof-bar">
+          <div class="container">
+            <div class="why-proof-inner">
+              <div class="why-proof-quote">
+                <i class="fas fa-quote-left"></i>
+                <p>"We were reconciling M-Pesa payments manually every evening â€” it took two staff members three hours a day. After Esubu set up our system, it takes zero hours. Everything matches automatically by morning."</p>
+                <span>â€” Operations Manager, Retail Chain, Nairobi</span>
+              </div>
+              <div class="why-proof-cta">
+                <p>Ready to stop running your business on WhatsApp and Excel?</p>
+                <a href="#tech-contact" class="why-proof-btn">Book a Free Demo <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- How It Works -->
+      <section class="how-it-works-section">
+        <div class="hiw-dark">
+          <div class="container">
+            <div class="tech-section-badge hiw-badge">Our Process</div>
+            <h2 class="tech-section-title hiw-title">From First Call to Going Live</h2>
+            <p class="tech-section-sub hiw-sub">A clear, no-surprise journey â€” designed around your business, not ours.</p>
+
+            <div class="hiw-steps">
+
+              <div class="hiw-step">
+                <div class="hiw-step-left"><div class="hiw-num">01</div><div class="hiw-line"></div></div>
+                <div class="hiw-content">
+                  <div class="hiw-icon-wrap"><i class="fas fa-comments"></i></div>
+                  <div class="hiw-text">
+                    <div class="hiw-meta">Day 1</div>
+                    <h3>Free Consultation</h3>
+                    <p>We start by listening. Your challenges, your team, your processes. We map exactly what you need â€” no upsell, no pressure. Just clarity.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="hiw-step">
+                <div class="hiw-step-left"><div class="hiw-num">02</div><div class="hiw-line"></div></div>
+                <div class="hiw-content">
+                  <div class="hiw-icon-wrap"><i class="fas fa-desktop"></i></div>
+                  <div class="hiw-text">
+                    <div class="hiw-meta">Day 2â€“3</div>
+                    <h3>Live Demo â€” Built Around You</h3>
+                    <p>Not a generic product tour. We configure a demo using your organisation's name, workflow, and data â€” so you see exactly what you're getting before you commit.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="hiw-step">
+                <div class="hiw-step-left"><div class="hiw-num">03</div><div class="hiw-line"></div></div>
+                <div class="hiw-content">
+                  <div class="hiw-icon-wrap"><i class="fas fa-file-signature"></i></div>
+                  <div class="hiw-text">
+                    <div class="hiw-meta">Day 4â€“5</div>
+                    <h3>Clear Proposal &amp; Agreement</h3>
+                    <p>Itemised scope, setup cost, monthly fee, timelines â€” all in writing, all in KES. No ambiguity. No hidden fees. You approve before we start.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="hiw-step">
+                <div class="hiw-step-left"><div class="hiw-num">04</div><div class="hiw-line"></div></div>
+                <div class="hiw-content">
+                  <div class="hiw-icon-wrap"><i class="fas fa-cogs"></i></div>
+                  <div class="hiw-text">
+                    <div class="hiw-meta">Week 1â€“2</div>
+                    <h3>Setup &amp; Data Migration</h3>
+                    <p>We configure your system and migrate existing data from Excel, paper, or old software â€” tested and verified before your team touches it.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="hiw-step">
+                <div class="hiw-step-left"><div class="hiw-num">05</div><div class="hiw-line"></div></div>
+                <div class="hiw-content">
+                  <div class="hiw-icon-wrap"><i class="fas fa-chalkboard-teacher"></i></div>
+                  <div class="hiw-text">
+                    <div class="hiw-meta">Week 2â€“3</div>
+                    <h3>Staff Training</h3>
+                    <p>On-site or virtual sessions for every role. We don't leave until your staff are confident â€” from the receptionist to the finance manager.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="hiw-step hiw-step-last">
+                <div class="hiw-step-left"><div class="hiw-num hiw-num-live">06</div></div>
+                <div class="hiw-content">
+                  <div class="hiw-icon-wrap hiw-icon-live"><i class="fas fa-rocket"></i></div>
+                  <div class="hiw-text">
+                    <div class="hiw-meta hiw-meta-live">Ongoing</div>
+                    <h3>Go Live â€” We Stay Close</h3>
+                    <p>You go live. We stay close. WhatsApp support, system updates, and quarterly check-ins included. This is a partnership â€” not a transaction.</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tech Contact -->
+      <section id="tech-contact" class="tech-contact-section">
+        <div class="container">
+          <div class="tech-section-badge">Get Started</div>
+          <h2 class="tech-section-title">Request a Free Demo</h2>
+          <p class="tech-section-sub">Tell us about your organisation and we'll set up a personalised demo within 24 hours.</p>
+          <div class="tech-contact-grid">
+            <form class="demo-form" id="demo-form" onsubmit="submitDemo(event)">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="org-name">Organisation Name</label>
+                  <input type="text" id="org-name" placeholder="e.g. Greenfields School" required>
+                </div>
+                <div class="form-group">
+                  <label for="org-type">Organisation Type</label>
+                  <select id="org-type" required>
+                    <option value="">Select type...</option>
+                    <option value="school">School / College</option>
+                    <option value="gym">Gym / Fitness Centre</option>
+                    <option value="retail">Retail / Shop</option>
+                    <option value="hospital">Hospital / Clinic</option>
+                    <option value="legal">Law Firm / Advocate</option>
+                    <option value="chama">Chama / SACCO</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contact-name">Your Name</label>
+                  <input type="text" id="contact-name" placeholder="Full name" required>
+                </div>
+                <div class="form-group">
+                  <label for="contact-phone">Phone / WhatsApp</label>
+                  <input type="tel" id="contact-phone" placeholder="+254 7XX XXX XXX" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="contact-email">Email Address</label>
+                <input type="email" id="contact-email" placeholder="you@example.com">
+              </div>
+              <div class="form-group">
+                <label for="message">Any specific requirements?</label>
+                <textarea id="message" rows="3" placeholder="Tell us what you need..."></textarea>
+              </div>
+              <button type="submit" class="tech-submit-btn">
+                <i class="fas fa-paper-plane"></i> Send Demo Request
+              </button>
+            </form>
+            <div class="tech-contact-info">
+              <h3>Or Reach Us Directly</h3>
+              <div class="tech-contact-items">
+                <a href="https://wa.me/254720811346" class="tech-contact-item wa" target="_blank">
+                  <i class="fab fa-whatsapp"></i>
+                  <div><strong>WhatsApp</strong><span>Fastest response</span></div>
+                </a>
+                <a href="mailto:esubumedia@gmail.com" class="tech-contact-item em">
+                  <i class="fas fa-envelope"></i>
+                  <div><strong>Email</strong><span>esubumedia@gmail.com</span></div>
+                </a>
+                <a href="tel:+254720811346" class="tech-contact-item ph">
+                  <i class="fas fa-phone"></i>
+                  <div><strong>Call</strong><span>+254 720 811 346</span></div>
+                </a>
+              </div>
+              <div class="tech-trust-badges">
+                <div class="trust-badge">âœ“ Free Demo</div>
+                <div class="trust-badge">âœ“ No Hidden Fees</div>
+                <div class="trust-badge">âœ“ 24hr Response</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">âš¡ Esubu<span>Tech</span></div>
+          <p>Three wings. One mission: empowering Kenya through technology.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>ðŸŽ“ Academy</h4>
+          <ul>
+            <li><a href="/academy#academy-home">Home</a></li>
+            <li><a href="/academy#about">About</a></li>
+            <li><a href="/academy#programs">Programs</a></li>
+            <li><a href="/academy#contact">Enroll Now</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>ðŸ’¼ Tech Solutions</h4>
+          <ul>
+            <li><a href="#tech-home">Overview</a></li>
+            <li><a href="#erp-products">ERP Systems</a></li>
+            <li><a href="#tech-consulting">Consulting</a></li>
+            <li><a href="#tech-why-us">Why Us</a></li>
+            <li><a href="#tech-contact">Get Demo</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>ðŸ“Š Data Science</h4>
+          <ul>
+            <li><a href="/datascience#data-home">Overview</a></li>
+            <li><a href="/datascience#data-services">Services</a></li>
+            <li><a href="/datascience#data-process">Process</a></li>
+            <li><a href="/datascience#data-contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><i class="fab fa-whatsapp"></i> +254 720 811 346</li>
+            <li><i class="fas fa-envelope"></i> esubumedia@gmail.com</li>
+            <li><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Â© 2025 Esubu Tech. All rights reserved. | <a href="https://esubutech.online">esubutech.online</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
