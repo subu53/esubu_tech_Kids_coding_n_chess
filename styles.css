@@ -1981,7 +1981,7 @@ nav {
 
 .cs-startup-h { background: linear-gradient(135deg, #b71c1c, #e53935); }
 .cs-ecom-h    { background: linear-gradient(135deg, var(--green-800), var(--green-500)); }
-.cs-ship-h    { background: linear-gradient(135deg, #0d47a1, #1e88e5); }
+
 .cs-mktg-h    { background: linear-gradient(135deg, #e65100, #ff8f00); }
 
 /* ── Tag pill — same as .erp-tag ── */
@@ -2041,7 +2041,7 @@ nav {
 /* Check colour per card */
 #cs-startup  .cs-features li i { color: #e53935; }
 #cs-ecommerce .cs-features li i { color: var(--green-600); }
-#cs-shipping  .cs-features li i { color: #1e88e5; }
+
 #cs-marketing .cs-features li i { color: #fb8c00; }
 
 /* ── CTA — same as .erp-cta ── */
@@ -2065,8 +2065,8 @@ nav {
 #cs-ecommerce .cs-cta { background: var(--green-800); }
 #cs-ecommerce .cs-cta:hover { background: var(--green-600); transform: translateX(3px); }
 
-#cs-shipping  .cs-cta { background: #1565c0; }
-#cs-shipping  .cs-cta:hover { background: #0d47a1; transform: translateX(3px); }
+
+
 
 #cs-marketing .cs-cta { background: #e65100; }
 #cs-marketing .cs-cta:hover { background: #bf360c; transform: translateX(3px); }
@@ -4277,6 +4277,7 @@ nav {
   .program-details-box { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
 }
+
 
 
 
