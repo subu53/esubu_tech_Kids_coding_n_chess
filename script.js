@@ -1,12 +1,12 @@
 /* ============================================================
-   ESUBU TECH â€” script.js  (multi-page version)
+   ESUBU TECH — script.js  (multi-page version)
    ============================================================ */
 
 const header    = document.getElementById('main-header');
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobile-menu');
 
-/* â”€â”€ Mobile nav toggle â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Mobile nav toggle ─────────────────────────────────────── */
 if (hamburger) {
   hamburger.addEventListener('click', function () {
     const isOpen = mobileMenu.classList.toggle('open');
@@ -28,7 +28,7 @@ document.querySelectorAll('.mobile-nav-links a, .mob-div-pill').forEach(link => 
   link.addEventListener('click', closeMobile);
 });
 
-/* â”€â”€ Smooth scroll for in-page anchor links â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Smooth scroll for in-page anchor links ────────────────── */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     const hash = this.getAttribute('href');
@@ -42,7 +42,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-/* â”€â”€ Active nav link on scroll â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Active nav link on scroll ─────────────────────────────── */
 function updateActiveLink() {
   const scrollY = window.scrollY + 120;
   document.querySelectorAll('section[id]').forEach(section => {
@@ -54,7 +54,7 @@ function updateActiveLink() {
   });
 }
 
-/* â”€â”€ Header shadow on scroll â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Header shadow on scroll ───────────────────────────────── */
 function handleHeaderScroll() {
   if (!header) return;
   header.style.boxShadow = window.scrollY > 10
@@ -62,7 +62,7 @@ function handleHeaderScroll() {
     : '0 2px 16px rgba(46,125,50,0.25)';
 }
 
-/* â”€â”€ Fade-in animation on scroll â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Fade-in animation on scroll ──────────────────────────── */
 function initFadeIn() {
   const fadeEls = document.querySelectorAll(
     '.feature-card, .program-card, .erp-card, .why-card, .step-item, ' +
@@ -85,7 +85,7 @@ function initFadeIn() {
   fadeEls.forEach(el => observer.observe(el));
 }
 
-/* â”€â”€ Form: ERP Demo Request â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Form: ERP Demo Request ────────────────────────────────── */
 function submitDemo(e) {
   e.preventDefault();
   const org   = document.getElementById('org-name')?.value || '';
@@ -95,16 +95,16 @@ function submitDemo(e) {
   const email = document.getElementById('contact-email')?.value || '';
   const msg   = document.getElementById('message')?.value || '';
   const waText = encodeURIComponent(
-    `*ERP Demo Request â€” Esubu Tech Solutions*\n\n` +
-    `ðŸ¢ Organisation: ${org}\nðŸ“‚ Type: ${type}\nðŸ‘¤ Contact: ${name}\n` +
-    `ðŸ“ž Phone: ${phone}\nðŸ“§ Email: ${email}\nðŸ’¬ Message: ${msg || 'N/A'}`
+    `*ERP Demo Request — Esubu Tech Solutions*\n\n` +
+    `🏢 Organisation: ${org}\n📂 Type: ${type}\n👤 Contact: ${name}\n` +
+    `📞 Phone: ${phone}\n📧 Email: ${email}\n💬 Message: ${msg || 'N/A'}`
   );
   window.open(`https://wa.me/254720811346?text=${waText}`, '_blank');
-  showToast('âœ… Demo request sent via WhatsApp!');
+  showToast('✅ Demo request sent via WhatsApp!');
   document.getElementById('demo-form')?.reset();
 }
 
-/* â”€â”€ Form: Data Science Project Brief â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Form: Data Science Project Brief ──────────────────────── */
 function submitDataForm(e) {
   e.preventDefault();
   const org     = document.getElementById('d-org')?.value || '';
@@ -114,31 +114,31 @@ function submitDataForm(e) {
   const email   = document.getElementById('d-email')?.value || '';
   const msg     = document.getElementById('d-message')?.value || '';
   const waText = encodeURIComponent(
-    `*Data Science Project Brief â€” Esubu Tech*\n\n` +
-    `ðŸ¢ Organisation: ${org}\nðŸ“Š Service: ${service}\nðŸ‘¤ Contact: ${name}\n` +
-    `ðŸ“ž Phone: ${phone}\nðŸ“§ Email: ${email}\nðŸ’¬ Challenge: ${msg || 'N/A'}`
+    `*Data Science Project Brief — Esubu Tech*\n\n` +
+    `🏢 Organisation: ${org}\n📊 Service: ${service}\n👤 Contact: ${name}\n` +
+    `📞 Phone: ${phone}\n📧 Email: ${email}\n💬 Challenge: ${msg || 'N/A'}`
   );
   window.open(`https://wa.me/254720811346?text=${waText}`, '_blank');
-  showToast('âœ… Project brief sent via WhatsApp!');
+  showToast('✅ Project brief sent via WhatsApp!');
   document.getElementById('data-form')?.reset();
 }
 
-/* â”€â”€ Form: Landing page general contact â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Form: Landing page general contact ────────────────────── */
 function submitLandingContact(e) {
   e.preventDefault();
   const name  = document.getElementById('lp-name')?.value || '';
   const phone = document.getElementById('lp-phone')?.value || '';
   const interest = document.getElementById('lp-interest')?.value || '';
   const waText = encodeURIComponent(
-    `*Esubu Tech â€” General Enquiry*\n\n` +
-    `ðŸ‘¤ Name: ${name}\nðŸ“ž Phone: ${phone}\nðŸ” Interest: ${interest}`
+    `*Esubu Tech — General Enquiry*\n\n` +
+    `👤 Name: ${name}\n📞 Phone: ${phone}\n🔍 Interest: ${interest}`
   );
   window.open(`https://wa.me/254720811346?text=${waText}`, '_blank');
-  showToast('âœ… Message sent via WhatsApp!');
+  showToast('✅ Message sent via WhatsApp!');
   document.getElementById('lp-contact-form')?.reset();
 }
 
-/* â”€â”€ Toast notification â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Toast notification ────────────────────────────────────── */
 function showToast(message) {
   let toast = document.querySelector('.toast');
   if (!toast) {
@@ -151,7 +151,7 @@ function showToast(message) {
   setTimeout(() => toast.classList.remove('show'), 4000);
 }
 
-/* â”€â”€ Init â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Init ──────────────────────────────────────────────────── */
 window.addEventListener('scroll', () => {
   updateActiveLink();
   handleHeaderScroll();
