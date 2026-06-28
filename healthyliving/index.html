@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Healthy Living | Esubu Tech — Premium Authentic Supplements in Kenya</title>
+  <meta name="description" content="Sourcing and delivering authentic premium dietary supplements in Kenya. Buy original NOW Foods and Solgar vitamins, minerals, and herbal complexes at direct retail prices with fast delivery.">
+  <meta name="keywords" content="supplements Kenya, buy NOW foods Nairobi, Solgar vitamins Kenya, ashwagandha price Kenya, parasite cleanse Nairobi, melatonin sleep Kenya, zinc picolinate Nairobi">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../styles.css?v=11" />
+  
+  <style>
+    /* ── HEALTHY LIVING SECTION STYLES ──────────────────── */
+    .hl-body { background: #040904; color: #f3f4f6; }
+    
+    /* Hero */
+    .hl-hero { position: relative; padding: 140px 2rem 80px; text-align: center; background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(76,175,80,0.18) 0%, transparent 70%); }
+    .hl-hero h1 { font-family: 'Inter', sans-serif; font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 900; color: #fff; letter-spacing: -1.5px; line-height: 1.15; margin-bottom: 1.5rem; }
+    .hl-hero h1 em { font-style: normal; color: #66bb6a; }
+    .hl-hero-sub { font-size: 1.1rem; color: rgba(255,255,255,0.65); max-width: 680px; margin: 0 auto 2.5rem; line-height: 1.8; }
+    
+    /* Catalog Section */
+    .hl-catalog { padding: 4rem 2rem 8rem; }
+    .hl-container { max-width: 1200px; margin: 0 auto; }
+    
+    /* Category Filter */
+    .hl-filters { display: flex; gap: 0.75rem; justify-content: center; margin-bottom: 3.5rem; }
+    .hl-filter-btn { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); color: rgba(255,255,255,0.7); font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 700; padding: 0.6rem 1.4rem; border-radius: 50px; cursor: pointer; transition: all 0.25s; }
+    .hl-filter-btn:hover { background: rgba(255,255,255,0.09); color: #fff; }
+    .hl-filter-btn.active { background: #388e3c; border-color: #388e3c; color: #fff; box-shadow: 0 4px 12px rgba(56,142,60,0.3); }
+    
+    /* Grid */
+    .hl-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 2.2rem; }
+    
+    /* Product Card */
+    .hl-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); position: relative; }
+    .hl-card:hover { transform: translateY(-8px); border-color: rgba(102,187,106,0.3); box-shadow: 0 16px 40px rgba(0,0,0,0.5); }
+    
+    .hl-card-img-wrapper { position: relative; width: 100%; aspect-ratio: 1; overflow: hidden; background: #020502; display: flex; align-items: center; justify-content: center; padding: 1.5rem; box-sizing: border-box; border-bottom: 1px solid rgba(255,255,255,0.04); }
+    .hl-card-img { max-width: 100%; max-height: 100%; object-fit: contain; transition: transform 0.4s; }
+    .hl-card:hover .hl-card-img { transform: scale(1.05); }
+    
+    .hl-card-badge { position: absolute; top: 1rem; left: 1rem; background: rgba(0,0,0,0.7); border: 1px solid rgba(255,255,255,0.15); backdrop-filter: blur(8px); padding: 0.3rem 0.75rem; border-radius: 6px; font-size: 0.72rem; font-weight: 800; font-family: 'Inter', sans-serif; color: #ffb74d; text-transform: uppercase; letter-spacing: 0.5px; }
+    
+    .hl-card-body { padding: 1.75rem; flex: 1; display: flex; flex-direction: column; }
+    .hl-card-brand { font-size: 0.75rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: #81c784; font-family: 'Inter', sans-serif; margin-bottom: 0.5rem; }
+    .hl-card-title { font-family: 'Inter', sans-serif; font-size: 1.15rem; font-weight: 800; color: #fff; line-height: 1.35; margin-bottom: 0.75rem; }
+    .hl-card-desc { font-size: 0.88rem; color: rgba(255,255,255,0.5); line-height: 1.55; margin-bottom: 1.5rem; flex: 1; }
+    
+    .hl-card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 1.25rem; border-top: 1px solid rgba(255,255,255,0.05); }
+    .hl-card-price { display: flex; flex-direction: column; }
+    .hl-price-label { font-size: 0.65rem; text-transform: uppercase; color: rgba(255,255,255,0.4); letter-spacing: 0.5px; font-weight: 600; }
+    .hl-price-val { font-family: 'Inter', sans-serif; font-size: 1.4rem; font-weight: 900; color: #fff; }
+    .hl-price-val span { font-size: 0.9rem; color: rgba(255,255,255,0.6); font-weight: 600; margin-right: 0.15rem; }
+    
+    .hl-order-btn { background: #388e3c; color: #fff; border: none; border-radius: 10px; font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 800; padding: 0.75rem 1.25rem; cursor: pointer; transition: all 0.25s; display: inline-flex; align-items: center; gap: 0.5rem; }
+    .hl-order-btn:hover { background: #4caf50; transform: translateY(-2px); box-shadow: 0 6px 16px rgba(76,175,80,0.35); }
+    
+    /* ── CHECKOUT MODAL ─────────────────────────────────── */
+    .hl-modal { position: fixed; inset: 0; z-index: 10000; display: flex; align-items: center; justify-content: center; padding: 1.5rem; background: rgba(0,0,0,0.85); backdrop-filter: blur(12px); opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+    .hl-modal.open { opacity: 1; pointer-events: auto; }
+    
+    .hl-modal-card { background: #0c140c; border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; width: 100%; max-width: 480px; overflow: hidden; position: relative; transform: translateY(20px); transition: transform 0.3s; }
+    .hl-modal.open .hl-modal-card { transform: translateY(0); }
+    
+    .hl-modal-header { padding: 1.75rem 2rem; background: linear-gradient(135deg, #1b5e20, #0c140c); border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: space-between; }
+    .hl-modal-header h3 { font-family: 'Inter', sans-serif; font-size: 1.25rem; font-weight: 900; color: #fff; }
+    .hl-modal-close { background: none; border: none; color: rgba(255,255,255,0.6); font-size: 1.3rem; cursor: pointer; transition: color 0.2s; }
+    .hl-modal-close:hover { color: #fff; }
+    
+    .hl-modal-body { padding: 2rem; }
+    .hl-checkout-form { display: flex; flex-direction: column; gap: 1.25rem; }
+    
+    .hl-form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .hl-form-group label { font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 700; color: rgba(255,255,255,0.55); letter-spacing: 0.5px; }
+    .hl-form-group input, .hl-form-group select, .hl-form-group textarea { width: 100%; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 0.75rem 1rem; color: #fff; font-family: 'Inter', sans-serif; font-size: 0.92rem; outline: none; transition: border-color 0.2s; box-sizing: border-box; }
+    .hl-form-group input:focus, .hl-form-group select:focus, .hl-form-group textarea:focus { border-color: #66bb6a; }
+    
+    .hl-form-group textarea { resize: none; height: 80px; }
+    .hl-form-group input[readonly] { background: rgba(255,255,255,0.01); color: rgba(255,255,255,0.7); cursor: not-allowed; }
+    
+    .hl-submit-btn { background: #388e3c; color: #fff; border: none; border-radius: 10px; padding: 0.95rem; font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 900; cursor: pointer; transition: all 0.25s; display: flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%; box-sizing: border-box; }
+    .hl-submit-btn:hover { background: #4caf50; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(76,175,80,0.4); }
+    
+    /* Toast notifications */
+    .hl-toast { position: fixed; bottom: 2rem; right: 2rem; z-index: 11000; background: #0c140c; border: 1px solid #388e3c; color: #fff; padding: 1rem 1.5rem; border-radius: 10px; font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 600; box-shadow: 0 10px 30px rgba(0,0,0,0.5); opacity: 0; pointer-events: none; transform: translateY(10px); transition: all 0.3s; }
+    .hl-toast.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hl-filters { flex-wrap: wrap; }
+      .hl-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+    }
+  </style>
+</head>
+<body class="hl-body">
+
+  <!-- ── NAV ──────────────────────────────────────────────── -->
+  <header class="lp-nav" id="main-header" style="position:fixed;top:0;left:0;right:0;z-index:1000;">
+    <nav>
+      <a href="/" class="lp-logo">
+        <span class="lp-logo-icon">⚡</span>
+        <span class="lp-logo-text">Esubu<span>Tech</span></span>
+      </a>
+      <ul class="lp-nav-links" id="nav-links">
+        <li><a href="/academy">🎓 Academy</a></li>
+        <li><a href="/techsolutions">💼 Tech Solutions</a></li>
+        <li><a href="/datascience">📊 Data Science</a></li>
+        <li><a href="/healthyliving" style="color:#fff;background:rgba(255,255,255,0.08);">🌱 Healthy Living</a></li>
+        <li><a href="/#lp-contact" class="lp-nav-cta">Get In Touch</a></li>
+      </ul>
+      <button class="lp-hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobile-menu" style="background:#080f08;padding:1.5rem;">
+      <ul class="mobile-nav-links" style="list-style:none;display:flex;flex-direction:column;gap:0.75rem;">
+        <li><a href="/academy" style="color:#fff;text-decoration:none;font-family:Inter,sans-serif;font-size:1rem;font-weight:700;">🎓 Academy</a></li>
+        <li><a href="/techsolutions" style="color:#fff;text-decoration:none;font-family:Inter,sans-serif;font-size:1rem;font-weight:700;">💼 Tech Solutions</a></li>
+        <li><a href="/datascience" style="color:#fff;text-decoration:none;font-family:Inter,sans-serif;font-size:1rem;font-weight:700;">📊 Data Science</a></li>
+        <li><a href="/healthyliving" style="color:#69f0ae;text-decoration:none;font-family:Inter,sans-serif;font-size:1rem;font-weight:700;">🌱 Healthy Living</a></li>
+        <li><a href="/#lp-contact" style="color:#fff;text-decoration:none;font-family:Inter,sans-serif;font-size:1rem;font-weight:700;">✉️ Get In Touch</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- ── HERO ─────────────────────────────────────────── -->
+    <section class="hl-hero">
+      <div class="hl-container">
+        <span class="lp-section-badge">🌱 Healthy Living</span>
+        <h1>Premium, Authentic <em>Supplements</em> Sourced at Direct Retail Prices.</h1>
+        <p class="hl-hero-sub">We bridge the gap in e-commerce wellness imports. Sourcing original NOW Foods and Solgar supplements directly from flagship wholesale distributors and delivering straight to your doorstep across Nairobi & Kenya.</p>
+        
+        <div class="hl-filters">
+          <button class="hl-filter-btn active" id="btn-all" onclick="filterCategory('all')">All Brands</button>
+          <button class="hl-filter-btn" id="btn-now" onclick="filterCategory('now')">NOW Foods</button>
+          <button class="hl-filter-btn" id="btn-solgar" onclick="filterCategory('solgar')">Solgar</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PRODUCTS CATALOG ──────────────────────────────── -->
+    <section class="hl-catalog">
+      <div class="hl-container">
+        <div class="hl-grid" id="product-grid">
+          
+          <!-- NOW Ashwagandha -->
+          <div class="hl-card" data-brand="now">
+            <div class="hl-card-img-wrapper">
+              <span class="hl-card-badge">Best Seller</span>
+              <img class="hl-card-img" src="now_ashwagandha.png" alt="NOW Ashwagandha 450mg Bottle">
+            </div>
+            <div class="hl-card-body">
+              <span class="hl-card-brand">NOW Foods</span>
+              <h2 class="hl-card-title">Ashwagandha 450mg (90 Veg Capsules)</h2>
+              <p class="hl-card-desc">Premium stress-relief and cortisol support supplement. Promotes relaxation, healthy immune function, cardiovascular support, and mental endurance. Standardized root extract.</p>
+              <div class="hl-card-footer">
+                <div class="hl-card-price">
+                  <span class="hl-price-label">Price</span>
+                  <span class="hl-price-val"><span>KSh</span>4,998</span>
+                </div>
+                <button class="hl-order-btn" onclick="openOrderModal('NOW Ashwagandha 450mg (90 Caps)', 4998)">Order Now <i class="fas fa-shopping-cart"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Solgar Zinc Picolinate -->
+          <div class="hl-card" data-brand="solgar">
+            <div class="hl-card-img-wrapper">
+              <span class="hl-card-badge">High Absorption</span>
+              <img class="hl-card-img" src="solgar_zinc.png" alt="Solgar Zinc Picolinate Bottle">
+            </div>
+            <div class="hl-card-body">
+              <span class="hl-card-brand">Solgar</span>
+              <h2 class="hl-card-title">Zinc Picolinate 22mg (100 Tablets)</h2>
+              <p class="hl-card-desc">Premium, highly bioavailable form of zinc bound to picolinic acid. Promotes glowing, healthy skin, supports immune cell production, and provides essential antioxidant support.</p>
+              <div class="hl-card-footer">
+                <div class="hl-card-price">
+                  <span class="hl-price-label">Price</span>
+                  <span class="hl-price-val"><span>KSh</span>4,900</span>
+                </div>
+                <button class="hl-order-btn" onclick="openOrderModal('Solgar Zinc Picolinate 22mg (100 Tabs)', 4900)">Order Now <i class="fas fa-shopping-cart"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- NOW Black Walnut Wormwood -->
+          <div class="hl-card" data-brand="now">
+            <div class="hl-card-img-wrapper">
+              <span class="hl-card-badge">Herbal Detox</span>
+              <img class="hl-card-img" src="now_black_walnut.png" alt="NOW Fresh Green Black Walnut Wormwood Complex Bottle">
+            </div>
+            <div class="hl-card-body">
+              <span class="hl-card-brand">NOW Foods</span>
+              <h2 class="hl-card-title">"Green" Black Walnut Wormwood Complex (60ml)</h2>
+              <p class="hl-card-desc">Traditional liquid herbal formula combining unripe green black walnut hulls, wormwood, and clove buds. Designed to support digestive health and promote a natural microbial balance in the gut.</p>
+              <div class="hl-card-footer">
+                <div class="hl-card-price">
+                  <span class="hl-price-label">Price</span>
+                  <span class="hl-price-val"><span>KSh</span>5,700</span>
+                </div>
+                <button class="hl-order-btn" onclick="openOrderModal('NOW Black Walnut Wormwood Complex (60ml)', 5700)">Order Now <i class="fas fa-shopping-cart"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- NOW Zinc -->
+          <div class="hl-card" data-brand="now">
+            <div class="hl-card-img-wrapper">
+              <img class="hl-card-img" src="now_zinc.png" alt="NOW Zinc 50mg Bottle">
+            </div>
+            <div class="hl-card-body">
+              <span class="hl-card-brand">NOW Foods</span>
+              <h2 class="hl-card-title">Zinc 50mg (100 Tablets)</h2>
+              <p class="hl-card-desc">Essential trace mineral that supports cellular health, protein synthesis, and general immune function. Highly recommended for controlling acne and reinforcing natural defense barriers.</p>
+              <div class="hl-card-footer">
+                <div class="hl-card-price">
+                  <span class="hl-price-label">Price</span>
+                  <span class="hl-price-val"><span>KSh</span>3,000</span>
+                </div>
+                <button class="hl-order-btn" onclick="openOrderModal('NOW Zinc 50mg (100 Tabs)', 3000)">Order Now <i class="fas fa-shopping-cart"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- NOW Vitamin D-3 -->
+          <div class="hl-card" data-brand="now">
+            <div class="hl-card-img-wrapper">
+              <img class="hl-card-img" src="now_vitamin_d3.png" alt="NOW Vitamin D-3 Bottle">
+            </div>
+            <div class="hl-card-body">
+              <span class="hl-card-brand">NOW Foods</span>
+              <h2 class="hl-card-title">Vitamin D-3 1000IU (180 Softgels)</h2>
+              <p class="hl-card-desc">Bioavailable liquid softgels providing high-grade vitamin D-3. Critical for proper calcium absorption to maintain skeletal strength, dental integrity, and immune regulation.</p>
+              <div class="hl-card-footer">
+                <div class="hl-card-price">
+                  <span class="hl-price-label">Price</span>
+                  <span class="hl-price-val"><span>KSh</span>3,400</span>
+                </div>
+                <button class="hl-order-btn" onclick="openOrderModal('NOW Vitamin D-3 1000IU (180 Softgels)', 3400)">Order Now <i class="fas fa-shopping-cart"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- NOW Melatonin -->
+          <div class="hl-card" data-brand="now">
+            <div class="hl-card-img-wrapper">
+              <span class="hl-card-badge">Sleep Aid</span>
+              <img class="hl-card-img" src="now_melatonin.png" alt="NOW Melatonin Bottle">
+            </div>
+            <div class="hl-card-body">
+              <span class="hl-card-brand">NOW Foods</span>
+              <h2 class="hl-card-title">Melatonin 3mg (60 Capsules)</h2>
+              <p class="hl-card-desc">Natural neurotransmitter support that regulates your biological clock. Aids in alleviating jet lag, promoting deep restful sleep, and regulating healthy sleep cycles safely.</p>
+              <div class="hl-card-footer">
+                <div class="hl-card-price">
+                  <span class="hl-price-label">Price</span>
+                  <span class="hl-price-val"><span>KSh</span>2,400</span>
+                </div>
+                <button class="hl-order-btn" onclick="openOrderModal('NOW Melatonin 3mg (60 Caps)', 2400)">Order Now <i class="fas fa-shopping-cart"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Solgar Vitamin D3 -->
+          <div class="hl-card" data-brand="solgar">
+            <div class="hl-card-img-wrapper">
+              <img class="hl-card-img" src="solgar_d3.png" alt="Solgar Vitamin D3 Bottle">
+            </div>
+            <div class="hl-card-body">
+              <span class="hl-card-brand">Solgar</span>
+              <h2 class="hl-card-title">Vitamin D3 1000IU (100 Softgels)</h2>
+              <p class="hl-card-desc">Premium active Vitamin D3 from a globally trusted amber-glass brand. Formulated to enhance calcium absorption, maintain strong muscle tissue, and boost year-round immunity.</p>
+              <div class="hl-card-footer">
+                <div class="hl-card-price">
+                  <span class="hl-price-label">Price</span>
+                  <span class="hl-price-val"><span>KSh</span>3,900</span>
+                </div>
+                <button class="hl-order-btn" onclick="openOrderModal('Solgar Vitamin D3 1000IU (100 Softgels)', 3900)">Order Now <i class="fas fa-shopping-cart"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- NOW Vitamin B-12 -->
+          <div class="hl-card" data-brand="now">
+            <div class="hl-card-img-wrapper">
+              <img class="hl-card-img" src="now_b12.png" alt="NOW Vitamin B-12 Bottle">
+            </div>
+            <div class="hl-card-body">
+              <span class="hl-card-brand">NOW Foods</span>
+              <h2 class="hl-card-title">Vitamin B-12 1000mcg (100 Lozenges)</h2>
+              <p class="hl-card-desc">Convenient, tasty lozenges for energy production and nervous system support. Vital for healthy red blood cells, cellular metabolism, and brain functioning.</p>
+              <div class="hl-card-footer">
+                <div class="hl-card-price">
+                  <span class="hl-price-label">Price</span>
+                  <span class="hl-price-val"><span>KSh</span>2,400</span>
+                </div>
+                <button class="hl-order-btn" onclick="openOrderModal('NOW Vitamin B-12 1000mcg (100 Loz)', 2400)">Order Now <i class="fas fa-shopping-cart"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- NOW 5-HTP -->
+          <div class="hl-card" data-brand="now">
+            <div class="hl-card-img-wrapper">
+              <img class="hl-card-img" src="now_5htp.png" alt="NOW 5-HTP Bottle">
+            </div>
+            <div class="hl-card-body">
+              <span class="hl-card-brand">NOW Foods</span>
+              <h2 class="hl-card-title">5-HTP 50mg (30 Capsules)</h2>
+              <p class="hl-card-desc">Naturally sourced intermediate in the synthesis of serotonin. Provides powerful support for balanced mood regulation, emotional stability, and overall positive wellness.</p>
+              <div class="hl-card-footer">
+                <div class="hl-card-price">
+                  <span class="hl-price-label">Price</span>
+                  <span class="hl-price-val"><span>KSh</span>1,999</span>
+                </div>
+                <button class="hl-order-btn" onclick="openOrderModal('NOW 5-HTP 50mg (30 Caps)', 1999)">Order Now <i class="fas fa-shopping-cart"></i></button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ── ONE-STEP CHECKOUT MODAL ───────────────────────── -->
+  <div class="hl-modal" id="checkout-modal" onclick="closeOrderModalOnOverlay(event)">
+    <div class="hl-modal-card">
+      <div class="hl-modal-header">
+        <h3>Fast Checkout</h3>
+        <button class="hl-modal-close" onclick="closeOrderModal()"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="hl-modal-body">
+        <form class="hl-checkout-form" id="checkout-form" onsubmit="submitProductOrder(event)">
+          <div class="hl-form-group">
+            <label for="order-product">Product Sourced</label>
+            <input type="text" id="order-product" readonly required>
+          </div>
+          <div class="hl-form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="hl-form-group">
+              <label for="order-price">Unit Price</label>
+              <input type="text" id="order-price" readonly>
+            </div>
+            <div class="hl-form-group">
+              <label for="order-qty">Quantity</label>
+              <select id="order-qty" onchange="calculateTotal()" required>
+                <option value="1">1 Bottle</option>
+                <option value="2">2 Bottles</option>
+                <option value="3">3 Bottles</option>
+                <option value="4">4 Bottles</option>
+                <option value="5">5 Bottles</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="hl-form-group">
+            <label for="order-total" style="color: #66bb6a; font-weight: 800;">Estimated Total</label>
+            <input type="text" id="order-total" style="font-weight: 800; border-color: rgba(102,187,106,0.3);" readonly>
+          </div>
+          
+          <div class="hl-form-group">
+            <label for="order-phone">Your Phone Number (WhatsApp/M-Pesa)</label>
+            <input type="tel" id="order-phone" placeholder="e.g. 07XX XXX XXX" required>
+          </div>
+          <div class="hl-form-group">
+            <label for="order-location">Delivery Location (Nairobi / County)</label>
+            <textarea id="order-location" placeholder="Building name, apartment number, area, or town details" required></textarea>
+          </div>
+          <button type="submit" class="hl-submit-btn"><i class="fab fa-whatsapp"></i> Confirm & Order via WhatsApp</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="hl-toast" id="hl-toast">Order initiated! Redirecting to WhatsApp...</div>
+
+  <!-- ── FOOTER ─────────────────────────────────────────── -->
+  <footer class="lp-footer">
+    <div class="lp-footer-inner">
+      <p class="lp-footer-copy">© 2025 Esubu Tech · Healthy Living. Sourcing premium quality authentic wellness products for Kenya.</p>
+      <nav class="lp-footer-links">
+        <a href="/academy">Academy</a>
+        <a href="/techsolutions">Tech Solutions</a>
+        <a href="/datascience">Data Science</a>
+        <a href="mailto:esubumedia@gmail.com">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+  
+  <script>
+    // Price variables for dynamic calculation
+    let currentUnitPrice = 0;
+    
+    // Category Filter Function
+    function filterCategory(category) {
+      // Toggle button active classes
+      document.querySelectorAll('.hl-filter-btn').forEach(btn => btn.classList.remove('active'));
+      document.getElementById('btn-' + category).classList.add('active');
+      
+      // Filter cards
+      const cards = document.querySelectorAll('.hl-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-brand') === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Modal Control Functions
+    function openOrderModal(productName, unitPrice) {
+      document.getElementById('order-product').value = productName;
+      document.getElementById('order-price').value = 'KSh ' + unitPrice.toLocaleString();
+      currentUnitPrice = unitPrice;
+      
+      // Default qty
+      document.getElementById('order-qty').value = "1";
+      calculateTotal();
+      
+      const modal = document.getElementById('checkout-modal');
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden'; // Stop background scroll
+    }
+
+    function closeOrderModal() {
+      const modal = document.getElementById('checkout-modal');
+      modal.classList.remove('open');
+      document.body.style.overflow = 'auto'; // Enable scroll
+    }
+
+    function closeOrderModalOnOverlay(e) {
+      if (e.target.id === 'checkout-modal') {
+        closeOrderModal();
+      }
+    }
+
+    function calculateTotal() {
+      const qty = parseInt(document.getElementById('order-qty').value);
+      const total = currentUnitPrice * qty;
+      document.getElementById('order-total').value = 'KSh ' + total.toLocaleString();
+    }
+
+    // Order Submission Handler
+    function submitProductOrder(e) {
+      e.preventDefault();
+      const product = document.getElementById('order-product').value;
+      const qty = document.getElementById('order-qty').value;
+      const total = document.getElementById('order-total').value;
+      const phone = document.getElementById('order-phone').value;
+      const location = document.getElementById('order-location').value;
+      
+      const waText = encodeURIComponent(
+        `*Esubu Healthy Living — New Order*\n\n` +
+        `💊 *Product:* ${product}\n` +
+        `🔢 *Quantity:* ${qty} bottle(s)\n` +
+        `💰 *Total Value:* ${total}\n` +
+        `📞 *Customer Phone:* ${phone}\n` +
+        `📍 *Delivery Location:* ${location}\n\n` +
+        `_Please confirm order processing and delivery timelines._`
+      );
+      
+      // Open WhatsApp API Link
+      window.open(`https://wa.me/254720811346?text=${waText}`, '_blank');
+      
+      // Show toast
+      showLocalToast('✅ Order sent! Redirecting to WhatsApp...');
+      
+      // Close modal and reset form
+      closeOrderModal();
+      document.getElementById('checkout-form').reset();
+    }
+
+    function showLocalToast(message) {
+      const toast = document.getElementById('hl-toast');
+      toast.textContent = message;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 4000);
+    }
+  </script>
+</body>
+</html>
