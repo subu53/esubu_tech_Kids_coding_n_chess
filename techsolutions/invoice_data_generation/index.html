@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="InvoiceAI — Extract structured data from any invoice using AI. 100% browser-based. No server. No signup." />
+  <meta name="theme-color" content="#0d1117" />
+  <title>InvoiceAI — AI-Powered Invoice Data Extraction</title>
+
+  <!-- Favicon (inline SVG) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='80'>✦</text></svg>" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css?v=1.1" />
+</head>
+
+<body>
+
+  <!-- ════════════════════════════════════════════════════════════
+       NAVIGATION
+       ════════════════════════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <a href="#" class="nav-logo">
+      <span class="sparkle">✦</span>
+      InvoiceAI
+    </a>
+
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#how-it-works">How it Works</a></li>
+      <li><a href="#hero-section">Try Demo</a></li>
+      <li>
+        <a href="https://github.com/subu53/invoice_data_generation"
+           target="_blank" rel="noopener noreferrer"
+           class="nav-github">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          GitHub
+        </a>
+      </li>
+      <li>
+        <button class="nav-icon-btn" id="settings-btn" aria-label="API Settings" title="API Settings">
+          ⚙
+        </button>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- ════════════════════════════════════════════════════════════
+       HERO / UPLOAD SECTION
+       ════════════════════════════════════════════════════════════ -->
+  <section class="hero-section" id="hero-section">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      Autonomy, Not Templates
+    </div>
+
+    <h1 class="hero-title">
+      Ingest Invoices Without<br />
+      the <span class="gradient-text-red">Manual Tax</span>
+    </h1>
+
+    <p class="hero-subtitle">
+      Stop building fragile template rules. Our layout-agnostic cognitive parsing client extracts ledger-ready financial transactions in seconds. 100% local client-side processing — zero document transit to third-party servers.
+    </p>
+
+    <!-- Upload Zone -->
+    <div class="upload-zone" id="upload-zone" role="button" tabindex="0"
+         aria-label="Upload invoice file">
+      <input type="file" id="file-input" class="file-input-hidden"
+             accept=".pdf,.png,.jpg,.jpeg,.webp,.tiff,.bmp" />
+
+      <span class="upload-icon" id="upload-icon">📄</span>
+
+      <div id="upload-text">
+        <h3>Drop invoice here for cognitive analysis</h3>
+        <p>or <strong style="color:var(--accent);">browse local files</strong> to run autopilot</p>
+        <div class="file-types">
+          <span class="file-type-tag">PDF</span>
+          <span class="file-type-tag">PNG</span>
+          <span class="file-type-tag">JPG</span>
+          <span class="file-type-tag">WEBP</span>
+          <span class="file-type-tag">TIFF</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sample Invoices -->
+    <div class="sample-section">
+      <p class="sample-label">Or try a sample invoice</p>
+      <div class="sample-buttons" id="sample-buttons">
+        <button class="sample-btn" data-sample="standard">
+          <span class="emoji">🧾</span>
+          Standard Invoice
+        </button>
+        <button class="sample-btn" data-sample="complex">
+          <span class="emoji">📊</span>
+          Complex Multi-Page
+        </button>
+        <button class="sample-btn" data-sample="handwritten">
+          <span class="emoji">✍️</span>
+          Handwritten Invoice
+        </button>
+        <button class="sample-btn" data-sample="slack">
+          <span class="emoji">💬</span>
+          Slack Invoice
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       RESULTS SECTION
+       ════════════════════════════════════════════════════════════ -->
+  <section class="results-section" id="results-section">
+    <div style="max-width:1400px; margin:0 auto;">
+
+      <!-- Results Header -->
+      <div class="results-header">
+        <div class="results-header-left">
+          <h2>Extraction Results</h2>
+          <span class="confidence-badge high" id="overall-confidence">
+            <span class="confidence-dot high"></span>
+            98% Confidence
+          </span>
+        </div>
+        <div class="results-actions">
+          <button class="btn btn-new-upload" id="new-upload-btn">
+            <span class="btn-icon">⬆</span>
+            New Upload
+          </button>
+          <button class="btn btn-secondary" id="export-json">
+            <span class="btn-icon">{ }</span>
+            JSON
+          </button>
+          <button class="btn btn-secondary" id="export-csv">
+            <span class="btn-icon">📋</span>
+            CSV
+          </button>
+          <button class="btn btn-primary" id="copy-clipboard">
+            <span class="btn-icon">📎</span>
+            Copy
+          </button>
+        </div>
+      </div>
+
+      <!-- Split View -->
+      <div class="results-split">
+
+        <!-- Left: Document Viewer -->
+        <div class="document-viewer" id="document-viewer">
+          <div class="viewer-header">
+            <h3>Document Preview</h3>
+            <div class="page-controls" id="page-controls">
+              <button class="page-btn" id="prev-page" aria-label="Previous page">‹</button>
+              <span class="page-indicator" id="page-indicator">1 / 1</span>
+              <button class="page-btn" id="next-page" aria-label="Next page">›</button>
+            </div>
+          </div>
+          <div class="canvas-container">
+            <canvas id="doc-canvas"></canvas>
+          </div>
+        </div>
+
+        <!-- Right: Extracted Data -->
+        <div class="extracted-data" id="extracted-data">
+
+          <!-- Invoice Details Card -->
+          <div class="data-card fade-in-up">
+            <div class="data-card-header">
+              <span class="card-icon">🧾</span>
+              <h3>Invoice Details</h3>
+            </div>
+            <div class="data-card-body">
+              <div class="fields-grid" id="invoice-fields">
+                <!-- Populated by JS -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Vendor Card -->
+          <div class="data-card fade-in-up">
+            <div class="data-card-header">
+              <span class="card-icon">🏢</span>
+              <h3>Vendor</h3>
+            </div>
+            <div class="data-card-body">
+              <div class="fields-grid" id="vendor-fields">
+                <!-- Populated by JS -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Customer Card -->
+          <div class="data-card fade-in-up">
+            <div class="data-card-header">
+              <span class="card-icon">👤</span>
+              <h3>Customer</h3>
+            </div>
+            <div class="data-card-body">
+              <div class="fields-grid" id="customer-fields">
+                <!-- Populated by JS -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Line Items Card -->
+          <div class="data-card fade-in-up">
+            <div class="data-card-header">
+              <span class="card-icon">📦</span>
+              <h3>Line Items</h3>
+            </div>
+            <div class="data-card-body" style="padding:0;">
+              <div class="table-wrapper">
+                <table class="line-items-table" id="line-items-table">
+                  <thead>
+                    <tr>
+                      <th>Description</th>
+                      <th class="text-right">Qty</th>
+                      <th class="text-right">Unit Price</th>
+                      <th class="text-right">Tax</th>
+                      <th class="text-right">Total</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody id="line-items-body">
+                    <!-- Populated by JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Totals Card -->
+          <div class="data-card fade-in-up">
+            <div class="data-card-header">
+              <span class="card-icon">💰</span>
+              <h3>Totals</h3>
+            </div>
+            <div class="data-card-body">
+              <div class="totals-grid" id="totals-fields">
+                <!-- Populated by JS -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Payment Info Card -->
+          <div class="data-card fade-in-up">
+            <div class="data-card-header">
+              <span class="card-icon">💳</span>
+              <h3>Payment Information</h3>
+            </div>
+            <div class="data-card-body">
+              <div class="fields-grid" id="payment-fields">
+                <!-- Populated by JS -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Notes Card -->
+          <div class="data-card fade-in-up">
+            <div class="data-card-header">
+              <span class="card-icon">📝</span>
+              <h3>Notes &amp; Terms</h3>
+            </div>
+            <div class="data-card-body">
+              <div id="notes-field">
+                <!-- Populated by JS -->
+              </div>
+            </div>
+          </div>
+
+        </div><!-- / extracted-data -->
+
+      </div><!-- / results-split -->
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       THE COST OF MANUAL ENTRY (PAIN POINTS)
+       ════════════════════════════════════════════════════════════ -->
+  <section class="pain-section" id="pain-section">
+    <div class="section-header">
+      <h2>Data Entry is a <span class="gradient-text-red">Tax on Your Growth</span></h2>
+      <p>Manual invoice processing is slow, error-prone, and burns out your most valuable employees</p>
+    </div>
+
+    <div class="pain-grid">
+      <!-- Pain 1 -->
+      <div class="pain-card">
+        <div class="pain-icon-wrapper">⚠️</div>
+        <h3>The Typo Liability</h3>
+        <p>
+          A fat-fingered decimal point, an overlooked tax allocation, or a misread account number can cost thousands. Reconciling manual data entry errors wastes valuable accounting hours in post-audit cleanups.
+        </p>
+      </div>
+
+      <!-- Pain 2 -->
+      <div class="pain-card">
+        <div class="pain-icon-wrapper">⏳</div>
+        <h3>The Month-End Close Panic</h3>
+        <p>
+          Invoices pile up, approval routing stalls, and your closing timeline slips. When AP is manual, you miss early-payment discounts, risk late fees, and turn tax season into an operational bottleneck.
+        </p>
+      </div>
+
+      <!-- Pain 3 -->
+      <div class="pain-card">
+        <div class="pain-icon-wrapper">🔥</div>
+        <h3>The Talent Burnout</h3>
+        <p>
+          Bookkeepers didn't go to school to spend 50% of their billable hours copy-pasting numbers from PDFs into spreadsheets. Boring, repetitive tasks trigger high employee turnover and cap your agency's capacity to scale.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       ROI CALCULATOR
+       ════════════════════════════════════════════════════════════ -->
+  <section class="roi-section" id="roi-section">
+    <div class="section-header">
+      <h2>Calculate Your <span class="gradient-text">Savings</span></h2>
+      <p>See exactly how much time and operational costs you save with automated exception auditing</p>
+    </div>
+
+    <div class="roi-card">
+      <div class="roi-inputs">
+        <div class="slider-group">
+          <div class="slider-header">
+            <span class="slider-label">Monthly Invoices</span>
+            <span class="slider-value" id="calc-val-volume">300</span>
+          </div>
+          <input type="range" id="calc-input-volume" min="50" max="2000" step="50" value="300" class="roi-slider" />
+        </div>
+
+        <div class="slider-group">
+          <div class="slider-header">
+            <span class="slider-label">Hourly Bookkeeper Wage ($)</span>
+            <span class="slider-value" id="calc-val-wage">25</span>
+          </div>
+          <input type="range" id="calc-input-wage" min="15" max="80" step="5" value="25" class="roi-slider" />
+        </div>
+
+        <div class="slider-group">
+          <div class="slider-header">
+            <span class="slider-label">Manual Process Time per Invoice (min)</span>
+            <span class="slider-value" id="calc-val-time">8</span>
+          </div>
+          <input type="range" id="calc-input-time" min="2" max="20" step="1" value="8" class="roi-slider" />
+        </div>
+      </div>
+
+      <div class="roi-outputs">
+        <div class="output-card output-savings">
+          <span class="output-lbl">Monthly Savings</span>
+          <div class="output-val-large" id="calc-result-savings">$900</div>
+          <span class="output-desc">Direct labor cost returned</span>
+        </div>
+        <div class="output-card">
+          <span class="output-lbl">Time Reclaimed</span>
+          <div class="output-val" id="calc-result-hours">40 Hours</div>
+          <span class="output-desc">Per month of manual keystrokes</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       HOW IT WORKS
+       ════════════════════════════════════════════════════════════ -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="section-header">
+      <h2>The Cognitive <span class="gradient-text">Advantage</span></h2>
+      <p>Why layout-agnostic parsing leaves legacy OCR in the past</p>
+    </div>
+
+    <div class="steps-grid">
+      <!-- Step 1 -->
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <span class="step-icon">📤</span>
+        <h3>Document Ingestion</h3>
+        <p>
+          Ingest any raw file type—PDF invoices, crumpled mobile receipts, low-contrast scans, or emergency handwritten work orders.
+        </p>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <span class="step-icon">🧠</span>
+        <h3>Cognitive Processing</h3>
+        <p>
+          Our cognitive parsing engine understands vendor context, line item relationships, tax structures, and currency splits without templates.
+        </p>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <span class="step-icon">📊</span>
+        <h3>Ledger Validation</h3>
+        <p>
+          Direct visual confidence checks highlight anomalies. Instantly download standard JSON/CSV or sync with your ERP.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       API KEY MODAL
+       ════════════════════════════════════════════════════════════ -->
+  <div class="modal-overlay" id="api-key-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>⚙ Secure Integration Gateway</h2>
+        <button class="modal-close" id="cancel-api-key" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <p>
+          To process custom invoices privately, you need to establish a connection using a <strong>secure integration key</strong>.
+        </p>
+        <p>
+          👉 Request your connection key from the
+          <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener noreferrer">
+            Developer Console Gateway
+          </a>
+        </p>
+
+        <div class="input-group">
+          <label for="api-key-input">Gateway Connection Token</label>
+          <input type="password" id="api-key-input"
+                 placeholder="Enter secure connection key..." autocomplete="off" spellcheck="false" />
+        </div>
+
+        <div class="privacy-notice">
+          <span class="shield-icon">🔒</span>
+          <p>
+            Your connection key is stored <strong>only</strong> in your browser's
+            localStorage. It is never sent to any server other than
+            the integration gateway. Your data never leaves your browser.
+          </p>
+        </div>
+
+        <div class="modal-actions">
+          <button class="btn btn-outline" id="cancel-api-key-btn" type="button">Cancel</button>
+          <button class="btn btn-primary" id="save-api-key" type="button">
+            <span class="btn-icon">💾</span>
+            Save Key
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════════════════
+       PROCESSING OVERLAY
+       ════════════════════════════════════════════════════════════ -->
+  <div class="processing-overlay" id="processing-overlay">
+    <div class="spinner"></div>
+    <div>
+      <p class="processing-status" id="processing-status">Analyzing invoice…</p>
+      <p class="processing-substatus">This usually takes 5–15 seconds</p>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════════════════
+       ERROR TOAST
+       ════════════════════════════════════════════════════════════ -->
+  <div class="error-toast" id="error-toast" role="alert">
+    <span class="error-icon">⚠</span>
+    <div class="error-content">
+      <p class="error-title">Something went wrong</p>
+      <p class="error-message" id="error-message">Please try again.</p>
+    </div>
+    <button class="close-toast" id="close-toast" aria-label="Dismiss">✕</button>
+  </div>
+
+  <!-- ════════════════════════════════════════════════════════════
+       FOOTER
+       ════════════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        Built with ♥ by
+        <a href="https://github.com/subu53" target="_blank" rel="noopener noreferrer">subu53</a>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/subu53/invoice_data_generation" target="_blank" rel="noopener noreferrer">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          Source Code
+        </a>
+        <a href="#" onclick="return false;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Privacy
+        </a>
+      </div>
+      <p class="footer-privacy">
+        <span class="lock-icon">🔒</span>
+        Your data never leaves your browser. All processing happens locally via
+        direct API calls. No files are stored on any server.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ════════════════════════════════════════════════════════════
+       SCRIPTS
+       ════════════════════════════════════════════════════════════ -->
+  <!-- pdf.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+  <!-- App modules -->
+  <script type="module" src="js/schema.js?v=1.1"></script>
+  <script type="module" src="js/api-config.js?v=1.1"></script>
+  <script type="module" src="js/document-handler.js?v=1.1"></script>
+  <script type="module" src="js/extraction-engine.js?v=1.1"></script>
+  <script type="module" src="js/results-renderer.js?v=1.1"></script>
+  <script type="module" src="js/export-manager.js?v=1.1"></script>
+  <script type="module" src="js/sample-manager.js?v=1.1"></script>
+  <script type="module" src="js/app.js?v=1.1"></script>
+
+  <!-- Inline: Navbar scroll effect + mobile toggle (no module needed) -->
+  <script>
+    // Navbar glassmorphism on scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+
+    // Mobile nav toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks  = document.getElementById('nav-links');
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    // Close mobile nav on link click
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+  </script>
+
+</body>
+</html>

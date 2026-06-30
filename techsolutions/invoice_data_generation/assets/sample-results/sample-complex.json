@@ -1,0 +1,95 @@
+{
+  "invoice": {
+    "invoice_number": { "value": "FK-87234", "confidence": "high" },
+    "invoice_date": { "value": "2024-07-22", "confidence": "high" },
+    "due_date": { "value": "2024-08-21", "confidence": "high" },
+    "purchase_order": { "value": "PO-J99-10A", "confidence": "medium" },
+    "currency": { "value": "EUR", "confidence": "high" }
+  },
+  "vendor": {
+    "name": { "value": "Friedrich & Krause GmbH", "confidence": "high" },
+    "address": { "value": "Berliner Str. 42, 80331 München, Germany", "confidence": "high" },
+    "phone": { "value": "+49-89-555-4200", "confidence": "high" },
+    "email": { "value": "accounts@friedrichkrause.de", "confidence": "high" },
+    "tax_id": { "value": "DE298745123", "confidence": "high" },
+    "website": { "value": "www.friedrichkrause.de", "confidence": "high" }
+  },
+  "customer": {
+    "name": { "value": "Sakura Digital Ltd.", "confidence": "high" },
+    "address": { "value": "3-15-7 Roppongi, Minato-ku, Tokyo 106-0032, Japan", "confidence": "high" },
+    "phone": null,
+    "email": null
+  },
+  "line_items": [
+    {
+      "description": { "value": "Cloud Infrastructure Setup - Multi-region AWS and GCP staging & production deployment", "confidence": "high" },
+      "quantity": { "value": 1, "confidence": "high" },
+      "unit_price": { "value": 12400.00, "confidence": "high" },
+      "tax_rate": { "value": 19.0, "confidence": "high" },
+      "amount": { "value": 12400.00, "confidence": "high" }
+    },
+    {
+      "description": { "value": "Data Migration Service - Legacy Oracle DB schema parsing and sync to PostgreSQL RDS", "confidence": "high" },
+      "quantity": { "value": 1, "confidence": "high" },
+      "unit_price": { "value": 8750.00, "confidence": "high" },
+      "tax_rate": { "value": 19.0, "confidence": "high" },
+      "amount": { "value": 8750.00, "confidence": "high" }
+    },
+    {
+      "description": { "value": "API Development - Go-based microservices development (6 core endpoints)", "confidence": "high" },
+      "quantity": { "value": 6, "confidence": "high" },
+      "unit_price": { "value": 1500.00, "confidence": "high" },
+      "tax_rate": { "value": 19.0, "confidence": "high" },
+      "amount": { "value": 9000.00, "confidence": "high" }
+    },
+    {
+      "description": { "value": "Security Audit - Third-party penetration testing and ISO 27001 vulnerability audit", "confidence": "high" },
+      "quantity": { "value": 1, "confidence": "medium" },
+      "tax_rate": { "value": 19.0, "confidence": "high" },
+      "amount": { "value": 5200.00, "confidence": "high" }
+    },
+    {
+      "description": { "value": "DevOps Pipeline - Fully automated CI/CD setup via GitHub Actions, Docker and Terraform", "confidence": "high" },
+      "quantity": { "value": 1, "confidence": "high" },
+      "unit_price": { "value": 3800.00, "confidence": "high" },
+      "tax_rate": { "value": 19.0, "confidence": "high" },
+      "amount": { "value": 3800.00, "confidence": "high" }
+    },
+    {
+      "description": { "value": "Technical Documentation - Architectural maps, code comments, API OpenAPI yaml specs", "confidence": "medium" },
+      "quantity": { "value": 240, "confidence": "medium" },
+      "unit_price": { "value": 85.00, "confidence": "high" },
+      "tax_rate": { "value": 19.0, "confidence": "high" },
+      "amount": { "value": 20400.00, "confidence": "medium" }
+    },
+    {
+      "description": { "value": "Training Sessions - Interactive video workshops on microservices deployment (3 days)", "confidence": "high" },
+      "quantity": { "value": 3, "confidence": "high" },
+      "unit_price": { "value": 2000.00, "confidence": "high" },
+      "tax_rate": { "value": 19.0, "confidence": "high" },
+      "amount": { "value": 6000.00, "confidence": "high" }
+    },
+    {
+      "description": { "value": "Support Package - 6-month tier-3 priority engineering support contract SLA", "confidence": "high" },
+      "quantity": { "value": 6, "confidence": "high" },
+      "unit_price": { "value": 1500.00, "confidence": "high" },
+      "tax_rate": { "value": 19.0, "confidence": "high" },
+      "amount": { "value": 9000.00, "confidence": "high" }
+    }
+  ],
+  "totals": {
+    "subtotal": { "value": 74550.00, "confidence": "high" },
+    "tax_amount": { "value": 14164.50, "confidence": "high" },
+    "discount_amount": { "value": 2000.00, "confidence": "high" },
+    "shipping": { "value": null, "confidence": null },
+    "total_amount": { "value": 86714.50, "confidence": "high" }
+  },
+  "payment": {
+    "payment_terms": { "value": "Net 45", "confidence": "high" },
+    "payment_method": { "value": "Wire Transfer", "confidence": "high" },
+    "bank_name": { "value": "Deutsche Bank", "confidence": "high" },
+    "account_number": { "value": "DE89700200300012345678", "confidence": "high" },
+    "routing_number": { "value": "DBANKDEMM", "confidence": "high" }
+  },
+  "notes": { "value": "Garantieansprüche und Leistungsbedingungen unterliegen unseren AGB. Bitte überweisen Sie den Betrag unter Angabe der Rechnungsnummer.", "confidence": "medium" }
+}

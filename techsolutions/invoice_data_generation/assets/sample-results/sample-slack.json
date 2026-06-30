@@ -1,0 +1,47 @@
+{
+  "invoice": {
+    "invoice_number": { "value": "1223113", "confidence": "high" },
+    "invoice_date": { "value": "2023-12-01", "confidence": "high" },
+    "due_date": { "value": "2024-01-15", "confidence": "high" },
+    "purchase_order": { "value": null, "confidence": null },
+    "currency": { "value": "USD", "confidence": "high" }
+  },
+  "vendor": {
+    "name": { "value": "Slack", "confidence": "high" },
+    "address": { "value": "500 Howard Street, San Francisco, CA 94105", "confidence": "high" },
+    "phone": { "value": null, "confidence": null },
+    "email": { "value": null, "confidence": null },
+    "tax_id": { "value": null, "confidence": null },
+    "website": { "value": null, "confidence": null }
+  },
+  "customer": {
+    "name": { "value": "MineralTree", "confidence": "high" },
+    "address": { "value": "101 Arch Street, Boston, MA 02110", "confidence": "high" },
+    "phone": { "value": null, "confidence": null },
+    "email": { "value": null, "confidence": null }
+  },
+  "line_items": [
+    {
+      "description": { "value": "Business+ Monthly User License - August 2023", "confidence": "high" },
+      "quantity": { "value": 115, "confidence": "high" },
+      "unit_price": { "value": 15.00, "confidence": "high" },
+      "tax_rate": { "value": 0.00, "confidence": "high" },
+      "amount": { "value": 1725.00, "confidence": "high" }
+    }
+  ],
+  "totals": {
+    "subtotal": { "value": 1725.00, "confidence": "high" },
+    "tax_amount": { "value": 0.00, "confidence": "high" },
+    "discount_amount": { "value": null, "confidence": null },
+    "shipping": { "value": null, "confidence": null },
+    "total_amount": { "value": 1725.00, "confidence": "high" }
+  },
+  "payment": {
+    "payment_terms": { "value": "Net 45", "confidence": "high" },
+    "payment_method": { "value": null, "confidence": null },
+    "bank_name": { "value": null, "confidence": null },
+    "account_number": { "value": null, "confidence": null },
+    "routing_number": { "value": null, "confidence": null }
+  },
+  "notes": { "value": null, "confidence": null }
+}

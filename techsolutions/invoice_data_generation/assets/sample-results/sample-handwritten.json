@@ -1,0 +1,68 @@
+{
+  "invoice": {
+    "invoice_number": { "value": "0034", "confidence": "medium" },
+    "invoice_date": { "value": "2024-11-08", "confidence": "medium" },
+    "due_date": { "value": "2024-11-08", "confidence": "medium" },
+    "purchase_order": { "value": null, "confidence": null },
+    "currency": { "value": "USD", "confidence": "high" }
+  },
+  "vendor": {
+    "name": { "value": "Mike's Plumbing Service", "confidence": "medium" },
+    "address": { "value": "48 Oak Lane, Portland, OR", "confidence": "medium" },
+    "phone": { "value": "503-555-0145", "confidence": "medium" },
+    "email": null,
+    "tax_id": null,
+    "website": null
+  },
+  "customer": {
+    "name": { "value": "Johnson Residence", "confidence": "medium" },
+    "address": { "value": "127 Maple Street", "confidence": "medium" },
+    "phone": null,
+    "email": null
+  },
+  "line_items": [
+    {
+      "description": { "value": "Emergency pipe repair - kitchen sink drain line fix", "confidence": "medium" },
+      "quantity": { "value": 1, "confidence": "medium" },
+      "unit_price": { "value": 185.00, "confidence": "medium" },
+      "tax_rate": { "value": 0.00, "confidence": "high" },
+      "amount": { "value": 185.00, "confidence": "medium" }
+    },
+    {
+      "description": { "value": "Replacement parts - copper pipe, joints & solder paste", "confidence": "medium" },
+      "quantity": { "value": 4, "confidence": "medium" },
+      "unit_price": { "value": 12.50, "confidence": "medium" },
+      "tax_rate": { "value": 0.00, "confidence": "high" },
+      "amount": { "value": 50.00, "confidence": "medium" }
+    },
+    {
+      "description": { "value": "Labor - 3 hours on-site repair time", "confidence": "high" },
+      "quantity": { "value": 3, "confidence": "high" },
+      "unit_price": { "value": 75.00, "confidence": "high" },
+      "tax_rate": { "value": 0.00, "confidence": "high" },
+      "amount": { "value": 225.00, "confidence": "high" }
+    },
+    {
+      "description": { "value": "Drain cleaning services", "confidence": "low" },
+      "quantity": { "value": 1, "confidence": "high" },
+      "unit_price": { "value": 95.00, "confidence": "low" },
+      "tax_rate": { "value": 0.00, "confidence": "high" },
+      "amount": { "value": 95.00, "confidence": "low" }
+    }
+  ],
+  "totals": {
+    "subtotal": { "value": 555.00, "confidence": "medium" },
+    "tax_amount": { "value": 0.00, "confidence": "high" },
+    "discount_amount": { "value": null, "confidence": null },
+    "shipping": { "value": null, "confidence": null },
+    "total_amount": { "value": 555.00, "confidence": "medium" }
+  },
+  "payment": {
+    "payment_terms": { "value": "Due on receipt", "confidence": "high" },
+    "payment_method": { "value": "Cash or Check", "confidence": "medium" },
+    "bank_name": null,
+    "account_number": null,
+    "routing_number": null
+  },
+  "notes": { "value": "Plumbing repair completed. Emergency dispatch fee waived. Thank you!", "confidence": "medium" }
+}

@@ -1,0 +1,68 @@
+{
+  "invoice": {
+    "invoice_number": { "value": "INV-2024-0892", "confidence": "high" },
+    "invoice_date": { "value": "2024-03-15", "confidence": "high" },
+    "due_date": { "value": "2024-04-14", "confidence": "high" },
+    "purchase_order": { "value": "PO-7892", "confidence": "high" },
+    "currency": { "value": "USD", "confidence": "high" }
+  },
+  "vendor": {
+    "name": { "value": "Quantum Design Studios", "confidence": "high" },
+    "address": { "value": "2847 Innovation Blvd, Suite 340, Austin, TX 78701", "confidence": "high" },
+    "phone": { "value": "+1-512-555-0199", "confidence": "high" },
+    "email": { "value": "billing@quantumdesign.co", "confidence": "high" },
+    "tax_id": { "value": "US-87654321", "confidence": "high" },
+    "website": { "value": "www.quantumdesign.co", "confidence": "high" }
+  },
+  "customer": {
+    "name": { "value": "Meridian Technologies Inc.", "confidence": "high" },
+    "address": { "value": "1200 Commerce Park Dr, San Jose, CA 95131", "confidence": "high" },
+    "phone": { "value": null, "confidence": null },
+    "email": { "value": "accounts-payable@meridiantech.com", "confidence": "high" }
+  },
+  "line_items": [
+    {
+      "description": { "value": "Brand Identity Package - Logo design, color palette, typography guidelines", "confidence": "high" },
+      "quantity": { "value": 1, "confidence": "high" },
+      "unit_price": { "value": 4500.00, "confidence": "high" },
+      "tax_rate": { "value": 8.25, "confidence": "high" },
+      "amount": { "value": 4500.00, "confidence": "high" }
+    },
+    {
+      "description": { "value": "Website UI/UX Design - 12 page responsive landing page and product console templates", "confidence": "high" },
+      "quantity": { "value": 1, "confidence": "high" },
+      "unit_price": { "value": 8200.00, "confidence": "high" },
+      "tax_rate": { "value": 8.25, "confidence": "high" },
+      "amount": { "value": 8200.00, "confidence": "high" }
+    },
+    {
+      "description": { "value": "Marketing Collateral - Printed company brochures, business cards, physical envelopes", "confidence": "high" },
+      "quantity": { "value": 500, "confidence": "high" },
+      "unit_price": { "value": 2.50, "confidence": "high" },
+      "tax_rate": { "value": 8.25, "confidence": "high" },
+      "amount": { "value": 1250.00, "confidence": "high" }
+    },
+    {
+      "description": { "value": "Social Media Kit - Customizable post templates for LinkedIn, Twitter, Instagram", "confidence": "high" },
+      "quantity": { "value": 1, "confidence": "high" },
+      "unit_price": { "value": 1800.00, "confidence": "high" },
+      "tax_rate": { "value": 8.25, "confidence": "high" },
+      "amount": { "value": 1800.00, "confidence": "high" }
+    }
+  ],
+  "totals": {
+    "subtotal": { "value": 15750.00, "confidence": "high" },
+    "tax_amount": { "value": 1299.38, "confidence": "high" },
+    "discount_amount": { "value": 0.00, "confidence": "high" },
+    "shipping": { "value": null, "confidence": null },
+    "total_amount": { "value": 17049.38, "confidence": "high" }
+  },
+  "payment": {
+    "payment_terms": { "value": "Net 30", "confidence": "high" },
+    "payment_method": { "value": "Bank Transfer", "confidence": "high" },
+    "bank_name": { "value": "Silicon Valley Bank", "confidence": "high" },
+    "account_number": { "value": "****8923", "confidence": "high" },
+    "routing_number": { "value": "****0210", "confidence": "high" }
+  },
+  "notes": { "value": "Thank you for partnering with Quantum Design Studios. Please process payment to account listed above within 30 days.", "confidence": "high" }
+}
