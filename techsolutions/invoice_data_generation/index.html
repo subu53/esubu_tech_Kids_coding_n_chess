@@ -131,15 +131,20 @@
             <span class="btn-icon">⬆</span>
             New Upload
           </button>
-          <button class="btn btn-secondary" id="export-json">
-            <span class="btn-icon">{ }</span>
-            JSON
-          </button>
-          <button class="btn btn-secondary" id="export-csv">
-            <span class="btn-icon">📋</span>
-            CSV
-          </button>
-          <button class="btn btn-primary" id="copy-clipboard">
+          <div class="export-dropdown-wrapper">
+            <select id="export-format" class="btn btn-secondary export-select">
+              <option value="xero">Xero (CSV)</option>
+              <option value="qbo">QuickBooks Online (CSV)</option>
+              <option value="dext">Dext (CSV)</option>
+              <option value="csv">Generic CSV</option>
+              <option value="json">JSON</option>
+            </select>
+            <button class="btn btn-primary" id="export-download">
+              <span class="btn-icon">⬇</span>
+              Download
+            </button>
+          </div>
+          <button class="btn btn-secondary" id="copy-clipboard">
             <span class="btn-icon">📎</span>
             Copy
           </button>
@@ -519,6 +524,9 @@
   <script type="module" src="js/extraction-engine.js?v=1.1"></script>
   <script type="module" src="js/results-renderer.js?v=1.1"></script>
   <script type="module" src="js/export-manager.js?v=1.1"></script>
+  <script type="module" src="js/xero-export.js?v=1.1"></script>
+  <script type="module" src="js/qbo-export.js?v=1.1"></script>
+  <script type="module" src="js/dext-export.js?v=1.1"></script>
   <script type="module" src="js/sample-manager.js?v=1.1"></script>
   <script type="module" src="js/app.js?v=1.1"></script>
 

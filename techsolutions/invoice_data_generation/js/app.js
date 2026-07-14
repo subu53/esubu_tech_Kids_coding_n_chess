@@ -1,7 +1,7 @@
 window.InvoiceAI = window.InvoiceAI || {};
 
 document.addEventListener('DOMContentLoaded', () => {
-  const { Schema, ApiConfig, DocumentHandler, ExtractionEngine, ResultsRenderer, ExportManager, SampleManager } = window.InvoiceAI;
+  const { Schema, ApiConfig, DocumentHandler, ExtractionEngine, ResultsRenderer, ExportManager, XeroExport, QboExport, DextExport, SampleManager } = window.InvoiceAI;
 
   // DOM Elements
   const uploadZone = document.getElementById('upload-zone');
@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const pageIndicator = document.getElementById('page-indicator');
   const pageControls = document.getElementById('page-controls');
 
-  const exportJsonBtn = document.getElementById('export-json');
-  const exportCsvBtn = document.getElementById('export-csv');
+  const exportFormatSelect = document.getElementById('export-format');
+  const exportDownloadBtn = document.getElementById('export-download');
   const copyClipboardBtn = document.getElementById('copy-clipboard');
   const newUploadBtn = document.getElementById('new-upload-btn');
 
@@ -287,11 +287,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Export Buttons
   function setupExportButtons() {
-    if (exportJsonBtn) {
-      exportJsonBtn.addEventListener('click', () => ExportManager.exportJSON());
-    }
-    if (exportCsvBtn) {
-      exportCsvBtn.addEventListener('click', () => ExportManager.exportCSV());
+    if (exportDownloadBtn && exportFormatSelect) {
+      exportDownloadBtn.addEventListener('click', () => {
+        const format = exportFormatSelect.value;
+        const data = ExportManager.currentData;
+        
+        switch (format) {
+          case 'xero':
+            XeroExport.exportForXero(data);
+            break;
+          case 'qbo':
+            QboExport.exportForQBO(data);
+            break;
+          case 'dext':
+            DextExport.exportForDext(data);
+            break;
+          case 'csv':
+            ExportManager.exportCSV();
+            break;
+          case 'json':
+            ExportManager.exportJSON();
+            break;
+        }
+      });
     }
     if (copyClipboardBtn) {
       copyClipboardBtn.addEventListener('click', () => ExportManager.copyToClipboard());
