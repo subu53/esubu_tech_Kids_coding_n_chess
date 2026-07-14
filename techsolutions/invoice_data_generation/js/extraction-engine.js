@@ -12,7 +12,8 @@ CRITICAL RULES:
 4. For dates: normalize to ISO 8601 format (YYYY-MM-DD). If only partial date is visible, extract what you can.
 5. For line items: extract EVERY line item as a separate object. Do not skip any.
 6. Currency: identify from symbols ($, €, £, ¥) or text and use ISO 4217 codes (USD, EUR, GBP, JPY).
-7. If multiple pages are provided, they are parts of the SAME invoice. Combine information across all pages.
+7. Paid/Due Amounts: Look carefully for handwritten notes indicating amounts paid (e.g., "paid 10000", "deposit") or balance due. Capture these under totals.amount_paid and totals.amount_due.
+8. If multiple pages are provided, they are parts of the SAME invoice. Combine information across all pages.
 
 CONFIDENCE SCORING:
 - "high": Text is clearly legible, unambiguous, and directly stated on the invoice

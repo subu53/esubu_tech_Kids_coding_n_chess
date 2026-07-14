@@ -37,7 +37,9 @@ window.InvoiceAI.Schema = {
     "tax_amount": { "value": "number|null", "confidence": "high|medium|low|null" },
     "discount_amount": { "value": "number|null", "confidence": "high|medium|low|null" },
     "shipping": { "value": "number|null", "confidence": "high|medium|low|null" },
-    "total_amount": { "value": "number|null", "confidence": "high|medium|low|null" }
+    "total_amount": { "value": "number|null", "confidence": "high|medium|low|null" },
+    "amount_paid": { "value": "number|null", "confidence": "high|medium|low|null" },
+    "amount_due": { "value": "number|null", "confidence": "high|medium|low|null" }
   },
   "payment": {
     "payment_terms": { "value": "string|null", "confidence": "high|medium|low|null" },
@@ -111,7 +113,7 @@ window.InvoiceAI.Schema = {
     });
 
     // Totals fields
-    const totalsFields = ['subtotal', 'tax_amount', 'discount_amount', 'shipping', 'total_amount'];
+    const totalsFields = ['subtotal', 'tax_amount', 'discount_amount', 'shipping', 'total_amount', 'amount_paid', 'amount_due'];
     totalsFields.forEach(f => {
       const raw = safeField(data.totals, f);
       normalized.totals[f] = {

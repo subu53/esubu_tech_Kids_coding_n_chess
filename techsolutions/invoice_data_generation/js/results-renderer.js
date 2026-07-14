@@ -152,7 +152,9 @@ window.InvoiceAI.ResultsRenderer = {
       tax_amount: "Tax Amount",
       discount_amount: "Discount",
       shipping: "Shipping & Handling",
-      total_amount: "Total Amount"
+      total_amount: "Total Amount",
+      amount_paid: "Amount Paid",
+      amount_due: "Amount Due"
     };
 
     Object.keys(labels).forEach(key => {
