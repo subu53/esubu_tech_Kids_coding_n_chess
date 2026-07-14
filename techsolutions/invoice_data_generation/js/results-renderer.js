@@ -7,6 +7,16 @@ window.InvoiceAI.ResultsRenderer = {
     // Set overall confidence indicator
     this.renderOverallConfidence(data);
 
+    // Currency: user override > AI-detected > fallback
+    const userCurrency = localStorage.getItem('invoiceai_currency');
+    const aiCurrency = data.invoice.currency ? data.invoice.currency.value : null;
+    const currency = (userCurrency && userCurrency !== 'auto') ? userCurrency : (aiCurrency || 'USD');
+
+    // Override the displayed currency field if user has set a preference
+    if (userCurrency && userCurrency !== 'auto') {
+      data.invoice.currency = { value: userCurrency, confidence: 'high' };
+    }
+
     // Invoice Meta Section
     const invoiceLabels = {
       invoice_number: "Invoice #",
@@ -36,11 +46,6 @@ window.InvoiceAI.ResultsRenderer = {
       email: "Email"
     };
     this.renderFieldSection('customer-fields', data.customer, customerLabels);
-
-    // Currency: user override > AI-detected > fallback
-    const userCurrency = localStorage.getItem('invoiceai_currency');
-    const aiCurrency = data.invoice.currency ? data.invoice.currency.value : null;
-    const currency = (userCurrency && userCurrency !== 'auto') ? userCurrency : (aiCurrency || 'USD');
 
     // Line Items Section
     this.renderLineItems(data.line_items, currency);
