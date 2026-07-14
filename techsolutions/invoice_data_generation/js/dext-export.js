@@ -45,7 +45,9 @@ window.InvoiceAI.DextExport = {
     ];
 
     const reference   = this._val(data.invoice && data.invoice.invoice_number) || '';
-    const supplier    = this._val(data.vendor && data.vendor.name) || '';
+    const supplier    = this._val(data.vendor && data.vendor.name) 
+                     || this._val(data.customer && data.customer.name) 
+                     || 'Unknown Supplier';
     const dateRaw     = this._val(data.invoice && data.invoice.invoice_date) || '';
     const dateStr     = this._formatDate(dateRaw);
     

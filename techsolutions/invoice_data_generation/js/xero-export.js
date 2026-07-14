@@ -80,7 +80,9 @@ window.InvoiceAI.XeroExport = {
     ];
 
     // Invoice-level fields (repeated on every row)
-    const contactName  = this._val(data.vendor && data.vendor.name) || '';
+    const contactName  = this._val(data.vendor && data.vendor.name) 
+                      || this._val(data.customer && data.customer.name) 
+                      || 'Unknown Vendor';
     const invoiceNum   = this._val(data.invoice && data.invoice.invoice_number) || '';
     const invoiceDateRaw = this._val(data.invoice && data.invoice.invoice_date) || '';
     const dueDateRaw     = this._val(data.invoice && data.invoice.due_date) || '';

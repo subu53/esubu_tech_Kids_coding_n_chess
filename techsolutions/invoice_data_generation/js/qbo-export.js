@@ -55,7 +55,9 @@ window.InvoiceAI.QboExport = {
     ];
 
     const invoiceNum   = this._val(data.invoice && data.invoice.invoice_number) || '';
-    const supplier     = this._val(data.vendor && data.vendor.name) || '';
+    const supplier     = this._val(data.vendor && data.vendor.name) 
+                      || this._val(data.customer && data.customer.name) 
+                      || 'Unknown Supplier';
     const invoiceDateRaw = this._val(data.invoice && data.invoice.invoice_date) || '';
     const dueDateRaw     = this._val(data.invoice && data.invoice.due_date) || '';
 
