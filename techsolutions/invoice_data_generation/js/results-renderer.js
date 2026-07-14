@@ -37,11 +37,16 @@ window.InvoiceAI.ResultsRenderer = {
     };
     this.renderFieldSection('customer-fields', data.customer, customerLabels);
 
+    // Currency: user override > AI-detected > fallback
+    const userCurrency = localStorage.getItem('invoiceai_currency');
+    const aiCurrency = data.invoice.currency ? data.invoice.currency.value : null;
+    const currency = (userCurrency && userCurrency !== 'auto') ? userCurrency : (aiCurrency || 'USD');
+
     // Line Items Section
-    this.renderLineItems(data.line_items, data.invoice.currency ? data.invoice.currency.value : 'USD');
+    this.renderLineItems(data.line_items, currency);
 
     // Totals Section
-    this.renderTotals(data.totals, data.invoice.currency ? data.invoice.currency.value : 'USD');
+    this.renderTotals(data.totals, currency);
 
     // Payment Section
     const paymentLabels = {

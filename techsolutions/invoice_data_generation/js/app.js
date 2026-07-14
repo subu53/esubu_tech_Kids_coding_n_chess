@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const saveApiKeyBtn = document.getElementById('save-api-key');
   const cancelApiKeyBtn = document.getElementById('cancel-api-key');
   const cancelApiKeyBtnSecondary = document.getElementById('cancel-api-key-btn');
+  const currencySelect = document.getElementById('currency-select');
 
   const processingOverlay = document.getElementById('processing-overlay');
   const processingStatus = document.getElementById('processing-status');
@@ -57,6 +58,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Populate API Key input if stored
     if (ApiConfig.hasApiKey()) {
       apiKeyInput.value = ApiConfig.getApiKey();
+    }
+
+    // Populate currency selector if stored
+    const savedCurrency = localStorage.getItem('invoiceai_currency');
+    if (savedCurrency && currencySelect) {
+      currencySelect.value = savedCurrency;
     }
   }
 
@@ -240,6 +247,12 @@ document.addEventListener('DOMContentLoaded', () => {
       saveApiKeyBtn.addEventListener('click', () => {
         const key = apiKeyInput.value.trim();
         ApiConfig.setApiKey(key);
+
+        // Save currency preference
+        if (currencySelect) {
+          localStorage.setItem('invoiceai_currency', currencySelect.value);
+        }
+
         closeSettingsModal();
         
         if (ApiConfig.hasApiKey()) {

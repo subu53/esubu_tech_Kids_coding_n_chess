@@ -441,6 +441,27 @@
                  placeholder="Enter secure connection key..." autocomplete="off" spellcheck="false" />
         </div>
 
+        <div class="input-group">
+          <label for="currency-select">Default Currency</label>
+          <select id="currency-select" class="settings-select">
+            <option value="auto">Auto-detect from document</option>
+            <option value="GBP">£ GBP — British Pound</option>
+            <option value="USD">$ USD — US Dollar</option>
+            <option value="EUR">€ EUR — Euro</option>
+            <option value="ZAR">R ZAR — South African Rand</option>
+            <option value="KES">KSh KES — Kenyan Shilling</option>
+            <option value="AUD">$ AUD — Australian Dollar</option>
+            <option value="NZD">$ NZD — New Zealand Dollar</option>
+            <option value="CAD">$ CAD — Canadian Dollar</option>
+            <option value="INR">₹ INR — Indian Rupee</option>
+            <option value="JPY">¥ JPY — Japanese Yen</option>
+            <option value="CHF">Fr CHF — Swiss Franc</option>
+            <option value="AED">د.إ AED — UAE Dirham</option>
+            <option value="NGN">₦ NGN — Nigerian Naira</option>
+          </select>
+          <p class="input-hint">Override AI-detected currency for all extractions, or leave on auto.</p>
+        </div>
+
         <div class="privacy-notice">
           <span class="shield-icon">🔒</span>
           <p>
