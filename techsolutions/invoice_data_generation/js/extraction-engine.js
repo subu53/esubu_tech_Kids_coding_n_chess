@@ -130,9 +130,16 @@ ${Schema.EXTRACTION_SCHEMA}`;
         }
 
         if (response.status === 429) {
-          if (onStatus) onStatus(`Rate limited by API. Retrying (Attempt ${attempt}/${maxRetries}) in ${delay/1000}s...`);
+          if (onStatus) onStatus(`Rate limited. Retrying (Attempt ${attempt}/${maxRetries}) in ${delay/1000}s...`);
           await new Promise(resolve => setTimeout(resolve, delay));
-          delay *= 2; // exponential backoff
+          delay *= 2;
+          continue;
+        }
+
+        if (response.status === 503) {
+          if (onStatus) onStatus(`Service busy. Retrying (Attempt ${attempt}/${maxRetries}) in ${delay/1000}s...`);
+          await new Promise(resolve => setTimeout(resolve, delay));
+          delay *= 2;
           continue;
         }
 
