@@ -1069,23 +1069,33 @@ body.page-intake{
   'use strict';
 
   /* ══════════════════════════════════════════════════════════════
-     CONFIG — set formEndpoint BEFORE running ads.
-     See README.md for the 5-minute Google Sheet setup.
+     CONFIG
      ══════════════════════════════════════════════════════════════ */
+
+  // Every application is emailed here. Change this one line to move it.
+  var NOTIFY_EMAIL = 'esubumedia@gmail.com';
+
   var CONFIG = {
     whatsappNumber: '254720811346',
 
-    // Where applications are stored. Recommended: a Google Apps Script Web App
-    // URL (deploy: Execute as "Me", Access: "Anyone"). Formspree URLs work too.
-    formEndpoint: '',
+    // Delivery endpoint — FormSubmit, which emails each application to
+    // NOTIFY_EMAIL with no account or API key required.
+    //
+    // ONE-TIME ACTIVATION: the first submission triggers a "confirm your email"
+    // message to NOTIFY_EMAIL. Applications only begin forwarding after that
+    // link has been clicked. Check spam if it does not arrive.
+    //
+    // TO UPGRADE to a Google Sheet as well as email, replace this value with
+    // your Apps Script Web App URL (see README §3). Nothing else changes.
+    formEndpoint: 'https://formsubmit.co/ajax/' + NOTIFY_EMAIL,
 
-    // Only needed for Web3Forms. Leave blank for Google Apps Script / Formspree.
+    // Only needed for Web3Forms. Leave blank otherwise.
     formAccessKey: '',
 
     // Meta Pixel. Required for ad optimisation and retargeting. Empty = no Meta events.
     metaPixelId: '',
 
-    // Show the WhatsApp fallback if the endpoint is unreachable.
+    // Show the WhatsApp fallback if delivery fails.
     fallbackToWhatsAppOnError: true
   };
   /* ══════════════════════════════════════════════════════════════ */
@@ -1361,6 +1371,15 @@ body.page-intake{
       fd.append('submitted_at', new Date().toISOString());
       if (CONFIG.formAccessKey) fd.append('access_key', CONFIG.formAccessKey);
 
+      // FormSubmit options: a readable subject line, one-tap reply to the parent,
+      // table layout in the email, and no captcha page (which would break the
+      // JSON response). Other providers simply ignore fields they don't know.
+      fd.append('_subject', 'New application — ' + d.name + ' (' +
+        d.children.length + (d.children.length === 1 ? ' child)' : ' children)'));
+      fd.append('_replyto', d.email);
+      fd.append('_template', 'table');
+      fd.append('_captcha', 'false');
+
       fetch(CONFIG.formEndpoint, {
         method: 'POST',
         body: fd,                    // multipart = no CORS preflight, works with Apps Script
@@ -1369,7 +1388,16 @@ body.page-intake{
       })
         .then(function (res) {
           if (!res.ok) throw new Error('HTTP ' + res.status);
-          return res;
+          // A 200 does not always mean delivered — FormSubmit returns a JSON body
+          // whose success flag can be false. Read it instead of assuming.
+          return res.text().then(function (txt) {
+            var json = null;
+            try { json = JSON.parse(txt); } catch (e) { /* not JSON — accept */ }
+            if (json && (json.success === false || json.success === 'false')) {
+              throw new Error(json.message || 'rejected by provider');
+            }
+            return json || true;
+          });
         })
         .then(function () {
           if (window.showToast) window.showToast('Application received — we\u2019ll be in touch today.');
