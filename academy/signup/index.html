@@ -1,41 +1,61 @@
 <!DOCTYPE html>
-<html lang="en-KE">
+<html lang="en-KE" data-season="holiday">
 <head>
-<meta charset="UTF-8" />
-<link rel="icon" type="image/png" href="/favicon.png">
-<link rel="apple-touch-icon" href="/favicon.png">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- ═══════════════════════════════════════════════════════════════════
-     ESUBU ACADEMY — SIGNUP / ADMISSION ENQUIRY
-     Deploy to:   academy/signup/index.html    (repo root)
-     Expects:     /styles.css   /script.js   /favicon.png   ← shared shell
-     Live URL:    https://esubutech.online/academy/signup/
+<!--
+  ESUBU ACADEMY, SIGNUP PAGE
+  Live URL: https://esubutech.online/academy/signup/
 
-     ▸ THE FORM POSTS TO CONFIG.formEndpoint (see the <script> at the
-       bottom). Until you set it, submissions fall back to WhatsApp so
-       no lead is lost. Read README.md in this folder for the 5-minute
-       Google Sheet setup — that is the recommended route.
-     ═══════════════════════════════════════════════════════════════════ -->
+  This page stands on its own. It does not load /styles.css, /script.js
+  or Font Awesome, so it stays light on phone data.
 
-<title>Coding &amp; Chess Classes for Kids in Nairobi (Ages 6–16) — Apply | Esubu Academy</title>
-<meta name="description" content="Small-group coding and chess classes for children 6–16 in Nairobi, live on Zoom. Twelve sessions a month, fifteen children per cohort, taught by one teacher. Apply online and we will be in touch the same day.">
+  SEASONS
+  The page shows the holiday camp while today's date sits inside a window
+  in HOLIDAYS below, and term classes the rest of the time. Add each school
+  holiday here when the Ministry publishes the calendar.
+  Preview either version with ?season=holiday or ?season=term on the URL.
+
+  FORM
+  Applications go to FormSubmit, which emails them to NOTIFY_EMAIL (see the
+  script at the bottom). If sending fails, the parent's details open in
+  WhatsApp so no lead is lost.
+-->
+<script>
+(function () {
+  // [start, end] in YYYY-MM-DD, both days included.
+  var HOLIDAYS = [
+    ['2026-10-24', '2027-01-01']   // end of year holiday, schools reopen 4 Jan 2027
+  ];
+  var q = location.search.match(/[?&]season=(holiday|term)\b/);
+  var today = new Date(Date.now() + 3 * 3600 * 1000).toISOString().slice(0, 10); // Nairobi date
+  var inHoliday = HOLIDAYS.some(function (w) { return today >= w[0] && today <= w[1]; });
+  document.documentElement.setAttribute('data-season', q ? q[1] : (inHoliday ? 'holiday' : 'term'));
+})();
+</script>
+
+<title>Coding &amp; Chess Classes for Kids in Kenya, Ages 6 to 16 | Holiday Camp &amp; Term Classes | Esubu Academy</title>
+<meta name="description" content="Live online coding and chess classes for children aged 6 to 16 across Kenya. Holiday camp on weekday mornings, term classes three evenings a week. Groups of up to 15, one teacher. Book a free placement session.">
 <link rel="canonical" href="https://esubutech.online/academy/signup/">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://esubutech.online/academy/signup/">
-<meta property="og:title" content="Your child is capable of more than they are being asked for.">
-<meta property="og:description" content="Coding and chess for children 6–16. Small cohorts, one teacher, work that is genuinely demanding. Apply for a place.">
+<meta property="og:title" content="Coding and chess classes for Kenyan children, ages 6 to 16">
+<meta property="og:description" content="Live on Zoom with one teacher and groups of up to 15. Holiday camp on weekday mornings, term classes three evenings a week. Book a free placement session.">
 <meta property="og:image" content="https://esubutech.online/esubu-logo.jpg">
 <meta property="og:site_name" content="Esubu Tech Academy">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#0B1710">
+<meta name="theme-color" content="#173A2A">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="stylesheet" href="../../styles.css?v=11" />
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/favicon.png">
+
+<!-- Fonts are self-hosted in /academy/fonts (SIL Open Font License), subset to
+     keep them small. caveat-600.woff2 holds only the letters in the two
+     handwritten lines on this page. If you change those lines, re-subset the
+     font or the new letters fall back to a system handwriting face. -->
+<link rel="preload" href="/academy/fonts/bricolage-grotesque-var.woff2" as="font" type="font/woff2" crossorigin>
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHFDG299C1"></script>
@@ -47,1066 +67,881 @@
 </script>
 
 <style>
-/* ═══════════════════════════════════════════════════════════════════
-   SCOPED TO THIS PAGE. Everything namespaced under body.page-intake
-   and .it so it cannot leak into the rest of the site's styles.
-   ═══════════════════════════════════════════════════════════════════ */
-body.page-intake{
-  --ink:      #0B1710;
-  --ink-2:    #10231A;
-  --paper:    #F5F7F2;
-  --paper-2:  #FFFFFF;
-  --deep:     #1B5E20;
-  --moss:     #2E7D32;
-  --accent:   #69F0AE;
-  --rule-d:   rgba(255,255,255,.15);
-  --rule-l:   #D9E1D5;
-  --text-d:   #EAF0E8;
-  --mute-d:   #9CB0A2;
-  --text-l:   #17211B;
-  --mute-l:   #56685D;
-
-  --serif: 'Newsreader', Georgia, 'Times New Roman', serif;
-  --sans:  'Inter', system-ui, -apple-system, sans-serif;
-
-  font-family: var(--sans);
-  background: var(--ink);
-  color: var(--text-d);
-  -webkit-font-smoothing: antialiased;
+@font-face{
+  font-family:"Bricolage Grotesque";
+  src:url("/academy/fonts/bricolage-grotesque-var.woff2") format("woff2");
+  font-weight:200 800;font-display:swap;
 }
-
-.it{ font-family: var(--sans); }
-.it-wrap{ max-width: 1120px; margin: 0 auto; padding: 0 clamp(1.25rem, 5vw, 2.5rem); }
-
-.it h1, .it h2, .it h3{
-  font-family: var(--serif);
-  font-weight: 500;
-  letter-spacing: -.015em;
-  line-height: 1.1;
-  margin: 0;
-  text-wrap: balance;
+@font-face{
+  font-family:"Caveat";
+  src:url("/academy/fonts/caveat-600.woff2") format("woff2");
+  font-weight:600;font-display:swap;
 }
-.it p{ margin: 0 0 1.05em; text-wrap: pretty; }
-.it p:last-child{ margin-bottom: 0; }
+:root{
+  --paper:#FBFCFA;
+  --white:#FFFFFF;
+  --board:#EAF1E7;
+  --ink:#173A2A;
+  --text:#2B3A31;
+  --mute:#56665C;
+  --green:#1B5E20;
+  --green-2:#144A18;
+  --red:#C8102E;
+  --brand-red:#D32F2F;
+  --rule:#E1EAF2;
+  --line:#DCE4DB;
+  --field:#C3CFC5;
+  --hl:#FFE066;
+  --sq-l:#E8EFE4;
+  --sq-d:#7A9E7C;
 
-.it-h1{ font-size: clamp(2.25rem, 6.2vw, 4rem); line-height: 1.04; }
-.it-h2{ font-size: clamp(1.72rem, 3.8vw, 2.7rem); }
-.it-h3{ font-size: clamp(1.12rem, 2vw, 1.32rem); }
-
-.it-lede{ font-size: clamp(1.02rem, .97rem + .35vw, 1.18rem); line-height: 1.62; }
-.it-eyebrow{
-  font-family: var(--sans);
-  font-size: .68rem; font-weight: 600;
-  letter-spacing: .19em; text-transform: uppercase;
-  color: var(--mute-d);
-}
-.it--light .it-eyebrow, .it--white .it-eyebrow{ color: var(--mute-l); }
-.it-sr{ position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
-
-.it-sec{ padding: clamp(3.4rem, 7vw, 6rem) 0; }
-.it-sec--dark{ background: var(--ink); color: var(--text-d); }
-.it-sec--deep{ background: var(--ink-2); color: var(--text-d); }
-.it-sec--light{ background: var(--paper); color: var(--text-l); }
-.it-sec--white{ background: var(--paper-2); color: var(--text-l); }
-
-.it-btn{
-  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
-  font-family: var(--sans); font-size: .95rem; font-weight: 500;
-  padding: .95rem 1.6rem; border-radius: 2px; border: 1px solid transparent;
-  cursor: pointer; text-decoration: none;
-  transition: background .18s ease, color .18s ease, border-color .18s ease;
-}
-.it-btn--solid{ background: var(--accent); color: #06130B; font-weight: 600; }
-.it-btn--solid:hover{ background: #86f8c1; }
-.it-btn--solid[disabled]{ opacity: .6; cursor: default; }
-.it-btn--line{ background: transparent; color: var(--text-d); border-color: var(--rule-d); }
-.it-btn--line:hover{ border-color: var(--accent); color: var(--accent); }
-.it-btn--deep{ background: var(--deep); color: #fff; }
-.it-btn--deep:hover{ background: var(--moss); }
-.it-btn--block{ width: 100%; }
-.it-btn--sm{ padding: .6rem 1rem; font-size: .855rem; }
-
-.it-link{ color: inherit; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 1px; }
-.it-link:hover{ color: var(--accent); }
-.it--light .it-link:hover, .it--white .it-link:hover{ color: var(--deep); }
-
-/* ── slim header ───────────────────────────────────────────── */
-.it-top{ background: var(--deep); border-bottom: 1px solid rgba(0,0,0,.18); }
-.it-top__in{
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 1rem; padding: .78rem 0;
-}
-.it-brand{
-  display: flex; align-items: center; gap: .42rem;
-  text-decoration: none; color: #fff;
-  font-family: var(--sans); font-size: 1.3rem; font-weight: 800;
-  letter-spacing: -.6px;
-}
-.it-brand span{ color: #ff5252; }
-.it-brand small{
-  font-family: var(--sans); font-size: .72rem; font-weight: 500;
-  letter-spacing: .13em; text-transform: uppercase;
-  color: rgba(255,255,255,.62); margin-left: .35rem;
-  padding-left: .7rem; border-left: 1px solid rgba(255,255,255,.25);
+  --f:"Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --hand:"Caveat", "Segoe Print", "Bradley Hand", cursive;
 }
 
-/* ═══════════════ HERO ═══════════════ */
-.it-hero{ padding: clamp(2.8rem, 6.5vw, 5.2rem) 0 clamp(2.8rem, 5.5vw, 4.6rem); }
-.it-hero__grid{ display: grid; grid-template-columns: 1fr; gap: clamp(2.2rem, 4vw, 3.4rem); }
-@media (min-width: 62rem){
-  .it-hero__grid{ grid-template-columns: 1.4fr .6fr; align-items: start; gap: clamp(2.5rem, 4vw, 4.2rem); }
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0;background:var(--paper);color:var(--text);
+  font:400 1.0625rem/1.6 var(--f);font-optical-sizing:auto;
+  -webkit-font-smoothing:antialiased;
 }
-.it-hero h1{ color: #fff; }
-.it-hero__sub{
-  margin-top: 1.6rem; max-width: 46ch; color: #C8D6CB;
-  font-size: clamp(1.02rem,.97rem + .37vw, 1.18rem); line-height: 1.6;
-}
-.it-hero__act{ margin-top: 2rem; display: flex; flex-wrap: wrap; gap: .8rem 1.2rem; align-items: center; }
-.it-hero__note{ margin-top: 1.1rem; font-size: .82rem; color: var(--mute-d); }
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,h4{font-family:var(--f);color:var(--ink);margin:0;line-height:1.2;text-wrap:balance}
+p{margin:0 0 1em;text-wrap:pretty}
+p:last-child{margin-bottom:0}
+:focus-visible{outline:3px solid var(--green);outline-offset:2px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
-.it-panel{ border-top: 1px solid var(--rule-d); padding-top: 1.1rem; margin: 0; }
-.it-panel__row{
-  display: flex; justify-content: space-between; gap: 1rem; align-items: baseline;
-  padding: .7rem 0; border-bottom: 1px solid var(--rule-d);
-}
-.it-panel__row dt{
-  font-size: .73rem; font-weight: 500; letter-spacing: .11em;
-  text-transform: uppercase; color: var(--mute-d); flex: none;
-}
-.it-panel__row dd{
-  margin: 0; text-align: right; font-family: var(--serif);
-  font-size: 1rem; color: var(--text-d); line-height: 1.35;
-}
-.it-panel__foot{ margin-top: .95rem; font-size: .77rem; color: var(--mute-d); line-height: 1.55; }
+html[data-season="holiday"] .s-term,
+html[data-season="term"] .s-holiday{display:none !important}
 
-/* ═══════════════ WHO THIS IS FOR ═══════════════ */
-.it-who{ margin-top: clamp(1.8rem, 3.4vw, 2.6rem); }
-.it-who__item{
-  display: grid; grid-template-columns: 1fr; gap: .35rem;
-  padding: 1.45rem 0; border-top: 1px solid var(--rule-l);
-}
-.it-who__item:last-of-type{ border-bottom: 1px solid var(--rule-l); }
-@media (min-width: 48rem){
-  .it-who__item{ grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: baseline; }
-}
-.it-who__item h3{ font-size: clamp(1.06rem, 1.7vw, 1.26rem); color: var(--text-l); }
-.it-who__item p{ margin: 0; font-size: .92rem; color: var(--mute-l); line-height: 1.6; }
+.wrap{max-width:1120px;margin:0 auto;padding:0 clamp(1rem,4.5vw,2rem)}
+.sec{padding:clamp(3.5rem,8vw,6.25rem) 0}
+.sec--white{background:var(--white)}
+.sec--board{background:var(--board)}
+.sec--ink{background:var(--ink);color:#C9D9CE}
+.h2{font-size:clamp(1.85rem,1.2rem + 2.5vw,2.8rem);font-weight:720;line-height:1.08;letter-spacing:-.022em}
+.lede{font-size:clamp(1.06rem,1rem + .3vw,1.2rem);line-height:1.55;color:var(--mute);max-width:56ch;margin-top:1rem}
 
-.it-aside{
-  margin-top: 1.9rem; padding-left: 1.15rem;
-  border-left: 2px solid var(--moss);
-  font-size: .94rem; color: var(--text-l); line-height: 1.6; max-width: 58ch;
+/* buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+  min-height:3.15rem;padding:.8rem 1.35rem;border-radius:10px;
+  border:1.5px solid var(--green);background:var(--green);color:#fff;
+  font:650 1rem/1.2 var(--f);text-decoration:none;cursor:pointer;
+  transition:background-color .15s,border-color .15s;
 }
+.btn:hover{background:var(--green-2);border-color:var(--green-2)}
+.btn[disabled]{opacity:.65;cursor:default}
+.btn svg{width:1.25rem;height:1.25rem;flex:none}
+.btn--wa{background:#fff;color:var(--ink);border-color:#BCCDBF}
+.btn--wa:hover{background:#F1F7F2;border-color:var(--green)}
+.btn--wa svg{color:#25D366}
+.btn--hl{background:var(--hl);border-color:var(--hl);color:var(--ink)}
+.btn--hl:hover{background:#FFD633;border-color:#FFD633}
+.btn--sm{min-height:2.6rem;padding:.5rem .95rem;font-size:.92rem}
+.btn--block{width:100%}
 
-/* ═══════════════ THE STANDARD ═══════════════ */
-.it-standard{ max-width: 60ch; margin-top: 1.3rem; }
-.it-standard p{
-  font-family: var(--serif);
-  font-size: clamp(1.24rem, 2.4vw, 1.62rem);
-  line-height: 1.44; color: #fff; letter-spacing: -.01em;
-}
-.it-standard p + p{ margin-top: 1.1em; }
-.it-standard .it-quiet{
-  font-family: var(--sans); font-size: .94rem; line-height: 1.65;
-  color: var(--mute-d); letter-spacing: 0; margin-top: 1.6rem;
-}
+/* ticks, the teacher's red pen */
+.tick{flex:none;width:1.35rem;height:1.35rem;color:var(--red)}
 
-/* ═══════════════ FEE ═══════════════ */
-.it-fee{ display: grid; grid-template-columns: 1fr; gap: clamp(2rem, 3.5vw, 3rem); }
-@media (min-width: 56rem){ .it-fee{ grid-template-columns: 1fr 1fr; gap: clamp(2.5rem, 5vw, 4.2rem); align-items: start; } }
-.it-fee__card{ border: 1px solid var(--moss); padding: clamp(1.4rem, 3vw, 2rem); background: var(--paper-2); }
-.it-fee__amt{
-  font-family: var(--serif); font-size: clamp(2rem, 4.5vw, 2.8rem);
-  line-height: 1; color: var(--deep); letter-spacing: -.02em;
-}
-.it-fee__amt small{
-  font-family: var(--sans); font-size: .88rem; font-weight: 400;
-  color: var(--mute-l); letter-spacing: 0; margin-left: .3rem;
-}
-.it-fee__note{ margin-top: .75rem; font-size: .89rem; color: var(--mute-l); }
-.it-fee__list{ margin: 1.4rem 0 0; padding: 0; list-style: none; display: grid; gap: .58rem; }
-.it-fee__list li{ position: relative; padding-left: 1.2rem; font-size: .9rem; color: var(--text-l); line-height: 1.55; }
-.it-fee__list li::before{ content: ''; position: absolute; left: 0; top: .58em; width: 7px; height: 1px; background: var(--moss); }
-
-/* ═══════════════ THE FORM ═══════════════ */
-.it-form-grid{ display: grid; grid-template-columns: 1fr; gap: clamp(1.8rem, 3.2vw, 3rem); }
-@media (min-width: 60rem){ .it-form-grid{ grid-template-columns: .8fr 1.2fr; gap: clamp(2.5rem, 4.5vw, 4.2rem); align-items: start; } }
-
-.it-form{ display: grid; gap: 1.05rem; }
-/* an author `display` beats the UA [hidden] rule, so it must be restored
-   explicitly or the form stays visible after a successful submission */
-.it-form[hidden]{ display: none; }
-
-.it-block{ border: 0; margin: 0; padding: 0; display: grid; gap: .7rem; }
-.it-block + .it-block{ padding-top: 1.15rem; border-top: 1px solid var(--rule-d); }
-.it-legend{
-  font-family: var(--sans); font-size: .7rem; font-weight: 600;
-  letter-spacing: .16em; text-transform: uppercase;
-  color: var(--accent); padding: 0 0 .15rem;
-}
-.it-count{
-  font-family: var(--sans); font-size: .76rem; font-weight: 400;
-  letter-spacing: 0; text-transform: none; color: var(--mute-d);
+/* header */
+.hd{background:var(--paper);border-bottom:1px solid var(--line)}
+.hd__in{display:flex;align-items:center;justify-content:space-between;gap:.75rem;min-height:4rem}
+.brand{display:inline-flex;align-items:baseline;font-weight:800;font-size:1.22rem;letter-spacing:-.03em;text-decoration:none;color:var(--ink);white-space:nowrap}
+.brand span{color:var(--brand-red)}
+.brand small{font-weight:500;font-size:.82rem;letter-spacing:0;color:var(--mute);margin-left:.5rem;padding-left:.55rem;border-left:1px solid var(--line)}
+.hd__act{display:flex;align-items:center;gap:.4rem}
+.hd__wa{display:inline-flex;align-items:center;gap:.4rem;min-height:2.6rem;padding:.4rem .6rem;border-radius:8px;font-weight:600;font-size:.92rem;text-decoration:none;color:var(--ink)}
+.hd__wa:hover{background:#EEF5EF}
+.hd__wa svg{width:1.3rem;height:1.3rem;color:#25D366}
+.hd .btn{white-space:nowrap}
+.hd .btn .short{display:none}
+@media (max-width:30rem){
+  .hd__wa span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .brand small{display:none}
+  .hd .btn .long{display:none}
+  .hd .btn .short{display:inline}
 }
 
-.it-field{ display: grid; gap: .35rem; }
-.it-row2{ display: grid; grid-template-columns: 1fr; gap: .9rem; }
-@media (min-width: 32rem){ .it-row2{ grid-template-columns: 1fr 1fr; } }
+/* hero: a page from a ruled exercise book */
+.hero{
+  position:relative;overflow:hidden;
+  padding:clamp(2.25rem,6vw,4.75rem) 0 0;
+  background-color:var(--paper);
+  background-image:repeating-linear-gradient(to bottom,transparent 0,transparent calc(2rem - 1px),var(--rule) calc(2rem - 1px),var(--rule) 2rem);
+}
+@media (min-width:76rem){
+  .hero::before{content:"";position:absolute;top:0;bottom:0;left:calc(50% - 600px);width:2px;background:rgba(200,16,46,.26)}
+}
+.hero__grid{display:grid;grid-template-columns:minmax(0,1fr);gap:2.5rem;align-items:center}
+@media (min-width:60rem){.hero__grid{grid-template-columns:1.08fr .92fr;gap:3.5rem}}
+.status{
+  display:inline-flex;align-items:center;gap:.55rem;margin:0 0 1.3rem;
+  padding:.38rem .85rem .38rem .7rem;border-radius:999px;
+  background:#fff;border:1px solid var(--line);
+  font-size:.9rem;font-weight:600;color:var(--ink);
+}
+.status i{width:.55rem;height:.55rem;border-radius:50%;background:#2EAD4B;box-shadow:0 0 0 3px rgba(46,173,75,.2)}
+.hero h1{font-size:clamp(2.35rem,1.25rem + 4.5vw,4.2rem);line-height:1.02;font-weight:770;letter-spacing:-.03em;max-width:17ch}
+.hero__sub{margin-top:1.35rem;font-size:clamp(1.07rem,1rem + .35vw,1.22rem);line-height:1.55;color:#33443A;max-width:44ch}
+.hero__cta{margin-top:1.9rem;display:flex;flex-wrap:wrap;gap:.75rem}
+.hero__cta .btn{flex:1 1 15rem}
+@media (min-width:60rem){.hero__cta .btn{flex:0 1 auto}}
+.hero__fine{margin-top:1rem;font-size:.92rem;color:var(--mute);max-width:46ch}
 
-.it-form label{
-  font-family: var(--sans); font-size: .79rem; font-weight: 500;
-  letter-spacing: .02em; color: #C6D4C9;
-}
-.it-form label .it-opt{ font-weight: 400; color: var(--mute-d); }
+/* timetable card */
+.tt{margin:0;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;
+  box-shadow:0 1px 0 rgba(23,58,42,.05),0 26px 50px -30px rgba(23,58,42,.5)}
+.tt__hd{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:.25rem 1rem;padding:.95rem 1.15rem;background:var(--ink);color:#fff}
+.tt__hd b{font-weight:700;font-size:1.02rem}
+.tt__hd span{font-size:.84rem;color:#B7CBBE}
+.tt table{width:100%;border-collapse:collapse;font-size:.93rem;line-height:1.35}
+.tt th,.tt td{text-align:left;padding:.7rem .9rem;border-bottom:1px solid var(--rule);vertical-align:top}
+.tt thead th{font-size:.82rem;font-weight:700;color:var(--mute);background:#F6F9F5}
+.tt thead th span{display:inline-flex;align-items:center;gap:.35rem}
+.tt thead svg{width:1rem;height:1rem;color:var(--green)}
+.tt tbody th{width:3.7rem;font-weight:700;color:var(--ink);border-right:2px solid rgba(200,16,46,.3)}
+.tt td{color:#34453B}
+.tt__note{display:flex;align-items:center;gap:.45rem;padding:.75rem 1.15rem 1rem;font:600 1.5rem/1.1 var(--hand);color:var(--red)}
+.tt__note span{display:inline-block;transform:rotate(-1.5deg)}
+.tt__note svg{width:1.7rem;height:1.7rem;flex:none}
+.draw path{stroke-dasharray:40;stroke-dashoffset:40;animation:draw .7s .5s ease-out forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){.draw path{animation:none;stroke-dashoffset:0}}
 
-.it-form input[type=text], .it-form input[type=email],
-.it-form input[type=tel], .it-form textarea{
-  width: 100%; font-family: var(--sans); font-size: .97rem;
-  padding: .8rem .85rem; border-radius: 2px;
-  background: #0E1E15; color: var(--text-d);
-  border: 1px solid var(--rule-d);
-  transition: border-color .16s ease;
+.proof{
+  list-style:none;margin:0;padding-left:0;padding-right:0;margin-top:clamp(2.5rem,5vw,3.75rem);padding-top:1.4rem;padding-bottom:1.75rem;
+  display:grid;gap:.85rem 1.75rem;grid-template-columns:repeat(auto-fit,minmax(min(13.5rem,100%),1fr));
+  border-top:1px solid var(--line);
 }
-.it-form textarea{ resize: vertical; min-height: 4.4rem; line-height: 1.5; }
-.it-form input::placeholder, .it-form textarea::placeholder{ color: #6E8477; }
-.it-form input:hover, .it-form textarea:hover{ border-color: #3A5B45; }
-.it-form input:focus, .it-form textarea:focus{ border-color: var(--accent); outline: none; }
-.it-form input:focus-visible, .it-form textarea:focus-visible{ outline: 2px solid var(--accent); outline-offset: 1px; }
+.proof li{display:flex;gap:.6rem;align-items:flex-start;font-size:.97rem;font-weight:550;color:var(--ink);line-height:1.4}
 
-.it-form select{
-  width: 100%; font-family: var(--sans); font-size: .97rem;
-  padding: .8rem .85rem; border-radius: 2px;
-  background-color: #0E1E15; color: var(--text-d);
-  border: 1px solid var(--rule-d); appearance: none; -webkit-appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='7' viewBox='0 0 10 7'%3E%3Cpath fill='%2369F0AE' d='M5 7 0 0h10z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat; background-position: right .85rem center;
-  padding-right: 2.1rem; cursor: pointer;
-  transition: border-color .16s ease;
-}
-.it-form select:hover{ border-color: #3A5B45; }
-.it-form select:focus{ border-color: var(--accent); outline: none; }
-.it-form select option{ background: #0E1E15; color: var(--text-d); }
+/* teacher */
+.teach{display:grid;grid-template-columns:minmax(0,1fr);gap:1.75rem;align-items:start}
+@media (min-width:52rem){.teach{grid-template-columns:auto 1fr;gap:3rem}}
+.teach__photo{width:7.5rem;height:7.5rem;border-radius:50%;object-fit:cover;box-shadow:0 0 0 4px #fff,0 0 0 5.5px var(--green)}
+.teach .h2{max-width:20ch}
+.teach .lede{max-width:58ch}
+.creds{list-style:none;padding:0;margin:1.75rem 0 0;display:grid;gap:.9rem 2rem;grid-template-columns:repeat(auto-fit,minmax(min(15rem,100%),1fr));max-width:40rem}
+.creds li{padding-left:.9rem;border-left:3px solid var(--sq-d);font-size:.97rem;color:var(--ink);line-height:1.45}
+.sig{margin-top:1.6rem;font:600 2.2rem/1 var(--hand);color:var(--green)}
+.reg{margin-top:.6rem;font-size:.88rem;color:var(--mute)}
 
-/* child rows */
-.it-child{
-  display: grid; gap: .6rem;
-  grid-template-columns: 1fr;
-  padding: .95rem;
-  border: 1px solid var(--rule-d); border-radius: 2px;
-  background: rgba(255,255,255,.022);
-}
-@media (min-width: 40rem){ .it-child{ grid-template-columns: 1.1fr .8fr 1fr auto; align-items: end; } }
-.it-child__head{
-  grid-column: 1 / -1;
-  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-  font-family: var(--sans); font-size: .72rem; font-weight: 600;
-  letter-spacing: .13em; text-transform: uppercase; color: var(--mute-d);
-}
-.it-child__rm{
-  background: none; border: 0; padding: .1rem .2rem;
-  font-family: var(--sans); font-size: .74rem; letter-spacing: .02em;
-  text-transform: none; color: var(--mute-d);
-  cursor: pointer; text-decoration: underline; text-underline-offset: 2px;
-}
-.it-child__rm:hover{ color: #FFA493; }
-.it-child__rm[hidden]{ display: none; }
+/* outcomes */
+.out{list-style:none;padding:0;margin:2.1rem 0 0;display:grid;gap:0 2.75rem}
+@media (min-width:48rem){.out{grid-template-columns:1fr 1fr}}
+.out li{display:grid;grid-template-columns:1.6rem 1fr;gap:.8rem;padding:1.1rem 0;border-bottom:1px solid #D0DCCD;font-size:1.06rem;color:var(--ink);line-height:1.5}
+.out .tick{width:1.6rem;height:1.6rem}
 
-.it-add{
-  display: inline-flex; align-items: center; gap: .45rem;
-  background: none; border: 1px dashed var(--rule-d); border-radius: 2px;
-  padding: .7rem .9rem; width: 100%; justify-content: center;
-  font-family: var(--sans); font-size: .85rem; color: #C6D4C9;
-  cursor: pointer; transition: border-color .16s ease, color .16s ease;
-}
-.it-add:hover{ border-color: var(--accent); color: var(--accent); }
+/* parent questions */
+.qa{margin-top:2.1rem;border-top:1px solid var(--line)}
+.qa__row{display:grid;gap:.55rem;padding:1.6rem 0;border-bottom:1px solid var(--line)}
+@media (min-width:52rem){.qa__row{grid-template-columns:.85fr 1.15fr;gap:3rem}}
+.qa__row h3{font-size:clamp(1.15rem,1.05rem + .45vw,1.38rem);font-weight:680;letter-spacing:-.012em;line-height:1.3}
+.qa__row p{margin:0;color:var(--mute);max-width:60ch}
 
-/* consent */
-.it-consent{
-  display: grid; grid-template-columns: auto 1fr; gap: .7rem;
-  align-items: start; padding-top: .3rem;
-}
-.it-consent input[type=checkbox]{
-  width: 1.05rem; height: 1.05rem; margin: .18rem 0 0;
-  accent-color: var(--moss); cursor: pointer; flex: none;
-}
-.it-consent label{
-  font-size: .79rem; font-weight: 400; line-height: 1.55;
-  color: var(--mute-d); letter-spacing: 0;
-}
-.it-consent a{ color: #C6D4C9; }
+/* fee structure */
+.fee{display:grid;grid-template-columns:minmax(0,1fr);gap:2.25rem}
+@media (min-width:58rem){.fee{grid-template-columns:.8fr 1.2fr;gap:3.5rem;align-items:start}}
+.fee__notes{margin-top:1.4rem;display:grid;gap:.9rem}
+.fee__notes p{margin:0;color:var(--mute);max-width:46ch}
+.fee__notes b{color:var(--ink);font-weight:650}
+.fs{background:#fff;border:1.5px solid var(--ink);border-radius:4px}
+.fs__hd{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:.25rem 1rem;padding:.95rem 1.1rem;border-bottom:1.5px solid var(--ink)}
+.fs__hd b{font-weight:800;color:var(--ink);letter-spacing:-.01em}
+.fs__hd span{font-size:.86rem;color:var(--mute)}
+.fs table{width:100%;border-collapse:collapse;font-size:.95rem;line-height:1.4}
+.fs th,.fs td{padding:.8rem 1.1rem;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.fs thead th{font-size:.88rem;font-weight:700;color:var(--ink);background:var(--board)}
+.fs tbody th{width:22%;font-weight:600;color:var(--mute)}
+.fs .amt{display:block;font-weight:800;font-size:1.2rem;color:var(--ink);letter-spacing:-.01em}
+.fs .per{display:block;font-size:.86rem;color:var(--mute);margin-top:.15rem}
+.fs__foot{padding:.95rem 1.1rem;font-size:.92rem;color:var(--mute)}
+@media (max-width:30rem){.fs th,.fs td{padding:.7rem .7rem}.fs__hd,.fs__foot{padding-left:.8rem;padding-right:.8rem}}
 
-/* honeypot — hidden from humans, attractive to bots */
-.it-hp{ position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+/* booking */
+.book{display:grid;grid-template-columns:minmax(0,1fr);gap:2.75rem}
+@media (min-width:60rem){.book{grid-template-columns:.85fr 1.15fr;gap:4rem;align-items:start}}
+.sec--ink .h2{color:#fff}
+.sec--ink .lede{color:#C5D6CA}
+.steps{list-style:none;counter-reset:s;padding:0;margin:2rem 0 0;display:grid;gap:1.2rem}
+.steps li{counter-increment:s;display:grid;grid-template-columns:2.1rem 1fr;gap:.9rem;color:#BFD1C5;font-size:.98rem;line-height:1.5}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:2.1rem;height:2.1rem;border-radius:50%;border:1.5px solid var(--hl);color:var(--hl);font-weight:700;font-size:.95rem}
+.steps b{display:block;color:#fff;font-weight:650}
+.book__fine{margin-top:1.75rem;font-size:.92rem;color:#A3B9AA;max-width:46ch}
+.sec--ink :focus-visible,.band :focus-visible,.ft :focus-visible{outline-color:var(--hl)}
 
-.it-err{ font-size: .8rem; color: #FFA493; margin: 0; min-height: 1.1em; line-height: 1.5; }
-.it-form[data-state="error"] input:invalid,
-.it-form[data-state="error"] select:invalid{ border-color: #C4533F; }
-
-.it-fine{ font-size: .76rem; color: var(--mute-d); line-height: 1.55; margin: 0; }
-
-/* success panel */
-.it-done{
-  border: 1px solid var(--accent);
-  background: rgba(105,240,174,.07);
-  padding: clamp(1.4rem, 3vw, 2rem);
+.card{background:#fff;color:var(--text);border-radius:18px;padding:clamp(1.15rem,3.5vw,2rem);box-shadow:0 30px 60px -32px rgba(0,0,0,.55)}
+.card :focus-visible{outline-color:var(--green)}
+.f{display:grid;gap:1.4rem}
+.f[hidden]{display:none}
+.f fieldset{border:0;margin:0;padding:0;min-width:0;display:grid;gap:.9rem}
+.f fieldset + fieldset{padding-top:1.4rem;border-top:1px solid var(--line)}
+.f legend{display:flex;align-items:baseline;gap:.5rem;padding:0;margin-bottom:.1rem;font-weight:720;font-size:1.06rem;color:var(--ink)}
+.opt{font-weight:400;font-size:.88rem;color:var(--mute)}
+.fld{display:grid;gap:.35rem}
+.fld label{font-size:.93rem;font-weight:600;color:var(--ink)}
+.hint{margin:0;font-size:.84rem;color:var(--mute)}
+.row2{display:grid;gap:.9rem}
+@media (min-width:34rem){.row2{grid-template-columns:1fr 1fr}}
+.f input[type=text],.f input[type=email],.f input[type=tel],.f select,.f textarea{
+  width:100%;min-height:3rem;padding:.75rem .85rem;
+  font:400 1rem/1.4 var(--f);color:var(--text);background:#fff;
+  border:1.5px solid var(--field);border-radius:9px;
+  transition:border-color .15s,box-shadow .15s;
 }
-.it-done[hidden]{ display: none; }
-.it-done h3{ color: #fff; font-size: clamp(1.25rem, 2.4vw, 1.55rem); }
-.it-done p{ color: #C8D6CB; margin-top: .9rem; font-size: .95rem; }
-.it-done ol{ margin: 1.15rem 0 0; padding-left: 1.15rem; color: #C8D6CB; font-size: .92rem; display: grid; gap: .5rem; }
-.it-done__act{ margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: .7rem; }
-.it-ref{
-  margin-top: 1.1rem; font-family: var(--mono, monospace); font-size: .8rem;
-  color: var(--accent); letter-spacing: .06em;
+.f textarea{min-height:5.5rem;resize:vertical}
+.f select{
+  appearance:none;-webkit-appearance:none;cursor:pointer;padding-right:2.3rem;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5l5-5' fill='none' stroke='%23173A2A' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right .85rem center;
 }
+.f input::placeholder,.f textarea::placeholder{color:#8A988F}
+.f input:focus,.f select:focus,.f textarea:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(27,94,32,.2)}
+.f [aria-invalid="true"]{border-color:var(--red) !important}
 
-/* ═══════════════ PROCESS ═══════════════ */
-.it-steps{ margin: clamp(1.8rem, 3.4vw, 2.6rem) 0 0; padding: 0; list-style: none; }
-.it-step{
-  display: grid; grid-template-columns: 2.4rem 1fr; gap: 0 1.2rem;
-  padding: 1.55rem 0; border-top: 1px solid var(--rule-l);
-}
-.it-step:last-child{ border-bottom: 1px solid var(--rule-l); }
-@media (min-width: 48rem){
-  .it-step{ grid-template-columns: 3rem 1.05fr 1.1fr; gap: 0 2.2rem; align-items: start; }
-}
-.it-step__n{ font-family: var(--serif); font-size: 1.02rem; color: var(--moss); line-height: 1.45; }
-.it-step h3{ font-size: clamp(1.02rem, 1.7vw, 1.18rem); color: var(--text-l); }
-.it-step p{ margin: .5rem 0 0; font-size: .92rem; color: var(--mute-l); line-height: 1.62; }
-@media (min-width: 48rem){ .it-step p{ margin-top: 0; } }
+.kid{display:grid;gap:.75rem;padding:1rem;border:1.5px dashed var(--field);border-radius:12px;background:#FAFCF9}
+@media (min-width:34rem){.kid{grid-template-columns:1.2fr .75fr 1fr}}
+.kid__hd{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:.9rem;color:var(--mute)}
+.kid__rm{background:none;border:0;padding:.3rem;color:var(--red);font:600 .86rem var(--f);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.kid__rm[hidden]{display:none}
+.kids{display:grid;gap:.75rem}
+.add{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;width:100%;min-height:2.85rem;padding:.6rem 1rem;background:none;border:1.5px dashed var(--field);border-radius:10px;font:600 .93rem var(--f);color:var(--green);cursor:pointer}
+.add:hover{border-color:var(--green);background:#F3F8F3}
+.add[hidden]{display:none}
 
-/* ═══════════════ CURRICULUM ═══════════════ */
-.it-two{ display: grid; grid-template-columns: 1fr; gap: clamp(2rem, 3.5vw, 3rem); margin-top: clamp(1.8rem, 3.4vw, 2.8rem); }
-@media (min-width: 54rem){ .it-two{ grid-template-columns: 1fr 1fr; gap: clamp(2.5rem, 5vw, 4.2rem); } }
-.it-track h3{ color: #fff; margin-bottom: .3rem; }
-.it-track__tag{
-  display: block; margin-bottom: .8rem;
-  font-size: .67rem; font-weight: 600; letter-spacing: .19em;
-  text-transform: uppercase; color: var(--accent);
-}
-.it-track p{ color: #BFCFC4; font-size: .94rem; }
-.it-track ul{ margin: 1.15rem 0 0; padding: 0; list-style: none; display: grid; gap: .6rem; }
-.it-track li{ position: relative; padding-left: 1.15rem; font-size: .89rem; color: #BFCFC4; line-height: 1.55; }
-.it-track li::before{ content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 1px; background: var(--accent); }
+.chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.chip{position:relative;display:inline-flex}
+.chip input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
+.chip span{display:inline-flex;align-items:center;min-height:2.75rem;padding:.5rem 1rem;border:1.5px solid var(--field);border-radius:999px;background:#fff;font-weight:600;font-size:.94rem;color:var(--ink)}
+.chip input:checked + span{background:var(--ink);border-color:var(--ink);color:#fff}
+.chip input:focus-visible + span{outline:3px solid var(--green);outline-offset:2px}
 
-/* ═══════════════ PROOF ═══════════════ */
-.it-proof{ display: grid; grid-template-columns: 1fr; gap: clamp(1.8rem, 3.4vw, 3rem); }
-@media (min-width: 56rem){ .it-proof{ grid-template-columns: 1.1fr .9fr; gap: clamp(2.5rem, 4.5vw, 4.2rem); align-items: start; } }
-.it-quote{ margin: 0; }
-.it-quote p{ font-family: var(--serif); font-size: clamp(1.18rem, 2.2vw, 1.48rem); line-height: 1.45; color: #fff; letter-spacing: -.01em; }
-.it-quote footer{ margin-top: 1.25rem; font-family: var(--sans); font-size: .82rem; color: var(--mute-d); letter-spacing: 0; line-height: 1.6; }
-.it-facts{ list-style: none; margin: 0; padding: 0; }
-.it-facts li{ padding: 1rem 0; border-top: 1px solid var(--rule-d); }
-.it-facts b{ display: block; font-family: var(--serif); font-weight: 500; font-size: 1.14rem; color: var(--accent); letter-spacing: -.01em; }
-.it-facts p{ margin: .2rem 0 0; font-size: .84rem; color: #AFBEB4; line-height: 1.55; }
+.consent{display:grid;grid-template-columns:auto 1fr;gap:.7rem;align-items:start}
+.consent input{width:1.25rem;height:1.25rem;margin:.15rem 0 0;accent-color:var(--green);cursor:pointer}
+.consent label{font-size:.9rem;color:var(--mute);line-height:1.5}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.err{margin:0;min-height:1.2em;font-size:.92rem;font-weight:550;color:var(--red)}
+.f .fine{margin:0;text-align:center;font-size:.86rem;color:var(--mute)}
 
-/* ═══════════════ FAQ ═══════════════ */
-.it-faq{ margin-top: clamp(1.5rem, 2.8vw, 2.1rem); border-top: 1px solid var(--rule-l); }
-.it-faq details{ border-bottom: 1px solid var(--rule-l); }
-.it-faq summary{
-  cursor: pointer; list-style: none; position: relative;
-  padding: 1.15rem 2.4rem 1.15rem 0;
-  font-family: var(--serif); font-size: 1.02rem; color: var(--text-l); line-height: 1.4;
-}
-.it-faq summary::-webkit-details-marker{ display: none; }
-.it-faq summary::after{
-  content: ''; position: absolute; right: .45rem; top: 1.55rem;
-  width: 7px; height: 7px;
-  border-right: 1px solid var(--moss); border-bottom: 1px solid var(--moss);
-  transform: rotate(45deg); transition: transform .2s ease;
-}
-.it-faq details[open] summary::after{ transform: rotate(-135deg); top: 1.68rem; }
-.it-faq__a{ padding: 0 2.8rem 1.3rem 0; font-size: .92rem; color: var(--mute-l); line-height: 1.65; }
-.it-faq__a p{ margin: 0; }
-@media (prefers-reduced-motion: reduce){ .it-faq summary::after{ transition: none; } }
+.done{display:grid;gap:1rem}
+.done[hidden]{display:none}
+.done h3{font-size:clamp(1.45rem,1.2rem + 1vw,1.85rem);font-weight:740;letter-spacing:-.02em}
+.done ol{margin:0;padding-left:1.25rem;display:grid;gap:.5rem;color:var(--text)}
+.done__act{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.4rem}
+.done__act .btn{flex:1 1 14rem}
+.ref{margin:0;font-size:.88rem;color:var(--mute);font-variant-numeric:tabular-nums}
+.alt{margin-top:1.25rem;font-size:.93rem;color:#BFD1C5}
+.alt a{color:#fff;text-underline-offset:3px}
 
-/* ═══════════════ FOOTER / STICKY ═══════════════ */
-.page-intake .site-footer{ padding: 3rem 1.5rem 1.3rem; }
-.page-intake .footer-col h4{ text-transform: none; letter-spacing: 0; font-size: .9rem; }
+/* curriculum */
+.cur{display:grid;grid-template-columns:minmax(0,1fr);gap:2.5rem;margin-top:2.25rem}
+@media (min-width:56rem){.cur{grid-template-columns:1fr 1fr;gap:3.5rem}}
+.track h3{font-size:1.42rem;font-weight:720;letter-spacing:-.015em;margin-bottom:.6rem}
+.track p{color:var(--mute);max-width:52ch}
+.track ul{list-style:none;padding:0;margin:1.1rem 0 0;display:grid;gap:.55rem}
+.track li{display:grid;grid-template-columns:.9rem 1fr;gap:.65rem;color:var(--text);font-size:.98rem;line-height:1.5}
+.track li::before{content:"";width:.55rem;height:.55rem;margin-top:.55em;border-radius:2px;background:var(--sq-d)}
 
-.it-sticky{
-  position: fixed; left: 0; right: 0; bottom: 0; z-index: 900;
-  display: flex; align-items: center; justify-content: space-between; gap: .85rem;
-  padding: .68rem clamp(1.25rem, 5vw, 2.5rem) calc(.68rem + env(safe-area-inset-bottom));
-  background: rgba(11,23,16,.97);
-  border-top: 1px solid var(--rule-d);
-  transform: translateY(110%); visibility: hidden;
-  transition: transform .28s cubic-bezier(.4,0,.2,1);
+.puz{display:grid;grid-template-columns:minmax(0,1fr);gap:1.5rem;margin-top:3rem;padding-top:2.75rem;border-top:1px solid var(--line)}
+@media (min-width:48rem){.puz{grid-template-columns:auto 1fr;gap:2.75rem;align-items:center}}
+.board{
+  position:relative;width:18rem;max-width:100%;aspect-ratio:1/1;
+  display:grid;grid-template-columns:repeat(8,1fr);grid-template-rows:repeat(8,1fr);
+  background:conic-gradient(var(--sq-d) 25%,var(--sq-l) 0 50%,var(--sq-d) 0 75%,var(--sq-l) 0) 0 0/25% 25%;
+  border-radius:6px;box-shadow:0 0 0 6px #fff,0 0 0 7px var(--line);
+  font-size:1.9rem;container-type:inline-size;
 }
-.it-sticky.on{ transform: translateY(0); visibility: visible; }
-.it-sticky__t{ font-size: .78rem; color: #C6D4C9; line-height: 1.35; }
-.it-sticky .it-btn{ padding: .7rem 1rem; font-size: .85rem; flex: none; }
-@media (min-width: 62rem){ .it-sticky{ display: none; } }
-@media (prefers-reduced-motion: reduce){ .it-sticky{ transition: none; } .it-btn{ transition: none; } }
+.pc{display:grid;place-items:center;line-height:1;font-size:1.9rem;font-size:10.5cqi;font-family:"Segoe UI Symbol","Apple Symbols","Noto Sans Symbols 2","DejaVu Sans",serif;user-select:none}
+.pc--w{color:#fff;text-shadow:0 0 1px #173A2A,0 0 1px #173A2A,0 1px 1px #173A2A,0 0 2px #173A2A}
+.pc--b{color:#101A14}
+.board svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.puz h3{font-size:1.3rem;font-weight:700;margin-bottom:.5rem}
+.puz p{color:var(--mute);max-width:52ch}
+
+.note{margin-top:3rem;padding:1.3rem 1.4rem;border-left:3px solid var(--red);background:var(--paper);max-width:46rem}
+.note h3{font-size:1.12rem;font-weight:700;margin-bottom:.5rem}
+.note p{color:var(--mute);font-size:.98rem}
+
+/* faq */
+.faq{margin-top:2rem;border-top:1px solid var(--line);max-width:52rem}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{position:relative;list-style:none;cursor:pointer;padding:1.15rem 2.6rem 1.15rem 0;font-weight:650;font-size:1.07rem;color:var(--ink);line-height:1.4}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"";position:absolute;right:.45rem;top:50%;width:.85rem;height:.85rem;margin-top:-.425rem;
+  background:linear-gradient(var(--green),var(--green)) center/100% 2px no-repeat,linear-gradient(var(--green),var(--green)) center/2px 100% no-repeat;
+  transition:transform .2s ease;
+}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq__a{padding:0 2.6rem 1.3rem 0;color:var(--mute)}
+@media (prefers-reduced-motion:reduce){.faq summary::after{transition:none}}
+
+/* closing band */
+.band{background:var(--green);color:#D8EADB;padding:clamp(3rem,7vw,4.75rem) 0}
+.band__in{display:grid;gap:1.5rem;align-items:center}
+@media (min-width:52rem){.band__in{grid-template-columns:1fr auto;gap:3rem}}
+.band .h2{color:#fff;max-width:22ch}
+.band p{margin-top:.75rem;max-width:50ch}
+
+/* footer */
+.ft{background:var(--ink);color:#B4C8BA;padding:3rem 0 6.5rem;font-size:.93rem}
+@media (min-width:60rem){.ft{padding-bottom:2rem}}
+.ft__grid{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(min(12rem,100%),1fr))}
+.ft .brand{color:#fff}
+.ft .brand span{color:#FF6B6B}
+.ft p{margin-top:.7rem;max-width:32ch}
+.ft h4{font-size:.95rem;font-weight:700;color:#fff;margin:0 0 .75rem}
+.ft ul{list-style:none;padding:0;margin:0;display:grid;gap:.45rem}
+.ft a{text-decoration:none}
+.ft a:hover{color:#fff;text-decoration:underline}
+.ft__bot{margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.12);font-size:.86rem}
+
+/* mobile action bar */
+.bar{
+  position:fixed;left:0;right:0;bottom:0;z-index:60;
+  display:flex;gap:.6rem;align-items:center;
+  padding:.65rem 1rem calc(.65rem + env(safe-area-inset-bottom));
+  background:#fff;border-top:1px solid var(--line);box-shadow:0 -12px 30px -20px rgba(0,0,0,.4);
+  transform:translateY(110%);visibility:hidden;transition:transform .25s ease,visibility .25s;
+}
+.bar.on{transform:none;visibility:visible}
+.bar .btn{flex:1;min-height:2.9rem}
+.bar .btn--wa{flex:0 0 3.1rem;padding:0}
+@media (min-width:60rem){.bar{display:none}}
+@media (prefers-reduced-motion:reduce){.bar{transition:none}}
+
+.toast{
+  position:fixed;left:50%;bottom:5.75rem;z-index:70;max-width:calc(100% - 2rem);
+  padding:.75rem 1.1rem;border-radius:10px;background:var(--ink);color:#fff;font-size:.93rem;
+  opacity:0;transform:translate(-50%,.75rem);transition:opacity .2s,transform .2s;pointer-events:none;
+}
+.toast.on{opacity:1;transform:translate(-50%,0)}
 </style>
 </head>
 
-<body class="page-intake">
+<body>
 
-<header id="main-header" class="it-top">
-  <div class="container it-top__in">
-    <a class="it-brand" href="/academy">
-      ⚡ Esubu<span>Tech</span>
-      <small>Academy</small>
-    </a>
-    <a class="it-btn it-btn--solid it-btn--sm" href="#signup">Apply</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-tick" viewBox="0 0 24 24"><path d="M3.2 13.6c2.1 1.2 3.9 3.1 5.2 5.4C11 12.6 15.5 7.3 21.2 3.6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.47-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.59-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.42-.08-.12-.28-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89a11.82 11.82 0 0 0-3.48-8.41Z"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><path d="M8.5 7 3.5 12l5 5M15.5 7l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-knight" viewBox="0 0 24 24"><path fill="currentColor" d="M7 20h11v1.8H6.2V20H7Zm1.2-1.6c.1-2.4 1.3-4 2.9-5.3-1.6.4-3 .3-4.1-.4-.9-.6-.8-1.6-.2-2.4l3.5-4.6c.2-1.1.6-2 1.4-2.6l.4 1.5c3.6.4 6.3 3.4 6.3 7.6v6.2H8.2Zm4-11.2a.9.9 0 1 0 0 1.8.9.9 0 0 0 0-1.8Z"/></symbol>
+</svg>
+
+<header class="hd">
+  <div class="wrap hd__in">
+    <a class="brand" href="/academy" aria-label="Esubu Tech Academy home">&#9889;&nbsp;Esubu<span>Tech</span><small>Academy</small></a>
+    <div class="hd__act">
+      <a class="hd__wa js-wa" data-wa="header" target="_blank" rel="noopener"
+         href="https://wa.me/254720811346?text=Hello%20Sammy%2C%20I%27d%20like%20to%20ask%20about%20coding%20and%20chess%20classes.%20My%20child%27s%20age%3A%20">
+        <svg aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span>
+      </a>
+      <a class="btn btn--sm" href="#book"><span class="long">Book free session</span><span class="short">Free session</span></a>
+    </div>
   </div>
 </header>
 
-<main class="it">
+<main>
 
-<!-- ══════════════════ HERO ══════════════════ -->
-<section class="it-hero it-sec--dark">
-  <div class="it-wrap">
-    <div class="it-hero__grid">
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap hero__grid">
+    <div>
+      <p class="status"><i aria-hidden="true"></i>
+        <span class="s-holiday">Holiday camp enrolling now, ages 6 to 16</span>
+        <span class="s-term">Term classes enrolling, ages 6 to 16</span>
+      </p>
 
-      <div>
-        <p class="it-eyebrow">Admissions &middot; Coding &amp; Chess &middot; Ages 6&ndash;16</p>
+      <h1>
+        <span class="s-holiday">Your child is home until 4&nbsp;January. Give their mornings a plan.</span>
+        <span class="s-term">Three evenings a week, your child builds on a screen instead of scrolling one.</span>
+      </h1>
 
-        <h1 class="it-h1" style="margin-top:1.1rem">
-          Your child is capable of more than they are being asked for.
-        </h1>
+      <p class="hero__sub">
+        <span class="s-holiday">Live coding and chess classes on Zoom, Monday to Friday from 9am to 12pm. Up to 15 children in a group, one teacher, and a game your child designs and builds.</span>
+        <span class="s-term">Live coding and chess classes on Zoom, three evenings a week, 1.5 hours a session. Up to 15 children in a group, with the same teacher all term.</span>
+      </p>
 
-        <p class="it-hero__sub">
-          Live online classes in coding and chess, taught in small cohorts by one
-          teacher, at a level that expects something of the child. Places are
-          offered after a placement conversation &mdash; not on a first-come basis.
-        </p>
-
-        <div class="it-hero__act">
-          <a class="it-btn it-btn--solid" href="#signup">Apply for a place</a>
-          <a class="it-btn it-btn--line" href="#process">How places are offered</a>
-        </div>
-
-        <p class="it-hero__note">
-          Applying takes about two minutes. No payment is taken to apply.
-        </p>
+      <div class="hero__cta">
+        <a class="btn" href="#book">Book a free placement session</a>
+        <a class="btn btn--wa js-wa" data-wa="hero" target="_blank" rel="noopener"
+           href="https://wa.me/254720811346?text=Hello%20Sammy%2C%20I%27d%20like%20to%20ask%20about%20coding%20and%20chess%20classes.%20My%20child%27s%20age%3A%20">
+          <svg aria-hidden="true"><use href="#i-wa"/></svg>Ask on WhatsApp
+        </a>
       </div>
+      <p class="hero__fine">Booking is free and takes about two minutes. I reply on WhatsApp, usually the same day. You pay nothing until you accept a place.</p>
+    </div>
 
-      <aside aria-label="Programme at a glance">
-        <dl class="it-panel">
-          <div class="it-panel__row"><dt>Ages</dt><dd>6&ndash;16</dd></div>
-          <div class="it-panel__row"><dt>Cohort</dt><dd>15 children, no more</dd></div>
-          <div class="it-panel__row"><dt>Format</dt><dd>Live on Zoom,<br>three evenings a week</dd></div>
-          <div class="it-panel__row"><dt>Admission</dt><dd>By placement<br>conversation</dd></div>
-          <div class="it-panel__row"><dt>Fee</dt><dd>KES 12,000 per month</dd></div>
-        </dl>
-        <p class="it-panel__foot">
-          We are in Nairobi and teach across Kenya. Every class is live &mdash;
-          nothing is recorded and sent to you later.
-        </p>
-      </aside>
+    <figure class="tt" aria-label="Sample timetable">
+      <div class="tt__hd">
+        <b class="s-holiday">Holiday camp timetable</b>
+        <b class="s-term">Term timetable</b>
+        <span class="s-holiday">9am to 12pm, sample week</span>
+        <span class="s-term">Evenings, sample week</span>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col"><span class="sr">Day</span></th>
+            <th scope="col"><span><svg aria-hidden="true"><use href="#i-code"/></svg>Coding</span></th>
+            <th scope="col"><span><svg aria-hidden="true"><use href="#i-knight"/></svg>Chess</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Mon</th><td>Make a character move</td><td>How every piece moves</td></tr>
+          <tr class="s-holiday"><th scope="row">Tue</th><td>Add a score</td><td>Forks</td></tr>
+          <tr><th scope="row">Wed</th><td>Build a game-over screen</td><td>Pins and skewers</td></tr>
+          <tr class="s-holiday"><th scope="row">Thu</th><td>Add a second level</td><td>Mate in two</td></tr>
+          <tr><th scope="row">Fri</th><td>Show the family your game</td><td>Mini tournament</td></tr>
+        </tbody>
+      </table>
+      <figcaption class="tt__note">
+        <svg class="draw" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.2 13.6c2.1 1.2 3.9 3.1 5.2 5.4C11 12.6 15.5 7.3 21.2 3.6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Friday: every child shows their game</span>
+      </figcaption>
+    </figure>
+  </div>
 
+  <div class="wrap"><ul class="proof">
+    <li><svg class="tick" aria-hidden="true"><use href="#i-tick"/></svg>A live teacher in every session, no recorded videos</li>
+    <li><svg class="tick" aria-hidden="true"><use href="#i-tick"/></svg>Never more than 15 children in a group</li>
+    <li><svg class="tick" aria-hidden="true"><use href="#i-tick"/></svg>Pay by M-Pesa, after the free session</li>
+    <li><svg class="tick" aria-hidden="true"><use href="#i-tick"/></svg>Classes aren&rsquo;t recorded and children don&rsquo;t message each other</li>
+  </ul></div>
+</section>
+
+<!-- TEACHER -->
+<section class="sec sec--white" aria-labelledby="teach-h">
+  <div class="wrap teach">
+    <img class="teach__photo" src="/sammy-subu.jpg" width="200" height="200" alt="Sammy Subu, founder and programmes director of Esubu Tech Academy" loading="lazy">
+    <div>
+      <h2 class="h2" id="teach-h">I&rsquo;m Sammy Subu, founder and programmes director.</h2>
+      <p class="lede">
+        I design the curriculum and oversee every group, from the placement session to the
+        progress notes you receive. When you book, you talk to me on WhatsApp. No call centre
+        and no sales team.
+      </p>
+      <ul class="creds">
+        <li>BSc Data Science, KCA University</li>
+        <li>MSc Artificial Intelligence, Open University of Kenya (ongoing)</li>
+      </ul>
+      <p class="sig" aria-hidden="true">Sammy Subu</p>
+      <p class="reg">Esubu Tech Academy is run by Esubu Media, a business registered in Kenya.</p>
     </div>
   </div>
 </section>
 
-<!-- ══════════════════ WHO THIS IS FOR ══════════════════ -->
-<section class="it-sec it-sec--light it--light" aria-labelledby="who-h">
-  <div class="it-wrap">
-    <p class="it-eyebrow">The children we teach</p>
-    <h2 class="it-h2" id="who-h" style="margin-top:.85rem;max-width:24ch">
-      Most of the children who arrive here are one of four kinds.
-    </h2>
-
-    <div class="it-who">
-      <div class="it-who__item">
-        <h3>The one who takes things apart to see how they work.</h3>
-        <p>Who wants to know what is inside the thing, not just what it does. Coding gives that instinct somewhere to go.</p>
-      </div>
-      <div class="it-who__item">
-        <h3>The one who asks a question you cannot answer, then asks another.</h3>
-        <p>Who is not being difficult. Who is thinking further ahead than the lesson requires, and has run out of room for it.</p>
-      </div>
-      <div class="it-who__item">
-        <h3>The one who is doing fine at school and is not stretched by it.</h3>
-        <p>Fine is not the same as occupied. A child who finishes early and coasts learns that effort is optional.</p>
-      </div>
-      <div class="it-who__item">
-        <h3>The one who hates losing and has not yet learned what losing is for.</h3>
-        <p>Chess teaches that faster than anything else: you lose, you look at why, you play again. They need that earlier than most.</p>
-      </div>
-    </div>
-
-    <p class="it-aside">
-      If none of these sounds like your child, this is probably not the right
-      programme &mdash; and it is worth knowing that before you apply rather than after.
-    </p>
+<!-- OUTCOMES -->
+<section class="sec sec--board" aria-labelledby="out-h">
+  <div class="wrap">
+    <h2 class="h2" id="out-h">What your child brings home</h2>
+    <p class="lede">You should see the work, so every child finishes with something to show you.</p>
+    <ul class="out">
+      <li><svg class="tick" aria-hidden="true"><use href="#i-tick"/></svg>A working game they designed and coded, to play with you at home</li>
+      <li><svg class="tick" aria-hidden="true"><use href="#i-tick"/></svg>A chess game written down in notation, which they replay for you move by move</li>
+      <li><svg class="tick" aria-hidden="true"><use href="#i-tick"/></svg>Written progress notes from the teacher, so you know what they&rsquo;re working on</li>
+      <li><svg class="tick" aria-hidden="true"><use href="#i-tick"/></svg>A certificate when the camp or term ends</li>
+    </ul>
   </div>
 </section>
 
-<!-- ══════════════════ WHY THIS, WHY NOW ══════════════════
-     Built from keyword research: the dominant parent intent is not
-     "where do I buy this" but "is this worth doing at all". -->
-<section class="it-sec it-sec--white it--white" id="why" aria-labelledby="why-h">
-  <div class="it-wrap">
-    <p class="it-eyebrow">Why this, and why now</p>
-    <h2 class="it-h2" id="why-h" style="margin-top:.85rem;max-width:30ch">
-      The three things parents ask before they apply.
-    </h2>
-
-    <div class="it-who">
-      <div class="it-who__item">
-        <h3>&ldquo;Isn&rsquo;t this just more screen time?&rdquo;</h3>
-        <p>
-          The screens are not going away, and no argument from you is going to
-          remove them. What changes a child&rsquo;s trajectory is whether the screen
-          is where they <em>consume</em> or where they <em>make</em>. Three evenings a
-          week, yours is building. The rest of the week stays exactly as it is &mdash;
-          we are not asking for the phone back.
-        </p>
+<!-- PARENT QUESTIONS -->
+<section class="sec sec--white" aria-labelledby="qa-h">
+  <div class="wrap">
+    <h2 class="h2" id="qa-h">The three questions parents ask me first</h2>
+    <div class="qa">
+      <div class="qa__row">
+        <h3>&ldquo;Isn&rsquo;t this more screen time?&rdquo;</h3>
+        <p>Your child will spend time on screens whatever you plan. What changes their week is whether they watch or build. In class, they build. The rest of the day stays yours to manage, and I won&rsquo;t ask you to take the phone away.</p>
       </div>
-      <div class="it-who__item">
-        <h3>&ldquo;AI writes code now. Does this still matter?&rdquo;</h3>
-        <p>
-          More, not less &mdash; but for a different reason than most programmes will
-          give you. AI will produce the code. It will not decide what should be built,
-          notice that an answer is subtly wrong, or explain why the program behaves as
-          it does. Those are the skills we teach: the structure underneath, and the
-          habit of checking. A child who has only watched AI produce things cannot
-          tell good work from confident nonsense. A child who has built things can.
-        </p>
+      <div class="qa__row">
+        <h3>&ldquo;AI writes code now. Is coding still worth learning?&rdquo;</h3>
+        <p>More than before. AI produces code fast, and it&rsquo;s often wrong in ways a beginner won&rsquo;t spot. Children who have built programs themselves notice the mistakes, ask sharper questions and decide what gets built. Those are the skills we teach.</p>
       </div>
-      <div class="it-who__item">
+      <div class="qa__row">
         <h3>&ldquo;Is this a game club with a certificate?&rdquo;</h3>
-        <p>
-          A finished project. A game they can read back to you in notation. A teacher
-          who can tell you, specifically, what your child is currently working on. If
-          your child leaves having only had fun, we have wasted your money &mdash; and
-          we would rather say that plainly now.
-        </p>
+        <p>No. Your child finishes a project, records chess games in notation and gets written feedback from the teacher. If all they did was have fun, I&rsquo;d count your money as wasted, and I&rsquo;d rather say so now.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════════════ THE STANDARD ══════════════════ -->
-<section class="it-sec it-sec--deep" aria-labelledby="std-h">
-  <div class="it-wrap">
-    <p class="it-eyebrow" id="std-h">The standard</p>
-    <div class="it-standard">
-      <p>
-        We do not fill rooms. We keep cohorts small enough that the teacher knows
-        what every child is working on, and we hold the work at a level that
-        requires effort from them.
-      </p>
-      <p>
-        Children who are used to being the quickest in the room often discover here
-        that they are not. That is not a problem we have failed to prevent. It is
-        the reason the room is small.
-      </p>
-      <p class="it-quiet">
-        If that is uncomfortable to read, it is meant to be. It is also precisely
-        where the growth happens &mdash; and almost nothing else in your child&rsquo;s
-        week will be asking it of them.
-      </p>
+<!-- FEE -->
+<section class="sec" id="fee" aria-labelledby="fee-h">
+  <div class="wrap fee">
+    <div>
+      <h2 class="h2" id="fee-h">Fee structure</h2>
+      <p class="lede">KES 12,000 a month. You pay by M-Pesa after the free placement session, once you accept a place.</p>
+      <div class="fee__notes">
+        <p><b>Paying by M-Pesa:</b> Buy Goods Till 680985. Your confirmation message shows the name Soko Huru, the company I co-founded, so you know the money reached me.</p>
+        <p><b>A second child joining?</b> Ask me about sibling pricing on WhatsApp.</p>
+        <p><b>Starting partway through a month?</b> The first month is pro-rated, so you don&rsquo;t pay for classes already done.</p>
+        <p><b>If the fee is the one thing in the way,</b> say so in the form. I&rsquo;ll be straight with you about what&rsquo;s possible.</p>
+      </div>
+    </div>
+
+    <div class="fs">
+      <div class="fs__hd">
+        <b>Esubu Tech Academy</b>
+        <span class="s-holiday">Holiday 2026 and Term 1 2027</span><span class="s-term">Term classes</span>
+      </div>
+      <table>
+        <thead>
+          <tr><th scope="col"><span class="sr">Item</span></th><th scope="col" class="s-holiday">Holiday camp</th><th scope="col">Term classes</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">When</th><td class="s-holiday">Monday to Friday, 9am to 12pm</td><td>Three evenings a week, 1.5 hours each</td></tr>
+          <tr><th scope="row">Runs</th><td class="s-holiday">Now until 1 January</td><td><span class="s-holiday">From January, when schools reopen</span><span class="s-term">Every school term</span></td></tr>
+          <tr><th scope="row">Group</th><td class="s-holiday">Up to 15 children</td><td>Up to 15 children</td></tr>
+          <tr><th scope="row">Fee</th>
+            <td class="s-holiday"><span class="amt">KES 12,000</span><span class="per">per month</span></td>
+            <td><span class="amt">KES 12,000</span><span class="per">per month, about KES 1,000 a class</span></td></tr>
+        </tbody>
+      </table>
+      <p class="fs__foot">Every place includes the same teacher throughout, written progress notes, one finished project and a certificate.<br>Pay to M-Pesa Buy Goods Till 680985. The name shows as Soko Huru.</p>
     </div>
   </div>
 </section>
 
-<!-- ══════════════════ FEE ══════════════════ -->
-<section class="it-sec it-sec--light it--light" id="fee" aria-labelledby="fee-h">
-  <div class="it-wrap it-fee">
+<!-- BOOKING -->
+<section class="sec sec--ink" id="book" aria-labelledby="book-h">
+  <div class="wrap book">
     <div>
-      <p class="it-eyebrow">The fee</p>
-      <h2 class="it-h2" id="fee-h" style="margin-top:.85rem">One fee. A small group. One teacher.</h2>
-      <p style="margin-top:1.1rem;color:var(--mute-l)">
-        Twelve live sessions a month, capped at fifteen children, taught by the same
-        person throughout the term. About a thousand shillings a class, for a room
-        small enough that your child cannot hide in it.
-      </p>
-      <p style="color:var(--mute-l)">
-        We would rather you took a moment over this than that you took it quickly.
-        If the fee is the only thing standing between your child and a place here,
-        say so in the form &mdash; we will be straightforward with you about what is possible.
-      </p>
-    </div>
-
-    <div class="it-fee__card">
-      <div class="it-fee__amt">KES 12,000<small>per month</small></div>
-      <p class="it-fee__note">
-        About <strong style="font-weight:500;color:var(--text-l)">KES 1,000 per class</strong>
-        &mdash; roughly <strong style="font-weight:500;color:var(--text-l)">KES 670 per teaching hour</strong>,
-        across twelve sessions a month.
-      </p>
-      <!-- ⚠ VERIFY BEFORE PUBLISHING: the comparison below reflects MindHub
-           Nairobi's published price (KES 15,000 / 4-week module, 1 x weekly)
-           at the time of research. Competitor pricing changes. Either confirm
-           it, date it, or delete this paragraph. -->
-      <p class="it-fee__note" style="border-top:1px solid var(--rule-l);padding-top:.85rem;margin-top:.95rem">
-        For context: a term of weekly group classes at a Nairobi coding centre
-        runs around KES 15,000 for four sessions. This is twelve sessions for
-        twelve thousand, without a Saturday drive.
-      </p>
-      <ul class="it-fee__list">
-        <li>12 live sessions &mdash; three evenings a week, term time</li>
-        <li>15 children maximum, the same cohort throughout</li>
-        <li>One finished project your child keeps</li>
-        <li>Written progress from the teacher, to you</li>
-        <li>Certificate at the end of term</li>
-        <li>Holiday intensives available to enrolled families</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════ THE FORM ══════════════════ -->
-<section class="it-sec it-sec--deep" id="signup" aria-labelledby="signup-h">
-  <div class="it-wrap it-form-grid">
-
-    <div>
-      <p class="it-eyebrow">Application</p>
-      <h2 class="it-h2" id="signup-h" style="margin-top:.85rem">Tell us about your child.</h2>
-      <p style="margin-top:1.1rem;color:#BFCFC4">
-        Leave your details and we will come back to you &mdash; by WhatsApp first,
-        and by email if we cannot reach you.
-      </p>
-      <p style="color:#BFCFC4">
-        If you have more than one child who might join, add them below. Cohorts are
-        grouped by ability, not age alone, so siblings can sit in different groups.
-      </p>
-      <p style="color:#BFCFC4">
-        <strong style="color:#fff;font-weight:500">You do not need to work out whether your child qualifies.</strong>
-        Most children arrive having done nothing like this before. The placement
-        conversation is where we work out which group fits &mdash; that is our job,
-        not yours. Applying commits you to nothing.
-      </p>
-      <p class="it-fine" style="margin-top:1.3rem">
-        Read by one person, not a team. Enquiries are answered in the order they
-        arrive, usually within two hours during the day.
-      </p>
+      <h2 class="h2" id="book-h">Book a free placement session</h2>
+      <p class="lede">Tell me about your child. I&rsquo;ll reply on WhatsApp and set up a short Zoom session to find the right group.</p>
+      <ol class="steps">
+        <li><span><b>You fill this in</b>About two minutes.</span></li>
+        <li><span><b>I reply on WhatsApp</b>Usually the same day. By email if you prefer.</span></li>
+        <li><span><b>Free placement session</b>A short session on Zoom with your child. You&rsquo;re welcome to sit in. Nobody passes or fails.</span></li>
+        <li><span><b>Your child starts</b>You accept the place and pay the month to M-Pesa Till 680985 (Soko Huru).</span></li>
+      </ol>
+      <p class="book__fine">Groups are set by ability, not age alone, so nobody starts in a group where they get lost. Brothers and sisters often land in different groups.</p>
     </div>
 
     <div>
-      <!-- ─────────────── THE FORM ─────────────── -->
-      <form class="it-form" id="it-form" novalidate>
-
-        <fieldset class="it-block">
-          <legend class="it-legend">About you</legend>
-
-          <div class="it-field">
-            <label for="it-name">Your full name</label>
-            <input id="it-name" name="name" type="text" autocomplete="name"
-                   placeholder="e.g. Wanjiru Kamau" required>
-          </div>
-
-          <div class="it-row2">
-            <div class="it-field">
-              <label for="it-email">Email address</label>
-              <input id="it-email" name="email" type="email" autocomplete="email"
-                     inputmode="email" placeholder="you@example.com" required>
+      <div class="card">
+        <form class="f" id="f" novalidate>
+          <fieldset>
+            <legend>About you</legend>
+            <div class="fld">
+              <label for="f-name">Your name</label>
+              <input id="f-name" name="name" type="text" autocomplete="name" placeholder="e.g. Wanjiru Kamau" required>
             </div>
-            <div class="it-field">
-              <label for="it-phone">Phone / WhatsApp</label>
-              <input id="it-phone" name="phone" type="tel" autocomplete="tel"
-                     inputmode="tel" placeholder="07XX XXX XXX" value="+254 " required>
+            <div class="row2">
+              <div class="fld">
+                <label for="f-phone">WhatsApp number</label>
+                <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="0712 345 678" required aria-describedby="f-phone-h">
+                <p class="hint" id="f-phone-h">I&rsquo;ll message you here.</p>
+              </div>
+              <div class="fld">
+                <label for="f-email">Email <span class="opt">(optional)</span></label>
+                <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com">
+              </div>
             </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Your child <span class="opt" id="f-count">1 child</span></legend>
+            <div class="kids" id="f-kids"></div>
+            <button type="button" class="add" id="f-add">+ Add another child</button>
+          </fieldset>
+
+          <fieldset>
+            <legend>Which classes?</legend>
+            <div class="chips" role="radiogroup" aria-label="Which classes">
+              <label class="chip s-holiday"><input type="radio" name="classes" value="Holiday camp"><span>Holiday camp</span></label>
+              <label class="chip"><input type="radio" name="classes" value="Term classes"><span>Term classes</span></label>
+              <label class="chip"><input type="radio" name="classes" value="Not sure yet"><span>Not sure yet</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Anything else <span class="opt">(optional)</span></legend>
+            <div class="fld">
+              <label for="f-heard">How did you hear about us?</label>
+              <select id="f-heard" name="heard_from">
+                <option value="">Choose one</option>
+                <option>A friend or family member</option>
+                <option>A WhatsApp group</option>
+                <option>Facebook</option>
+                <option>Instagram</option>
+                <option>TikTok</option>
+                <option>Google search</option>
+                <option>My child&rsquo;s school</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="fld">
+              <label for="f-notes">What have you noticed about how your child thinks?</label>
+              <textarea id="f-notes" name="notes" rows="3" placeholder="e.g. He's ahead in maths but says school is boring. She plays chess with her grandfather and beats him."></textarea>
+            </div>
+          </fieldset>
+
+          <div class="hp" aria-hidden="true">
+            <label for="f-website">Website</label>
+            <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
           </div>
-        </fieldset>
 
-        <fieldset class="it-block">
-          <legend class="it-legend">
-            Your child <span class="it-count" id="it-count">1 child</span>
-          </legend>
-
-          <div id="it-children"></div>
-
-          <button type="button" class="it-add" id="it-add">
-            + Add another child
-          </button>
-        </fieldset>
-
-        <fieldset class="it-block">
-          <legend class="it-legend">Anything else <span class="it-count">optional</span></legend>
-          <div class="it-field">
-            <label for="it-notes">What have you noticed about how they think?</label>
-            <textarea id="it-notes" name="notes" rows="3"
-                      placeholder="e.g. He is ahead in maths but says school is boring. She plays chess with her grandfather and beats him."></textarea>
+          <div class="consent">
+            <input type="checkbox" id="f-consent" name="consent" required>
+            <label for="f-consent">I&rsquo;m the parent or guardian, and I agree to Esubu Tech contacting me about my child&rsquo;s place. My details stay with Esubu Tech and go to nobody else.</label>
           </div>
-        </fieldset>
 
-        <!-- honeypot: bots fill this, humans never see it -->
-        <div class="it-hp" aria-hidden="true">
-          <label for="it-website">Website</label>
-          <input id="it-website" name="website" type="text" tabindex="-1" autocomplete="off">
+          <p class="err" id="f-err" role="alert" aria-live="polite"></p>
+
+          <button class="btn btn--block" type="submit" id="f-submit">Book my free session</button>
+          <p class="fine">No payment to book. No mailing list.</p>
+        </form>
+
+        <div class="done" id="f-done" hidden tabindex="-1">
+          <h3>Asante<span id="f-done-name"></span>. Your free session request is in.</h3>
+          <p>Here&rsquo;s what happens next:</p>
+          <ol>
+            <li>I message you on WhatsApp, usually today.</li>
+            <li>We pick a time for the free placement session.</li>
+            <li>I tell you which group fits your child and offer a place.</li>
+            <li>You pay the month to M-Pesa Buy Goods Till 680985. The name shows as Soko Huru.</li>
+          </ol>
+          <div class="done__act">
+            <a class="btn btn--wa js-wa" id="f-done-wa" data-wa="success" target="_blank" rel="noopener"
+               href="https://wa.me/254720811346?text=Hello%20Sammy%2C%20I%20have%20just%20booked%20a%20free%20placement%20session.">
+              <svg aria-hidden="true"><use href="#i-wa"/></svg>Message me on WhatsApp now
+            </a>
+          </div>
+          <p class="ref" id="f-ref"></p>
         </div>
 
-        <div class="it-consent">
-          <input type="checkbox" id="it-consent" name="consent" required>
-          <label for="it-consent">
-            I am the parent or guardian, and I agree to Esubu Tech contacting me
-            about my child&rsquo;s place. My details are kept for this purpose and
-            not shared with anyone else.
-          </label>
-        </div>
-
-        <p class="it-err" id="it-err" role="alert" aria-live="polite"></p>
-
-        <button class="it-btn it-btn--solid it-btn--block" type="submit" id="it-submit">
-          Submit application
-        </button>
-
-        <p class="it-fine">
-          You will not be added to a mailing list. Submitting does not commit you
-          to anything.
-        </p>
-      </form>
-
-      <!-- ─────────────── SUCCESS ─────────────── -->
-      <div class="it-done" id="it-done" hidden tabindex="-1">
-        <h3>Thank you &mdash; we have your details.</h3>
-        <p>
-          Your enquiry is with the teacher. Here is what happens now.
-        </p>
-        <ol>
-          <li>We read it and come back to you on WhatsApp, usually the same day.</li>
-          <li>We arrange a short placement conversation with your child.</li>
-          <li>We tell you honestly whether we can serve them well, and offer a place if we can.</li>
-        </ol>
-        <div class="it-done__act">
-          <a class="it-btn it-btn--solid js-wa" id="it-done-wa" data-wa="success"
-             target="_blank" rel="noopener"
-             href="https://wa.me/254720811346?text=Hello%20Esubu%20Academy%2C%20I%20have%20just%20applied.%20My%20child%27s%20age%3A%20">
-            Also message us on WhatsApp
-          </a>
-          <a class="it-btn it-btn--line" href="/academy">Back to the Academy page</a>
-        </div>
-        <p class="it-ref" id="it-ref"></p>
+        <noscript>
+          <p style="margin-top:1rem">This form needs JavaScript.
+            <a href="https://wa.me/254720811346?text=Hello%20Sammy%2C%20I%27d%20like%20to%20book%20a%20free%20placement%20session.%20My%20child%27s%20age%3A%20">Message me on WhatsApp</a> instead.</p>
+        </noscript>
       </div>
 
-      <noscript>
-        <p class="it-fine" style="margin-top:1rem">
-          This form needs JavaScript. Please
-          <a class="it-link" href="https://wa.me/254720811346?text=Hello%20Esubu%20Academy%2C%20I%27d%20like%20the%20admissions%20details.%20My%20child%27s%20age%3A%20">message us on WhatsApp</a>
-          instead.
-        </p>
-      </noscript>
-
-      <p style="margin-top:1.15rem;padding-top:1.15rem;border-top:1px solid var(--rule-d)"
-         class="it-fine">
-        Rather not fill a form?
-        <a class="it-link js-wa" data-wa="alt" target="_blank" rel="noopener"
-           href="https://wa.me/254720811346?text=Hello%20Esubu%20Academy%2C%20I%20have%20a%20question%20about%20admissions.%20My%20child%27s%20age%3A%20">Message the teacher directly</a>
-        &nbsp;&middot;&nbsp;
-        <a class="it-link" href="tel:+254720811346">+254 720 811 346</a>
+      <p class="alt">Rather talk first?
+        <a class="js-wa" data-wa="alt" target="_blank" rel="noopener"
+           href="https://wa.me/254720811346?text=Hello%20Sammy%2C%20I%27d%20like%20to%20ask%20about%20coding%20and%20chess%20classes.%20My%20child%27s%20age%3A%20">WhatsApp me</a>
+        or call <a href="tel:+254720811346">+254 720 811 346</a>.
       </p>
     </div>
-
   </div>
 </section>
 
-<!-- ══════════════════ PROCESS ══════════════════ -->
-<section class="it-sec it-sec--white it--white" id="process" aria-labelledby="process-h">
-  <div class="it-wrap">
-    <p class="it-eyebrow">What happens next</p>
-    <h2 class="it-h2" id="process-h" style="margin-top:.85rem;max-width:26ch">
-      Places are offered, not sold.
-    </h2>
-    <p class="it-lede" style="margin-top:1rem;max-width:54ch;color:var(--mute-l)">
-      There is no free class to try, because we are not trying to fill a room.
-      The application above is the first step, and it is how every family here started.
-    </p>
-
-    <ol class="it-steps">
-      <li class="it-step">
-        <span class="it-step__n" aria-hidden="true">01</span>
-        <h3>You apply</h3>
-        <p>The form above takes about two minutes. Age, contact details, and what you have noticed about your child.</p>
-      </li>
-      <li class="it-step">
-        <span class="it-step__n" aria-hidden="true">02</span>
-        <h3>We reply</h3>
-        <p>On WhatsApp, usually the same day. Email if we cannot reach you there. Not a newsletter &mdash; a reply from the person who teaches.</p>
-      </li>
-      <li class="it-step">
-        <span class="it-step__n" aria-hidden="true">03</span>
-        <h3>A placement conversation</h3>
-        <p>A short session with your child, online. We look at where they are and how they approach something they cannot yet do. It is not a test they can fail.</p>
-      </li>
-      <li class="it-step">
-        <span class="it-step__n" aria-hidden="true">04</span>
-        <h3>An offer of a place</h3>
-        <p>If we can serve them well and there is a place, we offer one. You then confirm and pay the month. Places are held for the intake date only.</p>
-      </li>
-    </ol>
-  </div>
-</section>
-
-<!-- ══════════════════ CURRICULUM ══════════════════ -->
-<section class="it-sec it-sec--dark" aria-labelledby="what-h">
-  <div class="it-wrap">
-    <p class="it-eyebrow">What the work actually is</p>
-    <h2 class="it-h2" id="what-h" style="margin-top:.85rem;max-width:22ch">
-      Two disciplines. Both reward the same habit of mind.
-    </h2>
-
-    <div class="it-two">
-      <div class="it-track">
-        <span class="it-track__tag">Coding</span>
-        <h3 class="it-h3">Scratch, then Python</h3>
-        <p>
-          Children begin by assembling, not typing &mdash; but the point was never
-          the blocks. Within a few weeks they are holding a working game of their
-          own design, with rules they wrote.
-        </p>
+<!-- CURRICULUM -->
+<section class="sec sec--white" aria-labelledby="cur-h">
+  <div class="wrap">
+    <h2 class="h2" id="cur-h">What the lessons cover</h2>
+    <div class="cur">
+      <div class="track">
+        <h3>Coding: Scratch first, then Python</h3>
+        <p>Younger children start by snapping code blocks together in Scratch, inside the browser. Within a few weeks they&rsquo;re running a game of their own design, with rules they wrote. Older children who are ready to type move on to Python.</p>
         <ul>
-          <li>Sequencing, variables, conditionals and coordinates</li>
-          <li>Debugging: forming a theory about why it broke, then testing it</li>
-          <li>One finished project per term, that they keep and can share</li>
-          <li>Older and ready children move on to Python</li>
+          <li>Sequences, variables, conditions and coordinates</li>
+          <li>Debugging: guess why it broke, test the guess, fix it</li>
+          <li>One finished project, theirs to keep and share</li>
+          <li>Python for older children once they&rsquo;re ready</li>
         </ul>
       </div>
-
-      <div class="it-track">
-        <span class="it-track__tag">Chess</span>
-        <h3 class="it-h3">The board as a discipline</h3>
-        <p>
-          Taught properly &mdash; notation, openings with reasons, tactics, and the
-          habit of reviewing a game you have just lost. Not a club where children
-          are left to move pieces.
-        </p>
+      <div class="track">
+        <h3>Chess: notation, tactics and reviewing every loss</h3>
+        <p>Children learn to write their games down and go back over what went wrong. Nobody gets left alone to push pieces around.</p>
         <ul>
-          <li>Algebraic notation, so they can read and record their own games</li>
-          <li>Openings and the ideas behind them, not lines to memorise</li>
-          <li>Tactics and pattern recognition, built by repetition</li>
-          <li>Tournament play inside the cohort, with supervised review</li>
+          <li>Algebraic notation, to record and replay their own games</li>
+          <li>Openings with the reasons behind them, not memorised lines</li>
+          <li>Tactics like forks and pins, built up by repetition</li>
+          <li>Tournaments inside the group, with a review after each game</li>
         </ul>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ══════════════════ PROOF ══════════════════ -->
-<section class="it-sec it-sec--deep" aria-labelledby="proof-h">
-  <div class="it-wrap it-proof">
-    <div>
-      <p class="it-eyebrow" id="proof-h">What parents notice</p>
-      <blockquote class="it-quote" style="margin-top:1.3rem">
-        <p>
-          &ldquo;My son used to avoid any question he did not immediately know the
-          answer to. Three months in, his teacher called me &mdash; she said he is
-          now the first to put his hand up and try.&rdquo;
-        </p>
-        <footer>Parent, Nairobi &middot; term-time student</footer>
-      </blockquote>
-    </div>
-
-    <div>
-      <ul class="it-facts">
-        <li>
-          <b>One finished project a term</b>
-          <p>A working game your child built, that they keep and can show you. Not a certificate for attending.</p>
-        </li>
-        <li>
-          <b>15, and never more</b>
-          <p>A cohort small enough that the teacher knows what each child is working on &mdash; and can tell you specifically.</p>
-        </li>
-        <li>
-          <b>Taught by the founder</b>
-          <p>Sammy Subu &mdash; online since 2008, co-founder of a marketplace that reached 2,500 Kenyan businesses, BSc Data Science.</p>
-        </li>
-      </ul>
-
-      <!-- The honesty block. Deliberate: the contested chess-transfer claims
-           on the main academy page are removed here on purpose. A programme
-           claiming rigour cannot publish statistics its audience can disprove. -->
-      <div style="margin-top:1.5rem;padding-top:1.3rem;border-top:1px solid var(--rule-d)">
-        <p style="font-size:.86rem;color:#AFBEB4;line-height:1.65">
-          <strong style="color:#EAF0E8;font-weight:500">A note on the research.</strong>
-          You will find programmes claiming that chess raises exam scores. The
-          strongest reviews of that evidence do not support it &mdash; chess reliably
-          makes children better at chess, and the transfer to grades is far smaller
-          than the marketing says. We are not going to claim it.
-        </p>
-        <p style="font-size:.86rem;color:#AFBEB4;line-height:1.65;margin-top:.8rem">
-          What we claim is narrower, and we stand behind it: sustained attention, the
-          habit of reviewing a game you have lost, and a child who can read a game
-          back to you in notation.
-        </p>
+    <div class="puz">
+      <div class="board" role="img" aria-label="Chess position: a white knight on c7 attacks the black king on e8 and the black rook on a8 at the same time.">
+        <span class="pc pc--b" style="grid-area:1/1" aria-hidden="true">&#9820;&#xFE0E;</span>
+        <span class="pc pc--b" style="grid-area:1/5" aria-hidden="true">&#9818;&#xFE0E;</span>
+        <span class="pc pc--w" style="grid-area:2/3" aria-hidden="true">&#9822;&#xFE0E;</span>
+        <span class="pc pc--w" style="grid-area:8/7" aria-hidden="true">&#9818;&#xFE0E;</span>
+        <svg viewBox="0 0 8 8" aria-hidden="true">
+          <defs><marker id="ah" viewBox="0 0 6 6" refX="4.6" refY="3" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 6 3 0 6Z" fill="#C8102E"/></marker></defs>
+          <path d="M2.82 1.34 4.16 .68" stroke="#C8102E" stroke-width=".09" stroke-linecap="round" marker-end="url(#ah)"/>
+          <path d="M2.18 1.34 .84 .68" stroke="#C8102E" stroke-width=".09" stroke-linecap="round" marker-end="url(#ah)"/>
+        </svg>
+      </div>
+      <div>
+        <h3>A puzzle from the first week</h3>
+        <p>The white knight on c7 attacks the king and the rook at the same time. This pattern is called a fork. Black has to save the king, and the rook falls. Children spot this pattern in their own games within days, then start setting it up on purpose.</p>
       </div>
     </div>
+
+    <div class="note">
+      <h3>Will chess raise exam marks?</h3>
+      <p>You&rsquo;ll see programmes promise it. The strongest reviews of the research don&rsquo;t support it: chess makes children better at chess, and the effect on grades is small. I won&rsquo;t claim it.</p>
+      <p>What I stand behind is narrower. Longer focus, the habit of reviewing a lost game, and a child who reads a game back to you in notation.</p>
+    </div>
   </div>
 </section>
 
-<!-- ══════════════════ FAQ ══════════════════ -->
-<section class="it-sec it-sec--white it--white" aria-labelledby="faq-h">
-  <div class="it-wrap">
-    <p class="it-eyebrow">Before you apply</p>
-    <h2 class="it-h2" id="faq-h" style="margin-top:.85rem">
-      The questions parents actually ask.
-    </h2>
-
-    <div class="it-faq">
+<!-- FAQ -->
+<section class="sec" aria-labelledby="faq-h">
+  <div class="wrap">
+    <h2 class="h2" id="faq-h">Questions from parents</h2>
+    <div class="faq">
       <details>
-        <summary>Is this only for exceptionally advanced children?</summary>
-        <div class="it-faq__a"><p>No. It is for children who are ready to be stretched. Readiness is not the same thing as ability &mdash; it is closer to curiosity, and to being willing to be wrong in front of other people. Some very able children are not ready, and the placement conversation is how we tell the difference.</p></div>
+        <summary>Is the placement session free?</summary>
+        <div class="faq__a"><p>Yes. It&rsquo;s a short session on Zoom with your child, with no payment and no obligation. You&rsquo;re welcome to sit in.</p></div>
       </details>
       <details>
-        <summary>What age should my child start?</summary>
-        <div class="it-faq__a"><p>Six is the youngest we take, because it is roughly where a child can follow a sequence of instructions and hold a rule in their head long enough to use it. There is no upper urgency &mdash; children start at nine and eleven and do very well. What matters far more than age is whether they are curious about how things work.</p></div>
+        <summary>Is six too young?</summary>
+        <div class="faq__a"><p>Six is where most groups start. At six it&rsquo;s mostly Scratch, plus chess through small games, paced for short attention spans.</p></div>
       </details>
       <details>
-        <summary>Why is there no free trial class?</summary>
-        <div class="it-faq__a"><p>Because we are not trying to fill a room. A free class is a sales technique, and it teaches a child that the first one does not matter. The placement conversation takes about as long, tells us considerably more, and costs you nothing but an application.</p></div>
+        <summary>Does my child need any experience?</summary>
+        <div class="faq__a"><p>None. Many children join having never coded or played a full game of chess. Others already play. The placement session sorts out which group fits.</p></div>
       </details>
       <details>
-        <summary>My child is six. Is that too young?</summary>
-        <div class="it-faq__a"><p>Six is where most cohorts begin. At that age it is largely Scratch and chess taught through small games rather than theory, and the work is paced for short attention spans without being condescending about it.</p></div>
+        <summary>Will my child keep up?</summary>
+        <div class="faq__a"><p>Groups are set by ability, not age alone. A fast seven-year-old and a careful twelve-year-old sit in different groups, so nobody starts somewhere they&rsquo;re lost.</p></div>
       </details>
       <details>
-        <summary>What if my child is not ready?</summary>
-        <div class="it-faq__a"><p>Then we will tell you, and suggest what to do instead &mdash; including coming back in six or twelve months. We would rather decline a place than take a child who will spend the term behind the room. A no from us is information, not a rejection of your child.</p></div>
-      </details>
-      <details>
-        <summary>Will my child be out of their depth?</summary>
-        <div class="it-faq__a"><p>That is the most common worry, and the reason we do a placement conversation before a first class. Children are grouped by ability rather than age, so the seven-year-old who races ahead and the twelve-year-old who works carefully sit in different rooms. Nobody starts in a group where they cannot keep up.</p></div>
-      </details>
-      <details>
-        <summary>Do they need any experience?</summary>
-        <div class="it-faq__a"><p>None. Children join having done no coding and never having played a proper game of chess. Others arrive already playing. The placement conversation sorts that out, which is why we do not ask you to guess now.</p></div>
-      </details>
-      <details>
-        <summary>Will this help with school?</summary>
-        <div class="it-faq__a"><p>Indirectly, and we will not overstate it. We are not a tutoring service and we do not teach towards the KCSE. What the work does build is patience with a problem that does not yield immediately, and the habit of checking your own reasoning &mdash; which is close to what the mathematics Kenyan children most often fail actually rewards.</p></div>
-      </details>
-      <details>
-        <summary>I have more than one child. Can they both join?</summary>
-        <div class="it-faq__a"><p>Yes &mdash; add each child in the form. They are placed on ability rather than age alone, so siblings often sit in different cohorts. Message us after applying and we will tell you what a second place costs.</p></div>
-      </details>
-      <details>
-        <summary>What equipment do we need?</summary>
-        <div class="it-faq__a"><p>A laptop, tablet or desktop with a camera, and a connection good enough for a video call. Nothing to install &mdash; Scratch runs in the browser. Headphones help. A second screen is not necessary.</p></div>
+        <summary>What do we need at home, and how much data does it use?</summary>
+        <div class="faq__a"><p>A laptop, tablet or desktop with a camera, plus a steady connection. Nothing to install, Scratch runs in the browser. Headphones help. With video on at Zoom&rsquo;s standard quality, a class uses up to about 700&nbsp;MB an hour: around 1&nbsp;GB for a term class and 2&nbsp;GB for a holiday morning. Home Wi-Fi works out cheaper than a phone bundle.</p></div>
       </details>
       <details>
         <summary>Is it safe? Do you record the classes?</summary>
-        <div class="it-faq__a"><p>The cohort is capped at fifteen and led by one known instructor. Children join from home with a parent present at the start, sessions are not recorded, nothing is published afterwards, and there is no messaging between children. If you would like to sit in on the placement conversation, please do.</p></div>
+        <div class="faq__a"><p>Groups are capped at 15 and led by one teacher you know by name. Children join from home with a parent present at the start. Sessions aren&rsquo;t recorded, nothing gets published, and children don&rsquo;t message each other.</p></div>
       </details>
       <details>
-        <summary>Can a shy child cope?</summary>
-        <div class="it-faq__a"><p>Yes &mdash; and they are often the ones who take to chess fastest, because the board does not require them to speak up in front of the room. Coding is similar: the feedback comes from the program rather than from a teacher's opinion of them.</p></div>
+        <summary>My child is shy. Will they cope?</summary>
+        <div class="faq__a"><p>Shy children often take to chess fastest, because the board doesn&rsquo;t ask them to speak up in front of everyone. Coding works the same way. The feedback comes from the program, not from someone judging them.</p></div>
       </details>
       <details>
-        <summary>What if they lose interest partway through?</summary>
-        <div class="it-faq__a"><p>It usually means the cohort level is wrong rather than that the child is finished. Tell us in the first two or three weeks and we will move them to a group that fits better.</p></div>
+        <summary>Is this holiday tuition?</summary>
+        <div class="faq__a"><p>No. We don&rsquo;t teach the school syllabus or exam work. These are coding and chess classes, run by a private academy, live online.</p></div>
       </details>
       <details>
-        <summary>Are there chess tournaments?</summary>
-        <div class="it-faq__a"><p>We run tournaments inside the cohort, with supervised review of the games afterwards &mdash; the review is the part that teaches. When a child is ready for outside competition we will point you to the junior events running in Nairobi, and tell you honestly whether they are ready for one yet.</p></div>
+        <summary>Will it help at school?</summary>
+        <div class="faq__a"><p>Indirectly, and I won&rsquo;t overstate it. Kenya approved a coding curriculum for schools in 2022, so these skills line up with where school is heading. The work also builds patience with hard problems and the habit of checking your own reasoning, which maths rewards.</p></div>
       </details>
       <details>
-        <summary>We are not in Nairobi.</summary>
-        <div class="it-faq__a"><p>That does not matter. Every class is live on Zoom, so we teach children anywhere with a connection. Your location only changes which cohort timetable suits you.</p></div>
+        <summary>What if my child loses interest?</summary>
+        <div class="faq__a"><p>Usually the group level is wrong. Tell me in the first two or three weeks and I&rsquo;ll move them to a group at the right level.</p></div>
       </details>
       <details>
-        <summary>How do we pay, and can we start mid-term?</summary>
-        <div class="it-faq__a"><p>Payment details come on WhatsApp once a place is offered and accepted. Starting mid-term is possible when a cohort has space, and the first month is pro-rated so you are not paying for classes that already ran.</p></div>
+        <summary>We&rsquo;re not in Nairobi.</summary>
+        <div class="faq__a"><p>Classes run live on Zoom, so children join from anywhere in Kenya. Where you live only affects which timetable suits you.</p></div>
+      </details>
+      <details>
+        <summary>How do I pay?</summary>
+        <div class="faq__a"><p>By M-Pesa Buy Goods, Till 680985, after the free placement session and once you accept a place. Your confirmation shows the name Soko Huru. It&rsquo;s my till, from Soko Huru, the company I co-founded. If anything about a payment looks wrong, WhatsApp me before you send.</p></div>
       </details>
     </div>
+  </div>
+</section>
 
-    <p style="margin-top:2.2rem">
-      <a class="it-btn it-btn--deep" href="#signup">Apply for a place</a>
-    </p>
+<!-- CLOSING BAND -->
+<section class="band" aria-labelledby="band-h">
+  <div class="wrap band__in">
+    <div>
+      <h2 class="h2" id="band-h">
+        <span class="s-holiday">The holiday runs to 1 January. Plan the mornings now.</span>
+        <span class="s-term">January groups form after the placement sessions.</span>
+      </h2>
+      <p>Book the free session and I&rsquo;ll reply on WhatsApp, usually the same day.</p>
+    </div>
+    <a class="btn btn--hl" href="#book">Book a free placement session</a>
   </div>
 </section>
 
 </main>
 
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="footer-logo">⚡ Esubu<span>Tech</span></div>
-        <p>Three wings. One mission: empowering Kenya through technology.</p>
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft__grid">
+      <div>
+        <a class="brand" href="/">&#9889;&nbsp;Esubu<span>Tech</span></a>
+        <p>Live online coding and chess classes for Kenyan children, ages 6 to 16.</p>
       </div>
-      <div class="footer-col">
-        <h4>🎓 Academy</h4>
+      <div>
+        <h4>Academy</h4>
         <ul>
           <li><a href="/academy">Academy home</a></li>
-          <li><a href="/academy/signup/">Apply</a></li>
           <li><a href="/academy#programs">Programmes</a></li>
           <li><a href="/academy#schedule">Schedule</a></li>
+          <li><a href="#book">Book a free session</a></li>
         </ul>
       </div>
-      <div class="footer-col">
+      <div>
         <h4>Esubu Tech</h4>
         <ul>
+          <li><a href="/">Home</a></li>
           <li><a href="/techsolutions">Tech Solutions</a></li>
           <li><a href="/datascience">Data Science</a></li>
-          <li><a href="/healthyliving">Healthy Living</a></li>
-          <li><a href="/">Home</a></li>
         </ul>
       </div>
-      <div class="footer-col">
+      <div>
         <h4>Contact</h4>
         <ul>
-          <li><i class="fab fa-whatsapp"></i> +254 720 811 346</li>
-          <li><i class="fas fa-envelope"></i> esubumedia@gmail.com</li>
-          <li><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</li>
+          <li><a class="js-wa" data-wa="footer" target="_blank" rel="noopener" href="https://wa.me/254720811346">WhatsApp +254 720 811 346</a></li>
+          <li><a href="mailto:esubumedia@gmail.com">esubumedia@gmail.com</a></li>
+          <li>Nairobi, Kenya</li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>© 2026 Esubu Tech. All rights reserved. | <a href="https://esubutech.online">esubutech.online</a></p>
+    <div class="ft__bot">
+      <p style="margin:0;max-width:none">&copy; 2026 Esubu Tech, run by Esubu Media, registered in Kenya. <a href="https://esubutech.online">esubutech.online</a></p>
     </div>
   </div>
 </footer>
 
-<div class="it-sticky" id="it-sticky" aria-hidden="true">
-  <span class="it-sticky__t">Admissions are open<br>Ages 6&ndash;16</span>
-  <a class="it-btn it-btn--solid" href="#signup" tabindex="-1" aria-hidden="true"
-     data-wa-sticky="1">Apply</a>
+<div class="bar" id="bar" aria-hidden="true">
+  <a class="btn btn--wa js-wa" data-wa="sticky" target="_blank" rel="noopener" tabindex="-1" aria-label="Ask on WhatsApp"
+     href="https://wa.me/254720811346?text=Hello%20Sammy%2C%20I%27d%20like%20to%20ask%20about%20coding%20and%20chess%20classes.%20My%20child%27s%20age%3A%20">
+    <svg aria-hidden="true"><use href="#i-wa"/></svg>
+  </a>
+  <a class="btn" href="#book" tabindex="-1">Book a free placement session</a>
 </div>
 
-<!-- The site's shared script. Loaded so we inherit its smooth-scroll and
-     its global showToast(), which the form uses for feedback. It is safe
-     here: every one of its entry points guards for missing elements, and
-     it only attaches fade-in classes to component types this page does
-     not use. -->
-<script src="../../script.js"></script>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
 (function () {
   'use strict';
 
-  /* ══════════════════════════════════════════════════════════════
+  /* ---------------------------------------------------------------
      CONFIG
-     ══════════════════════════════════════════════════════════════ */
-
+     --------------------------------------------------------------- */
   // Every application is emailed here. Change this one line to move it.
   var NOTIFY_EMAIL = 'esubumedia@gmail.com';
 
   var CONFIG = {
     whatsappNumber: '254720811346',
 
-    // Delivery endpoint — FormSubmit, which emails each application to
-    // NOTIFY_EMAIL with no account or API key required.
-    //
-    // ONE-TIME ACTIVATION: the first submission triggers a "confirm your email"
-    // message to NOTIFY_EMAIL. Applications only begin forwarding after that
-    // link has been clicked. Check spam if it does not arrive.
-    //
-    // TO UPGRADE to a Google Sheet as well as email, replace this value with
-    // your Apps Script Web App URL (see README §3). Nothing else changes.
+    // FormSubmit emails each application to NOTIFY_EMAIL, no account needed.
+    // First use sends a "confirm your email" message to NOTIFY_EMAIL, and
+    // forwarding starts once that link is clicked. Check spam for it.
+    // To log to a Google Sheet as well, swap in your Apps Script Web App URL.
     formEndpoint: 'https://formsubmit.co/ajax/' + NOTIFY_EMAIL,
 
-    // Only needed for Web3Forms. Leave blank otherwise.
+    // Only for Web3Forms. Leave blank otherwise.
     formAccessKey: '',
 
-    // Meta Pixel. Required for ad optimisation and retargeting. Empty = no Meta events.
+    // Meta Pixel ID for ad tracking. Empty means no Meta events.
     metaPixelId: '',
 
-    // Show the WhatsApp fallback if delivery fails.
+    // Open WhatsApp with the parent's details if sending fails.
     fallbackToWhatsAppOnError: true
   };
-  /* ══════════════════════════════════════════════════════════════ */
 
-  /* ── Meta Pixel ─────────────────────────────────────────────── */
+  var season = document.documentElement.getAttribute('data-season') || 'holiday';
+
+  /* Meta Pixel */
   if (CONFIG.metaPixelId) {
     !function (f, b, e, v, n, t, s) {
       if (f.fbq) return;
-      n = f.fbq = function () {
-        n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
-      };
+      n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
       if (!f._fbq) f._fbq = n;
       n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = [];
       t = b.createElement(e); t.async = !0; t.src = v;
@@ -1117,351 +952,374 @@ body.page-intake{
   }
 
   function track(event, params) {
-    if (window.gtag) window.gtag('event', event, params || {});
+    params = params || {};
+    params.season = season;
+    if (window.gtag) window.gtag('event', event, params);
     if (window.fbq) {
-      if (event === 'application_submit') window.fbq('track', 'Lead', params || {});
+      if (event === 'application_submit') window.fbq('track', 'Lead', params);
       if (event === 'whatsapp_click') window.fbq('track', 'Contact');
     }
   }
 
-  /* ── WhatsApp links (secondary path only) ───────────────────── */
+  var toastEl = document.getElementById('toast');
+  var toastTimer;
+  function toast(msg) {
+    if (!toastEl) return;
+    toastEl.textContent = msg;
+    toastEl.classList.add('on');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toastEl.classList.remove('on'); }, 4500);
+  }
+
+  /* WhatsApp links: season-aware opening message, plus click tracking */
+  var waText = season === 'holiday'
+    ? "Hello Sammy, I'd like to ask about the holiday camp. My child's age: "
+    : "Hello Sammy, I'd like to ask about term classes. My child's age: ";
+  document.querySelectorAll('.js-wa').forEach(function (a) {
+    var where = a.getAttribute('data-wa');
+    if (where === 'success' || where === 'footer') return;
+    a.href = 'https://wa.me/' + CONFIG.whatsappNumber + '?text=' + encodeURIComponent(waText);
+  });
   document.addEventListener('click', function (e) {
-    var el = e.target;
-    var a = el && el.closest ? el.closest('.js-wa') : null;
+    var a = e.target && e.target.closest ? e.target.closest('.js-wa') : null;
     if (a) track('whatsapp_click', { location: a.getAttribute('data-wa') || 'unknown' });
   });
 
-  /* ══════════════════════════════════════════════════════════════
+  /* ---------------------------------------------------------------
      CHILD ROWS
-     ══════════════════════════════════════════════════════════════ */
-  var childrenWrap = document.getElementById('it-children');
-  var countEl = document.getElementById('it-count');
-  var addBtn = document.getElementById('it-add');
-  var MAX_CHILDREN = 6;
+     --------------------------------------------------------------- */
+  var kidsWrap = document.getElementById('f-kids');
+  var countEl = document.getElementById('f-count');
+  var addBtn = document.getElementById('f-add');
+  var MAX_KIDS = 6;
   var nextId = 0;
 
-  function childRow() {
+  function kidRow() {
     var id = nextId++;
-    var wrap = document.createElement('div');
-    wrap.className = 'it-child';
-    wrap.dataset.child = String(id);
-    wrap.innerHTML =
-      '<div class="it-child__head">' +
-        '<span>Child</span>' +
-        '<button type="button" class="it-child__rm" data-rm="' + id + '" hidden>Remove</button>' +
-      '</div>' +
-      '<div class="it-field">' +
-        '<label for="c' + id + '-name">First name <span class="it-opt">(optional)</span></label>' +
-        '<input id="c' + id + '-name" name="child_name_' + id + '" type="text" ' +
-               'autocomplete="off" placeholder="e.g. Amara" class="it-c-name">' +
-      '</div>' +
-      '<div class="it-field">' +
-        '<label for="c' + id + '-age">Age</label>' +
-        '<select id="c' + id + '-age" name="child_age_' + id + '" class="it-c-age" required>' +
-          '<option value="">Select</option>' +
-          '<option>6</option><option>7</option><option>8</option><option>9</option>' +
-          '<option>10</option><option>11</option><option>12</option><option>13</option>' +
-          '<option>14</option><option>15</option><option>16</option>' +
-          '<option>Other</option>' +
-        '</select>' +
-      '</div>' +
-      '<div class="it-field">' +
-        '<label for="c' + id + '-prog">Interested in</label>' +
-        '<select id="c' + id + '-prog" name="child_prog_' + id + '" class="it-c-prog">' +
-          '<option>Both</option><option>Coding</option><option>Chess</option>' +
-          '<option>Not sure yet</option>' +
-        '</select>' +
-      '</div>';
-    return wrap;
+    var row = document.createElement('div');
+    row.className = 'kid';
+    var ages = '';
+    for (var a = 6; a <= 16; a++) ages += '<option>' + a + '</option>';
+    row.innerHTML =
+      '<div class="kid__hd"><span>Child</span>' +
+        '<button type="button" class="kid__rm" hidden>Remove</button></div>' +
+      '<div class="fld"><label for="k' + id + '-name">First name <span class="opt">(optional)</span></label>' +
+        '<input id="k' + id + '-name" type="text" autocomplete="off" placeholder="e.g. Amani" class="k-name"></div>' +
+      '<div class="fld"><label for="k' + id + '-age">Age</label>' +
+        '<select id="k' + id + '-age" class="k-age" required><option value="">Choose</option>' + ages +
+        '<option>Other</option></select></div>' +
+      '<div class="fld"><label for="k' + id + '-prog">Interested in</label>' +
+        '<select id="k' + id + '-prog" class="k-prog"><option>Both</option><option>Coding</option>' +
+        '<option>Chess</option><option>Not sure yet</option></select></div>';
+    return row;
   }
 
-  function syncChildren() {
-    var rows = childrenWrap.querySelectorAll('.it-child');
+  function syncKids() {
+    var rows = kidsWrap.querySelectorAll('.kid');
     rows.forEach(function (r, i) {
-      var head = r.querySelector('.it-child__head span');
-      if (head) head.textContent = 'Child ' + (i + 1);
-      var rm = r.querySelector('.it-child__rm');
-      if (rm) rm.hidden = rows.length < 2;
+      r.querySelector('.kid__hd span').textContent = 'Child ' + (i + 1);
+      r.querySelector('.kid__rm').hidden = rows.length < 2;
     });
-    if (countEl) countEl.textContent = rows.length === 1 ? '1 child' : rows.length + ' children';
-    if (addBtn) addBtn.style.display = rows.length >= MAX_CHILDREN ? 'none' : '';
+    countEl.textContent = rows.length === 1 ? '1 child' : rows.length + ' children';
+    addBtn.hidden = rows.length >= MAX_KIDS;
   }
 
-  function addChild() {
-    if (childrenWrap.querySelectorAll('.it-child').length >= MAX_CHILDREN) return;
-    childrenWrap.appendChild(childRow());
-    syncChildren();
+  function addKid(focus) {
+    if (kidsWrap.querySelectorAll('.kid').length >= MAX_KIDS) return;
+    var row = kidRow();
+    kidsWrap.appendChild(row);
+    syncKids();
+    if (focus) row.querySelector('.k-name').focus();
   }
 
-  if (childrenWrap) {
-    addChild(); // start with one
+  addKid(false);
+  addBtn.addEventListener('click', function () { addKid(true); });
+  kidsWrap.addEventListener('click', function (e) {
+    var btn = e.target.closest ? e.target.closest('.kid__rm') : null;
+    if (!btn) return;
+    if (kidsWrap.querySelectorAll('.kid').length > 1) {
+      btn.closest('.kid').remove();
+      syncKids();
+      addBtn.focus();
+    }
+  });
 
-    childrenWrap.addEventListener('click', function (e) {
-      var btn = e.target.closest ? e.target.closest('.it-child__rm') : null;
-      if (!btn) return;
-      var row = btn.closest('.it-child');
-      if (row && childrenWrap.querySelectorAll('.it-child').length > 1) {
-        row.remove();
-        syncChildren();
-      }
-    });
+  /* Pre-select the classes for the current season */
+  var defClass = document.querySelector('input[name="classes"][value="' +
+    (season === 'holiday' ? 'Holiday camp' : 'Term classes') + '"]');
+  if (defClass) defClass.checked = true;
 
-    if (addBtn) addBtn.addEventListener('click', addChild);
-  }
-
-  /* ══════════════════════════════════════════════════════════════
+  /* ---------------------------------------------------------------
      VALIDATION
-     ══════════════════════════════════════════════════════════════ */
+     --------------------------------------------------------------- */
   function normalisePhone(raw) {
     var d = (raw || '').replace(/\D/g, '');
-    if (d.indexOf('254') === 0) return d;
-    if (d.charAt(0) === '0') return '254' + d.slice(1);
-    if (d.length === 9) return '254' + d;
+    if (d.indexOf('00') === 0) d = d.slice(2);
+    if (d.indexOf('2540') === 0) d = '254' + d.slice(4);
+    else if (d.indexOf('254') === 0) { /* already international */ }
+    else if (d.charAt(0) === '0') d = '254' + d.slice(1);
+    else if (d.length === 9 && /^[17]/.test(d)) d = '254' + d;
     return d;
   }
-  function validPhone(d) { return /^254[17]\d{8}$/.test(d); }
-  function validEmail(e) { return /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test((e || '').trim()); }
+  function validPhone(d, raw) {
+    if (d.indexOf('254') === 0) return /^254[17]\d{8}$/.test(d);
+    var r = (raw || '').trim();
+    return (r.charAt(0) === '+' || r.indexOf('00') === 0) && d.length >= 8 && d.length <= 15;
+  }
+  function validEmail(e) { return /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(e); }
 
   function collect() {
-    var children = [];
-    childrenWrap.querySelectorAll('.it-child').forEach(function (row) {
-      var age = row.querySelector('.it-c-age').value;
-      var prog = row.querySelector('.it-c-prog').value;
-      var nm = (row.querySelector('.it-c-name').value || '').trim();
-      if (age) children.push({ name: nm, age: age, programme: prog });
+    var kids = [];
+    var firstEmptyAge = null;
+    kidsWrap.querySelectorAll('.kid').forEach(function (row) {
+      var ageEl = row.querySelector('.k-age');
+      var age = ageEl.value;
+      if (!age && !firstEmptyAge) firstEmptyAge = ageEl;
+      if (age) kids.push({
+        name: (row.querySelector('.k-name').value || '').trim(),
+        age: age,
+        programme: row.querySelector('.k-prog').value
+      });
     });
+    var cls = document.querySelector('input[name="classes"]:checked');
+    var phoneRaw = document.getElementById('f-phone').value;
     return {
-      name:  (document.getElementById('it-name').value || '').trim(),
-      email: (document.getElementById('it-email').value || '').trim(),
-      phone: normalisePhone(document.getElementById('it-phone').value),
-      children: children,
-      notes: (document.getElementById('it-notes').value || '').trim(),
-      consent: document.getElementById('it-consent').checked,
-      website: (document.getElementById('it-website').value || '') // honeypot
+      name: (document.getElementById('f-name').value || '').trim(),
+      email: (document.getElementById('f-email').value || '').trim(),
+      phoneRaw: phoneRaw,
+      phone: normalisePhone(phoneRaw),
+      children: kids,
+      firstEmptyAge: firstEmptyAge,
+      classes: cls ? cls.value : 'Not sure yet',
+      heard: document.getElementById('f-heard').value,
+      notes: (document.getElementById('f-notes').value || '').trim(),
+      consent: document.getElementById('f-consent').checked,
+      website: document.getElementById('f-website').value || ''
     };
   }
 
   function validate(d) {
-    var problems = [];
-    if (d.name.length < 2) problems.push({ field: 'it-name', msg: 'your full name' });
-    if (!validEmail(d.email)) problems.push({ field: 'it-email', msg: 'a valid email address' });
-    if (!validPhone(d.phone)) problems.push({ field: 'it-phone', msg: 'a valid Kenyan phone number (e.g. 0712 345 678)' });
-    if (!d.children.length) problems.push({ field: null, msg: "at least one child's age" });
-    if (!d.consent) problems.push({ field: 'it-consent', msg: 'your consent to be contacted' });
-    return problems;
+    var p = [];
+    if (d.name.length < 2) p.push({ el: document.getElementById('f-name'), msg: 'your name' });
+    if (!validPhone(d.phone, d.phoneRaw)) p.push({ el: document.getElementById('f-phone'), msg: 'a working WhatsApp number, like 0712 345 678' });
+    if (d.email && !validEmail(d.email)) p.push({ el: document.getElementById('f-email'), msg: 'a valid email, or leave it empty' });
+    if (!d.children.length) p.push({ el: d.firstEmptyAge || kidsWrap.querySelector('.k-age'), msg: "your child's age" });
+    if (!d.consent) p.push({ el: document.getElementById('f-consent'), msg: 'a tick in the consent box' });
+    return p;
   }
 
-  /* ══════════════════════════════════════════════════════════════
+  /* ---------------------------------------------------------------
      SUBMIT
-     ══════════════════════════════════════════════════════════════ */
-  var form = document.getElementById('it-form');
-  var errEl = document.getElementById('it-err');
-  var submitBtn = document.getElementById('it-submit');
-  var doneEl = document.getElementById('it-done');
-  var refEl = document.getElementById('it-ref');
-  var doneWa = document.getElementById('it-done-wa');
+     --------------------------------------------------------------- */
+  var form = document.getElementById('f');
+  var errEl = document.getElementById('f-err');
+  var submitBtn = document.getElementById('f-submit');
+  var doneEl = document.getElementById('f-done');
+  var refEl = document.getElementById('f-ref');
+  var doneWa = document.getElementById('f-done-wa');
+  var doneName = document.getElementById('f-done-name');
 
-  function childrenSummary(children) {
-    return children.map(function (c) {
-      return (c.name || 'Child') + ' (' + c.age + ', ' + c.programme + ')';
-    }).join('; ');
+  function kidsSummary(kids) {
+    return kids.map(function (c) { return (c.name || 'Child') + ' (' + c.age + ', ' + c.programme + ')'; }).join('; ');
+  }
+
+  function clearInvalid() {
+    form.querySelectorAll('[aria-invalid="true"]').forEach(function (el) { el.removeAttribute('aria-invalid'); });
   }
 
   function showError(problems) {
-    form.dataset.state = 'error';
-    errEl.textContent = 'Please check: ' + problems.map(function (p) { return p.msg; }).join(', ') + '.';
-    var first = problems.filter(function (p) { return p.field; })[0];
+    clearInvalid();
+    problems.forEach(function (p) { if (p.el) p.el.setAttribute('aria-invalid', 'true'); });
+    errEl.textContent = 'Please add ' + problems.map(function (p) { return p.msg; }).join(', ') + '.';
+    var first = problems[0] && problems[0].el;
     if (first) {
-      var el = document.getElementById(first.field);
-      if (el) { el.focus(); if (el.scrollIntoView) el.scrollIntoView({ block: 'center', behavior: 'smooth' }); }
+      first.focus({ preventScroll: true });
+      if (first.scrollIntoView) first.scrollIntoView({ block: 'center', behavior: 'smooth' });
     }
   }
 
   function showSuccess(d, ref) {
     form.hidden = true;
     doneEl.hidden = false;
-    if (refEl) refEl.textContent = 'Reference: ' + ref;
-    if (doneWa) {
-      var msg = 'Hello Esubu Academy, I have just applied (ref ' + ref + ').\n' +
-                'Parent: ' + d.name + '\n' +
-                'Children: ' + childrenSummary(d.children) + '\n' +
-                'My number: +' + d.phone;
-      doneWa.href = 'https://wa.me/' + CONFIG.whatsappNumber + '?text=' + encodeURIComponent(msg);
-    }
+    var first = (d.name || '').split(/\s+/)[0];
+    doneName.textContent = first ? ', ' + first : '';
+    refEl.textContent = 'Your reference: ' + ref;
+    doneWa.href = 'https://wa.me/' + CONFIG.whatsappNumber + '?text=' + encodeURIComponent(
+      'Hello Sammy, I have just booked a free placement session (ref ' + ref + ').\n' +
+      'Parent: ' + d.name + '\n' +
+      'Children: ' + kidsSummary(d.children) + '\n' +
+      'Classes: ' + d.classes);
     doneEl.focus();
     if (doneEl.scrollIntoView) doneEl.scrollIntoView({ block: 'center', behavior: 'smooth' });
   }
 
-  function whatsAppFallback(d) {
-    var msg = '*Academy — application*\n\n' +
+  function whatsAppFallback(d, ref) {
+    var msg = 'Academy booking (ref ' + ref + ')\n\n' +
       'Parent: ' + d.name + '\n' +
-      'Email: ' + d.email + '\n' +
-      'Phone: +' + d.phone + '\n' +
-      'Children: ' + childrenSummary(d.children) + '\n' +
+      'WhatsApp: +' + d.phone + '\n' +
+      (d.email ? 'Email: ' + d.email + '\n' : '') +
+      'Children: ' + kidsSummary(d.children) + '\n' +
+      'Classes: ' + d.classes + '\n' +
+      (d.heard ? 'Heard from: ' + d.heard + '\n' : '') +
       (d.notes ? 'Notes: ' + d.notes + '\n' : '');
     var url = 'https://wa.me/' + CONFIG.whatsappNumber + '?text=' + encodeURIComponent(msg);
-    if (/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent)) {
-      window.location.href = url;
-    } else {
-      window.open(url, '_blank', 'noopener');
-    }
+    if (/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent)) window.location.href = url;
+    else window.open(url, '_blank', 'noopener');
   }
 
   function makeRef() {
-    var d = new Date();
+    var t = new Date();
     var p = function (n) { return String(n).padStart(2, '0'); };
-    return 'ESU-' + String(d.getFullYear()).slice(2) + p(d.getMonth() + 1) + p(d.getDate()) +
+    return 'ESU-' + String(t.getFullYear()).slice(2) + p(t.getMonth() + 1) + p(t.getDate()) +
            '-' + Math.random().toString(36).slice(2, 6).toUpperCase();
   }
 
-  if (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      if (submitBtn.disabled) return;
+  var started = false;
+  form.addEventListener('focusin', function () {
+    if (started) return;
+    started = true;
+    track('form_start', {});
+  });
 
-      var d = collect();
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (submitBtn.disabled) return;
 
-      // honeypot: silently accept and discard
-      if (d.website) {
-        showSuccess(d, makeRef());
-        return;
-      }
+    var d = collect();
 
-      var problems = validate(d);
-      if (problems.length) { showError(problems); return; }
+    // Honeypot: bots fill the hidden field. Pretend success, send nothing.
+    if (d.website) { showSuccess(d, makeRef()); return; }
 
-      errEl.textContent = '';
-      form.dataset.state = 'ok';
+    var problems = validate(d);
+    if (problems.length) { showError(problems); return; }
 
-      var ref = makeRef();
-      var summary = childrenSummary(d.children);
+    errEl.textContent = '';
+    clearInvalid();
 
-      track('application_submit', {
-        child_count: d.children.length,
-        programmes: d.children.map(function (c) { return c.programme; }).join('+'),
-        ages: d.children.map(function (c) { return c.age; }).join('+')
-      });
+    var ref = makeRef();
+    var summary = kidsSummary(d.children);
 
-      // No endpoint configured yet — do not lose the lead.
-      if (!CONFIG.formEndpoint) {
-        whatsAppFallback(d);
-        if (window.showToast) {
-          window.showToast('Details copied to WhatsApp — press send and we\u2019ll reply today.');
-        }
-        showSuccess(d, ref);
-        return;
-      }
-
-      submitBtn.disabled = true;
-      var original = submitBtn.textContent;
-      submitBtn.textContent = 'Sending…';
-
-      var fd = new FormData();
-      fd.append('name', d.name);
-      fd.append('email', d.email);
-      fd.append('phone', '+' + d.phone);
-      fd.append('child_count', String(d.children.length));
-      fd.append('children', summary);
-      fd.append('children_json', JSON.stringify(d.children));
-      fd.append('notes', d.notes);
-      fd.append('consent', d.consent ? 'yes' : 'no');
-      fd.append('reference', ref);
-      fd.append('source', 'academy-signup');
-      fd.append('page', location.href);
-      fd.append('submitted_at', new Date().toISOString());
-      if (CONFIG.formAccessKey) fd.append('access_key', CONFIG.formAccessKey);
-
-      // FormSubmit options: a readable subject line, one-tap reply to the parent,
-      // table layout in the email, and no captcha page (which would break the
-      // JSON response). Other providers simply ignore fields they don't know.
-      fd.append('_subject', 'New application — ' + d.name + ' (' +
-        d.children.length + (d.children.length === 1 ? ' child)' : ' children)'));
-      fd.append('_replyto', d.email);
-      fd.append('_template', 'table');
-      fd.append('_captcha', 'false');
-
-      fetch(CONFIG.formEndpoint, {
-        method: 'POST',
-        body: fd,                    // multipart = no CORS preflight, works with Apps Script
-        mode: 'cors',
-        headers: { Accept: 'application/json' }
-      })
-        .then(function (res) {
-          if (!res.ok) throw new Error('HTTP ' + res.status);
-          // A 200 does not always mean delivered — FormSubmit returns a JSON body
-          // whose success flag can be false. Read it instead of assuming.
-          return res.text().then(function (txt) {
-            var json = null;
-            try { json = JSON.parse(txt); } catch (e) { /* not JSON — accept */ }
-            if (json && (json.success === false || json.success === 'false')) {
-              throw new Error(json.message || 'rejected by provider');
-            }
-            return json || true;
-          });
-        })
-        .then(function () {
-          if (window.showToast) window.showToast('Application received — we\u2019ll be in touch today.');
-          showSuccess(d, ref);
-        })
-        .catch(function () {
-          submitBtn.disabled = false;
-          submitBtn.textContent = original;
-          if (CONFIG.fallbackToWhatsAppOnError) {
-            errEl.textContent = 'We could not send that automatically. Opening WhatsApp so nothing is lost.';
-            whatsAppFallback(d);
-            showSuccess(d, ref);
-          } else {
-            errEl.textContent = 'Something went wrong. Please try again, or message us on WhatsApp.';
-          }
-        });
+    track('application_submit', {
+      child_count: d.children.length,
+      programmes: d.children.map(function (c) { return c.programme; }).join('+'),
+      ages: d.children.map(function (c) { return c.age; }).join('+'),
+      classes: d.classes,
+      heard_from: d.heard || 'not given'
     });
 
-    form.addEventListener('input', function () {
-      if (errEl.textContent) { errEl.textContent = ''; form.dataset.state = 'ok'; }
-    });
-    form.addEventListener('change', function () {
-      if (errEl.textContent) { errEl.textContent = ''; form.dataset.state = 'ok'; }
-    });
-  }
-
-  /* ── Mobile sticky CTA ─────────────────────────────────────── */
-  var sticky = document.getElementById('it-sticky');
-  if (sticky && 'IntersectionObserver' in window) {
-    var hero = document.querySelector('.it-hero');
-    var signup = document.getElementById('signup');
-    var st = { hero: true, form: false };
-
-    function sync() {
-      var show = !st.hero && !st.form;
-      sticky.classList.toggle('on', show);
-      sticky.setAttribute('aria-hidden', show ? 'false' : 'true');
-      var link = sticky.querySelector('.it-btn');
-      if (link) {
-        link.setAttribute('tabindex', show ? '0' : '-1');
-        link.setAttribute('aria-hidden', show ? 'false' : 'true');
-      }
+    if (!CONFIG.formEndpoint) {
+      whatsAppFallback(d, ref);
+      toast('Your details are in WhatsApp. Press send and I’ll reply today.');
+      showSuccess(d, ref);
+      return;
     }
 
+    submitBtn.disabled = true;
+    var original = submitBtn.textContent;
+    submitBtn.textContent = 'Sending…';
+
+    var fd = new FormData();
+    fd.append('name', d.name);
+    fd.append('phone', '+' + d.phone);
+    fd.append('email', d.email || 'not given');
+    fd.append('classes', d.classes);
+    fd.append('child_count', String(d.children.length));
+    fd.append('children', summary);
+    fd.append('children_json', JSON.stringify(d.children));
+    fd.append('heard_from', d.heard || 'not given');
+    fd.append('notes', d.notes);
+    fd.append('consent', d.consent ? 'yes' : 'no');
+    fd.append('reference', ref);
+    fd.append('season', season);
+    fd.append('source', 'academy-signup');
+    fd.append('page', location.href);
+    fd.append('submitted_at', new Date().toISOString());
+    if (CONFIG.formAccessKey) fd.append('access_key', CONFIG.formAccessKey);
+
+    // FormSubmit options. Other providers ignore fields they don't know.
+    fd.append('_subject', 'New booking: ' + d.name + ', ' + d.classes + ' (' +
+      d.children.length + (d.children.length === 1 ? ' child)' : ' children)'));
+    if (d.email) fd.append('_replyto', d.email);
+    fd.append('_template', 'table');
+    fd.append('_captcha', 'false');
+
+    fetch(CONFIG.formEndpoint, {
+      method: 'POST',
+      body: fd,
+      mode: 'cors',
+      headers: { Accept: 'application/json' }
+    })
+      .then(function (res) {
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        // A 200 can still carry success:false from FormSubmit. Read the body.
+        return res.text().then(function (txt) {
+          var json = null;
+          try { json = JSON.parse(txt); } catch (err) { /* not JSON, accept */ }
+          if (json && (json.success === false || json.success === 'false')) {
+            throw new Error(json.message || 'rejected by provider');
+          }
+          return true;
+        });
+      })
+      .then(function () {
+        toast('Booking received. I’ll message you on WhatsApp today.');
+        showSuccess(d, ref);
+      })
+      .catch(function () {
+        submitBtn.disabled = false;
+        submitBtn.textContent = original;
+        if (CONFIG.fallbackToWhatsAppOnError) {
+          toast('Sending failed, so your details are opening in WhatsApp. Press send there.');
+          whatsAppFallback(d, ref);
+          showSuccess(d, ref);
+        } else {
+          errEl.textContent = 'Sending failed. Try again, or message me on WhatsApp.';
+        }
+      });
+  });
+
+  form.addEventListener('input', function (e) {
+    if (e.target && e.target.removeAttribute) e.target.removeAttribute('aria-invalid');
+    if (errEl.textContent && !form.querySelector('[aria-invalid="true"]')) errEl.textContent = '';
+  });
+  form.addEventListener('change', function (e) {
+    if (e.target && e.target.removeAttribute) e.target.removeAttribute('aria-invalid');
+    if (errEl.textContent && !form.querySelector('[aria-invalid="true"]')) errEl.textContent = '';
+  });
+
+  /* ---------------------------------------------------------------
+     MOBILE ACTION BAR: shown between the hero and the booking form
+     --------------------------------------------------------------- */
+  var bar = document.getElementById('bar');
+  if (bar && 'IntersectionObserver' in window) {
+    var hero = document.getElementById('top');
+    var book = document.getElementById('book');
+    var st = { hero: true, book: false };
+    var links = bar.querySelectorAll('a');
+    var sync = function () {
+      var show = !st.hero && !st.book;
+      bar.classList.toggle('on', show);
+      bar.setAttribute('aria-hidden', show ? 'false' : 'true');
+      links.forEach(function (l) { l.setAttribute('tabindex', show ? '0' : '-1'); });
+    };
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
         if (en.target === hero) st.hero = en.isIntersecting;
-        if (en.target === signup) st.form = en.isIntersecting;
+        if (en.target === book) st.book = en.isIntersecting;
       });
       sync();
     }, { threshold: 0 });
-
-    if (hero) io.observe(hero);
-    if (signup) io.observe(signup);
+    io.observe(hero);
+    io.observe(book);
   }
 
-  /* ── Scroll depth ──────────────────────────────────────────── */
+  /* Scroll depth */
   var fired = false;
   window.addEventListener('scroll', function () {
     if (fired) return;
     var span = document.documentElement.scrollHeight - window.innerHeight;
     if (span > 0 && window.scrollY / span > 0.9) { fired = true; track('scroll_90', {}); }
   }, { passive: true });
-
 })();
 </script>
 
