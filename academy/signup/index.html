@@ -672,6 +672,7 @@ html[data-season="term"] .s-holiday{display:none !important}
                 <option>Instagram</option>
                 <option>TikTok</option>
                 <option>Google search</option>
+                <option>A blog article</option>
                 <option>My child&rsquo;s school</option>
                 <option>Other</option>
               </select>
@@ -870,6 +871,7 @@ html[data-season="term"] .s-holiday{display:none !important}
           <li><a href="/academy">Academy home</a></li>
           <li><a href="/academy#programs">Programmes</a></li>
           <li><a href="/academy#schedule">Schedule</a></li>
+          <li><a href="/academy/blog/">Blog</a></li>
           <li><a href="#book">Book a free session</a></li>
         </ul>
       </div>
@@ -936,6 +938,15 @@ html[data-season="term"] .s-holiday{display:none !important}
   };
 
   var season = document.documentElement.getAttribute('data-season') || 'holiday';
+
+  // Parents who arrive from a blog post carry ?from=<post>. It goes with the
+  // booking, and the "How did you hear" answer starts on "A blog article".
+  var fromMatch = location.search.match(/[?&]from=([a-z0-9-]{1,80})/);
+  var fromPost = fromMatch ? fromMatch[1] : '';
+  if (fromPost && fromPost !== 'academy-page') {
+    var heardSel = document.getElementById('f-heard');
+    if (heardSel && !heardSel.value) heardSel.value = 'A blog article';
+  }
 
   /* Meta Pixel */
   if (CONFIG.metaPixelId) {
@@ -1233,6 +1244,7 @@ html[data-season="term"] .s-holiday{display:none !important}
     fd.append('season', season);
     fd.append('source', 'academy-signup');
     fd.append('page', location.href);
+    fd.append('from_post', fromPost || 'none');
     fd.append('submitted_at', new Date().toISOString());
     if (CONFIG.formAccessKey) fd.append('access_key', CONFIG.formAccessKey);
 

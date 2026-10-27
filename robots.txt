@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /tools/
+Disallow: /academy/blog/_posts/
 
 Sitemap: https://esubutech.online/sitemap.xml
