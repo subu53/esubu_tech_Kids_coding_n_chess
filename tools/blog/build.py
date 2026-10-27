@@ -279,7 +279,7 @@ SPRITE = """<svg width="0" height="0" style="position:absolute" aria-hidden="tru
 </svg>"""
 
 
-def head(title, desc, url, image, og_type, jsonld, css_v):
+def head(title, desc, url, image, og_type, jsonld, css_v, extra_meta=""):
     return f"""<!DOCTYPE html>
 <html lang="en-KE">
 <head>
@@ -297,7 +297,7 @@ def head(title, desc, url, image, og_type, jsonld, css_v):
 <meta property="og:image:height" content="630">
 <meta property="og:site_name" content="Esubu Tech Academy">
 <meta property="og:locale" content="en_KE">
-<meta name="twitter:card" content="summary_large_image">
+{extra_meta}<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#173A2A">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/favicon.png">
@@ -394,7 +394,7 @@ def entry(p, tag="li"):
     mins = p["minutes"]
     return (f'<{tag} class="entry" data-cat="{esc(p["category"])}">'
             f'<a href="{p["path"]}"><span class="hand">{esc(p["category"])}</span>'
-            f'<span><h3>{esc(p["title"])}</h3><p>{esc(p["dek"])}</p></span>'
+            f'<div><h3>{esc(p["title"])}</h3><p>{esc(p["dek"])}</p></div>'
             f'<span class="mins">{mins} min read</span></a></{tag}>')
 
 
@@ -442,7 +442,11 @@ def post_page(p, by_slug, css_v):
     if p["updated"] != p["date"]:
         updated = f', updated {nice_date(p["updated"])}'
     return (head(p["seo_title"] + " | Esubu Academy" if len(p["seo_title"]) < 46 else p["seo_title"],
-                 p["description"], p["url"], cover_url(p), "article", jsonld, css_v)
+                 p["description"], p["url"], cover_url(p), "article", jsonld, css_v,
+                 f'<meta property="article:published_time" content="{p["date"].isoformat()}">\n'
+                 f'<meta property="article:modified_time" content="{p["updated"].isoformat()}">\n'
+                 f'<meta property="article:section" content="{esc(p["category"])}">\n'
+                 f'<meta name="author" content="{AUTHOR["name"]}">\n')
             + header(p["slug"], wa_text) + f"""<main>
 <article>
   <header class="post-hero ruled">
