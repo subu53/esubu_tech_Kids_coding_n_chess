@@ -13,8 +13,8 @@ featured: true
 feature_number: "72"
 feature_caption: "days at home between the end of Term 3 and the start of Term 1"
 related: [screen-time-watching-vs-building, teach-your-child-chess-at-home]
-invite_title: "Weekday mornings, sorted until 1 January"
-invite_text: "Our holiday camp runs live on Zoom, Monday to Friday from 9am to 12pm: coding and chess, groups of up to 15, a game your child builds and shows you on Friday. The first month is pro-rated if you join partway."
+invite_title: "Weekday mornings, sorted"
+invite_text: "Our holiday classes run live on Zoom, Monday to Friday from 9am to 12pm: coding and chess, groups of up to 15, and a game your child builds and shows you on Friday."
 sources:
   - title: "Ministry of Education 2026 to 2027 term dates (Education News Hub)"
     url: "https://educationnewshub.co.ke/education-ministry-releases-the-2026-2027-academic-term-dates-for-all-schools/"

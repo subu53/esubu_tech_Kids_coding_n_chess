@@ -11,7 +11,7 @@ dek: "You need a board, 20 minutes a day and a week. You don't need to be good a
 cover_line: "Chess at home in 7 days"
 related: [child-cries-after-losing-chess, does-chess-make-kids-smarter]
 invite_title: "When your child starts beating you"
-invite_text: "Home teaching runs out the week your child wins more than you do. Our groups pick up from there: notation, tactics, tournaments and a review after every game. Start with a free placement session."
+invite_text: "Home teaching runs out the week your child wins more than you do. Our groups pick up from there: notation, tactics, tournaments and a review after every game."
 sources:
   - title: "About Lichess"
     url: "https://lichess.org/about"

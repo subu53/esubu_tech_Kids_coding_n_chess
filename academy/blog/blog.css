@@ -64,6 +64,7 @@ p{margin:0 0 1em;text-wrap:pretty}
 .btn--wa{background:#fff;color:var(--ink);border-color:#BCCDBF}
 .btn--wa:hover{background:#F1F7F2;border-color:var(--green)}
 .btn--wa svg{color:#25D366}
+.btn--fb svg{color:#1877F2}
 .btn--hl{background:var(--hl);border-color:var(--hl);color:var(--ink)}
 .btn--hl:hover{background:#FFD633;border-color:#FFD633}
 .btn--sm{min-height:2.6rem;padding:.5rem .95rem;font-size:.92rem}
@@ -163,6 +164,12 @@ p{margin:0 0 1em;text-wrap:pretty}
 .board__sq.d{background:var(--sq-d)}
 .board__lbl{display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:650;color:var(--mute)}
 .board figcaption{margin-top:.75rem;font-size:.97rem;line-height:1.5;color:var(--mute)}
+
+/* data figures */
+.fig{margin:2.2em 0}
+.fig img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:#fff}
+.fig figcaption{margin-top:.7rem;font-size:.95rem;line-height:1.5;color:var(--mute)}
+@media (min-width:64rem){.prose .fig{margin-right:-4rem}}
 
 /* scratch-style block stack */
 .blocks{margin:0 0 1.5em;padding:1.1rem;border-radius:12px;background:#F4F6F1;border:1px solid var(--line);font:650 .98rem/1.2 var(--f);overflow-x:auto}

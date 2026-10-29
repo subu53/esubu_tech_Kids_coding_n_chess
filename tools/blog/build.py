@@ -50,10 +50,14 @@ from urllib.parse import quote
 import markdown
 import yaml
 
+import figures as figs
+
 ROOT = Path(__file__).resolve().parents[2]
 BLOG = ROOT / "academy" / "blog"
 POSTS = BLOG / "_posts"
 COVERS = BLOG / "covers"
+FIGURES = BLOG / "figures"
+FONTS = ROOT / "academy" / "fonts"
 SITE = "https://esubutech.online"
 BLOG_URL = SITE + "/academy/blog/"
 WA_NUMBER = "254720811346"
@@ -183,9 +187,24 @@ def inline_md(text):
     return re.sub(r"^<p>(.*)</p>$", r"\1", out.strip(), flags=re.S)
 
 
-def preprocess(body):
+def figure_html(slug, fid, specs):
+    if fid not in specs:
+        raise ValueError(f"{slug}: figure '{fid}' is not in the front matter")
+    spec = specs[fid]
+    src = f"/academy/blog/figures/{slug}-{fid}.webp"
+    cap = spec.get("caption", "")
+    if spec.get("source"):
+        cap = (cap + " " if cap else "") + f"Source: {spec['source']}."
+    return (f'<figure class="fig"><a href="{src}" target="_blank" rel="noopener" aria-label="Open the full-size figure">'
+            f'<img src="{src}" width="{figs.W}" height="{figs.H}" '
+            f'alt="{esc(figs.alt_text(spec))}" loading="lazy" decoding="async"></a>'
+            + (f"<figcaption>{inline_md(cap)}</figcaption>" if cap else "") + "</figure>")
+
+
+def preprocess(body, slug="", specs=None):
     """Swap custom blocks for placeholders. Markdown never sees them."""
     stash = []
+    specs = specs or {}
 
     def keep(fragment):
         stash.append(fragment)
@@ -198,6 +217,8 @@ def preprocess(body):
     body = re.sub(r"^:::pull\s*\n(.*?)\n:::\s*$",
                   lambda m: keep(f'<blockquote class="pull"><p><span class="hl">{inline_md(m.group(1))}</span></p></blockquote>'),
                   body, flags=re.M | re.S)
+    body = re.sub(r'^:::figure\s+id="([a-z0-9-]+)"\s*\n:::\s*$',
+                  lambda m: keep(figure_html(slug, m.group(1), specs)), body, flags=re.M)
     body = re.sub(r"^:::note\s*\n(.*?)\n:::\s*$",
                   lambda m: keep(f'<aside class="note"><p>{inline_md(m.group(1))}</p></aside>'),
                   body, flags=re.M | re.S)
@@ -207,8 +228,8 @@ def preprocess(body):
     return body, stash
 
 
-def render_body(body, slug, soft_text):
-    body, stash = preprocess(body)
+def render_body(body, slug, soft_text, specs=None):
+    body, stash = preprocess(body, slug, specs)
     md = markdown.Markdown(
         extensions=["tables", "fenced_code", "toc", "sane_lists", "smarty"],
         extension_configs={"toc": {"toc_depth": "2-2"}},
@@ -222,7 +243,7 @@ def render_body(body, slug, soft_text):
     starts = [m.start() for m in re.finditer(r"<h2[ >]", out)]
     if len(starts) >= 3:
         soft = (f'<aside class="soft"><p>{soft_text} '
-                f'<a href="{signup(slug)}" data-cta="soft">How the placement session works</a></p></aside>\n')
+                f'<a href="{signup(slug)}" data-cta="soft">How applying works</a></p></aside>\n')
         out = out[:starts[2]] + soft + out[starts[2]:]
     words = len(re.findall(r"\b\w+\b", re.sub(r"<[^>]+>", " ", out)))
     return out, heads, words
@@ -252,7 +273,8 @@ def load_posts():
         meta["path"] = f"/academy/blog/{meta['slug']}/"
         meta.setdefault("weight", 100)
         meta.setdefault("related", [])
-        meta.setdefault("soft", "If you'd like a teacher to take this further with your child, start with a free placement session on Zoom.")
+        meta["figures"] = meta.get("figures") or {}
+        meta.setdefault("soft", "If you'd like a teacher to take this further with your child, our coding and chess classes run live on Zoom in groups of up to 15.")
         posts.append(meta)
     slugs = {p["slug"] for p in posts}
     for p in posts:
@@ -275,6 +297,7 @@ def cover_url(p):
 
 SPRITE = """<svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.47-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.59-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.42-.08-.12-.28-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89a11.82 11.82 0 0 0-3.48-8.41Z"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24"><path fill="currentColor" d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07Z"/></symbol>
   <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1 1M14 10a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1-1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
 </svg>"""
 
@@ -324,7 +347,7 @@ def header(slug, wa_text):
     <a class="brand" href="/academy/" aria-label="Esubu Tech Academy home">&#9889;&nbsp;Esubu<span>Tech</span><small>Academy blog</small></a>
     <div class="hd__act">
       <a class="hd__link" data-cta="whatsapp-header" target="_blank" rel="noopener" href="{esc(wa_link(wa_text))}"><svg aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a>
-      <a class="btn btn--sm" data-cta="book-header" href="{signup(slug, '#book')}"><span class="long">Book free session</span><span class="short">Free session</span></a>
+      <a class="btn btn--sm" data-cta="book-header" href="{signup(slug, '#book')}"><span class="long">Apply for a place</span><span class="short">Apply</span></a>
     </div>
   </div>
 </header>
@@ -340,9 +363,9 @@ def invite(slug, title, text, wa_text):
       <p><a href="{signup(slug)}" data-cta="signup-page" style="color:#fff;font-weight:600">See the timetable, fees and parents' questions</a></p>
     </div>
     <div class="invite__btns">
-      <a class="btn btn--hl" data-cta="book" href="{signup(slug, '#book')}">Book a free placement session</a>
+      <a class="btn btn--hl" data-cta="book" href="{signup(slug, '#book')}">Apply for a place</a>
       <a class="btn btn--wa" data-cta="whatsapp" target="_blank" rel="noopener" href="{esc(wa_link(wa_text))}"><svg aria-hidden="true"><use href="#i-wa"/></svg>Ask Sammy on WhatsApp</a>
-      <small>Free, on Zoom. You pay nothing until you accept a place.</small>
+      <small>Two minutes to apply. I reply on WhatsApp with the group, fees and start details.</small>
     </div>
   </div>
 </section>
@@ -361,7 +384,7 @@ FOOTER = """<footer class="ft">
         <ul>
           <li><a href="/academy/">Academy home</a></li>
           <li><a href="/academy/blog/">Blog</a></li>
-          <li><a href="/academy/signup/">Book a free session</a></li>
+          <li><a href="/academy/signup/">Apply for a place</a></li>
           <li><a href="/academy/blog/feed.xml">RSS feed</a></li>
         </ul>
       </div>
@@ -405,7 +428,7 @@ def scripts(slug):
 # ---------------------------------------------------------------- pages
 
 def post_page(p, by_slug, css_v):
-    body, heads, words = render_body(p["body"], p["slug"], p["soft"])
+    body, heads, words = render_body(p["body"], p["slug"], p["soft"], p["figures"])
     p["minutes"] = max(3, math.ceil(words / 220))
     wa_text = f'Hello Sammy, I read "{p["title"]}" on your blog. I\'d like to ask about classes. My child\'s age: '
     jsonld = {"@context": "https://schema.org", "@graph": [
@@ -474,6 +497,7 @@ def post_page(p, by_slug, css_v):
           <div class="share">
             <span>Send this to a parent</span>
             <a class="btn btn--wa btn--sm" data-cta="share-whatsapp" target="_blank" rel="noopener" href="https://wa.me/?text={quote(share_text)}"><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
+            <a class="btn btn--wa btn--fb btn--sm" data-cta="share-facebook" target="_blank" rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u={quote(p["url"])}"><svg aria-hidden="true"><use href="#i-fb"/></svg>Facebook</a>
             <button class="btn btn--ghost btn--sm" type="button" data-cta="copy-link" data-copy="{esc(p["url"])}"><svg aria-hidden="true"><use href="#i-link"/></svg><span>Copy link</span></button>
           </div>
           <section class="check" aria-labelledby="check-title">
@@ -554,7 +578,7 @@ def index_page(posts, css_v):
     </ul>
   </div>
 </div>
-{invite("blog-index", "See where your child would start", "A short session on Zoom with your child, free, with you welcome to sit in. Nobody passes or fails. I tell you which group fits and offer a place.", wa_text)}
+{invite("blog-index", "Tell me about your child", "Live coding and chess classes on Zoom, groups of up to 15, one teacher. Apply in two minutes and I reply on WhatsApp with the right group for your child.", wa_text)}
 </main>
 {FOOTER}{scripts("blog-index")}""")
 
@@ -681,6 +705,7 @@ def main():
     global JS_V
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--covers", action="store_true", help="redraw share images with Playwright")
+    ap.add_argument("--figures", action="store_true", help="redraw post figures with Playwright")
     args = ap.parse_args()
 
     posts = load_posts()
@@ -689,7 +714,7 @@ def main():
     JS_V = file_hash(BLOG / "blog.js")
     # minutes are needed for related lists, so measure every post first
     for p in posts:
-        _, _, words = render_body(p["body"], p["slug"], p["soft"])
+        _, _, words = render_body(p["body"], p["slug"], p["soft"], p["figures"])
         p["minutes"] = max(3, math.ceil(words / 220))
     for p in posts:
         out = BLOG / p["slug"] / "index.html"
@@ -702,6 +727,13 @@ def main():
     print(f"  wrote blog index, feed.xml, sitemap.xml ({len(posts)} posts)")
     if args.covers:
         draw_covers(posts)
+    if args.figures:
+        jobs = [(f"{p['slug']}-{fid}", spec) for p in posts for fid, spec in p["figures"].items()]
+        figs.draw(jobs, FONTS, FIGURES)
+    missing_figs = [f"{p['slug']}-{fid}" for p in posts for fid in p["figures"]
+                    if not (FIGURES / f"{p['slug']}-{fid}.webp").exists()]
+    if missing_figs:
+        print("  note: figures not drawn yet: " + ", ".join(missing_figs) + ". Run with --figures.")
     missing = [p["slug"] for p in posts if not (COVERS / f"{p['slug']}.jpg").exists()]
     if missing:
         print("  note: no share image yet for " + ", ".join(missing) + ". Run with --covers.")

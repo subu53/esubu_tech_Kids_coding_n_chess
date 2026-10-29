@@ -11,7 +11,7 @@ dek: "The tears tell you your child cared. What you do in the next ten minutes, 
 cover_line: "Tears after a lost game"
 related: [does-chess-make-kids-smarter, teach-your-child-chess-at-home]
 invite_title: "Every lost game gets a second look"
-invite_text: "In our groups, children play tournaments inside the group and we review the games afterwards, together. The placement session is free and you're welcome to sit in."
+invite_text: "In our groups, children play tournaments inside the group and we review the games afterwards, together. Live on Zoom, groups of up to 15."
 sources:
   - title: "Sisk and colleagues, growth mind-sets and academic achievement: two meta-analyses (Psychological Science, 2018)"
     url: "https://englelab.gatech.edu/articles/2018/Sisk,%20Burgoyne%20et%20al.%20(2018)%20-%20Mindset%20and%20Academic%20Achievement.pdf"

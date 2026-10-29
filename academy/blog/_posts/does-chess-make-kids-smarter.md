@@ -11,7 +11,7 @@ dek: "You have seen the poster: chess raises IQ and maths marks. I run chess cla
 cover_line: "Does chess raise marks?"
 related: [child-cries-after-losing-chess, teach-your-child-chess-at-home]
 invite_title: "Judge us on what you see"
-invite_text: "Your child records games in notation and reads one back to you, move by move. Watch a free placement session on Zoom and decide for yourself."
+invite_text: "Your child records games in notation and reads one back to you, move by move. Apply for a place and judge the work yourself."
 sources:
   - title: "Sala and Gobet, chess instruction in schools: a quantitative review (Educational Research Review, 2016), ChessBase summary"
     url: "https://en.chessbase.com/newsroom/post/chess-instruction-in-schools-a-quantitative-review"
