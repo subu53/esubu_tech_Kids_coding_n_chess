@@ -11,7 +11,7 @@ dek: "Hour limits treat a cartoon, a game and a coding project as the same thing
 cover_line: "Watching or building?"
 related: [december-holiday-plan-nairobi-kids, should-kids-learn-coding-ai]
 invite_title: "Give one hour a day a different job"
-invite_text: "In our holiday camp children use the screen to build. Every Friday, each child shows the family a game they built during the week. The placement session is free, and you sit in."
+invite_text: "In our holiday classes children use the screen to build. Every Friday, each child shows the family a game they built during the week."
 sources:
   - title: "Screen-based sedentary behaviour and adiposity among school children, ISCOLE Kenya (PLoS ONE, 2018)"
     url: "https://doaj.org/article/e4656e6a14f3486d903723edb72d6499"

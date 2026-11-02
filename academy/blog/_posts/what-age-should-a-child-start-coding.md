@@ -11,7 +11,7 @@ dek: "I learned to code as an adult, the slow way. What each age is ready for, a
 cover_line: "When is my child ready to code?"
 related: [scratch-or-python-first, coding-in-kenyan-schools-kicd-curriculum]
 invite_title: "Six is where most of our groups start"
-invite_text: "Groups are set by ability, not age alone, so a quick seven-year-old and a careful twelve-year-old each land where they belong. The placement session is free."
+invite_text: "Groups are set by ability, not age alone, so a quick seven-year-old and a careful twelve-year-old each land where they belong. Tell me about your child and I'll place them."
 sources:
   - title: "At what age can a child start coding? (Raspberry Pi Foundation, November 2022)"
     url: "https://www.raspberrypi.org/blog/what-age-can-a-child-start-coding/"

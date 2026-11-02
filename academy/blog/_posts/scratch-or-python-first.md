@@ -11,7 +11,7 @@ dek: "Some parents worry Scratch is a toy. Others worry Python is too hard. A cl
 cover_line: "Blocks or typing first?"
 related: [what-age-should-a-child-start-coding, should-kids-learn-coding-ai]
 invite_title: "Scratch first, Python when your child is ready"
-invite_text: "Younger children start with blocks in the browser. Older children who type comfortably move on to Python. The free placement session tells us which group fits."
+invite_text: "Younger children start with blocks in the browser. Older children who type comfortably move on to Python. Tell me about your child and I'll say which group fits."
 sources:
   - title: "Weintrop and Wilensky, transitioning from blocks to text (Computers and Education, 2019)"
     url: "https://www.terpconnect.umd.edu/~weintrop/papers/Weintrop&Wilensky_2019_C&E.pdf"

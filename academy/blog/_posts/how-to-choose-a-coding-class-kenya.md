@@ -11,7 +11,7 @@ dek: "Most Kenyan parents know online classes exist. Few have enrolled a child, 
 cover_line: "9 questions before you pay"
 related: [coding-in-kenyan-schools-kicd-curriculum, does-chess-make-kids-smarter]
 invite_title: "Ask us all nine"
-invite_text: "Put these questions to me on WhatsApp or in the free placement session. If an answer doesn't satisfy you, don't pay."
+invite_text: "Put these questions to me on WhatsApp before you apply. If an answer doesn't satisfy you, don't pay."
 sources:
   - title: "80% of parents aware of online schooling, but uptake remains low (Citizen Digital, February 2026)"
     url: "https://www.citizen.digital/news/80-of-parents-aware-of-online-schooling-but-uptake-remains-low-study-n377059"
@@ -50,7 +50,7 @@ This is the question providers dodge most. Push for something concrete: a game y
 
 ### 5. How do you put children into groups?
 
-By age alone is a warning sign. A quick seven-year-old and a careful twelve-year-old need different groups. Ask if there's an assessment or placement session first.
+By age alone is a warning sign. A quick seven-year-old and a careful twelve-year-old need different groups. Ask what the provider wants to know about your child before placing them.
 
 ### 6. What happens if my child gets bored or falls behind?
 
@@ -68,9 +68,9 @@ A provider who records your child, posts their face and lets strangers message t
 
 Many coding and chess programmes promise better maths marks. Ask for the study. The largest review of chess research found the effect shrinks as studies get stronger, and a randomised trial of 4,009 English pupils found no improvement in test scores. A provider who promises grades without evidence will promise other things too.
 
-### 9. Is there a trial, and how do we leave?
+### 9. How does payment work, and how do we leave?
 
-A free first session lets your child and the teacher meet before money moves. Then ask how payment works. Monthly payment means you decide each month. A full term up front means you're committed even if the fit is wrong.
+Ask what you commit to. Monthly payment means you decide each month. A full term up front means you're committed even if the fit is wrong. Ask what happens if your child needs a different group in week two, and who you talk to.
 
 ## Now turn the questions on us
 
@@ -82,11 +82,11 @@ Fair is fair. Our answers are below. Check them against what you see.
 | Group size | Never more than 15 children |
 | Live or recorded? | Live on Zoom, every session |
 | What your child finishes with | A working game they designed, a chess game in notation they replay for you, written progress notes, a certificate |
-| Groups | Set by ability after a free placement session, not by age alone |
+| Groups | Set by ability after a short conversation about your child, not by age alone |
 | Bored or behind? | Tell me in the first two or three weeks and I move your child to a group at the right level |
 | Data and recordings | Sessions aren't recorded, nothing gets published, children don't message each other |
 | Grades | I don't promise better marks. The evidence doesn't support the claim. |
-| Trial and leaving | Free placement session first. KES 12,000 a month by M-Pesa, paid monthly once you accept a place. |
+| Payment | KES 12,000 a month by M-Pesa, paid monthly once you accept a place. No free trial classes. Ask on WhatsApp about paying week by week. |
 
 :::note
 Screenshot the nine questions and send them to every provider on your shortlist. Compare the replies side by side.

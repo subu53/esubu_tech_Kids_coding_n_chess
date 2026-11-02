@@ -11,7 +11,7 @@ dek: "One of the first questions parents send me on WhatsApp. The answer starts 
 cover_line: "AI writes code. Who checks it?"
 related: [scratch-or-python-first, what-age-should-a-child-start-coding]
 invite_title: "Build it first, then judge the machine"
-invite_text: "In our classes children write every line of their own game before anyone hands them a shortcut. Start with a free placement session on Zoom."
+invite_text: "In our classes children write every line of their own game before anyone hands them a shortcut. Live on Zoom, groups of up to 15."
 sources:
   - title: "METR randomised trial of AI tools with experienced developers, reported by The Decoder (July 2025)"
     url: "https://the-decoder.com/ai-coding-can-make-developers-slower-even-if-they-feel-faster/"
