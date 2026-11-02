@@ -6,7 +6,87 @@
   <atom:link href="https://esubutech.online/academy/blog/feed.xml" rel="self" type="application/rss+xml"/>
   <description>Straight answers for Kenyan parents on kids coding, chess, screen time and school.</description>
   <language>en-ke</language>
-  <lastBuildDate>Thu, 29 Oct 2026 05:05:06 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 02 Nov 2026 14:28:31 +0000</lastBuildDate>
+  <item>
+    <title>A phone for Christmas? What age to give one, and the settings to change on day one</title>
+    <link>https://esubutech.online/academy/blog/first-smartphone-age-kenya/</link>
+    <guid isPermaLink="true">https://esubutech.online/academy/blog/first-smartphone-age-kenya/</guid>
+    <pubDate>Mon, 02 Nov 2026 06:00:00 +0000</pubDate>
+    <category>Screens</category>
+    <description>A phone for Christmas? What a study of 100,000 young adults found about first-phone age, the kabambe route, and the settings to change on day one.</description>
+  </item>
+  <item>
+    <title>KJSEA results explained: what EE1 to BE2 mean, and what to do with each one</title>
+    <link>https://esubutech.online/academy/blog/kjsea-results-explained/</link>
+    <guid isPermaLink="true">https://esubutech.online/academy/blog/kjsea-results-explained/</guid>
+    <pubDate>Mon, 02 Nov 2026 06:00:00 +0000</pubDate>
+    <category>School</category>
+    <description>KJSEA slips show levels, not marks or a mean grade. What EE1 to BE2 mean subject by subject, and what to do with each result before Grade 10.</description>
+  </item>
+  <item>
+    <title>Your teenager and betting: the maths the odds don&#x27;t show</title>
+    <link>https://esubutech.online/academy/blog/teenagers-betting-maths/</link>
+    <guid isPermaLink="true">https://esubutech.online/academy/blog/teenagers-betting-maths/</guid>
+    <pubDate>Mon, 02 Nov 2026 06:00:00 +0000</pubDate>
+    <category>Maths</category>
+    <description>82.81% of young Kenyans surveyed had placed a bet. Teach your teenager the maths in the odds, the built-in margin, and a 1,000-bet test they run in Python.</description>
+  </item>
+  <item>
+    <title>Short videos and your child&#x27;s focus: what 71 studies found, and how to rebuild attention</title>
+    <link>https://esubutech.online/academy/blog/short-videos-child-focus/</link>
+    <guid isPermaLink="true">https://esubutech.online/academy/blog/short-videos-child-focus/</guid>
+    <pubDate>Mon, 02 Nov 2026 06:00:00 +0000</pubDate>
+    <category>Screens</category>
+    <description>A review of 71 studies linked heavy short-video use with weaker attention. What it shows, what it doesn&#x27;t, and a four-week focus ladder for home.</description>
+  </item>
+  <item>
+    <title>Grade 10 Computer Science in Kenya: what your child will learn, and how to prepare from Grade 7</title>
+    <link>https://esubutech.online/academy/blog/grade-10-computer-science-kenya/</link>
+    <guid isPermaLink="true">https://esubutech.online/academy/blog/grade-10-computer-science-kenya/</guid>
+    <pubDate>Mon, 02 Nov 2026 06:00:00 +0000</pubDate>
+    <category>School</category>
+    <description>KICD&#x27;s Grade 10 Computer Science design gives 92 of 180 lessons to software development. What your child learns, and how to prepare from Grade 7.</description>
+  </item>
+  <item>
+    <title>Robotics or coding first? An honest answer for parents</title>
+    <link>https://esubutech.online/academy/blog/robotics-or-coding-first/</link>
+    <guid isPermaLink="true">https://esubutech.online/academy/blog/robotics-or-coding-first/</guid>
+    <pubDate>Mon, 02 Nov 2026 06:00:00 +0000</pubDate>
+    <category>Choosing</category>
+    <description>Robotics looks more impressive than coding. What a robot needs before it moves, what kits cost you, and why coding first gives your child the robot&#x27;s brain.</description>
+  </item>
+  <item>
+    <title>The first chess opening to teach your child: the Italian Game, move by move</title>
+    <link>https://esubutech.online/academy/blog/italian-game-first-chess-opening/</link>
+    <guid isPermaLink="true">https://esubutech.online/academy/blog/italian-game-first-chess-opening/</guid>
+    <pubDate>Mon, 02 Nov 2026 06:00:00 +0000</pubDate>
+    <category>Chess</category>
+    <description>Your child knows the moves and keeps losing in four. The Italian Game gives a plan for the first six moves, the reason for each, and a defence to the trap.</description>
+  </item>
+  <item>
+    <title>How a Kenyan child gets a FIDE rating, and what the number means</title>
+    <link>https://esubutech.online/academy/blog/fide-rating-kenya-children/</link>
+    <guid isPermaLink="true">https://esubutech.online/academy/blog/fide-rating-kenya-children/</guid>
+    <pubDate>Mon, 02 Nov 2026 06:00:00 +0000</pubDate>
+    <category>Chess</category>
+    <description>A first FIDE rating needs five games against rated players and starts at 1400 or higher. How the number is worked out, and the road for Kenyan children.</description>
+  </item>
+  <item>
+    <title>What comes after Scratch? The coding ladder from age 6 to 16</title>
+    <link>https://esubutech.online/academy/blog/what-comes-after-scratch/</link>
+    <guid isPermaLink="true">https://esubutech.online/academy/blog/what-comes-after-scratch/</guid>
+    <pubDate>Mon, 02 Nov 2026 06:00:00 +0000</pubDate>
+    <category>Coding</category>
+    <description>Scratch is the first rung. What comes next, from ScratchJr at five to Python, web pages and data science at sixteen, and what your child builds on each rung.</description>
+  </item>
+  <item>
+    <title>Computational thinking explained with ugali, matatus and laundry</title>
+    <link>https://esubutech.online/academy/blog/computational-thinking-explained/</link>
+    <guid isPermaLink="true">https://esubutech.online/academy/blog/computational-thinking-explained/</guid>
+    <pubDate>Mon, 02 Nov 2026 06:00:00 +0000</pubDate>
+    <category>Coding</category>
+    <description>Computational thinking sounds like jargon. It&#x27;s four habits your child already uses at home: break problems down, spot patterns, drop details, write steps.</description>
+  </item>
   <item>
     <title>What your child builds in the first four weeks of coding and chess classes</title>
     <link>https://esubutech.online/academy/blog/first-four-weeks-of-coding/</link>
