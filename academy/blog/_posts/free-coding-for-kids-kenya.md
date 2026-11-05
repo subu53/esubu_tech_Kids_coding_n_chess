@@ -11,7 +11,7 @@ dek: "Everything a child needs to learn to code sits online for free. So why do 
 cover_line: "Free coding: where it runs out"
 related: [how-to-choose-a-coding-class-kenya, first-four-weeks-of-coding]
 invite_title: "When you want a teacher and a plan"
-invite_text: "Our classes run like school: you apply, your child is placed in the right group, and they work toward a finished game with the same teacher. Live on Zoom, groups of up to 15."
+invite_text: "Our classes run like school: you apply, your child is placed in the right group, and they work toward a finished game with the same teacher. Live on Zoom, one child per session."
 figures:
   free-options:
     type: list

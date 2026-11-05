@@ -280,7 +280,7 @@ def load_posts():
         meta.setdefault("weight", 100)
         meta.setdefault("related", [])
         meta["figures"] = meta.get("figures") or {}
-        meta.setdefault("soft", "If you'd like a teacher to take this further with your child, our coding and chess classes run live on Zoom in groups of up to 15.")
+        meta.setdefault("soft", "If you'd like a teacher to take this further with your child, our coding and chess classes run live on Zoom, one child per session.")
         posts.append(meta)
     slugs = {p["slug"] for p in posts}
     for p in posts:
@@ -584,7 +584,7 @@ def index_page(posts, css_v):
     </ul>
   </div>
 </div>
-{invite("blog-index", "Tell me about your child", "Live coding and chess classes on Zoom, groups of up to 15, one teacher. Apply in two minutes and I reply on WhatsApp with the right group for your child.", wa_text)}
+{invite("blog-index", "Tell me about your child", "Live coding and chess classes on Zoom, one child per session, same teacher throughout. Apply in two minutes and I reply on WhatsApp with the right group for your child.", wa_text)}
 </main>
 {FOOTER}{scripts("blog-index")}""")
 

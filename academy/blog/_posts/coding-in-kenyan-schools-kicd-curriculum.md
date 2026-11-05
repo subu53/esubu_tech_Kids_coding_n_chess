@@ -11,7 +11,7 @@ dek: "Kenya was the first African country to make coding a school subject. Appro
 cover_line: "Is your child's school teaching coding?"
 related: [what-age-should-a-child-start-coding, how-to-choose-a-coding-class-kenya]
 invite_title: "Classes which line up with where school is heading"
-invite_text: "We don't teach the school syllabus. We teach coding and chess, live on Zoom, in groups of up to 15. Tell me about your child and I'll say where they'd start."
+invite_text: "We don't teach the school syllabus. We teach coding and chess, live on Zoom, one child per session. Tell me about your child and I'll say where they'd start."
 sources:
   - title: "Govt approves new tech syllabus for primary, secondary schools (Kenyans.co.ke, 20 April 2022)"
     url: "https://www.kenyans.co.ke/news/74951-govt-approves-new-tech-syllabus-primary-secondary-schools"

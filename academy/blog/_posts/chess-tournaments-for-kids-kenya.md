@@ -11,7 +11,7 @@ dek: "A record 4,700 children played the national under-17 championship in 2026.
 cover_line: "From your table to the nationals"
 related: [teach-your-child-chess-at-home, child-cries-after-losing-chess]
 invite_title: "Notation, tactics and a tournament every week"
-invite_text: "In our chess groups children learn to record their games, play tournaments inside the group, and review every game afterwards. Live on Zoom, groups of up to 15."
+invite_text: "In our chess groups children learn to record their games, play games, and review every game afterwards. Live on Zoom, one child per session."
 figures:
   u17-nationals:
     type: stats
