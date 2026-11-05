@@ -98,6 +98,11 @@ def signup(slug, anchor=""):
     return f"/academy/signup/?from={quote(slug)}{anchor}"
 
 
+def fees(slug):
+    """Fee page, with the same ?from= attribution as signup."""
+    return f"/academy/fees/?from={quote(slug)}"
+
+
 # ---------------------------------------------------------------- blocks
 
 PIECES_W = {"k": "\u2654", "q": "\u2655", "r": "\u2656", "b": "\u2657", "n": "\u2658", "p": "\u2659"}
@@ -243,7 +248,8 @@ def render_body(body, slug, soft_text, specs=None):
     starts = [m.start() for m in re.finditer(r"<h2[ >]", out)]
     if len(starts) >= 3:
         soft = (f'<aside class="soft"><p>{soft_text} '
-                f'<a href="{signup(slug)}" data-cta="soft">How applying works</a></p></aside>\n')
+                f'<a href="{signup(slug)}" data-cta="soft">How applying works</a> '
+                f'&middot; <a href="{fees(slug)}" data-cta="soft">What it costs</a></p></aside>\n')
         out = out[:starts[2]] + soft + out[starts[2]:]
     words = len(re.findall(r"\b\w+\b", re.sub(r"<[^>]+>", " ", out)))
     return out, heads, words
