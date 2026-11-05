@@ -63,7 +63,11 @@ Last updated: 12 November 2026.
 
 ### 12 Nov 2026 — method page
 
-- **New `/academy/method/`** — "Test, build, review". Three stages, in the order they happen: find out what the child already believes, build from a blank screen, then review the mistake out loud. Grounded in Papert/Resnick constructionism and MIT Scratch's learning spiral, both linked. FAQPage + BreadcrumbList schema, self-canonical, 951 words.
+- **New `/academy/method/`** — "Test, build, review". Three stages, in the order they happen: find out what the child already believes, build from a blank screen, then review the mistake out loud. Grounded in Papert/Resnick constructionism and MIT Scratch's learning spiral, both linked. FAQPage + BreadcrumbList schema, self-canonical.
+- **Teaching strategy added above the stages:** "First we loosen the ground." Nothing grows in hard soil — a child who is afraid of being wrong will not take in a concept however clearly it is explained, so the first job is loosening (small wins, permission to break things, no marks attached) before the ideas arrive in order, each resting on the last.
+- **Process strip** shows the full shape: Loosen → Test → Build → Review → Grow. Deliberately unnumbered so it does not compete with the numbered stages below.
+- **Two outcomes** named explicitly: *Project-focused* (every stretch ends in a finished game) and *Tournament-ready* (a child can sit at a board, record the game and return after a loss).
+- **Mobile:** custom CSS carries its own breakpoints — the process strip and outcome cards stack to one column under 640–720px, stage cards lose padding and reflow their heading. The hero's floating cards are already hidden below 900px by `styles.css`.
 - Deliberate omissions: nothing about testing at scale, product research or future plans. The page describes practice only. It ends with a "what we don't publish" note about the sequence itself — intrigue without a false claim.
 - Linked from academy nav (desktop + mobile), fees page nav, and its own footer. Added to `sitemap.xml` (39 URLs).
 
