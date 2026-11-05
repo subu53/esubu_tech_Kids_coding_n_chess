@@ -11,7 +11,7 @@ dek: "Every school holiday the same question returns in parent WhatsApp groups. 
 cover_line: "Holiday tuition: legal or not?"
 related: [december-holiday-plan-nairobi-kids, screen-time-watching-vs-building]
 invite_title: "Holiday mornings with something to show"
-invite_text: "Our holiday classes teach coding and chess, not the school syllabus. Live on Zoom, Monday to Friday mornings, groups of up to 15, and a game your child builds by Friday."
+invite_text: "Our holiday classes teach coding and chess, not the school syllabus. Live on Zoom, Monday to Friday mornings, one child per session, and a game your child builds by Friday."
 figures:
   law-numbers:
     type: stats

@@ -11,7 +11,7 @@ dek: "In Grade 9, Kenyan girls outperformed boys in most subjects. In university
 cover_line: "Should she learn to code?"
 related: [future-jobs-kenya-developer-salary, chess-tournaments-for-kids-kenya]
 invite_title: "Girls build the same games"
-invite_text: "In our groups, girls and boys work through the same projects, with the same teacher and the same expectations. Live on Zoom, groups of up to 15."
+invite_text: "In our sessions, girls and boys work through the same projects, with the same teacher and the same expectations. Live on Zoom, one child per session."
 figures:
   girls-gap:
     type: stats

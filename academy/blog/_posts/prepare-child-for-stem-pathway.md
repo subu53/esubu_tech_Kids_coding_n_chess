@@ -11,7 +11,7 @@ dek: "Choosing STEM takes one tick on a form. Qualifying for it starts years ear
 cover_line: "Ready for STEM?"
 related: [help-your-child-with-maths-at-home, coding-in-kenyan-schools-kicd-curriculum]
 invite_title: "STEM thinking your child practises every week"
-invite_text: "Our coding classes build the habits STEM subjects lean on: steps in the right order, conditions, coordinates and checking your own work. Live on Zoom, groups of up to 15."
+invite_text: "Our coding classes build the habits STEM subjects lean on: steps in the right order, conditions, coordinates and checking your own work. Live on Zoom, one child per session."
 figures:
   pathway-choices:
     type: bars

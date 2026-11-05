@@ -11,7 +11,7 @@ dek: "Your child's first job is ten or fifteen years away. Some jobs on today's 
 cover_line: "What will your child become?"
 related: [prepare-child-for-stem-pathway, should-my-daughter-learn-to-code]
 invite_title: "Where these careers start"
-invite_text: "Every job on this list rests on logic, maths and finishing what you start. Our coding classes practise all three, live on Zoom, in groups of up to 15."
+invite_text: "Every job on this list rests on logic, maths and finishing what you start. Our coding classes practise all three, live on Zoom, one child per session."
 figures:
   wef-jobs:
     type: list
