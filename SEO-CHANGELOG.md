@@ -61,13 +61,25 @@ Last updated: 12 November 2026.
 
 ---
 
+### 12 Nov 2026 — method page
+
+- **New `/academy/method/`** — "Test, build, review". Three stages, in the order they happen: find out what the child already believes, build from a blank screen, then review the mistake out loud. Grounded in Papert/Resnick constructionism and MIT Scratch's learning spiral, both linked. FAQPage + BreadcrumbList schema, self-canonical, 951 words.
+- Deliberate omissions: nothing about testing at scale, product research or future plans. The page describes practice only. It ends with a "what we don't publish" note about the sequence itself — intrigue without a false claim.
+- Linked from academy nav (desktop + mobile), fees page nav, and its own footer. Added to `sitemap.xml` (39 URLs).
+
+### Repo settings changed
+
+- **Pages `build_type` switched from `legacy` to `workflow`.** Both a branch build and `deploy.yml` were publishing on every push, and the legacy one had started failing. Now there is one publisher. If Pages ever looks stale, check this setting first.
+
+---
+
 ## Not done yet
 
 | # | Item | Status | Blocked by |
 |---|---|---|---|
 | 1 | `/academy/holiday-camp/` | **Cancelled** — owner wants CTAs pointed at signup instead | — |
-| 2 | `/academy/students/` | **Blocked** — needs consent for names/quotes | Owner. Fabricated testimonials were declined; see note below |
-| 3 | `/academy/method/` | Not started — owner wants no "we are testing / scaling" framing in public | Draft needed |
+| 2 | `/academy/students/` | **On hold** — owner is deciding whether to ask parents for recording consent. No names, quotes or photos go live without it | Owner |
+| 3 | `/academy/method/` | **Done** — live | — |
 | 4 | `/academy/curriculum/` | Not started — `chess-coding-curriculum/` in the workspace can seed it | Owner review |
 | 5 | `/academy/faq/` | Not started — assemble from the FAQ already on the signup page | — |
 | 6 | `/academy/chess/` + `/academy/coding/` hubs | Not started — the 30 posts have no parent page | — |
@@ -76,8 +88,8 @@ Last updated: 12 November 2026.
 | 9 | YouTube (strongest correlate of AI visibility in the largest study available) | Not started | Owner filming |
 | 10 | Google Business Profile | **Not applicable** — online-only, not eligible | — |
 | 11 | `llms.txt` | **Do not build** — 97% never fetched; Google ignores it | — |
-| 12 | Two claims on the fee page | **Unconfirmed** — "no registration fee" and the missed-class wording | Owner |
-| 13 | Legacy `pages build and deployment` workflow failing | Open | Owner decision |
+| 12 | Fee page claims | Registration fee: **confirmed none** (12 Nov). Missed-class wording: **still unconfirmed** | Owner |
+| 13 | Legacy `pages build and deployment` workflow | **Done** — Pages switched to Actions-only | — |
 
 ---
 

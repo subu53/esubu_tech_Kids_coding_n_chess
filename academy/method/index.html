@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="canonical" href="https://esubutech.online/academy/method/">
+  <title>How We Teach: Test, Build, Review | Esubu Academy</title>
+  <meta name="description" content="Esubu Academy sessions run in three stages: find out what your child already believes, build something real from a blank screen, then review the mistake out loud.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="The Esubu Method: test, build, review">
+  <meta property="og:description" content="Why our children's coding and chess sessions run in three stages, and why nothing is copied from a tutorial.">
+  <meta property="og:url" content="https://esubutech.online/academy/method/">
+  <meta property="og:image" content="https://esubutech.online/esubu-logo.jpg">
+  <meta property="og:site_name" content="Esubu Tech Academy">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&amp;family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../../styles.css?v=11" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHFDG299C1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GHFDG299C1');
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://esubutech.online/" },
+          { "@type": "ListItem", "position": 2, "name": "Academy", "item": "https://esubutech.online/academy/" },
+          { "@type": "ListItem", "position": 3, "name": "Method", "item": "https://esubutech.online/academy/method/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://esubutech.online/academy/method/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is the Esubu Method just tutoring?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. A tutor follows the school syllabus and helps with homework. We do not teach the syllabus. Sessions run in three stages: find out what the child already believes, have them build something real from a blank screen, then review the mistake until they can explain it themselves." }
+          },
+          {
+            "@type": "Question",
+            "name": "Why does the method need one-to-one sessions?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Because the first stage only works if the teacher can hear how one child reasons. In a room of twenty, a child who has guessed correctly sounds the same as a child who understands. One-to-one, the guessing is audible. Groups return as we add teachers." }
+          },
+          {
+            "@type": "Question",
+            "name": "Does my child need to be good at maths to start?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. Children from age six start with blocks and the rules of chess. The arithmetic in a game is coordinates, counting and conditions, and it arrives because the game needs it, not as a separate lesson." }
+          },
+          {
+            "@type": "Question",
+            "name": "What if my child already codes?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The first session finds out what they actually understand rather than what they have copied. Many children who have followed tutorials can build a game but cannot explain why it breaks. That gap is where we start." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    body.page-method .lede-block { max-width: 62ch; font-size: 1.06rem; line-height: 1.75; }
+    body.page-method .stage {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      padding: 1.6rem 1.75rem;
+      margin: 1.25rem 0;
+    }
+    body.page-method .stage-num {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 2rem; height: 2rem; border-radius: var(--radius-full);
+      background: var(--green-800); color: #fff;
+      font-family: 'Nunito', sans-serif; font-weight: 800; font-size: .95rem;
+      margin-right: .6rem; vertical-align: middle;
+    }
+    body.page-method .stage h3 {
+      display: inline-block; vertical-align: middle; margin: 0 0 0 0;
+      font-family: 'Nunito', sans-serif; font-size: 1.25rem;
+    }
+    body.page-method .stage p { margin: .8rem 0 0; line-height: 1.75; }
+    body.page-method .stage p:first-of-type { margin-top: 1rem; }
+    body.page-method .mystery {
+      background: var(--green-50);
+      border-left: 4px solid var(--green-700);
+      border-radius: var(--radius-md);
+      padding: 1.35rem 1.6rem;
+      margin: 2rem 0;
+    }
+    body.page-method .mystery p { margin: 0; line-height: 1.75; }
+    body.page-method .faq-item { border-bottom: 1px solid var(--gray-200); padding: 1.15rem 0; }
+    body.page-method .faq-item:first-of-type { border-top: 1px solid var(--gray-200); }
+    body.page-method .faq-item h3 { font-family: 'Nunito', sans-serif; font-size: 1.02rem; margin: 0 0 .55rem; }
+    body.page-method .faq-item p { margin: 0; font-size: .95rem; line-height: 1.7; color: var(--gray-600); }
+    body.page-method .cite { font-size: .9rem; color: var(--gray-600); }
+  </style>
+</head>
+<body class="page-method">
+
+  <header id="main-header">
+    <nav>
+      <div class="logo">
+        <a href="/" style="display: flex; align-items: center; gap: 0.4rem;">
+          <span class="logo-icon">⚡</span>
+          <span class="logo-text">Esubu<span class="logo-accent">Tech</span></span>
+        </a>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="/academy/" class="nav-link">Academy</a></li>
+        <li><a href="/academy/fees/" class="nav-link">Fees</a></li>
+        <li><a href="/academy/method/" class="nav-link active-link" style="background: rgba(255,255,255,0.18); font-weight:700;">Method</a></li>
+        <li><a href="/academy/blog/" class="nav-link">Blog</a></li>
+        <li><a href="/academy/signup/" class="nav-link">Enroll Now</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+      <ul class="mobile-nav-links" id="mobile-nav-links">
+        <li><a href="/academy/" onclick="closeMobile()">Academy</a></li>
+        <li><a href="/academy/fees/">Fees</a></li>
+        <li><a href="/academy/method/">Method</a></li>
+        <li><a href="/academy/blog/">📝 Blog</a></li>
+        <li><a href="/academy/signup/">✉️ Enroll Now</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-badge">🧭 How we teach</div>
+        <h1>Test, build, review: how we teach coding and chess</h1>
+        <p class="lede-block">
+          Every session runs in three stages. <strong>Test</strong> — we find out what your child already believes before we teach anything.
+          <strong>Build</strong> — they make something real from a blank screen, never from a tutorial.
+          <strong>Review</strong> — they replay the mistake until they can explain it themselves.
+          That is the whole method. It is also why sessions are one-to-one while numbers are small.
+        </p>
+        <div class="hero-actions">
+          <a href="/academy/signup/" class="cta-btn"><i class="fas fa-pen-to-square"></i> Apply for a place</a>
+          <a href="https://wa.me/254720811346?text=METHOD" class="cta-btn-outline" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Ask a question</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="floating-card card-1">1 · Test</div>
+        <div class="floating-card card-2">2 · Build</div>
+        <div class="floating-card card-3">3 · Review</div>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <div class="container">
+        <div class="section-badge">The problem</div>
+        <h2>Why most children's coding classes look like progress</h2>
+        <p class="lede-block">
+          Hand a child a tutorial and they will produce a working game this afternoon. The screen fills, the parent is pleased, and everyone agrees it is working.
+          Then the tutorial is removed, and the ability goes with it.
+          A child who has copied a game has learned to follow instructions. A child who has built one has learned to recover when it breaks — which is the only part that transfers to anything else.
+        </p>
+      </div>
+    </section>
+
+    <section class="benefits-section">
+      <div class="container">
+        <div class="section-badge">The method</div>
+        <h2>Three stages, in this order</h2>
+
+        <div class="stage">
+          <span class="stage-num">1</span><h3>Test — before we teach anything</h3>
+          <p>We ask your child to predict what a piece of code will do, to explain a game they have just played, and to describe the move they would make next. Then we watch where they guess instead of reason. It takes about ten minutes and it is the most useful ten minutes of the term.</p>
+          <p>The reason is uncomfortable but true: <strong>a wrong belief is harder to fix than a missing one.</strong> A child who thinks a variable is a kind of button will build on that for weeks. Better to find it in the first session, while it is one sentence to correct.</p>
+        </div>
+
+        <div class="stage">
+          <span class="stage-num">2</span><h3>Build — from a blank screen</h3>
+          <p>Your child makes something small enough to finish in a session and deep enough to break: a character that moves, a score that changes, a rule that stops the game. No step-by-step tutorial, no copy-and-paste code, no template with the answer in it.</p>
+          <p>This is the part with the strongest foundation. Seymour Papert's <em>constructionism</em> holds that children build knowledge by making something shareable and then thinking about what they made — not by being told. MIT's Scratch team turned that into a learning spiral of <em>imagine, create, play, share, reflect</em>. The finished game is not a reward for the learning. It <em>is</em> the learning, and it is the thing your child carries home.</p>
+          <p class="cite">See <a href="https://web.media.mit.edu/~mres/papers/Learning-Leading.pdf" target="_blank" rel="noopener">Resnick, <em>Sowing the Seeds for a More Creative Society</em></a> and <a href="https://scratch.mit.edu/about" target="_blank" rel="noopener">Scratch's creative learning approach</a>.</p>
+        </div>
+
+        <div class="stage">
+          <span class="stage-num">3</span><h3>Review — the mistake, out loud</h3>
+          <p>When the game breaks, we stop. Your child replays what they did, finds the moment it turned, and then explains why they thought that would work. The teacher's main question is not "what is the answer" but "what did you expect to happen?"</p>
+          <p>In chess this is the same move every time: we replay the loss and find the move where the game turned. A child who can say <em>I thought my knight was defending that square</em> has just learned something no explanation could have installed.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <div class="container">
+        <div class="section-badge">What to expect</div>
+        <h2>What this looks like over a term</h2>
+        <p class="lede-block">
+          The first two sessions look slow, and if you are watching for a screen full of colour you may wonder whether anything is happening.
+          By week four your child has a game they built from nothing. By week eight they can tell you why it broke the first time.
+          By the end of term they have a finished project and a written record of how they got there.
+          The full fee structure is on <a href="/academy/fees/">the fees page</a>.
+        </p>
+
+        <div class="mystery">
+          <p><strong>What we don't publish.</strong> The sequence itself — the order ideas arrive in, and which ones we deliberately hold back until later — is the part that took the longest to get right. It changes what a child can do, and you will see it in the work rather than on a page.</p>
+        </div>
+
+        <div class="hero-actions">
+          <a href="/academy/signup/" class="cta-btn"><i class="fas fa-pen-to-square"></i> Apply for a place</a>
+          <a href="https://wa.me/254720811346?text=METHOD" class="cta-btn-outline" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Ask about the method</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="schedule-section">
+      <div class="container">
+        <div class="section-badge">Questions</div>
+        <h2>What parents ask about the teaching</h2>
+
+        <div class="faq-item">
+          <h3>Is this just tutoring?</h3>
+          <p>No. A tutor follows the school syllabus and helps with homework. We do not teach the syllabus. Sessions run in three stages: find out what the child already believes, have them build something real from a blank screen, then review the mistake until they can explain it themselves.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Why does the method need one-to-one sessions?</h3>
+          <p>Because the first stage only works if the teacher can hear how one child reasons. In a room of twenty, a child who has guessed correctly sounds the same as a child who understands. One-to-one, the guessing is audible. Groups return as we add teachers.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Does my child need to be good at maths to start?</h3>
+          <p>No. Children from age six start with blocks and the rules of chess. The arithmetic in a game is coordinates, counting and conditions, and it arrives because the game needs it, not as a separate lesson.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What if my child already codes?</h3>
+          <p>The first session finds out what they actually understand rather than what they have copied. Many children who have followed tutorials can build a game but cannot explain why it breaks. That gap is where we start.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">⚡ Esubu<span>Tech</span></div>
+          <p>Three wings. One mission: empowering Kenya through technology.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>🎓 Academy</h4>
+          <ul>
+            <li><a href="/academy/">Home</a></li>
+            <li><a href="/academy/method/">Method</a></li>
+            <li><a href="/academy/fees/">Fees</a></li>
+            <li><a href="/academy/blog/">Blog</a></li>
+            <li><a href="/academy/signup/">Enroll Now</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>💼 Tech Solutions</h4>
+          <ul>
+            <li><a href="/techsolutions#tech-home">Overview</a></li>
+            <li><a href="/techsolutions#erp-products">ERP Systems</a></li>
+            <li><a href="/techsolutions#tech-consulting">Consulting</a></li>
+            <li><a href="/techsolutions#tech-contact">Get Demo</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>📊 Data Science</h4>
+          <ul>
+            <li><a href="/datascience#data-home">Overview</a></li>
+            <li><a href="/datascience#data-services">Services</a></li>
+            <li><a href="/datascience#data-process">Process</a></li>
+            <li><a href="/datascience#data-contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><i class="fab fa-whatsapp"></i> +254 720 811 346</li>
+            <li><i class="fas fa-envelope"></i> esubumedia@gmail.com</li>
+            <li><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Esubu Tech. All rights reserved. | <a href="https://esubutech.online">esubutech.online</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../script.js"></script>
+</body>
+</html>
