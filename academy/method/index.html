@@ -135,6 +135,7 @@
 
     body.page-method .outcomes { display: grid; gap: 1rem; grid-template-columns: 1fr; margin-top: 1.75rem; }
     @media (min-width: 720px) { body.page-method .outcomes { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 940px) { body.page-method .outcomes.three { grid-template-columns: repeat(3, 1fr); } }
     body.page-method .outcome {
       background: var(--white); border: 1px solid var(--gray-200); border-left: 4px solid var(--green-700);
       border-radius: var(--radius-md); padding: 1.2rem 1.35rem; box-shadow: var(--shadow-sm);
@@ -158,7 +159,7 @@
     <nav>
       <div class="logo">
         <a href="/" style="display: flex; align-items: center; gap: 0.4rem;">
-          <span class="logo-icon">âš¡</span>
+          <span class="logo-icon">⚡</span>
           <span class="logo-text">Esubu<span class="logo-accent">Tech</span></span>
         </a>
       </div>
@@ -178,8 +179,8 @@
         <li><a href="/academy/" onclick="closeMobile()">Academy</a></li>
         <li><a href="/academy/fees/">Fees</a></li>
         <li><a href="/academy/method/">Method</a></li>
-        <li><a href="/academy/blog/">ðŸ“ Blog</a></li>
-        <li><a href="/academy/signup/">âœ‰ï¸ Enroll Now</a></li>
+        <li><a href="/academy/blog/">📝 Blog</a></li>
+        <li><a href="/academy/signup/">✉️ Enroll Now</a></li>
       </ul>
     </div>
   </header>
@@ -187,12 +188,12 @@
   <main>
     <section class="hero">
       <div class="hero-content">
-        <div class="hero-badge">ðŸ§­ How we teach</div>
+        <div class="hero-badge">🧭 How we teach</div>
         <h1>Test, build, review: how we teach coding and chess</h1>
         <p class="lede-block">
-          Every session runs in three stages. <strong>Test</strong> â€” we find out what your child already believes before we teach anything.
-          <strong>Build</strong> â€” they make something real from a blank screen, never from a tutorial.
-          <strong>Review</strong> â€” they replay the mistake until they can explain it themselves.
+          Every session runs in three stages. <strong>Test</strong> — we find out what your child already believes before we teach anything.
+          <strong>Build</strong> — they make something real from a blank screen, never from a tutorial.
+          <strong>Review</strong> — they replay the mistake until they can explain it themselves.
           That is the whole method. It is also why sessions are one-to-one while numbers are small.
         </p>
         <div class="hero-actions">
@@ -201,9 +202,9 @@
         </div>
       </div>
       <div class="hero-visual">
-        <div class="floating-card card-1">1 Â· Test</div>
-        <div class="floating-card card-2">2 Â· Build</div>
-        <div class="floating-card card-3">3 Â· Review</div>
+        <div class="floating-card card-1">1 · Test</div>
+        <div class="floating-card card-2">2 · Build</div>
+        <div class="floating-card card-3">3 · Review</div>
       </div>
     </section>
 
@@ -214,7 +215,7 @@
         <p class="lede-block">
           Hand a child a tutorial and they will produce a working game this afternoon. The screen fills, the parent is pleased, and everyone agrees it is working.
           Then the tutorial is removed, and the ability goes with it.
-          A child who has copied a game has learned to follow instructions. A child who has built one has learned to recover when it breaks â€” which is the only part that transfers to anything else.
+          A child who has copied a game has learned to follow instructions. A child who has built one has learned to recover when it breaks — which is the only part that transfers to anything else.
         </p>
       </div>
     </section>
@@ -224,26 +225,26 @@
         <div class="section-badge">The strategy</div>
         <h2>First we loosen the ground</h2>
         <p class="lede-block">
-          You cannot plant into hard soil. A child who is afraid of being wrong â€” or who has already decided they are "not a computer person" â€” will not take in a concept however clearly it is explained.
+          You cannot plant into hard soil. A child who is afraid of being wrong — or who has already decided they are "not a computer person" — will not take in a concept however clearly it is explained.
           So the first job is not teaching. It is <strong>loosening</strong>: small wins, permission to break things, questions with no marks attached, and enough play that the subject stops feeling like an exam.
           Then we plant, and only then do we move in order, one idea resting on the one before it.
         </p>
 
         <div class="flow">
-          <div class="flow-step is-soil"><b>1 Â· Loosen</b><span>Willingness, confidence, permission to be wrong</span></div>
-          <div class="flow-step"><b>2 Â· Test</b><span>What does the child already believe?</span></div>
-          <div class="flow-step"><b>3 Â· Build</b><span>Something real, from a blank screen</span></div>
-          <div class="flow-step"><b>4 Â· Review</b><span>Explain the mistake out loud</span></div>
-          <div class="flow-step"><b>5 Â· Grow</b><span>The next idea, on top of the last</span></div>
+          <div class="flow-step is-soil"><b>1 · Loosen</b><span>Willingness, confidence, permission to be wrong</span></div>
+          <div class="flow-step"><b>2 · Test</b><span>What does the child already believe?</span></div>
+          <div class="flow-step"><b>3 · Build</b><span>Something real, from a blank screen</span></div>
+          <div class="flow-step"><b>4 · Review</b><span>Explain the mistake out loud</span></div>
+          <div class="flow-step"><b>5 · Grow</b><span>The next idea, on top of the last</span></div>
         </div>
 
         <div class="outcomes">
           <div class="outcome">
-            <h3>ðŸ’» Project-focused</h3>
+            <h3>💻 Project-focused</h3>
             <p>Every stretch of learning ends in a finished game your child built and can show you. Nothing is left behind as an exercise, and nothing is copied.</p>
           </div>
           <div class="outcome">
-            <h3>â™Ÿï¸ Tournament-ready</h3>
+            <h3>♟️ Tournament-ready</h3>
             <p>Chess is played, written down and reviewed, so a child can sit at a board, record the game properly and come back the next week after losing.</p>
           </div>
         </div>
@@ -256,22 +257,52 @@
         <h2>Once the ground is loose: three stages</h2>
 
         <div class="stage">
-          <span class="stage-num">1</span><h3>Test â€” before we teach anything</h3>
+          <span class="stage-num">1</span><h3>Test — before we teach anything</h3>
           <p>We ask your child to predict what a piece of code will do, to explain a game they have just played, and to describe the move they would make next. Then we watch where they guess instead of reason. It takes about ten minutes and it is the most useful ten minutes of the term.</p>
           <p>The reason is uncomfortable but true: <strong>a wrong belief is harder to fix than a missing one.</strong> A child who thinks a variable is a kind of button will build on that for weeks. Better to find it in the first session, while it is one sentence to correct.</p>
         </div>
 
         <div class="stage">
-          <span class="stage-num">2</span><h3>Build â€” from a blank screen</h3>
+          <span class="stage-num">2</span><h3>Build — from a blank screen</h3>
           <p>Your child makes something small enough to finish in a session and deep enough to break: a character that moves, a score that changes, a rule that stops the game. No step-by-step tutorial, no copy-and-paste code, no template with the answer in it.</p>
-          <p>This is the part with the strongest foundation. Seymour Papert's <em>constructionism</em> holds that children build knowledge by making something shareable and then thinking about what they made â€” not by being told. MIT's Scratch team turned that into a learning spiral of <em>imagine, create, play, share, reflect</em>. The finished game is not a reward for the learning. It <em>is</em> the learning, and it is the thing your child carries home.</p>
+          <p>This is the part with the strongest foundation. Seymour Papert's <em>constructionism</em> holds that children build knowledge by making something shareable and then thinking about what they made — not by being told. MIT's Scratch team turned that into a learning spiral of <em>imagine, create, play, share, reflect</em>. The finished game is not a reward for the learning. It <em>is</em> the learning, and it is the thing your child carries home.</p>
           <p class="cite">See <a href="https://web.media.mit.edu/~mres/papers/Learning-Leading.pdf" target="_blank" rel="noopener">Resnick, <em>Sowing the Seeds for a More Creative Society</em></a> and <a href="https://scratch.mit.edu/about" target="_blank" rel="noopener">Scratch's creative learning approach</a>.</p>
         </div>
 
         <div class="stage">
-          <span class="stage-num">3</span><h3>Review â€” the mistake, out loud</h3>
+          <span class="stage-num">3</span><h3>Review — the mistake, out loud</h3>
           <p>When the game breaks, we stop. Your child replays what they did, finds the moment it turned, and then explains why they thought that would work. The teacher's main question is not "what is the answer" but "what did you expect to happen?"</p>
           <p>In chess this is the same move every time: we replay the loss and find the move where the game turned. A child who can say <em>I thought my knight was defending that square</em> has just learned something no explanation could have installed.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <div class="container">
+        <div class="section-badge">What we are training</div>
+        <h2>Little minds, handled carefully</h2>
+        <p class="lede-block">
+          A seven-year-old is not a small adult. Sessions are short, mistakes are expected, and nothing is ranked in front of other children — a child who feels embarrassed stops thinking and starts guessing.
+          Underneath the game we are building one habit: notice what you assumed, test it, then say out loud why it failed. That habit is what a deep thinker actually does.
+        </p>
+
+        <div class="outcomes three">
+          <div class="outcome">
+            <h3>Deep thinking</h3>
+            <p>Staying with one problem long enough to see its shape. A chess puzzle can take ten minutes; a bug in a game can take longer.</p>
+          </div>
+          <div class="outcome">
+            <h3>Critical thinking</h3>
+            <p>Asking "is that actually true?" before acting — of their own code, their own move, and eventually their own homework.</p>
+          </div>
+          <div class="outcome">
+            <h3>Logical thinking</h3>
+            <p>If this, then that. Order, conditions and consequence, practised until the reasoning is something they can show you, not just feel.</p>
+          </div>
+        </div>
+
+        <div class="mystery">
+          <p><strong>What the evidence actually says.</strong> Chess is the most studied "thinking game" for children, and the result is narrower than the marketing. In a review of 24 studies covering 5,221 children, the apparent benefits shrank as the studies got stricter; in a randomised trial across 100 English schools and 4,009 pupils, a year of chess lessons produced no measurable effect on maths, reading or science. Chess makes children better at chess. Coding builds the habit of testing your own work, and the evidence that it lifts general reasoning by itself is thinner than most providers imply. So we do not rely on a transfer that may not happen: we teach the reasoning explicitly and let the game be the practice ground.</p>
         </div>
       </div>
     </section>
@@ -307,7 +338,7 @@
         </p>
 
         <div class="mystery">
-          <p><strong>What we don't publish.</strong> The sequence itself â€” the order ideas arrive in, and which ones we deliberately hold back until later â€” is the part that took the longest to get right. It changes what a child can do, and you will see it in the work rather than on a page.</p>
+          <p><strong>What we don't publish.</strong> The sequence itself — the order ideas arrive in, and which ones we deliberately hold back until later — is the part that took the longest to get right. It changes what a child can do, and you will see it in the work rather than on a page.</p>
         </div>
 
         <div class="hero-actions">
@@ -346,7 +377,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <div class="footer-logo">âš¡ Esubu<span>Tech</span></div>
+          <div class="footer-logo">⚡ Esubu<span>Tech</span></div>
           <p>Three wings. One mission: empowering Kenya through technology.</p>
           <div class="footer-social">
             <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
@@ -356,7 +387,7 @@
           </div>
         </div>
         <div class="footer-col">
-          <h4>ðŸŽ“ Academy</h4>
+          <h4>🎓 Academy</h4>
           <ul>
             <li><a href="/academy/">Home</a></li>
             <li><a href="/academy/method/">Method</a></li>
@@ -366,7 +397,7 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h4>ðŸ’¼ Tech Solutions</h4>
+          <h4>💼 Tech Solutions</h4>
           <ul>
             <li><a href="/techsolutions#tech-home">Overview</a></li>
             <li><a href="/techsolutions#erp-products">ERP Systems</a></li>
@@ -375,7 +406,7 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h4>ðŸ“Š Data Science</h4>
+          <h4>📊 Data Science</h4>
           <ul>
             <li><a href="/datascience#data-home">Overview</a></li>
             <li><a href="/datascience#data-services">Services</a></li>
@@ -393,7 +424,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>Â© 2025 Esubu Tech. All rights reserved. | <a href="https://esubutech.online">esubutech.online</a></p>
+        <p>© 2025 Esubu Tech. All rights reserved. | <a href="https://esubutech.online">esubutech.online</a></p>
       </div>
     </div>
   </footer>
