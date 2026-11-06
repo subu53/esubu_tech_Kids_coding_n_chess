@@ -62,7 +62,7 @@
           {
             "@type": "Question",
             "name": "Is the Esubu Method just tutoring?",
-            "acceptedAnswer": { "@type": "Answer", "text": "No. A tutor follows the school syllabus and helps with homework. We do not teach the syllabus. Sessions run in three stages: find out what the child already believes, have them build something real from a blank screen, then review the mistake until they can explain it themselves." }
+            "acceptedAnswer": { "@type": "Answer", "text": "No. A tutor follows the school syllabus and helps with homework; we do not teach the syllabus. Sessions run in three stages — what the child already believes, something built from a blank screen, and the mistake reviewed out loud." }
           },
           {
             "@type": "Question",
@@ -77,7 +77,7 @@
           {
             "@type": "Question",
             "name": "What if my child already codes?",
-            "acceptedAnswer": { "@type": "Answer", "text": "The first session finds out what they actually understand rather than what they have copied. Many children who have followed tutorials can build a game but cannot explain why it breaks. That gap is where we start." }
+            "acceptedAnswer": { "@type": "Answer", "text": "The first session finds out what they actually understand rather than what they have copied. Many children who have followed tutorials can build a game but cannot explain why it breaks." }
           }
         ]
       }
@@ -86,70 +86,158 @@
   </script>
 
   <style>
-    body.page-method .lede-block { max-width: 62ch; font-size: 1.06rem; line-height: 1.75; }
-    body.page-method .stage {
-      background: var(--white);
-      border: 1px solid var(--gray-200);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-sm);
-      padding: 1.6rem 1.75rem;
-      margin: 1.25rem 0;
-    }
-    body.page-method .stage-num {
-      display: inline-flex; align-items: center; justify-content: center;
-      width: 2rem; height: 2rem; border-radius: var(--radius-full);
-      background: var(--green-800); color: #fff;
-      font-family: 'Inter', sans-serif; font-weight: 800; font-size: .95rem;
-      margin-right: .6rem; vertical-align: middle;
-    }
-    body.page-method .stage h3 {
-      display: inline-block; vertical-align: middle; margin: 0 0 0 0;
-      font-family: 'Inter', sans-serif; font-size: 1.25rem;
-    }
-    body.page-method .stage p { margin: .8rem 0 0; line-height: 1.75; }
-    body.page-method .stage p:first-of-type { margin-top: 1rem; }
-    body.page-method .mystery {
-      background: var(--green-50);
-      border-left: 4px solid var(--green-700);
-      border-radius: var(--radius-md);
-      padding: 1.35rem 1.6rem;
-      margin: 2rem 0;
-    }
-    body.page-method .mystery p { margin: 0; line-height: 1.75; }
-    body.page-method .faq-item { border-bottom: 1px solid var(--gray-200); padding: 1.15rem 0; }
-    body.page-method .faq-item:first-of-type { border-top: 1px solid var(--gray-200); }
-    body.page-method .faq-item h3 { font-family: 'Inter', sans-serif; font-size: 1.02rem; margin: 0 0 .55rem; }
-    body.page-method .faq-item p { margin: 0; font-size: .95rem; line-height: 1.7; color: var(--gray-600); }
-    body.page-method .cite { font-size: .9rem; color: var(--gray-600); }
+    /* ---- section rhythm: alternating bands so the page reads as chapters, not a list ---- */
+    body.page-method .pm { padding: 4.75rem 0; }
+    body.page-method .pm--tight { padding: 3.5rem 0; }
+    body.page-method .pm--tint { background: var(--green-50); }
+    body.page-method .pm--ink { background: #0e2417; color: #dfece3; }
+    body.page-method .pm--ink h2, body.page-method .pm--ink h3 { color: #fff; }
+    body.page-method .pm--ink .pm-eyebrow { color: #8fd6a1; }
+    body.page-method .pm--ink p { color: #cfe3d6; }
+    body.page-method .pm--rule { border-top: 1px solid var(--gray-200); }
 
-    /* process strip: loosens the page rhythm and stacks on small screens */
-    body.page-method .flow { display: flex; flex-wrap: wrap; gap: .55rem; margin: 1.75rem 0 .5rem; }
-    body.page-method .flow-step {
-      flex: 1 1 150px; min-width: 0;
-      background: var(--white); border: 1px solid var(--gray-200);
-      border-radius: var(--radius-md); padding: .8rem .95rem; box-shadow: var(--shadow-sm);
+    body.page-method .pm-eyebrow {
+      display: inline-block; font-family: 'Inter', sans-serif; font-size: .74rem;
+      font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--green-700); margin-bottom: .9rem;
     }
-    body.page-method .flow-step b { display: block; font-family: 'Inter', sans-serif; font-size: .95rem; color: var(--gray-900); }
-    body.page-method .flow-step span { display: block; font-size: .82rem; line-height: 1.5; color: var(--gray-600); margin-top: .25rem; }
-    body.page-method .flow-step.is-soil { border-color: var(--green-600); background: var(--green-50); }
+    body.page-method .pm h2 {
+      font-family: 'Inter', sans-serif; font-weight: 800; letter-spacing: -.02em;
+      line-height: 1.12; font-size: clamp(1.65rem, 3.6vw, 2.5rem); margin: 0 0 1.1rem;
+    }
+    body.page-method .pm-lede { max-width: 64ch; font-size: 1.06rem; line-height: 1.75; }
+    body.page-method .pm-lede p + p { margin-top: 1rem; }
 
-    body.page-method .outcomes { display: grid; gap: 1rem; grid-template-columns: 1fr; margin-top: 1.75rem; }
-    @media (min-width: 720px) { body.page-method .outcomes { grid-template-columns: 1fr 1fr; } }
-    @media (min-width: 940px) { body.page-method .outcomes.three { grid-template-columns: repeat(3, 1fr); } }
-    body.page-method .outcome {
+    /* ---- hero proof strip ---- */
+    body.page-method .pm-proof { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.6rem; }
+    body.page-method .pm-proof span {
+      font-family: 'Inter', sans-serif; font-size: .8rem; font-weight: 600;
+      background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.25);
+      color: #fff; padding: .42rem .8rem; border-radius: 999px;
+    }
+
+    /* ---- pull quote ---- */
+    body.page-method .pm-pull {
+      font-family: 'Inter', sans-serif; font-weight: 800; letter-spacing: -.02em;
+      font-size: clamp(1.25rem, 3.2vw, 1.9rem); line-height: 1.3;
+      border-left: 5px solid var(--green-600); padding-left: 1.4rem; margin: 2rem 0 0;
+      max-width: 42ch; color: var(--gray-900);
+    }
+
+    /* ---- 5-step process with connectors ---- */
+    body.page-method .pm-flow { display: flex; flex-wrap: wrap; align-items: stretch; gap: .5rem; margin-top: 2.2rem; }
+    body.page-method .pm-flow-step {
+      flex: 1 1 150px; min-width: 0; position: relative;
+      background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-md);
+      padding: .9rem 1rem; box-shadow: var(--shadow-sm);
+    }
+    body.page-method .pm-flow-step::after {
+      content: '›'; position: absolute; right: -.62rem; top: 50%; transform: translateY(-50%);
+      color: var(--green-600); font-size: 1.3rem; font-weight: 700; z-index: 2;
+    }
+    body.page-method .pm-flow-step:last-child::after { content: none; }
+    body.page-method .pm-flow-step b { display: block; font-family: 'Inter', sans-serif; font-size: .92rem; color: var(--gray-900); }
+    body.page-method .pm-flow-step span { display: block; font-size: .8rem; line-height: 1.5; color: var(--gray-600); margin-top: .25rem; }
+    body.page-method .pm-flow-step.is-first { background: #fff; border-color: var(--green-600); box-shadow: 0 0 0 3px rgba(67,160,71,.12); }
+
+    /* ---- vertical timeline for the three stages ---- */
+    body.page-method .pm-timeline { position: relative; margin-top: 2.5rem; }
+    body.page-method .pm-timeline::before {
+      content: ''; position: absolute; left: 1.6rem; top: .5rem; bottom: .5rem; width: 3px;
+      background: linear-gradient(var(--green-700), var(--green-100)); border-radius: 3px;
+    }
+    body.page-method .pm-step { position: relative; padding: 0 0 2.4rem 4.9rem; }
+    body.page-method .pm-step:last-child { padding-bottom: 0; }
+    body.page-method .pm-step-num {
+      position: absolute; left: 0; top: -.2rem; width: 3.3rem; height: 3.3rem; border-radius: 50%;
+      background: var(--green-800); color: #fff; display: flex; align-items: center; justify-content: center;
+      font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.35rem;
+      box-shadow: 0 0 0 7px #fff;
+    }
+    body.page-method .pm-step h3 {
+      font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.28rem;
+      letter-spacing: -.01em; margin: .2rem 0 .7rem;
+    }
+    body.page-method .pm-step p { margin: 0 0 .75rem; line-height: 1.75; color: var(--gray-600); }
+    body.page-method .pm-step p:last-child { margin-bottom: 0; }
+    body.page-method .pm-step .pm-cite { font-size: .88rem; color: var(--gray-400); }
+
+    /* ---- three training cards on the dark band ---- */
+    body.page-method .pm-train { display: grid; gap: 1rem; grid-template-columns: 1fr; margin-top: 2rem; }
+    @media (min-width: 780px) { body.page-method .pm-train { grid-template-columns: repeat(3, 1fr); } }
+    body.page-method .pm-train-card {
+      background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.14);
+      border-radius: var(--radius-md); padding: 1.35rem 1.4rem;
+    }
+    body.page-method .pm-train-card b {
+      display: block; font-family: 'Inter', sans-serif; font-size: 1.02rem; color: #fff; margin-bottom: .45rem;
+    }
+    body.page-method .pm-train-card p { margin: 0; font-size: .92rem; line-height: 1.7; color: #bcd4c4; }
+
+    /* ---- evidence stats ---- */
+    body.page-method .pm-stats { display: grid; gap: 1rem; grid-template-columns: 1fr; margin: 2rem 0 1.6rem; }
+    @media (min-width: 700px) { body.page-method .pm-stats { grid-template-columns: repeat(3, 1fr); } }
+    body.page-method .pm-stat {
+      text-align: center; background: var(--white); border: 1px solid var(--gray-200);
+      border-radius: var(--radius-md); padding: 1.5rem 1rem; box-shadow: var(--shadow-sm);
+    }
+    body.page-method .pm-stat b {
+      display: block; font-family: 'Inter', sans-serif; font-weight: 800;
+      font-size: clamp(1.9rem, 5vw, 2.6rem); line-height: 1; color: var(--green-800); letter-spacing: -.03em;
+    }
+    body.page-method .pm-stat span { display: block; margin-top: .55rem; font-size: .84rem; line-height: 1.45; color: var(--gray-600); }
+
+    /* ---- who teaches: portrait + credentials ---- */
+    body.page-method .pm-person { display: grid; gap: 1.75rem; align-items: center; margin-top: 2rem; }
+    @media (min-width: 820px) { body.page-method .pm-person { grid-template-columns: 210px 1fr; gap: 2.5rem; } }
+    body.page-method .pm-portrait {
+      width: 100%; max-width: 210px; border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg); display: block;
+    }
+    body.page-method .pm-person-name { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.3rem; margin: 0 0 .2rem; }
+    body.page-method .pm-person-role { font-size: .9rem; color: var(--gray-600); margin: 0 0 1rem; }
+    body.page-method .pm-creds { display: flex; flex-wrap: wrap; gap: .45rem; margin-bottom: 1rem; }
+    body.page-method .pm-creds span {
+      font-size: .78rem; font-weight: 600; background: var(--white); border: 1px solid var(--gray-200);
+      color: var(--gray-900); padding: .32rem .7rem; border-radius: 999px;
+    }
+    body.page-method .pm-standard {
       background: var(--white); border: 1px solid var(--gray-200); border-left: 4px solid var(--green-700);
-      border-radius: var(--radius-md); padding: 1.2rem 1.35rem; box-shadow: var(--shadow-sm);
+      border-radius: var(--radius-md); padding: 1.15rem 1.3rem; margin-top: 1.5rem; box-shadow: var(--shadow-sm);
     }
-    body.page-method .outcome h3 { font-family: 'Inter', sans-serif; font-size: 1.02rem; margin: 0 0 .45rem; }
-    body.page-method .outcome p { margin: 0; font-size: .93rem; line-height: 1.7; color: var(--gray-600); }
+    body.page-method .pm-standard b { display: block; font-family: 'Inter', sans-serif; margin-bottom: .4rem; }
+    body.page-method .pm-standard p { margin: 0; font-size: .93rem; line-height: 1.7; color: var(--gray-600); }
+
+    /* ---- FAQ accordion ---- */
+    body.page-method .pm-faq { margin-top: 1.75rem; }
+    body.page-method .pm-faq details { border-bottom: 1px solid var(--gray-200); }
+    body.page-method .pm-faq details:first-child { border-top: 1px solid var(--gray-200); }
+    body.page-method .pm-faq summary {
+      cursor: pointer; list-style: none; padding: 1.15rem 2.2rem 1.15rem 0; position: relative;
+      font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.01rem; color: var(--gray-900);
+    }
+    body.page-method .pm-faq summary::-webkit-details-marker { display: none; }
+    body.page-method .pm-faq summary::after {
+      content: '+'; position: absolute; right: .2rem; top: 50%; transform: translateY(-50%);
+      color: var(--green-700); font-size: 1.4rem; font-weight: 400; line-height: 1;
+    }
+    body.page-method .pm-faq details[open] summary::after { content: '−'; }
+    body.page-method .pm-faq details p { margin: 0 0 1.2rem; font-size: .95rem; line-height: 1.75; color: var(--gray-600); max-width: 68ch; }
+
+    /* ---- closing CTA band ---- */
+    body.page-method .pm-cta { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.9rem; }
 
     @media (max-width: 640px) {
-      body.page-method .stage { padding: 1.15rem 1.1rem; }
-      body.page-method .stage h3 { display: block; font-size: 1.08rem; margin-top: .65rem; }
-      body.page-method .flow { gap: .45rem; }
-      body.page-method .flow-step { flex: 1 1 100%; padding: .7rem .85rem; }
-      body.page-method .mystery { padding: 1.1rem 1.15rem; }
-      body.page-method .outcome { padding: 1rem 1.1rem; }
+      body.page-method .pm { padding: 3.2rem 0; }
+      body.page-method .pm-timeline::before { left: 1.15rem; }
+      body.page-method .pm-step { padding-left: 3.6rem; padding-bottom: 2rem; }
+      body.page-method .pm-step-num { width: 2.4rem; height: 2.4rem; font-size: 1rem; box-shadow: 0 0 0 5px #fff; }
+      body.page-method .pm-step h3 { font-size: 1.12rem; }
+      body.page-method .pm-flow-step { flex: 1 1 100%; }
+      body.page-method .pm-flow-step::after { content: none; }
+      body.page-method .pm-pull { border-left-width: 4px; padding-left: 1rem; }
+      body.page-method .pm-person { grid-template-columns: 1fr; }
+      body.page-method .pm-portrait { max-width: 150px; }
     }
   </style>
 </head>
@@ -186,16 +274,21 @@
   </header>
 
   <main>
+    <!-- 1 · HERO -->
     <section class="hero">
       <div class="hero-content">
         <div class="hero-badge">🧭 How we teach</div>
         <h1>Test, build, review: how we teach coding and chess</h1>
-        <p class="lede-block">
+        <p class="pm-lede">
           Every session runs in three stages. <strong>Test</strong> — we find out what your child already believes before we teach anything.
           <strong>Build</strong> — they make something real from a blank screen, never from a tutorial.
           <strong>Review</strong> — they replay the mistake until they can explain it themselves.
-          That is the whole method. It is also why sessions are one-to-one while numbers are small.
         </p>
+        <div class="pm-proof">
+          <span>One child per session</span>
+          <span>Same teacher, start to certificate</span>
+          <span>Groups return as we add teachers</span>
+        </div>
         <div class="hero-actions">
           <a href="/academy/signup/" class="cta-btn"><i class="fas fa-pen-to-square"></i> Apply for a place</a>
           <a href="https://wa.me/254720811346?text=METHOD" class="cta-btn-outline" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Ask a question</a>
@@ -208,166 +301,189 @@
       </div>
     </section>
 
-    <section class="about-section">
+    <!-- 2 · THE PROBLEM -->
+    <section class="pm">
       <div class="container">
-        <div class="section-badge">The problem</div>
-        <h2>Why most children's coding classes look like progress</h2>
-        <p class="lede-block">
-          Hand a child a tutorial and they will produce a working game this afternoon. The screen fills, the parent is pleased, and everyone agrees it is working.
-          Then the tutorial is removed, and the ability goes with it.
-          A child who has copied a game has learned to follow instructions. A child who has built one has learned to recover when it breaks — which is the only part that transfers to anything else.
-        </p>
+        <span class="pm-eyebrow">The problem</span>
+        <h2>Most children's coding classes look like progress</h2>
+        <div class="pm-lede">
+          <p>Hand a child a tutorial and they will produce a working game this afternoon. The screen fills, the parent is pleased, everyone agrees it is working. Then the tutorial is removed, and the ability goes with it.</p>
+        </div>
+        <p class="pm-pull">A child who copied a game has learned to follow instructions. A child who built one has learned to recover when it breaks.</p>
       </div>
     </section>
 
-    <section class="about-section">
+    <!-- 3 · THE STRATEGY -->
+    <section class="pm pm--tint">
       <div class="container">
-        <div class="section-badge">The strategy</div>
+        <span class="pm-eyebrow">The strategy</span>
         <h2>First we loosen the ground</h2>
-        <p class="lede-block">
-          You cannot plant into hard soil. A child who is afraid of being wrong — or who has already decided they are "not a computer person" — will not take in a concept however clearly it is explained.
-          So the first job is not teaching. It is <strong>loosening</strong>: small wins, permission to break things, questions with no marks attached, and enough play that the subject stops feeling like an exam.
-          Then we plant, and only then do we move in order, one idea resting on the one before it.
-        </p>
-
-        <div class="flow">
-          <div class="flow-step is-soil"><b>1 · Loosen</b><span>Willingness, confidence, permission to be wrong</span></div>
-          <div class="flow-step"><b>2 · Test</b><span>What does the child already believe?</span></div>
-          <div class="flow-step"><b>3 · Build</b><span>Something real, from a blank screen</span></div>
-          <div class="flow-step"><b>4 · Review</b><span>Explain the mistake out loud</span></div>
-          <div class="flow-step"><b>5 · Grow</b><span>The next idea, on top of the last</span></div>
+        <div class="pm-lede">
+          <p>You cannot plant into hard soil. A child who is afraid of being wrong — or who has already decided they are "not a computer person" — will not take in a concept however clearly it is explained.</p>
+          <p>So the first job is not teaching. It is <strong>loosening</strong>: small wins, permission to break things, questions with no marks attached. Then we plant, and only then do we move in order, one idea resting on the one before it.</p>
         </div>
 
-        <div class="outcomes">
-          <div class="outcome">
-            <h3>💻 Project-focused</h3>
-            <p>Every stretch of learning ends in a finished game your child built and can show you. Nothing is left behind as an exercise, and nothing is copied.</p>
-          </div>
-          <div class="outcome">
-            <h3>♟️ Tournament-ready</h3>
-            <p>Chess is played, written down and reviewed, so a child can sit at a board, record the game properly and come back the next week after losing.</p>
-          </div>
+        <div class="pm-flow">
+          <div class="pm-flow-step is-first"><b>Loosen</b><span>Willingness, confidence, permission to be wrong</span></div>
+          <div class="pm-flow-step"><b>Test</b><span>What does the child already believe?</span></div>
+          <div class="pm-flow-step"><b>Build</b><span>Something real, from a blank screen</span></div>
+          <div class="pm-flow-step"><b>Review</b><span>Explain the mistake out loud</span></div>
+          <div class="pm-flow-step"><b>Grow</b><span>The next idea, on top of the last</span></div>
         </div>
       </div>
     </section>
 
-    <section class="benefits-section">
+    <!-- 4 · THE THREE STAGES -->
+    <section class="pm">
       <div class="container">
-        <div class="section-badge">The method</div>
+        <span class="pm-eyebrow">The method</span>
         <h2>Once the ground is loose: three stages</h2>
 
-        <div class="stage">
-          <span class="stage-num">1</span><h3>Test — before we teach anything</h3>
-          <p>We ask your child to predict what a piece of code will do, to explain a game they have just played, and to describe the move they would make next. Then we watch where they guess instead of reason. It takes about ten minutes and it is the most useful ten minutes of the term.</p>
-          <p>The reason is uncomfortable but true: <strong>a wrong belief is harder to fix than a missing one.</strong> A child who thinks a variable is a kind of button will build on that for weeks. Better to find it in the first session, while it is one sentence to correct.</p>
-        </div>
+        <div class="pm-timeline">
+          <div class="pm-step">
+            <div class="pm-step-num">1</div>
+            <h3>Test — before we teach anything</h3>
+            <p>We ask your child to predict what a piece of code will do, explain a game they have just played, and describe the move they would make next. Then we watch where they guess instead of reason. About ten minutes, and the most useful ten minutes of the term.</p>
+            <p>A wrong belief is harder to fix than a missing one. A child who thinks a variable is a kind of button will build on that for weeks. Better to find it in the first session, while it is one sentence to correct.</p>
+          </div>
 
-        <div class="stage">
-          <span class="stage-num">2</span><h3>Build — from a blank screen</h3>
-          <p>Your child makes something small enough to finish in a session and deep enough to break: a character that moves, a score that changes, a rule that stops the game. No step-by-step tutorial, no copy-and-paste code, no template with the answer in it.</p>
-          <p>This is the part with the strongest foundation. Seymour Papert's <em>constructionism</em> holds that children build knowledge by making something shareable and then thinking about what they made — not by being told. MIT's Scratch team turned that into a learning spiral of <em>imagine, create, play, share, reflect</em>. The finished game is not a reward for the learning. It <em>is</em> the learning, and it is the thing your child carries home.</p>
-          <p class="cite">See <a href="https://web.media.mit.edu/~mres/papers/Learning-Leading.pdf" target="_blank" rel="noopener">Resnick, <em>Sowing the Seeds for a More Creative Society</em></a> and <a href="https://scratch.mit.edu/about" target="_blank" rel="noopener">Scratch's creative learning approach</a>.</p>
-        </div>
+          <div class="pm-step">
+            <div class="pm-step-num">2</div>
+            <h3>Build — from a blank screen</h3>
+            <p>Your child makes something small enough to finish in a session and deep enough to break: a character that moves, a score that changes, a rule that stops the game. No tutorial, no copy-and-paste, no template with the answer in it.</p>
+            <p>Seymour Papert's <em>constructionism</em> holds that children build knowledge by making something shareable and then thinking about what they made — not by being told. MIT's Scratch team turned that into a spiral of <em>imagine, create, play, share, reflect</em>. The finished game is not the reward for the learning; it <em>is</em> the learning.</p>
+            <p class="pm-cite">See <a href="https://web.media.mit.edu/~mres/papers/Learning-Leading.pdf" target="_blank" rel="noopener">Resnick, <em>Sowing the Seeds for a More Creative Society</em></a> and <a href="https://scratch.mit.edu/about" target="_blank" rel="noopener">Scratch's creative learning approach</a>.</p>
+          </div>
 
-        <div class="stage">
-          <span class="stage-num">3</span><h3>Review — the mistake, out loud</h3>
-          <p>When the game breaks, we stop. Your child replays what they did, finds the moment it turned, and then explains why they thought that would work. The teacher's main question is not "what is the answer" but "what did you expect to happen?"</p>
-          <p>In chess this is the same move every time: we replay the loss and find the move where the game turned. A child who can say <em>I thought my knight was defending that square</em> has just learned something no explanation could have installed.</p>
+          <div class="pm-step">
+            <div class="pm-step-num">3</div>
+            <h3>Review — the mistake, out loud</h3>
+            <p>When the game breaks, we stop. Your child replays what they did, finds the moment it turned, and explains why they thought that would work. The teacher's question is not "what is the answer" but "what did you expect to happen?"</p>
+            <p>In chess it is the same move every time: we replay the loss and find where the game turned. A child who can say <em>I thought my knight was defending that square</em> has learned something no explanation could have installed.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="about-section">
+    <!-- 5 · WHAT WE ARE TRAINING (dark band) -->
+    <section class="pm pm--ink">
       <div class="container">
-        <div class="section-badge">What we are training</div>
+        <span class="pm-eyebrow">What we are training</span>
         <h2>Little minds, handled carefully</h2>
-        <p class="lede-block">
-          A seven-year-old is not a small adult. Sessions are short, mistakes are expected, and nothing is ranked in front of other children — a child who feels embarrassed stops thinking and starts guessing.
-          Underneath the game we are building one habit: notice what you assumed, test it, then say out loud why it failed. That habit is what a deep thinker actually does.
-        </p>
+        <div class="pm-lede">
+          <p>A seven-year-old is not a small adult. Sessions are short, mistakes are expected, and nothing is ranked in front of other children — a child who feels embarrassed stops thinking and starts guessing.</p>
+        </div>
 
-        <div class="outcomes three">
-          <div class="outcome">
-            <h3>Deep thinking</h3>
+        <div class="pm-train">
+          <div class="pm-train-card">
+            <b>Deep thinking</b>
             <p>Staying with one problem long enough to see its shape. A chess puzzle can take ten minutes; a bug in a game can take longer.</p>
           </div>
-          <div class="outcome">
-            <h3>Critical thinking</h3>
+          <div class="pm-train-card">
+            <b>Critical thinking</b>
             <p>Asking "is that actually true?" before acting — of their own code, their own move, and eventually their own homework.</p>
           </div>
-          <div class="outcome">
-            <h3>Logical thinking</h3>
-            <p>If this, then that. Order, conditions and consequence, practised until the reasoning is something they can show you, not just feel.</p>
+          <div class="pm-train-card">
+            <b>Logical thinking</b>
+            <p>If this, then that. Order, conditions and consequence, practised until the reasoning is something they can show you.</p>
           </div>
-        </div>
-
-        <div class="mystery">
-          <p><strong>What the evidence actually says.</strong> Chess is the most studied "thinking game" for children, and the result is narrower than the marketing. In a review of 24 studies covering 5,221 children, the apparent benefits shrank as the studies got stricter; in a randomised trial across 100 English schools and 4,009 pupils, a year of chess lessons produced no measurable effect on maths, reading or science. Chess makes children better at chess. Coding builds the habit of testing your own work, and the evidence that it lifts general reasoning by itself is thinner than most providers imply. So we do not rely on a transfer that may not happen: we teach the reasoning explicitly and let the game be the practice ground.</p>
         </div>
       </div>
     </section>
 
-    <section class="benefits-section">
+    <!-- 6 · THE EVIDENCE -->
+    <section class="pm">
       <div class="container">
-        <div class="section-badge">Who teaches</div>
+        <span class="pm-eyebrow">The evidence</span>
+        <h2>What the research actually says</h2>
+        <div class="pm-stats">
+          <div class="pm-stat"><b>24</b><span>studies reviewed, covering 5,221 children</span></div>
+          <div class="pm-stat"><b>100</b><span>English schools in a randomised trial, 4,009 pupils</span></div>
+          <div class="pm-stat"><b>0</b><span>measurable effect on maths, reading or science</span></div>
+        </div>
+        <div class="pm-lede">
+          <p>Chess is the most studied "thinking game" for children, and the result is narrower than the marketing. The apparent benefits shrank as the studies got stricter, and the randomised trial found no effect on school marks at all. <strong>Chess makes children better at chess.</strong></p>
+          <p>Coding builds the habit of testing your own work, and the evidence that it lifts general reasoning by itself is thinner than most providers imply. So we do not rely on a transfer that may not happen: we teach the reasoning explicitly, and let the game be the practice ground.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 · WHO TEACHES -->
+    <section class="pm pm--tint">
+      <div class="container">
+        <span class="pm-eyebrow">Who teaches</span>
         <h2>Who is actually in the room with your child</h2>
-        <p class="lede-block">
-          I teach every session myself right now — no rota, no assistant. When teachers join, the standard is already written down, because a method is only as good as the person running it.
-        </p>
 
-        <div class="outcomes">
-          <div class="outcome">
-            <h3>Sammy Subu — founder</h3>
-            <p>BSc Data Science, KCA University. MSc Artificial Intelligence, Open University of Kenya (ongoing). Co-founder of Soko Huru, a marketplace that reached more than 2,500 Kenyan SMEs. I designed this curriculum and I teach every class.</p>
+        <div class="pm-person">
+          <img class="pm-portrait" src="/sammy-subu.jpg" alt="Sammy Subu, founder of Esubu Tech Academy" width="210" height="210" loading="lazy">
+          <div>
+            <p class="pm-person-name">Sammy Subu</p>
+            <p class="pm-person-role">Founder and programmes director</p>
+            <div class="pm-creds">
+              <span>BSc Data Science · KCA University</span>
+              <span>MSc Artificial Intelligence · OU Kenya (ongoing)</span>
+              <span>Co-founder, Soko Huru</span>
+            </div>
+            <p style="line-height:1.75;">I teach every session myself right now — no rota, no assistant. I designed this curriculum and I teach every class.</p>
           </div>
-          <div class="outcome">
-            <h3>Every teacher who joins</h3>
-            <p>A bachelor's degree is the floor, with a strong preference for BSc. A teacher from an education background must also hold a specialisation in science or mathematics — being good with children is not enough for this curriculum.</p>
-          </div>
+        </div>
+
+        <div class="pm-standard">
+          <b>Every teacher who joins</b>
+          <p>A bachelor's degree is the floor, with a strong preference for BSc. A teacher from an education background must also hold a specialisation in science or mathematics — being good with children is not enough for this curriculum.</p>
         </div>
       </div>
     </section>
 
-    <section class="about-section">
+    <!-- 8 · WHAT TO EXPECT -->
+    <section class="pm pm--rule">
       <div class="container">
-        <div class="section-badge">What to expect</div>
+        <span class="pm-eyebrow">What to expect</span>
         <h2>What this looks like over a term</h2>
-        <p class="lede-block">
-          The first two sessions look slow. By week four your child has a game they built from nothing; by week eight they can tell you why it broke.
-          The full fee structure is on <a href="/academy/fees/">the fees page</a>.
-        </p>
-
-        <div class="mystery">
-          <p><strong>What we don't publish.</strong> The sequence itself — the order ideas arrive in, and which ones we deliberately hold back until later — is the part that took the longest to get right. It changes what a child can do, and you will see it in the work rather than on a page.</p>
-        </div>
-
-        <div class="hero-actions">
-          <a href="/academy/signup/" class="cta-btn"><i class="fas fa-pen-to-square"></i> Apply for a place</a>
-          <a href="https://wa.me/254720811346?text=METHOD" class="cta-btn-outline" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Ask about the method</a>
+        <div class="pm-lede">
+          <p>The first two sessions look slow. By week four your child has a game they built from nothing; by week eight they can tell you why it broke. The full fee structure is on <a href="/academy/fees/">the fees page</a>.</p>
+          <p><strong>What we don't publish.</strong> The sequence itself — the order ideas arrive in, and which ones we hold back until later — is the part that took longest to get right. It changes what a child can do, and you will see it in the work rather than on a page.</p>
         </div>
       </div>
     </section>
 
-    <section class="schedule-section">
+    <!-- 9 · FAQ -->
+    <section class="pm pm--rule">
       <div class="container">
-        <div class="section-badge">Questions</div>
+        <span class="pm-eyebrow">Questions</span>
         <h2>What parents ask about the teaching</h2>
 
-        <div class="faq-item">
-          <h3>Is this just tutoring?</h3>
-          <p>No. A tutor follows the school syllabus and helps with homework; we do not teach the syllabus. Sessions run in three stages — what the child already believes, something built from a blank screen, and the mistake reviewed out loud.</p>
+        <div class="pm-faq">
+          <details open>
+            <summary>Is this just tutoring?</summary>
+            <p>No. A tutor follows the school syllabus and helps with homework; we do not teach the syllabus. Sessions run in three stages — what the child already believes, something built from a blank screen, and the mistake reviewed out loud.</p>
+          </details>
+          <details>
+            <summary>Why does the method need one-to-one sessions?</summary>
+            <p>Because the first stage only works if the teacher can hear how one child reasons. In a room of twenty, a child who has guessed correctly sounds the same as a child who understands. One-to-one, the guessing is audible. Groups return as we add teachers.</p>
+          </details>
+          <details>
+            <summary>Does my child need to be good at maths to start?</summary>
+            <p>No. Children from age six start with blocks and the rules of chess. The arithmetic in a game is coordinates, counting and conditions, and it arrives because the game needs it, not as a separate lesson.</p>
+          </details>
+          <details>
+            <summary>What if my child already codes?</summary>
+            <p>The first session finds out what they actually understand rather than what they have copied. Many children who have followed tutorials can build a game but cannot explain why it breaks. That gap is where we start.</p>
+          </details>
         </div>
-        <div class="faq-item">
-          <h3>Why does the method need one-to-one sessions?</h3>
-          <p>Because the first stage only works if the teacher can hear how one child reasons. In a room of twenty, a child who has guessed correctly sounds the same as a child who understands. One-to-one, the guessing is audible. Groups return as we add teachers.</p>
+      </div>
+    </section>
+
+    <!-- 10 · CLOSING CTA -->
+    <section class="pm pm--ink">
+      <div class="container">
+        <h2>See the method in a session</h2>
+        <div class="pm-lede">
+          <p>Tell me your child's age and what they already do, and I will say honestly where they would start — including if they are not ready yet.</p>
         </div>
-        <div class="faq-item">
-          <h3>Does my child need to be good at maths to start?</h3>
-          <p>No. Children from age six start with blocks and the rules of chess. The arithmetic in a game is coordinates, counting and conditions, and it arrives because the game needs it, not as a separate lesson.</p>
-        </div>
-        <div class="faq-item">
-          <h3>What if my child already codes?</h3>
-          <p>The first session finds out what they actually understand rather than what they have copied. Many children who have followed tutorials can build a game but cannot explain why it breaks. That gap is where we start.</p>
+        <div class="pm-cta">
+          <a href="/academy/signup/" class="cta-btn"><i class="fas fa-pen-to-square"></i> Apply for a place</a>
+          <a href="https://wa.me/254720811346?text=METHOD" class="cta-btn-outline" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Ask about the method</a>
         </div>
       </div>
     </section>
