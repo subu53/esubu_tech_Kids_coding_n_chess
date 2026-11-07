@@ -1,0 +1,37 @@
+Esubu Tech — ownership and reuse terms
+======================================
+
+Copyright © 2025 Esubu Tech, Nairobi, Kenya. All rights reserved.
+
+Origin reference: ESB-2F7C91A4
+Canonical site: https://esubutech.online/
+
+This repository is publicly readable so that GitHub Pages can serve the site
+on the free plan. Public readability is NOT a grant of rights.
+
+No permission is given to copy, reproduce, republish, host, mirror, resell or
+redistribute this site, its code, its curriculum, its written content or its
+images, in whole or in part, on any other domain or platform.
+
+Specifically, and without limitation, you may not:
+  - deploy this repository, or any part of it, as a website under another domain
+  - reuse the curriculum structure, lesson sequence or written lesson content
+  - reuse the Esubu Tech or Esubu Academy name, logo or branding
+  - present this material as your own, or remove the provenance markers described below
+
+Provenance markers
+------------------
+Every HTML page in this repository carries an invisible (source-only) comment of
+the form:
+
+  <!-- © 2025 Esubu Tech · esubutech.online · proof-of-origin ESB-2F7C91A4 · page:<path> -->
+
+These markers are copyright notices, not advertising. Their purpose is to allow
+the original owner to prove that a copy originated here. Remove them and the
+content is still protected by copyright; the marker only makes proof easier.
+
+To check whether a site is a copy:  node tools/verify-origin.mjs <url>
+
+Contact
+-------
+esubumedia@gmail.com  ·  +254 720 811 346

@@ -32,6 +32,23 @@ Last updated: 12 November 2026.
 
 ## Done
 
+### 12 Nov 2026 — provenance markers (because the repo is now public)
+
+Every one of the 41 HTML pages now carries **two** invisible source-only comments:
+
+```
+<!-- © 2025 Esubu Tech · esubutech.online · proof-of-origin ESB-2F7C91A4 · page:/academy/method/ -->
+```
+
+One immediately after `<meta charset>` and one immediately before `</body>`, so stripping a single marker is not enough. Invisible to visitors and to search engines, but present in `view-source` and in any fetch.
+
+- **`tools/provenance.mjs`** — stamps/re-stamps every hand-written page. Idempotent: existing markers are replaced, never duplicated. Run `node tools/provenance.mjs .` from the repo root after adding a page.
+- **`tools/blog/build.py`** — emits the same markers for all generated blog pages, so a rebuild cannot drop them. Blog page paths are derived from the slug, `/academy/blog/` for the index.
+- **`tools/verify-origin.mjs`** — the detector. `node tools/verify-origin.mjs https://suspicious.com` returns ORIGINAL, COPY — PROVEN (markers retained), SUSPECTED COPY — markers stripped (two or more distinctive phrases survive), or NO EVIDENCE.
+- **`NOTICE`** — ownership terms: public readability is not a grant of rights, and the markers are named as copyright notices rather than advertising.
+
+**What this can and cannot do.** GitHub does not report clones, so nobody can be alerted when the repo is copied. What the markers do is make a copy *provable* when it appears online. A copyist who leaves the comments in has handed over the evidence; one who strips them can still be caught by fingerprinting the wording.
+
 ### 12 Nov 2026 — outage: site returned 404, now restored
 
 **Symptom:** every URL, including `esubutech.online/`, served GitHub's "There isn't a GitHub Pages site here".

@@ -103,6 +103,19 @@ def fees(slug):
     return f"/academy/fees/?from={quote(slug)}"
 
 
+# ---------------------------------------------------------------- provenance
+# Source-only copyright marker. Invisible to visitors, present in every page.
+# Purpose: if this site is copied and hosted elsewhere, the copy can be proven
+# to originate here. Keep the ref in sync with NOTICE.
+ORIGIN_REF = "ESB-2F7C91A4"
+SITE = "https://esubutech.online"
+
+
+def provenance(path):
+    return (f"<!-- © 2025 Esubu Tech · esubutech.online · "
+            f"proof-of-origin {ORIGIN_REF} · page:{path} -->")
+
+
 # ---------------------------------------------------------------- blocks
 
 PIECES_W = {"k": "\u2654", "q": "\u2655", "r": "\u2656", "b": "\u2657", "n": "\u2658", "p": "\u2659"}
@@ -313,6 +326,7 @@ def head(title, desc, url, image, og_type, jsonld, css_v, extra_meta=""):
 <html lang="en-KE">
 <head>
 <meta charset="UTF-8">
+{provenance(url.replace(SITE, "") or "/")}
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(desc)}">
@@ -428,7 +442,9 @@ def entry(p, tag="li"):
 
 
 def scripts(slug):
-    return f'<script src="/academy/blog/blog.js?v={JS_V}" data-post="{esc(slug)}" defer></script>\n</body>\n</html>\n'
+    path = "/academy/blog/" if slug == "blog-index" else f"/academy/blog/{slug}/"
+    return (f'<script src="/academy/blog/blog.js?v={JS_V}" data-post="{esc(slug)}" defer></script>\n'
+            f'{provenance(path)}\n</body>\n</html>\n')
 
 
 # ---------------------------------------------------------------- pages
