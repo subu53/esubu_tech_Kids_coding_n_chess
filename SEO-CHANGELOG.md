@@ -7,8 +7,11 @@ Last updated: 12 November 2026.
 
 ## How this site is built (read before editing)
 
-- **Host:** GitHub Pages, custom domain `esubutech.online` (see `CNAME`). Push to `main` → `.github/workflows/deploy.yml` publishes the repo root.
-- **Two workflows fire on push.** `deploy.yml` succeeds. A second, legacy `pages build and deployment` job **fails every time** — it does not affect the site, but it is noise. Not yet resolved.
+- **Host:** GitHub Pages, custom domain `esubutech.online` (see `CNAME`).
+- **Deploy is BRANCH-BASED, not Actions.** Pages `build_type` is `legacy`, source `main` / root. **Push to `main` and Pages rebuilds by itself — no workflow needed.** `.nojekyll` is present, so files are served verbatim.
+- **`deploy.yml` is dormant.** It is valid but it is *not* the deploy path. Don't delete it — if Actions is restored, Pages can be switched back to `build_type: workflow`.
+- **Actions is blocked on this account** by a billing lock ("The job was not started because your account is locked due to a billing issue"). An Actions deploy fails with **0 steps and no logs** — that symptom means billing, not a code bug.
+- **The repo is public** (made so on 12 Nov 2026 to keep Pages on the free plan). Full 118-commit history was scanned for credentials before the switch: clean. Don't commit secrets — they would now be world-readable.
 - **The blog is generated, not hand-written.** Source of truth is `academy/blog/_posts/*.md` + `tools/blog/build.py`. Running the script rewrites:
   - `academy/blog/index.html`
   - `academy/blog/<slug>/index.html` (30 posts)
@@ -28,6 +31,25 @@ Last updated: 12 November 2026.
 ---
 
 ## Done
+
+### 12 Nov 2026 — outage: site returned 404, now restored
+
+**Symptom:** every URL, including `esubutech.online/`, served GitHub's "There isn't a GitHub Pages site here".
+
+**Cause chain:**
+1. GitHub Student Developer Pack expired → account dropped from Pro to Free.
+2. Pages is a Pro feature for **private** repos → GitHub unpublished the site.
+3. A failed billing charge then **locked the account for Actions**, so the `deploy.yml` deploy path could not run either (jobs failed with 0 steps and no logs).
+
+**Fix applied:**
+- Repo made **public** (Pages is free for public repos). Scanned all 118 commits for credentials first — no keys, tokens or sensitive filenames in history.
+- Pages reconfigured to **branch deployment** (`build_type: legacy`, `main` / root), which does not need an Actions runner and therefore works despite the account lock.
+- Custom domain and `HTTPS enforced` re-confirmed.
+- Rebuild triggered with an empty commit → build `2439d8d` succeeded → all pages verified 200.
+
+**Verified after restore:** home, academy, fees, method, signup, blog index, a blog post, supplements page, sitemap (39 URLs) and styles.css all 200; fee page shows the price and till; method page shows the timeline and evidence block; no group-size claims remain; supplements still `noindex`; emoji intact; no mojibake.
+
+**Standing risk:** until the billing issue is resolved, Actions will not run. Branch deployment is unaffected, so normal content edits and pushes will publish fine. If someone later re-enables `build_type: workflow` without fixing billing, **the site will go down again** — that is the one setting not to touch.
 
 ### 12 Nov 2026 — commit `d0a26b9` (PR #6)
 
