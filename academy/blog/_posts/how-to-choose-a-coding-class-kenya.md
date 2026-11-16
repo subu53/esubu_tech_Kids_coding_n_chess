@@ -78,12 +78,12 @@ Fair is fair. Our answers are below. Check them against what you see.
 
 | Question | Esubu Tech Academy |
 |---|---|
-| Who teaches? | I'm Sammy Subu, founder and programmes director. I design the curriculum and oversee every group. Your child keeps the same teacher all term. |
-| Group size | Never more than 15 children |
+| Who teaches? | I'm Sammy Subu, founder and programmes director. I design the curriculum and teach every session. Your child keeps the same teacher all term. |
+| Class size | Capped at 15. One-to-one while numbers are small |
 | Live or recorded? | Live on Zoom, every session |
 | What your child finishes with | A working game they designed, a chess game in notation they replay for you, written progress notes, a certificate |
-| Groups | Set by ability after a short conversation about your child, not by age alone |
-| Bored or behind? | Tell me in the first two or three weeks and I move your child to a group at the right level |
+| Levels | Set by ability after a short conversation about your child, not by age alone |
+| Bored or behind? | Tell me in the first two or three weeks and I move your child to the right level |
 | Data and recordings | Sessions aren't recorded, nothing gets published, children don't message each other |
 | Grades | I don't promise better marks. The evidence doesn't support the claim. |
 | Payment | KES 12,000 a month by M-Pesa, paid monthly once you accept a place. No free trial classes. Ask on WhatsApp about paying week by week. |

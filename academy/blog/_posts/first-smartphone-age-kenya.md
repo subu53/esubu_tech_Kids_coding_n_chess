@@ -11,7 +11,7 @@ dek: "December is when many Kenyan children get their first phone. The age matte
 cover_line: "First phone: when, and how"
 related: [screen-time-watching-vs-building, learn-coding-on-a-phone]
 invite_title: "Give the screen a job"
-invite_text: "In our classes, children use a laptop or tablet to build games and play chess against classmates, live on Zoom with one teacher. Tell me about your child and I'll say which group fits."
+invite_text: "In our classes, children use a laptop or tablet to build games and play chess against classmates, live on Zoom with one teacher. Tell me about your child and I'll say which level fits."
 figures:
   phone-study:
     type: stats

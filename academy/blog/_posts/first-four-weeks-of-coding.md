@@ -11,8 +11,8 @@ dek: "We don't run trial classes. So here is the next best thing: the work your 
 cover_line: "Week 1 to week 4: the work"
 related: [free-coding-for-kids-kenya, how-to-choose-a-coding-class-kenya]
 invite_title: "See the work, then decide"
-invite_text: "Tell me your child's age and what they've tried before. I reply on WhatsApp with the right group for your child, the fees and when your child starts."
-soft: "Groups are set by ability after a short conversation about your child."
+invite_text: "Tell me your child's age and what they've tried before. I reply on WhatsApp with the right level for your child, the fees and when your child starts."
+soft: "Levels are set by ability after a short conversation about your child."
 figures:
   four-weeks:
     type: steps
@@ -37,7 +37,7 @@ figures:
 sources:
   - title: "Scratch, information for parents (MIT)"
     url: "https://scratch.mit.edu/help/parents/"
-    note: "The free block-coding tool our younger groups use, designed for ages 8 to 16."
+    note: "The free block-coding tool our younger students use, designed for ages 8 to 16."
   - title: "80% of parents aware of online schooling, but uptake remains low (Citizen Digital, February 2026)"
     url: "https://www.citizen.digital/news/80-of-parents-aware-of-online-schooling-but-uptake-remains-low-study-n377059"
     note: "Koa Academy study: parents rank the teacher about as high as the content."
@@ -66,7 +66,7 @@ Would you judge a school by whether your child liked break time?
 
 ## The four weeks, side by side
 
-Here is the plan every new group follows. Holiday groups meet every weekday morning and move faster. Term groups meet three evenings a week. Groups are set by ability, so a child who already codes starts further along.
+Here is the plan every new student follows. Holiday classes meet every weekday morning and move faster. Term classes meet three evenings a week. Levels are set by ability, so a child who already codes starts further along.
 
 :::figure id="four-weeks"
 :::
@@ -105,7 +105,7 @@ In chess, pins and skewers join the fork, and your child plays a full game and r
 
 ### Week 4: a finished game, shown at home
 
-Your child adds a second level, tidies the game and shows it to the family. In chess, the group plays a mini tournament, and we replay one game from each child to find the move where it turned.
+Your child adds a second level, tidies the game and shows it to the family. In chess, your child plays a short match against the teacher, and we replay one game to find the move where it turned.
 
 :::figure id="at-home"
 :::

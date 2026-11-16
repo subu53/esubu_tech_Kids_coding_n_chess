@@ -11,7 +11,7 @@ dek: "Your child watches a two-hour film without blinking, then won't sit with t
 cover_line: "Fifteen seconds at a time"
 related: [screen-time-watching-vs-building, does-chess-make-kids-smarter]
 invite_title: "Long problems, every week"
-invite_text: "In our classes children stay with one game or one chess position for the whole session, and the teacher notices when attention drifts. Tell me about your child and I'll say which group fits."
+invite_text: "In our classes children stay with one game or one chess position for the whole session, and the teacher notices when attention drifts. Tell me about your child and I'll say which level fits."
 figures:
   review-numbers:
     type: stats

@@ -11,7 +11,7 @@ dek: "Everything a child needs to learn to code sits online for free. So why do 
 cover_line: "Free coding: where it runs out"
 related: [how-to-choose-a-coding-class-kenya, first-four-weeks-of-coding]
 invite_title: "When you want a teacher and a plan"
-invite_text: "Our classes run like school: you apply, your child is placed in the right group, and they work toward a finished game with the same teacher. Live on Zoom, one child per session."
+invite_text: "Our classes run like school: you apply, your child is placed at the right level, and they work toward a finished game with the same teacher. Live on Zoom, one child per session."
 figures:
   free-options:
     type: list
@@ -94,7 +94,7 @@ Many coding schools offer a free trial class. We don't.
 
 A free hour shows you a child on day one, excited by something new. It doesn't show you week three, when the project gets hard and the real learning starts. The work worth judging happens there.
 
-So we run like school. You apply, I place your child in the right group, and they start. Fees are monthly, by M-Pesa. If you'd rather see how it goes before committing to a month, ask me on WhatsApp about paying week by week.
+So we run like school. You apply, I place your child at the right level, and they start. Fees are monthly, by M-Pesa. If you'd rather see how it goes before committing to a month, ask me on WhatsApp about paying week by week.
 
 ## Make free work at home
 

@@ -11,7 +11,7 @@ dek: "Knowing how the pieces move is step one. The next step is a plan for the f
 cover_line: "Six moves with a plan"
 related: [teach-your-child-chess-at-home, chess-tournaments-for-kids-kenya]
 invite_title: "Openings with the reasons behind them"
-invite_text: "In our chess groups children learn openings by their ideas, then test them in tournaments inside the group and review every game. Tell me about your child and I'll say which group fits."
+invite_text: "In our chess sessions, children learn openings by their ideas, then test them in practice games and review every game. Tell me about your child and I'll say which level fits."
 figures:
   opening-rules:
     type: list

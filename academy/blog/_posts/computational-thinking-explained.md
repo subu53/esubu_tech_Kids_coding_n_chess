@@ -11,7 +11,7 @@ dek: "The phrase turns up in coding courses and curriculum talk, and most parent
 cover_line: "Thinking like a programmer, at home"
 related: [what-age-should-a-child-start-coding, help-your-child-with-maths-at-home]
 invite_title: "Four habits, practised every week"
-invite_text: "Every game a child builds in our classes uses all four: break the game into parts, reuse patterns, ignore what doesn't matter, and write the steps. Tell me about your child and I'll say which group fits."
+invite_text: "Every game a child builds in our classes uses all four: break the game into parts, reuse patterns, ignore what doesn't matter, and write the steps. Tell me about your child and I'll say which level fits."
 figures:
   four-habits:
     type: steps
