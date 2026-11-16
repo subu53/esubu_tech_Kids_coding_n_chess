@@ -50,9 +50,15 @@
   </url>
   <url>
     <loc>https://esubutech.online/academy/blog/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://esubutech.online/academy/blog/laptop-for-kids-coding-kenya/</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://esubutech.online/academy/blog/first-smartphone-age-kenya/</loc>
@@ -73,8 +79,8 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://esubutech.online/academy/blog/teenagers-betting-maths/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <loc>https://esubutech.online/academy/blog/keep-child-safe-online-kenya/</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -87,6 +93,12 @@
   <url>
     <loc>https://esubutech.online/academy/blog/screen-time-watching-vs-building/</loc>
     <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://esubutech.online/academy/blog/chess-tactics-for-kids/</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -109,6 +121,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://esubutech.online/academy/blog/scratch-project-ideas-for-kids/</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://esubutech.online/academy/blog/grade-10-computer-science-kenya/</loc>
     <lastmod>2026-11-02</lastmod>
     <changefreq>monthly</changefreq>
@@ -123,6 +141,12 @@
   <url>
     <loc>https://esubutech.online/academy/blog/how-to-choose-a-coding-class-kenya/</loc>
     <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://esubutech.online/academy/blog/how-to-write-chess-notation/</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

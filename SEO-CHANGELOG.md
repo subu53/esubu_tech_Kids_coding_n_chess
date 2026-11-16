@@ -32,6 +32,21 @@ Last updated: 12 November 2026.
 
 ## Done
 
+### 16 Nov 2026 - blog batch 4 (5 posts) and two clean-ups
+
+- **Five new posts**, all from `_posts/` and rebuilt with `build.py --figures --covers`:
+  `laptop-for-kids-coding-kenya`, `keep-child-safe-online-kenya`, `chess-tactics-for-kids`,
+  `scratch-project-ideas-for-kids`, `how-to-write-chess-notation`. 35 posts live.
+- **`teenagers-betting-maths` retired** (owner rule, 3 Nov: no betting or gambling topics, even as a teaching hook).
+  Source, figures and cover deleted. `academy/blog/teenagers-betting-maths/index.html` is now a hand-written
+  `noindex` stub with a meta refresh to `/academy/blog/` (Pages has no 301s). `build.py` does not delete stale
+  folders, so leave the stub in place.
+- **One-to-one wording carried into 15 older posts**: "which group fits" became "which level fits", and the few
+  body lines describing group sessions now match the fees page ("Capped at 15. One-to-one while numbers are small").
+- **Search Console, 13 Nov:** `/academy/blog/` and the posts were "Discovered, currently not indexed", never crawled.
+  `/academy/` was last crawled 8 Oct, before the blog existed. Owner requested indexing for the homepage,
+  `/academy/` and `/academy/blog/`.
+
 ### 12 Nov 2026 — provenance markers (because the repo is now public)
 
 Every one of the 41 HTML pages now carries **two** invisible source-only comments:

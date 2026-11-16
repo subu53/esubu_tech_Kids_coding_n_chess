@@ -6,7 +6,47 @@
   <atom:link href="https://esubutech.online/academy/blog/feed.xml" rel="self" type="application/rss+xml"/>
   <description>Straight answers for Kenyan parents on kids coding, chess, screen time and school.</description>
   <language>en-ke</language>
-  <lastBuildDate>Sat, 07 Nov 2026 00:14:15 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 16 Nov 2026 18:09:43 +0000</lastBuildDate>
+  <item>
+    <title>Buying a laptop for a child learning to code in Kenya: what to check before you pay</title>
+    <link>https://esubutech.online/academy/blog/laptop-for-kids-coding-kenya/</link>
+    <guid isPermaLink="true">https://esubutech.online/academy/blog/laptop-for-kids-coding-kenya/</guid>
+    <pubDate>Mon, 16 Nov 2026 06:00:00 +0000</pubDate>
+    <category>Choosing</category>
+    <description>One refurbished laptop, three Nairobi prices from KSh 25,999 to 39,995. What a young coder needs, why Windows 10 is a risk now, and the checks to run in the shop.</description>
+  </item>
+  <item>
+    <title>Keeping your child safe online in Kenya: what the new rules ask of companies, and what stays with you</title>
+    <link>https://esubutech.online/academy/blog/keep-child-safe-online-kenya/</link>
+    <guid isPermaLink="true">https://esubutech.online/academy/blog/keep-child-safe-online-kenya/</guid>
+    <pubDate>Mon, 16 Nov 2026 06:00:00 +0000</pubDate>
+    <category>Screens</category>
+    <description>Kenya&#x27;s child online protection guidelines took effect in October 2025. What they ask of apps and networks, the four kinds of online risk, and a plan for home.</description>
+  </item>
+  <item>
+    <title>Five chess tactics every child should know, and how to train the eye to see them</title>
+    <link>https://esubutech.online/academy/blog/chess-tactics-for-kids/</link>
+    <guid isPermaLink="true">https://esubutech.online/academy/blog/chess-tactics-for-kids/</guid>
+    <pubDate>Mon, 16 Nov 2026 06:00:00 +0000</pubDate>
+    <category>Chess</category>
+    <description>Fork, pin, skewer, discovered attack and back-rank mate. A board for each, what a 1973 memory study says about how players see them, and a daily routine.</description>
+  </item>
+  <item>
+    <title>Scratch project ideas for kids, by age: from a talking matatu to a platform game</title>
+    <link>https://esubutech.online/academy/blog/scratch-project-ideas-for-kids/</link>
+    <guid isPermaLink="true">https://esubutech.online/academy/blog/scratch-project-ideas-for-kids/</guid>
+    <pubDate>Mon, 16 Nov 2026 06:00:00 +0000</pubDate>
+    <category>Coding</category>
+    <description>Ten Scratch project ideas sorted by age, from ScratchJr at five to clones and lists at thirteen. Kenyan themes, the skill each one teaches, and how to finish them.</description>
+  </item>
+  <item>
+    <title>How to write chess notation: a parent&#x27;s guide to the scoresheet at Kenyan junior tournaments</title>
+    <link>https://esubutech.online/academy/blog/how-to-write-chess-notation/</link>
+    <guid isPermaLink="true">https://esubutech.online/academy/blog/how-to-write-chess-notation/</guid>
+    <pubDate>Mon, 16 Nov 2026 06:00:00 +0000</pubDate>
+    <category>Chess</category>
+    <description>FIDE&#x27;s Laws ask every player in a standard game to write down both players&#x27; moves. How algebraic notation works, symbol by symbol, and how to practise at home.</description>
+  </item>
   <item>
     <title>A phone for Christmas? What age to give one, and the settings to change on day one</title>
     <link>https://esubutech.online/academy/blog/first-smartphone-age-kenya/</link>
@@ -22,14 +62,6 @@
     <pubDate>Mon, 02 Nov 2026 06:00:00 +0000</pubDate>
     <category>School</category>
     <description>KJSEA slips show levels, not marks or a mean grade. What EE1 to BE2 mean subject by subject, and what to do with each result before Grade 10.</description>
-  </item>
-  <item>
-    <title>Your teenager and betting: the maths the odds don&#x27;t show</title>
-    <link>https://esubutech.online/academy/blog/teenagers-betting-maths/</link>
-    <guid isPermaLink="true">https://esubutech.online/academy/blog/teenagers-betting-maths/</guid>
-    <pubDate>Mon, 02 Nov 2026 06:00:00 +0000</pubDate>
-    <category>Maths</category>
-    <description>82.81% of young Kenyans surveyed had placed a bet. Teach your teenager the maths in the odds, the built-in margin, and a 1,000-bet test they run in Python.</description>
   </item>
   <item>
     <title>Short videos and your child&#x27;s focus: what 71 studies found, and how to rebuild attention</title>

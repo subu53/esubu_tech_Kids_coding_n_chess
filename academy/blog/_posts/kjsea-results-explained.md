@@ -11,7 +11,7 @@ dek: "The slip has letters where you expect marks, and no mean grade at the bott
 cover_line: "EE1 to BE2: read the slip"
 related: [prepare-child-for-stem-pathway, help-your-child-with-maths-at-home]
 invite_title: "Groundwork for the subjects which lag"
-invite_text: "Our coding classes put maths to work: coordinates, sequences and conditions your child uses to build a game. Tell me about your child and the results, and I'll say which group fits."
+invite_text: "Our coding classes put maths to work: coordinates, sequences and conditions your child uses to build a game. Tell me about your child and the results, and I'll say which level fits."
 figures:
   kjsea-numbers:
     type: stats

@@ -11,7 +11,7 @@ dek: "Every serious chess player carries a number. Your child earns their first 
 cover_line: "The number every player carries"
 related: [chess-tournaments-for-kids-kenya, child-cries-after-losing-chess]
 invite_title: "Ready for rated games"
-invite_text: "In our chess groups children play with notation, review every game and learn to handle a loss. Those habits matter most in a child's first rated tournament. Tell me about your child and I'll say which group fits."
+invite_text: "In our chess sessions, children play with notation, review every game and learn to handle a loss. Those habits matter most in a child's first rated tournament. Tell me about your child and I'll say which level fits."
 figures:
   fide-numbers:
     type: stats

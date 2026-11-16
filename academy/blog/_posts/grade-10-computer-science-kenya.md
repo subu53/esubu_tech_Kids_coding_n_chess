@@ -11,7 +11,7 @@ dek: "We read KICD's own curriculum design for Grade 10 Computer Science. Half t
 cover_line: "Grade 10 CS: half is coding"
 related: [coding-in-kenyan-schools-kicd-curriculum, prepare-child-for-stem-pathway]
 invite_title: "Programming before Grade 10"
-invite_text: "Our classes teach the ideas in the Grade 10 design, starting with blocks and moving to Python: variables, conditions, loops and functions. Tell me your child's grade and I'll say which group fits."
+invite_text: "Our classes teach the ideas in the Grade 10 design, starting with blocks and moving to Python: variables, conditions, loops and functions. Tell me your child's grade and I'll say which level fits."
 figures:
   cs-strands:
     type: bars

@@ -11,7 +11,7 @@ dek: "A robot rolling across the floor beats a cat on a screen in any photo. Bef
 cover_line: "Robot first, or the brain first?"
 related: [how-to-choose-a-coding-class-kenya, scratch-or-python-first]
 invite_title: "The brain behind every robot"
-invite_text: "Our classes teach the coding every robot depends on: sequences, loops, conditions and sensors in a program. Tell me about your child and I'll say which group fits."
+invite_text: "Our classes teach the coding every robot depends on: sequences, loops, conditions and sensors in a program. Tell me about your child and I'll say which level fits."
 figures:
   robot-compare:
     type: compare

@@ -11,7 +11,7 @@ dek: "Parents see a cartoon cat and wonder where this leads. The whole ladder, r
 cover_line: "After the cat: the ladder"
 related: [scratch-or-python-first, first-four-weeks-of-coding]
 invite_title: "One ladder, one teacher"
-invite_text: "Our groups take children from their first Scratch game to Python, at the pace each child sets. Tell me where your child is on the ladder and I'll say which group fits."
+invite_text: "Our classes take children from their first Scratch game to Python, at the pace each child sets. Tell me where your child is on the ladder and I'll say which level fits."
 figures:
   ladder:
     type: list
