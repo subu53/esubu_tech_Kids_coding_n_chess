@@ -124,4 +124,6 @@ If the honest answer is YouTube and games, the spec won't matter, and the laptop
 
 Prices move every week, and our numbers are from one day in November. Open three listings for the same model, compare the warranty on each, and ask every shop the same questions: which Windows, which processor generation, which battery health, how long a warranty, and is it on the receipt.
 
+If you'd like help securing one, send us your budget on [WhatsApp](https://wa.me/254720811346?text=Hello%20Sammy%2C%20I%20read%20your%20laptop%20guide.%20I%27d%20like%20help%20choosing%20a%20laptop%20for%20my%20child.%20My%20budget%3A%20) and we'll recommend a laptop to fit it, with the checks to run before you pay.
+
 If you're weighing a phone or tablet instead, read our post on [learning to code on a phone](/academy/blog/learn-coding-on-a-phone/) first.
